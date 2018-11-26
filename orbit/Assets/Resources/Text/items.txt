@@ -1,0 +1,12 @@
+Name:BasePrice:Mass:Volume
+Water:5:1:1
+Oxygen:7:0:1
+Iron:10:5:1
+Steel:14:10:1
+Rations:8:5:1
+Crops:13:7:1
+Biofuel:15:4:1
+Medicine:16:3:1
+Fuel Cells:20:8:1
+Titanium:25:12:1
+end

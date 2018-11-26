@@ -1,0 +1,16 @@
+Name:Type:Pop:Descrip:Image:production:consumption
+Hagarth Station:Station:200:A research facility orbitting a distant gas giant.:ringstation:2,2,3,3,3,2,6,6,6,2:4,4,3,3,3,4,3,3,3,3
+Wenshen Station:Station:7,000:A mining station built by predominantly German migrants.:station1:2,2,3,5,3,1,2,1,4,1:3,4,5,2,5,3,4,3,3,2
+Gorent Station:Station:12,000:A military outpost designed to train soldiers in a variety of different gravity levels.:ringstation2:1,1,2,3,2,1,2,2,2,1:3,4,2,3,6,3,4,5,6,5
+Earth:Planet:13.4 billion:The densely populated home world of humanity.:earth:10,10,4,2,8,8,6,2,2,1:6,4,2,5,6,5,4,5,6,7
+Pavoria:Planet:14 million:The colony on this small moon primarily focus on studying the affects of low gravity on life.:planet1:10,10,3,3,5,4,6,7,5,1:6,4,2,4,6,3,4,3,6,3
+Cira:Planet:5 million:The colonists here are trying to survive after a plague ran through their ranks:planet3:10,10,3,5,3,3,6,2,5,2:6,4,2,3,6,5,4,7,6,1
+Gado Belt:Station:730,000:The denizens of this asteroid belt make a living by building large ships for richer nations.:asteroidbelt2:4,4,7,7,4,1,6,4,5,5:6,6,5,4,6,3,5,3,6,8
+Demeter:Planet:1.2 billion:Over 80% of the land on this terrestrial planet is worked as farmland.:planet2:10,10,3,3,8,8,5,4,2,2:6,6,4,4,4,3,6,3,2,2
+Musi Ring:Station:2.2 million:This station functions as a hub for ice haulers to harvest from the nearby asteroid belt.:asteroidbelt:10,8,7,7,4,1,5,5,7,5:5,5,3,4,6,3,5,3,6,8
+Birjom City:Planet:4.3 million:This city is built into a crater to protect it from the harsh solar wind.:cratercity:4,4,7,7,4,1,5,4,9,8:6,7,3,4,6,3,5,3,6,8
+Minio:Planet:48 million:This cold planet produces some of the most advanced robots in the known universe.:coldplanet:8,7,4,6,4,4,3,6,7:6,7,3,4,6,4,4,3,6,7
+Drini:Planet:27 million:The algae from this planet is renowned for its medicinal capabilities.:greenplanet:8,7,3,3,7,6,3,10,4,2:6,6,6,5,5,4,4,5,5,3
+Ondel Station:Station:86,000:This station harvests the most deuterium in its sector.:asteroidbelt3:5,5,6,3,3,1,2,3,8,2:4,3,4,5,5,4,4,5,4,3
+Antan:Planet:990 million:There are islands on this world made entirely of diamond, with most of the economy focused on getting these off planet:planet4:10,10,5,3,4,4,6,4,6,8:6,6,4,5,5,3,3,5,4,4
+end
