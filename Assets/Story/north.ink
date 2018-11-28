@@ -8,11 +8,11 @@ VAR has_coin = false
 VAR knows_O = false
 You have been tasked with getting a silver coin.
 -> trails
-== trails
+== trails ==
 = intro
 The further north you go, the hillier it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go, and you catch a whiff of dank water. -> main
 = main
-    + [GO NORTH] -> brambles #movement
+    + [GO NORTH] -> brambles 
     + [GO SOUTH] This is a bad idea. Mr. O is there. #movement
     ~knows_O = true
     -> main
@@ -44,7 +44,7 @@ You exit the brambles into a sparse thicket of trees. There is a particularly ta
     ~has_stick = true
     -> main
     * [Examine cliff] At first it seems like an easy enough slope, but then you notice the dense bushes and slope steepening and decide that it would take way too much effort. -> main
-    * {has_rope} [Use rope on cliff] You throw the rope to the top of the cliff and it latches onto a bush.
+    * {has_rope} [Use rope on cliff] You throw the rope to the top of the cliff and it latches onto a bush. #item #rope #cliff
     ~rope_cliff = true
     -> main
     +  {rope_cliff} [Climb rope]
