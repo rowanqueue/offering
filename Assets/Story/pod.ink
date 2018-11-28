@@ -12,6 +12,6 @@ You move your hand above it and you find a metal door.
 -> panel
 * [Push on door] You try to push against the door but it is locked. 
 -> latch
-== panel == 
+== panel ==
 There is a panel.
 -> END
