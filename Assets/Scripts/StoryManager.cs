@@ -17,6 +17,12 @@ public class StoryManager : MonoBehaviour {
     List<GameObject> screenText;//all text thats been generated so you can scroll it up
     public string currentKnot;//what knot are you currently in
 
+    public bool typing;//whether you're typing out a line or not
+    public string whatToType;
+    TMP_Text typeText;
+    public float typeSpeed;
+    float lastTyped;
+
     //constants
     int maxLineLength;
 
@@ -31,15 +37,28 @@ public class StoryManager : MonoBehaviour {
     {
         screenText = new List<GameObject>();
         offsetDelta = 20;
-        maxLineLength = 44;
+        maxLineLength = 33;
         story = new Story(inkJSONAsset.text);
         choicesButtons = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update () {
-        if (story.canContinue)
+        //choices
+        if (story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
+            Choice choice = story.currentChoices[numChoicesDisplayed];
+            Button button = CreateChoice(choice.text.Trim());
+
+            button.onClick.AddListener(delegate { OnClickChoice(choice); });
+            numChoicesDisplayed++;
+            offset += offsetDelta;
+            choicesButtons.Add(button.gameObject);//add buttons to the list
+        }
+        //text
+        if (story.canContinue && typing == false)
+        {
+            typing = true;
             string text = story.Continue().Trim();
             string thisKnot = "";
             foreach (string s in story.currentTags)
@@ -74,24 +93,42 @@ public class StoryManager : MonoBehaviour {
             }
             resetOffset = offset;
         }
-        if(story.currentChoices.Count > numChoicesDisplayed)
+        //typing
+        if (typing)
         {
-            Choice choice = story.currentChoices[numChoicesDisplayed];
-            Button button = CreateChoice(choice.text.Trim());
-
-            button.onClick.AddListener(delegate { OnClickChoice(choice); });
-            numChoicesDisplayed++;
-            offset += offsetDelta;
-            choicesButtons.Add(button.gameObject);//add buttons to the list
+            if(Time.time > lastTyped + typeSpeed)
+            {
+                lastTyped = Time.time;
+                typeText.text += whatToType[0];
+                if(whatToType.Length > 1)
+                {
+                    whatToType = whatToType.Substring(1);
+                }
+                else
+                {
+                    typing = false;
+                    typeText = null;
+                    whatToType = "";
+                }
+            }
+            //lets you skip
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                typeText.text += whatToType;
+                typing = false;
+                typeText = null;
+                whatToType = "";
+            }
         }
 	}
     void ViewText(string text)
     {
         TMP_Text storyText = Instantiate(textPrefab) as TMP_Text;
-        storyText.text = text;
         storyText.transform.SetParent(textPos, false);
         storyText.transform.position += new Vector3(0, -offset);
         screenText.Add(storyText.gameObject);
+        whatToType = text;
+        typeText = storyText;
 
     }
     void OnClickChoice(Choice choice)

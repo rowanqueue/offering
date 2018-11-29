@@ -176,6 +176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkJSONAsset: {fileID: 4900000, guid: 1c33f2b42bb1c954b8894fbf0b1a7650, type: 3}
   currentKnot: 
+  typing: 0
+  whatToType: 
+  typeSpeed: 0.05
   textPos: {fileID: 734480819}
   textPrefab: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
     type: 2}
