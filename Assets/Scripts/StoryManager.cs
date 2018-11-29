@@ -14,6 +14,8 @@ public class StoryManager : MonoBehaviour {
     float resetOffset;//where offset should be after choice buttons are deleted
     int numChoicesDisplayed;//how many choices you've displayed this scene
     List<GameObject> choicesButtons;
+    List<GameObject> screenText;//all text thats been generated so you can scroll it up
+    public string currentKnot;//what knot are you currently in
 
     //constants
     int maxLineLength;
@@ -27,6 +29,7 @@ public class StoryManager : MonoBehaviour {
     // Use this for initialization
     private void Awake()
     {
+        screenText = new List<GameObject>();
         offsetDelta = 20;
         maxLineLength = 44;
         story = new Story(inkJSONAsset.text);
@@ -38,10 +41,37 @@ public class StoryManager : MonoBehaviour {
         if (story.canContinue)
         {
             string text = story.Continue().Trim();
+            string thisKnot = "";
+            foreach (string s in story.currentTags)
+            {
+                Debug.Log(s);
+                if (s[0] == 'k')
+                {
+                    thisKnot = s.Split('_')[1];
+                }
+            }
+            if(currentKnot == "")
+            {
+                currentKnot = thisKnot;
+            }else if(currentKnot != thisKnot)
+            {
+                currentKnot = thisKnot;
+                ResetScene();
+            }
             ViewText(text);
             int numLines  = Mathf.CeilToInt(text.Length / (float)maxLineLength);
             Debug.Log(numLines);
-            offset += offsetDelta * numLines;
+            if(offset < 420)
+            {
+                offset += offsetDelta*0.75f * numLines;
+            }
+            else
+            {
+                foreach(GameObject te in screenText)
+                {
+                    te.transform.position += new Vector3(0, offsetDelta);
+                }
+            }
             resetOffset = offset;
         }
         if(story.currentChoices.Count > numChoicesDisplayed)
@@ -61,11 +91,20 @@ public class StoryManager : MonoBehaviour {
         storyText.text = text;
         storyText.transform.SetParent(textPos, false);
         storyText.transform.position += new Vector3(0, -offset);
+        screenText.Add(storyText.gameObject);
 
     }
     void OnClickChoice(Choice choice)
     {
+        foreach (string s in story.currentTags)
+        {
+            Debug.Log(s);
+        }
         story.ChooseChoiceIndex(choice.index);
+        foreach(string s in story.currentTags)
+        {
+            Debug.Log(s);
+        }
         //reset the scene
         foreach(GameObject button in choicesButtons)
         {
@@ -83,7 +122,15 @@ public class StoryManager : MonoBehaviour {
 
         TMP_Text choiceText = choice.GetComponent<TMP_Text>();
         choiceText.text = text;
-
         return choice;
+    }
+    void ResetScene()
+    {
+        foreach(GameObject te in screenText)
+        {
+            Destroy(te);
+        }
+        screenText = new List<GameObject>();
+        offset = 0;
     }
 }
