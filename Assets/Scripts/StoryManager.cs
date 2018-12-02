@@ -36,7 +36,7 @@ public class StoryManager : MonoBehaviour {
     private void Awake()
     {
         screenText = new List<GameObject>();
-        offsetDelta = 20;
+        offsetDelta = 20*1.5f;
         maxLineLength = 33;
         story = new Story(inkJSONAsset.text);
         choicesButtons = new List<GameObject>();
@@ -80,7 +80,7 @@ public class StoryManager : MonoBehaviour {
             ViewText(text);
             int numLines  = Mathf.CeilToInt(text.Length / (float)maxLineLength);
             Debug.Log(numLines);
-            if(offset < 420)
+            if(offset < 420*1.5f)
             {
                 offset += offsetDelta*0.75f * numLines;
             }
