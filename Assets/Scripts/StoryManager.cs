@@ -45,6 +45,7 @@ public class StoryManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         //choices
+        Debug.Log(Screen.height);
         if (story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
             Choice choice = story.currentChoices[numChoicesDisplayed];
