@@ -1,17 +1,17 @@
 MORNING
 
-You look out across the bay at the snow-capped mountains and the small town at their base. 
+You look out across the bay at the snow-capped mountains and the small town at their base where your parents grew up. 
 
-Your parents grew up here: 5 hours of flying, 5 hours of driving, and now an hour of a ferry ride away from New York City. Until this weekend you’d never even left the tri-state-area. You start to feel sick from the rocking of the boat.
-    * [Tell Mom you feel sick] "Mom, I feel sick," you say. 
+It's been five hours of flying and five hours of driving to get to this ferry, which they assure you is the only way to get to ___. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area. 
+    * [Complain] "Mom, I feel sick," you say.
     She puts her hands on your shoulders. 
     "Take deep breaths, and focus on the waves. Just listen. There's nowhere else on Earth that sounds like this place."
-        ** [Listen to the waves] You listen to the waves. 
+        ++ [You listen to the waves.]  
         Your Mom turns to you and asks, "Are you excited to meet your cousin?"
             *** [Say Yes] "Yeah, definitely." you say. 
                 "I’m excited to meet him too" says Mom.
             *** [Say No] "Not really," you say.
-                "Well I’m excited to meet him." says Mom
+                "Well, I’m excited to meet him." says Mom
     -"His mom was my best friend. I think you two will get along famously."
         *[Ask about Grandpa] "What about Grandpa?" you ask. 
     
