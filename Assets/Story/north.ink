@@ -1,4 +1,4 @@
-NORTH
+NORTHff
 VAR wearing_boots = false
 VAR has_stick = false
 VAR has_rope = false
@@ -6,22 +6,25 @@ VAR rope_cliff = false
 VAR coin_visible = false
 VAR has_coin = false
 VAR knows_O = false
-You have been tasked with getting a silver coin.
+You have been tasked with getting a silver coin.#fuck
 -> trails
+
 == trails ==
 = intro
+#k_trails
 The further north you go, the hillier it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go, and you catch a whiff of dank water. -> main
 = main
-    + [GO NORTH] -> brambles 
-    + [GO SOUTH] This is a bad idea. Mr. O is there. #movement
+    + [GO NORTH] -> brambles
+    + [GO SOUTH] This is a bad idea. Mr. O is there.
     ~knows_O = true
     -> main
     * [Smell water] The smell of the water reminds you of the orphanage, but you’re not sure why. It doesn’t smell like any water you’ve ever known, and frankly it’s bothering you. -> main
     * {knows_O} [Mr. O?] Yeah, the mullet guy. -> main
     
-    
+
 == brambles == 
 = intro
+#k_brambles
 More and more vegetation crunches under your foot. A dense, waist-high bramble stands between you and a thicket of trees to the west. The horrid smell of the water is stronger here, and you can hear it lapping to the north. -> main
 = main
     + [GO NORTH] -> shore
@@ -35,6 +38,7 @@ More and more vegetation crunches under your foot. A dense, waist-high bramble s
     
 == thicket ==
 = intro
+#k_thicket
 You exit the brambles into a sparse thicket of trees. There is a particularly tall one that seems to be dying. You look past the trees to see a stark cliff face, upon which you hear a strange sort of rustling. -> main
 = main
     + [GO NORTH] -> hilltop
@@ -55,6 +59,7 @@ You exit the brambles into a sparse thicket of trees. There is a particularly ta
         
 == hilltop == 
 = intro 
+#k_hilltop
 You are deafened by the cacophony of bird sounds coming from the countless number of birds before you. They seem to cover every space available, leading up to the cliff facing the lake. You see a glint of metal in the center. -> main
 = main
     + [GO SOUTH] -> thicket
@@ -67,6 +72,7 @@ You are deafened by the cacophony of bird sounds coming from the countless numbe
     
 == shore == 
 = intro
+#k_shore
 Walking upon the sandy shore, you see a rotting old shack and remember spending time at the beach with your foster parents. You see a cliff jutting out over the waterline and swear you can hear something over the sound of waves. -> main
 = main
 {not wearing_boots: There are a pair of boots by the shore.}
@@ -82,6 +88,7 @@ Walking upon the sandy shore, you see a rotting old shack and remember spending 
         
 == shack == 
 = intro
+#k_shack
 As you enter the dusty, grimy shack you instantly understand why your new parents want you to clean your room so often. Apart from the rusting bedframe and what might once have been food on a desk, you see a pile of rope in fairly good condition on top of a shelf. -> main
 = main
     + [GO OUT] -> shore
