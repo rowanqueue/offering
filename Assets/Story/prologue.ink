@@ -6,8 +6,7 @@ It's been five hours of flying and five hours of driving to get to this ferry, w
     * [Complain] "Mom, I feel sick," you say.
     She puts her hands on your shoulders. 
     "Take deep breaths, and focus on the waves. Just listen. There's nowhere else on Earth that sounds like this place."
-        ++ [You listen to the waves.]  
-        Your Mom turns to you and asks, "Are you excited to meet your cousin?"
+        ++ [You listen to the waves.]  Your Mom turns to you and asks, "Are you excited to meet your cousin?"
             *** [Say Yes] "Yeah, definitely." you say. 
                 "I’m excited to meet him too" says Mom.
             *** [Say No] "Not really," you say.

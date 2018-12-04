@@ -144,7 +144,9 @@ public class NewStoryManager : MonoBehaviour {
             if(Time.time > lastTypedTimed + typeSpeed)
             {
                 lastTypedTimed = Time.time;
+                Debug.Log(whatToType);
                 displayText.text += whatToType[0];
+                //audio
                 if(whatToType.Length > 1)//keep on typing
                 {
                     whatToType = whatToType.Substring(1);
