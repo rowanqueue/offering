@@ -25,6 +25,10 @@ public class NewStoryManager : MonoBehaviour {
     public string whatToType;
     public float typeSpeed;
     float lastTypedTimed;//last time you typed something
+    string currentSpeaker;//when "", just typing noises
+    public ScrollRect scrollRect;
+
+    public Image displayImage;
 
     //constant
     float maxChoiceOffset;//the furthest the choice offset can go
@@ -67,6 +71,7 @@ public class NewStoryManager : MonoBehaviour {
             Button button = choicesButtons[numChoicesDisplayed - numSpecialChoices];
             button.gameObject.SetActive(true);
             string choiceText = choice.text.Trim();
+            //grid choice?
             if (choiceText.Contains("^"))
             {
                 string[] allText = choiceText.Split('^');
@@ -117,6 +122,7 @@ public class NewStoryManager : MonoBehaviour {
         //text
         if(story.canContinue && typing == false)
         {
+            scrollRect.verticalNormalizedPosition = 0;
             typing = true;
             whatToType = story.Continue().Trim();
             //checking knots!!
@@ -125,18 +131,26 @@ public class NewStoryManager : MonoBehaviour {
             {
                 if(s[0] == 'k')
                 {
-                    thisKnot = s.Split('_')[1];
+                    thisKnot = s.Split('_')[1].Trim();
                 }
             }
-            if(currentKnot == "")//first knot
-            {
-                currentKnot = thisKnot;
-            }else if(currentKnot != thisKnot)//changes knots
+            if(currentKnot != thisKnot && thisKnot != "")//changes knots
             {
                 currentKnot = thisKnot;
                 //this is where you could reset the scene
+                displayText.text = "";
+                displayImage.sprite = Resources.Load<Sprite>(currentKnot);
             }
             //done checking knots!!
+            //check for current voice (either typing sound or specific voice
+            if(whatToType[0] == ':')
+            {
+                string[] split = whatToType.Split(':');
+                currentSpeaker = split[1];
+                Debug.Log(currentSpeaker);
+                whatToType = split[2];
+            }
+            else { currentSpeaker = ""; }
         }
         //typing
         if (typing)
@@ -144,7 +158,6 @@ public class NewStoryManager : MonoBehaviour {
             if(Time.time > lastTypedTimed + typeSpeed)
             {
                 lastTypedTimed = Time.time;
-                Debug.Log(whatToType);
                 displayText.text += whatToType[0];
                 //audio
                 if(whatToType.Length > 1)//keep on typing
@@ -165,6 +178,7 @@ public class NewStoryManager : MonoBehaviour {
                 typing = false;
                 whatToType = "";
             }
+            scrollRect.verticalNormalizedPosition = 0;
         }
 	}
     void SetChoice(string text, Button button)
