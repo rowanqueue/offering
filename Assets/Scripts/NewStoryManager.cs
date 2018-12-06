@@ -69,11 +69,11 @@ public class NewStoryManager : MonoBehaviour {
             //TODO:  we'll checck for special choices here
             //Debug.Log(numChoicesDisplayed - numSpecialChoices);
             Button button = choicesButtons[numChoicesDisplayed - numSpecialChoices];
-            button.gameObject.SetActive(true);
             string choiceText = choice.text.Trim();
             //grid choice?
             if (choiceText.Contains("^"))
             {
+                Debug.Log(choiceText);
                 string[] allText = choiceText.Split('^');
                 for(int i = 0; i < allText.Length; i++)
                 {
@@ -113,9 +113,14 @@ public class NewStoryManager : MonoBehaviour {
                         SetTile(new int[2] { x, y }, choice);
                     }
                 }
+                numSpecialChoices++;
             }
-            SetChoice(choiceText, button);
-            button.onClick.AddListener(delegate { OnClickChoice(choice); });
+            else
+            {
+                button.gameObject.SetActive(true);
+                SetChoice(choiceText, button);
+                button.onClick.AddListener(delegate { OnClickChoice(choice); });
+            }
             numChoicesDisplayed++;
         }
 
@@ -188,6 +193,24 @@ public class NewStoryManager : MonoBehaviour {
                 TextSound.me.PlaySound(currentSpeaker);
             }
             scrollRect.verticalNormalizedPosition = 0;
+        }
+        else//looking for a choice?
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit hit;
+                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                {
+                    Tile tile = hit.collider.GetComponent<Tile>();
+                    if(tile != null)
+                    {
+                        Debug.Log("fuck");
+                        OnClickChoice(tile.choice);
+                        TextSound.me.PlaySound(currentSpeaker);
+                    }
+                }
+
+            }
         }
 	}
     void SetChoice(string text, Button button)
