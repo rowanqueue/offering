@@ -26,9 +26,10 @@ Grandpa speaks to you in English, finding his way slowly through the words:
 :grandpa:"Kari, please show our guests to their rooms."
 :kari:"Yes, grandfather."
 
-*   [Go upstairs]->intro_upstairs
+*   ^H:H,2:5 ^[Go upstairs]->intro_upstairs
 
 == intro_upstairs == 
+#k_act1/bedroom
 :kari:"...and you'll be staying in my room! What do you think?" You step into your cousin's room. Drawings of creatures are scattered everywhere, covering almost every surface. 
 *   [It's nice] :player:"It's a nice room. I like your drawings."
     :kari:"Thank you! Drawing is my favorite. Grandpa likes them too. He says I could be a famous artist one day. Here, I made this for you."
@@ -42,9 +43,10 @@ Grandpa speaks to you in English, finding his way slowly through the words:
 - :kari: Kari laughs. "What do you think of my English? I learn at school but Grandpa never allows me to speak it. It always is so funny to hear him use it!"
 Before you can answer, your dad enters the room. "Dinner is ready, come downstairs."
 :kari:"Coming!" Kari cheerfully replies.
-*   [Go downstairs]->dinner
+*   ^I:J,3:7 ^[Go downstairs]->dinner
 
 ==dinner==
+#k_act1/homeInterior
 You walk downstairs and a large dinner of lamb, fish stew, potatoes, and freshly baked bread awaits. You are very hungry.
 *   [Dig in]
 You eat ravenously for a bit before realizing Mom hasn't touched her food. Nobody is saying anything. 
