@@ -28,12 +28,16 @@ public class NewStoryManager : MonoBehaviour {
     string currentSpeaker;//when "", just typing noises
     public ScrollRect scrollRect;
 
+    //sound shit
+    AudioSource audioLoop;
+
     public Image displayImage;
 
     //constant
     float maxChoiceOffset;//the furthest the choice offset can go
     Dictionary<string, int> letterToNum;
 	void Awake () {
+        audioLoop = GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         story = new Story(inkJSONAsset.text);
         GetTiles();
@@ -134,9 +138,14 @@ public class NewStoryManager : MonoBehaviour {
             string thisKnot = "";//to check if this is a new knot or not
             foreach(string s in story.currentTags)
             {
-                if(s[0] == 'k')
+                if(s[0] == 'k')//knot?
                 {
                     thisKnot = s.Split('_')[1].Trim();
+                }
+                if(s[0] == 's')//sound?
+                {
+                    audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                    audioLoop.Play();
                 }
             }
             if(currentKnot != thisKnot && thisKnot != "")//changes knots
@@ -226,6 +235,7 @@ public class NewStoryManager : MonoBehaviour {
     }
     void ResetScene()
     {
+        numSpecialChoices = 0;
         numChoicesDisplayed = 0;
         foreach(Button choice in choicesButtons)
         {
