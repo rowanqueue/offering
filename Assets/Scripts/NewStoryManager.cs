@@ -77,7 +77,6 @@ public class NewStoryManager : MonoBehaviour {
             //grid choice?
             if (choiceText.Contains("^"))
             {
-                Debug.Log(choiceText);
                 string[] allText = choiceText.Split('^');
                 for(int i = 0; i < allText.Length; i++)
                 {
@@ -91,7 +90,6 @@ public class NewStoryManager : MonoBehaviour {
                         choiceText = s;
                         break;
                     }
-                    Debug.Log(s);
                     if (s.Contains(":"))//range of values
                     {
                         string[] rangeText = s.Split(',');
