@@ -144,8 +144,16 @@ public class NewStoryManager : MonoBehaviour {
                 }
                 if(s[0] == 's')//sound?
                 {
-                    audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
-                    audioLoop.Play();
+                    string audioFile = s.Split('_')[1].Trim();
+                    if(audioFile == "stop")
+                    {
+                        audioLoop.Stop();
+                    }
+                    else
+                    {
+                        audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                        audioLoop.Play();
+                    }
                 }
             }
             if(currentKnot != thisKnot && thisKnot != "")//changes knots
