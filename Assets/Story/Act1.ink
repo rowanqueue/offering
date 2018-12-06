@@ -54,10 +54,10 @@ You bring your plate up to the sink and wipe it down.
 *   [Give drawing]
     ~has_drawing = false
     ~given_drawing = true
-{given_drawing: :grandpa:Ah, Kari drew for you. How lucky you are! Did your parents teach you the significance of the whale?->whale_story}
+{given_drawing: :grandpa:Ah, Kari drew for you. How lucky you are! Did your parents teach you the meaning of the whale?->whale_story}
 = whale_story
-*   [No]
-- :grandpa: "Well there are obviously many whales here in Iceland. I can have my men take you out to find some if you want. But legend tells of a king who sent a wizard to Iceland, disguised as a whale. The whale tried to find the weaknesses of Iceland but the four landvættir, land wights, protected Iceland and .
+*   [Say No]
+- :grandpa: "Well there are obviously many whales here in Iceland. I can have my men take you out to find some if you want. But legend tells of a king who sent a wizard to Iceland, disguised as a whale. The whale tried to find the weaknesses of Iceland but the four landvættir, land wights, protected it.
 Mom interjects: "Actually, why don't you go play outside with your cousin instead?"
 
 :kari:"Oh, I know exactly what to show you!"
