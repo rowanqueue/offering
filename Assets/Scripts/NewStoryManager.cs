@@ -160,6 +160,14 @@ public class NewStoryManager : MonoBehaviour {
                 lastTypedTimed = Time.time;
                 displayText.text += whatToType[0];
                 //audio
+                if(whatToType[0] == ' ' || whatToType[0] == '\n')
+                {
+                    //TextSound.me.PlaySound(currentSpeaker);
+                }
+                else
+                {
+                    TextSound.me.PlaySound(currentSpeaker);
+                }
                 if(whatToType.Length > 1)//keep on typing
                 {
                     whatToType = whatToType.Substring(1);
@@ -177,6 +185,7 @@ public class NewStoryManager : MonoBehaviour {
                 displayText.text += "\n \n";
                 typing = false;
                 whatToType = "";
+                TextSound.me.PlaySound(currentSpeaker);
             }
             scrollRect.verticalNormalizedPosition = 0;
         }

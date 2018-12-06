@@ -1,6 +1,6 @@
 MORNING
 
-You look out across the bay at the snow-capped mountains and the small town at their base where your parents grew up. 
+You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
 
 It's been five hours of flying and five hours of driving to get to this ferry, which they assure you is the only way to get to Fjallvík. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area. 
     * [Complain] :player:"Mom, I feel sick," you say.
