@@ -1,4 +1,4 @@
-NORTHff
+NORTH
 VAR wearing_boots = false
 VAR has_stick = false
 VAR has_rope = false
@@ -14,12 +14,12 @@ You have been tasked with getting a silver coin.#fuck
 #k_trails
 The further north you go, the hillier it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go, and you catch a whiff of dank water. -> main
 = main
-    + [GO NORTH] -> brambles
+    + ^A,1 ^C:E,5:6 ^[GO NORTH] -> brambles
     + [GO SOUTH] This is a bad idea. Mr. O is there.
     ~knows_O = true
     -> main
     * [Smell water] The smell of the water reminds you of the orphanage, but you’re not sure why. It doesn’t smell like any water you’ve ever known, and frankly it’s bothering you. -> main
-    * {knows_O} [Mr. O?] Yeah, the mullet guy. -> main
+   // * {knows_O} [Mr. O?] Yeah, the mullet guy. -> main
     
 
 == brambles == 
@@ -33,7 +33,7 @@ More and more vegetation crunches under your foot. A dense, waist-high bramble s
         {not wearing_boots: You take a step onto the bramble and a thorn drives right through your shoe and into the sole of your foot. You stumble back and pull it out. -> main} 
         You start to wade through the brambles. The boots protect the soles of your feet but every step you take drives more thorns into your legs and waist. Eventually you make it to the tree line. 
         -> thicket
-    * [Examine thicket] The brambles here look thornier than any you’ve ever seen, like tiny knives. You don’t want to think about them getting caught up in your feet. -> main
+    //* [Examine thicket] The brambles here look thornier than any you’ve ever seen, like tiny knives. You don’t want to think about them getting caught up in your feet. -> main
     
     
 == thicket ==
