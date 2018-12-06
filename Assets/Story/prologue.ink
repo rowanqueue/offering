@@ -3,19 +3,19 @@ MORNING
 
 You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
 
-It's been five hours of flying and five hours of driving to get to this ferry, which they assure you is the only way to get to Fjallvík. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area. 
+It's been five hours of flying and five hours of driving to get to this ferry, which Dad assures you is the only way to get to Fjallvík. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area. 
     * [Complain] :player:"Mom, I feel sick," you say.
     She puts her hands on your shoulders. 
     :mom:"Take deep breaths, and focus on the waves. Just listen. There's nowhere else on Earth that sounds like this place."
-        ++ [You listen to the waves.] :mom:Your Mom turns to you and asks, "Are you excited to meet your cousin?"
-            *** [Say Yes] :player:"Yeah, definitely." you say. 
-                :mom:"I’m excited to meet him too," she replies. "His mom was my best friend. I think you two will get along famously."
+        ++ [Listen to the waves.] :mom:Your Mom turns to you and asks, "Are you excited to meet your cousin?"
+            *** [Say Yes] :player:"Yeah, definitely," you say. 
+                :mom:"I’m excited to meet him too," she replies. "His mom - your aunt - was my best friend. I think you two will get along famously."
             *** [Say No] :player:"Not really," you say.
-                :mom:"Well, I’m excited to meet him," she replies. "His mom was my best friend. I think you two will get along famously."
+                :mom:"Well, I’m excited to meet him," she replies. "His mom - your aunt -  was my best friend. I think you two will get along famously."
     -
 *   [Ask about Grandpa] :player:"What about Grandpa?" you ask. 
     
--   :mom:"Well I think so but the thing is... I haven’t seen Grandpa since before you were born. He is a very, very old man now. He might be a bit confused. He might seem weird. But if there’s one thing I remember about him it’s that he could talk for hours and hold a whole room’s attention. He’ll probably talk your ear off if he gets the chance, just... don’t believe everything he says."
+-   :mom:"Well I think he'll like you very much. The thing is... I haven’t seen Grandpa since before you were born. He is a very, very old man now. He might be a bit confused. He might seem weird. If there’s one thing I remember about him it’s that he could talk for hours and hours, but hold a whole room’s attention. He’ll probably talk your ear off if he gets the chance, just... don’t believe everything he says."
 * [Okay]
         -> ACT1
 
