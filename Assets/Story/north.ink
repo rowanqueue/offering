@@ -1,107 +1,102 @@
 NORTH
+VAR eagle_here = true
 VAR wearing_boots = false
 VAR has_stick = false
-VAR has_rope = false
-VAR rope_cliff = false
-VAR coin_visible = false
-VAR has_coin = false
-VAR knows_O = false
-You have been tasked with getting a silver coin.#fuck
+VAR has_rock = false
+VAR has_horn = false
+VAR boat_docked = false
+VAR has_feather = false
+You know your cousin's hide out is nearby. Hes been gone for so long its starting to scare you. You really hope hes in there. 
 -> trails
+
+
 
 == trails ==
 = intro
-#k_trails
-The further north you go, the hillier it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go, and you catch a whiff of dank water. -> main
+The further north you go, the hillier it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. In the distance, you can see the briny shore.-> main
 = main
-    + ^A,1 ^C:E,5:6 ^[GO NORTH] -> brambles
-    + [GO SOUTH] This is a bad idea. Mr. O is there.
-    ~knows_O = true
-    -> main
-    * [Smell water] The smell of the water reminds you of the orphanage, but you’re not sure why. It doesn’t smell like any water you’ve ever known, and frankly it’s bothering you. -> main
-   // * {knows_O} [Mr. O?] Yeah, the mullet guy. -> main
+    + [GO NORTH] -> snowyHilltop1
+    + [GO EAST] -> shore
+    * [GO SOUTH] There is no going back. -> main
+    + [GO WEST] -> cave
     
-
-== brambles == 
+    
+    
+== cave ==
 = intro
-#k_brambles
-More and more vegetation crunches under your foot. A dense, waist-high bramble stands between you and a thicket of trees to the west. The horrid smell of the water is stronger here, and you can hear it lapping to the north. -> main
+You wander down the shoreline until you find a cove just as your cousin described it. You would try and enter but a massive eagle has nested right near the entrance, its nest made from ripped apart branches and rotten wooden planks. It stares at you menacing, waiting for you to make a move. -> main 
 = main
-    + [GO NORTH] -> shore
+ + [GO EAST] ->trails
+ + [ENTER CAVE]
+    {eagle_here: You approach the entrance slowly, carefully eyeing the eagle. As soon as you get close it flaps its wings and brandishes its sharp talons. You wont be getting in with it there. ->main}
+    You are in. ->END
+ * {has_rock} [THROW ROCK AT EAGLE] You chuck your rock near the eagle, hoping that will scare it. Yor are shocked when it actually hits and even more shocked when does not react. It just sits there staring at you, as if it wants something. ->main
+ * {has_stick} [SWING STICK] The more you look at the creature, the more it scares you. Its eyes pierce right through you, you dont know what it wants. You just want it to go away you swing the stick towards the eagle hoping it would at least flinch. It does not. You are running out of options. ->main
+ 
+* {has_horn} [Blow horn] You take a long and deep breath and blow the horn desperately. Its loud, low tone seems to ring throughout the seaside. There is a long pause. Then, the eagle screaches in return, flaps its winds, and launches out towards you. You duck just in time but one of its talons digs into your shoulder. You remain folded over in fear for a whilem until you realize the eagle is gone leaving only a feather behind. You take it, as a reminder and enter the cave.
+    ~has_horn = false
+    ~has_feather = true
+    ->END
+    
+    
+    
+== snowyHilltop1 == 
+= intro
+More and more frozen vegetation crunches under your foot. A dense patch of thorns blocks the path ahead. Next to you is an old decaying tree. Its branches, large and grey, swing precariously in the wind as if the whole thing was ready to fall apart. ->main
+= main
+    + [GO NORTH] 
+        {not wearing_boots: You take a step onto the bushes and a thorn drives right through your shoe and into the sole of your foot. You stumble back and pull it out. -> main}
+        You start to wade through the bushes. The boots protect the soles of your feet but every step you take drives more thorns into your legs and waist. Eventually you make it to the tree line.   
+        -> cliff
     + [GO SOUTH] -> trails
-    + [GO WEST] 
-        {not wearing_boots: You take a step onto the bramble and a thorn drives right through your shoe and into the sole of your foot. You stumble back and pull it out. -> main} 
-        You start to wade through the brambles. The boots protect the soles of your feet but every step you take drives more thorns into your legs and waist. Eventually you make it to the tree line. 
-        -> thicket
-    //* [Examine thicket] The brambles here look thornier than any you’ve ever seen, like tiny knives. You don’t want to think about them getting caught up in your feet. -> main
+    * [Examine tree] The tree seems to be withering right in front of you. You can hear it creak and crack in the wind. Its branches are long and thin ready to snap off at any moment.
+        -> main
+    * [Take branch] You can reach any of the branches and climbing the tree seems just as dangerous for it as it would be for you. Its best not to stand under it like this something might just fall on you.
+        -> main
+    * {has_rock} [Knock down branch] You chuck a rock at one of the branches. You hear the rock hit with a crunch and a branch almost as tall as you falls to your feet.
+      ~has_stick = true 
+      ~has_rock = false
+      ->main
     
     
-== thicket ==
+    
+== cliff ==
 = intro
-#k_thicket
-You exit the brambles into a sparse thicket of trees. There is a particularly tall one that seems to be dying. You look past the trees to see a stark cliff face, upon which you hear a strange sort of rustling. -> main
+You exit the brambles unto a sheer cliff over looking the chaoic sea. At the ledge lies a pure white horn decarated with metal orniments. The cold bites at your face as the ocean roars below you. -> main
 = main
-    + [GO NORTH] -> hilltop
-    + [GO EAST] -> brambles
-    * [Examine tree] You look up at the tree that definitely has seen better days. You see a particular branch that looks to be about to fall off. -> main
-    * [Get branch] You reach up and break off a long branch.
-    ~has_stick = true
+    + [GO SOUTH] -> snowyHilltop1
+    * [Examine horn] It is some kind of animal part fassioned into a horn. It seems to be in pristine condition despite looking as if it was left here by vikings.-> main
+    * [Get horn] You walk toward the edge of the cliff to grab the horn. The winds tug at you harder the closer you get to the raging sea. Just a little bit closer. You bend over to pick it up and a blast of air throws you off balance. You stumble forward and a heart stops. You regain you balance at the last minute, but at least you got the horn.  
+    ~has_horn = true
     -> main
-    * [Examine cliff] At first it seems like an easy enough slope, but then you notice the dense bushes and slope steepening and decide that it would take way too much effort. -> main
-    * {has_rope} [Use rope on cliff] You throw the rope to the top of the cliff and it latches onto a bush. #item #rope #cliff
-    ~rope_cliff = true
-    -> main
-    +  {rope_cliff} [Climb rope]
-        {not wearing_boots: You can’t get a good footing and after a few minutes of effort slide all the way back to the bottom. -> main}
-        Wearing your handy boots, you are able to slowly make your way up the cliff. It tires you out, but you manage to make it. 
-        -> hilltop
-        
-        
-== hilltop == 
-= intro 
-#k_hilltop
-You are deafened by the cacophony of bird sounds coming from the countless number of birds before you. They seem to cover every space available, leading up to the cliff facing the lake. You see a glint of metal in the center. -> main
-= main
-    + [GO SOUTH] -> thicket
-    * [Examine birds] You see a wide range of birds, mostly crows and sparrows, but with a majestic eagle in the center. -> main
-    * [Examine coin]
-        {not coin_visible: You can barely see a glint from the silvery coin between the constantly moving throng of birds. -> main}
-    * [Make noise] All of the birds, save one, fly off as a single unit over the lake. The eagle flies onto your shoulder, you are terrified. It gently places a metal coin in your open palm before flying away. 
-    -> fake_ending
-    
     
 == shore == 
 = intro
 #k_shore
-Walking upon the sandy shore, you see a rotting old shack and remember spending time at the beach with your foster parents. You see a cliff jutting out over the waterline and swear you can hear something over the sound of waves. -> main
+Walking upon the sandy shore, you see a rotting old shack and remember spending time at the beach with your foster parents. You see a cliff jutting out over the waterline and swear you can hear something over the sound of waves. Pebbles line the shore made smooth my the waves washing over them. -> main
 = main
-{not wearing_boots: There are a pair of boots by the shore.}
-    + [GO SOUTH] -> brambles
+    + [Take a pebble] You take one of the many pebbles. Its cold to the touch so you drop it in your pocket quickly. 
+    ~has_rock = true
+    ->main
+    + [GO WEST] ->trails
     + [GO INTO SHACK] -> shack
     * [Examine shack] This wooden shack is probably missing more planks than it still has left, you’re not sure how its still standing. The mildewy door swaying in the lake breeze. -> main
-    * [Examine cliff] Atop the sheer cliff over the water you see a grassy knoll. You hear some sort of sound, almost as of tons of sheets of paper rustling. -> main
-    * [Examine water] The water looks cleaner than it smells, somehow -> main
-    * [Examine boots] These new boots pristinely sit by the shore, perfectly in a line. If you didn’t know better, you’d say they had never been used before. Picking them up, you realize they are full of water and dump it back into the lake.
-        ~ wearing_boots = true
+    * [Examine water] The water seems to be rushing to shore harder than usual. In the distance, you can see waves continously crashing into each other. -> main
         -> main
         
-        
+     
 == shack == 
 = intro
-#k_shack
+//we could change the shack in to a boat so we dont have to draw another screen
 As you enter the dusty, grimy shack you instantly understand why your new parents want you to clean your room so often. Apart from the rusting bedframe and what might once have been food on a desk, you see a pile of rope in fairly good condition on top of a shelf. -> main
 = main
     + [GO OUT] -> shore
     * [Examine bed] The bed sits under a thick layer of dust, still made. You can’t tell the last time someone used it, but you’re betting it wasn’t last night. -> main
     * [Examine desk] On top of the desk you see the mottled old remains of a sketch of an man with a thick beard. Maybe a self portrait? -> main
-    * [Examine shelf] The shelf seems to be almost twice your height, you wonder why the shack’s owner put it so high. You see a pile of rope on top of it. -> main
-    * {not has_rope} [Examine rope] The rope seems a little out of place, being the only thing in the shack that is in good condition. -> main
-    + {not has_rope} [Take rope] The shelf is too high for you to reach. -> main
-    * {has_stick} [Use stick on rope] You knock over the rope, picking up the coil and throwing it over your shoulder. This should come in handy somewhere, right?
-    ~has_rope = true
+    * [Examine shelf] The shelf seems to be almost twice your height, you wonder why the shack’s owner put it so high. You see a pair of boots. -> main
+    * {not has_stick} [Examine boots] Lined with fur and blackened with age, they seem to high to reach. They are problably too big for you, but that doesn't mean they won't be useful. -> main
+    + {not has_stick} [Take boots] The shelf is too high for you to reach. -> main
+    * {has_stick} [Use stick on shelf] You knock over the boots, picking up the pair and putting them on. You feet slide around inside, but these will keep them nice and safe.
+    ~has_stick = false
+    ~wearing_boots = true
     -> main
-    
-    
-== fake_ending ==
-You got the coin!
--> END
