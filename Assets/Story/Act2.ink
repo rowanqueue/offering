@@ -25,13 +25,24 @@ You've reached the foggy thicket of trees and Kari is speeding right along.
 
 ======== campfire ========  
 The grass gives way to dirt as you reach a clearing between the trees. There is a lean-to and some logs set up as benches around a fire pit. 
-:kari:"We made it, cousin! Oh, this is a very special place. Five times a year, this is where grandpa and I gather with all his friends for the celebration Grandpa calls Blót. There is always music and singing and good food! We used to do it more often. There used to be more people too."->cousinConvo
-==cousinConvo==
-*   What's a Blót? ->cousinConvo
-*   Who else comes here?->cousinConvo
-*   What happened?->cousinConvo
+:kari:"We made it, cousin! Oh, this is a very special place. Five times a year, this is where grandpa and I gather with all his friends for the celebration Grandpa calls Blót. There is always music and singing and good food! We used to do it more often. There used to be more people too."->cousinConvo_campfire
+==cousinConvo_campfire==
+*   What's a Blót? ->cousinConvo_campfire
+*   Who else comes here?->cousinConvo_campfire
+*   What happened?->cousinConvo_campfire
 - :kari:"Wanna see something funny?"
 *   [Examine wooden sculpture]
 - Huh.
-*   [return] He's gone.
+*   [return] He's gone.->act2Home_outside
+
+== act2Home_outside ==
+You emerge from the trees and your parents run to you and embrace you. 
+:mom:"Are you okay?"
+*   Yes
+*   No
+- :mom: "You look hurt... where is your cousin?"
+*   [I lost him]
+*   [He just disappeared]
+*   [I don't know]
+- 
 ->DONE
