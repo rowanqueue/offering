@@ -25,11 +25,19 @@ public class NewStoryManager : MonoBehaviour {
     public string whatToType;
     public float typeSpeed;
     float lastTypedTimed;//last time you typed something
+    string currentSpeaker;//when "", just typing noises
+    public ScrollRect scrollRect;
+
+    //sound shit
+    AudioSource audioLoop;
+
+    public Image displayImage;
 
     //constant
     float maxChoiceOffset;//the furthest the choice offset can go
     Dictionary<string, int> letterToNum;
 	void Awake () {
+        audioLoop = GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         story = new Story(inkJSONAsset.text);
         GetTiles();
@@ -63,10 +71,10 @@ public class NewStoryManager : MonoBehaviour {
         {
             Choice choice = story.currentChoices[numChoicesDisplayed];
             //TODO:  we'll checck for special choices here
-            //Debug.Log(numChoicesDisplayed - numSpecialChoices);
+            Debug.Log(numChoicesDisplayed - numSpecialChoices);
             Button button = choicesButtons[numChoicesDisplayed - numSpecialChoices];
-            button.gameObject.SetActive(true);
             string choiceText = choice.text.Trim();
+            //grid choice?
             if (choiceText.Contains("^"))
             {
                 string[] allText = choiceText.Split('^');
@@ -82,7 +90,6 @@ public class NewStoryManager : MonoBehaviour {
                         choiceText = s;
                         break;
                     }
-                    Debug.Log(s);
                     if (s.Contains(":"))//range of values
                     {
                         string[] rangeText = s.Split(',');
@@ -108,35 +115,62 @@ public class NewStoryManager : MonoBehaviour {
                         SetTile(new int[2] { x, y }, choice);
                     }
                 }
+                numSpecialChoices++;
             }
-            SetChoice(choiceText, button);
-            button.onClick.AddListener(delegate { OnClickChoice(choice); });
+            else
+            {
+                button.gameObject.SetActive(true);
+                SetChoice(choiceText, button);
+                button.onClick.AddListener(delegate { OnClickChoice(choice); });
+            }
             numChoicesDisplayed++;
         }
 
         //text
         if(story.canContinue && typing == false)
         {
+            scrollRect.verticalNormalizedPosition = 0;
             typing = true;
             whatToType = story.Continue().Trim();
             //checking knots!!
             string thisKnot = "";//to check if this is a new knot or not
             foreach(string s in story.currentTags)
             {
-                if(s[0] == 'k')
+                if(s[0] == 'k')//knot?
                 {
-                    thisKnot = s.Split('_')[1];
+                    thisKnot = s.Split('_')[1].Trim();
+                }
+                if(s[0] == 's')//sound?
+                {
+                    string audioFile = s.Split('_')[1].Trim();
+                    if(audioFile == "stop")
+                    {
+                        audioLoop.Stop();
+                    }
+                    else
+                    {
+                        audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                        audioLoop.Play();
+                    }
                 }
             }
-            if(currentKnot == "")//first knot
-            {
-                currentKnot = thisKnot;
-            }else if(currentKnot != thisKnot)//changes knots
+            if(currentKnot != thisKnot && thisKnot != "")//changes knots
             {
                 currentKnot = thisKnot;
                 //this is where you could reset the scene
+                displayText.text = "";
+                displayImage.sprite = Resources.Load<Sprite>(currentKnot);
             }
             //done checking knots!!
+            //check for current voice (either typing sound or specific voice
+            if(whatToType[0] == ':')
+            {
+                string[] split = whatToType.Split(':');
+                currentSpeaker = split[1];
+                Debug.Log(currentSpeaker);
+                whatToType = split[2];
+            }
+            else { currentSpeaker = ""; }
         }
         //typing
         if (typing)
@@ -145,6 +179,15 @@ public class NewStoryManager : MonoBehaviour {
             {
                 lastTypedTimed = Time.time;
                 displayText.text += whatToType[0];
+                //audio
+                if(whatToType[0] == ' ' || whatToType[0] == '\n')
+                {
+                    //TextSound.me.PlaySound(currentSpeaker);
+                }
+                else
+                {
+                    TextSound.me.PlaySound(currentSpeaker);
+                }
                 if(whatToType.Length > 1)//keep on typing
                 {
                     whatToType = whatToType.Substring(1);
@@ -162,6 +205,26 @@ public class NewStoryManager : MonoBehaviour {
                 displayText.text += "\n \n";
                 typing = false;
                 whatToType = "";
+                TextSound.me.PlaySound(currentSpeaker);
+            }
+            scrollRect.verticalNormalizedPosition = 0;
+        }
+        else//looking for a choice?
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit hit;
+                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                {
+                    Tile tile = hit.collider.GetComponent<Tile>();
+                    if(tile != null)
+                    {
+                        Debug.Log("fuck");
+                        OnClickChoice(tile.choice);
+                        TextSound.me.PlaySound(currentSpeaker);
+                    }
+                }
+
             }
         }
 	}
@@ -178,6 +241,7 @@ public class NewStoryManager : MonoBehaviour {
     }
     void ResetScene()
     {
+        numSpecialChoices = 0;
         numChoicesDisplayed = 0;
         foreach(Button choice in choicesButtons)
         {
