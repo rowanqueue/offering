@@ -3,6 +3,7 @@
 == ACT2 ==
 ->afterDinner
 == afterDinner ==
+#k_act2/outsideHouse
 :kari:"I'm so excited you're here! Did you have a nice dinner?"
 *   [Yes]
 *   [No]

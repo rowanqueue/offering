@@ -1422,6 +1422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba386069d0150409e4d0349898e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cheatJump: ACT2
   inkJSONAsset: {fileID: 4900000, guid: 05d1cc79cc82c423cb254dca275c2022, type: 3}
   choicesButtons:
   - {fileID: 1582184673}

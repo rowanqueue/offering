@@ -6,6 +6,7 @@ using TMPro;
 using Ink.Runtime;
 
 public class NewStoryManager : MonoBehaviour {
+    public string cheatJump;
     public TextAsset inkJSONAsset;
     private Story story;
 
@@ -46,6 +47,10 @@ public class NewStoryManager : MonoBehaviour {
             button.gameObject.SetActive(false);
         }
         ResetScene();
+        if(cheatJump != "")
+        {
+            story.ChoosePathString(cheatJump);
+        }
     }
 	void GetTiles()//puts all the tiles into one 2d array
     {
