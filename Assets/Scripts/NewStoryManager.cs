@@ -71,7 +71,7 @@ public class NewStoryManager : MonoBehaviour {
         {
             Choice choice = story.currentChoices[numChoicesDisplayed];
             //TODO:  we'll checck for special choices here
-            //Debug.Log(numChoicesDisplayed - numSpecialChoices);
+            Debug.Log(numChoicesDisplayed - numSpecialChoices);
             Button button = choicesButtons[numChoicesDisplayed - numSpecialChoices];
             string choiceText = choice.text.Trim();
             //grid choice?
