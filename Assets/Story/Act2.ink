@@ -1,5 +1,4 @@
 //INCLUDE act1.ink
-INCLUDE Act2
 == Act2 ==
 ->afterDinner
 == afterDinner ==
@@ -80,5 +79,4 @@ She leaves and you drift back asleep.
 *   [Get up]
 - You reluctantly get out of bed. 
 //SNEAKING OUT PUZZLE, BEGIN ACT 3
-INCLUDE Act3
 ->DONE
