@@ -1,6 +1,6 @@
 //INCLUDE act1.ink
-INCLUDE Act2
-== Act2 ==
+//INCLUDE Act2
+== ACT2 ==
 ->afterDinner
 == afterDinner ==
 :kari:"I'm so excited you're here! Did you have a nice dinner?"
@@ -80,5 +80,5 @@ She leaves and you drift back asleep.
 *   [Get up]
 - You reluctantly get out of bed. 
 //SNEAKING OUT PUZZLE, BEGIN ACT 3
-INCLUDE Act3
+//INCLUDE Act3
 ->DONE
