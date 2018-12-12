@@ -6,7 +6,7 @@ using TMPro;
 using Ink.Runtime;
 
 public class NewStoryManager : MonoBehaviour {
-    public string cheatJump;
+    public string cheatJump;//put knot here
     public TextAsset inkJSONAsset;
     private Story story;
 
