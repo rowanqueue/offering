@@ -51,7 +51,7 @@ Before you can answer, your dad enters the room. "Dinner is ready, come downstai
 You walk downstairs and a large dinner of lamb, fish stew, potatoes, and freshly baked bread awaits. You are very hungry.
 *   [Dig in]
 You eat ravenously for a bit before realizing Mom hasn't touched her food. Nobody is saying anything. Finally, dad breaks the silence. 
-:dad: "Ólafur, we're all so sorry about Fjola. We all know how much she meant to you."
+-:dad: "Ólafur, we're all so sorry about Fjola. We all know how much she meant to you."
 :grandpa: Grandpa looks at his plate and smiles. "She was a wonderful woman. It would make her so happy to know you all came to send her off. We missed you all so much."
 :mom: Mom looks at grandpa. "We're only staying here for three days. After the wake, we leave."
 :grandpa: Grandpa frowns. "Of course, of course." After a moment, he turns and looks at you: "What do you think of Iceland so far, little one?"
@@ -60,7 +60,7 @@ You eat ravenously for a bit before realizing Mom hasn't touched her food. Nobod
 *   [It's alright I guess] Grandpa smiles: "You'll see, we'll show you a wonderful time here, isn't that right, Kari?" Kari nods. "Yes, grandfather!"
 - You finish your dinner and are instructed to place your dish in the sink.
 *   [Put dish away]:grandpa:"What's that paper you have there in your pocket?" asks Grandpa. "Bring it here."
-*   [Give drawing]
+**   [Give drawing]
     ~has_drawing = false
     ~given_drawing = true
 {given_drawing: :grandpa:"Ah, Kari drew for you. How lucky you are! Did your parents teach you the meaning of the whale?"->whale_story}
