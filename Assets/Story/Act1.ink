@@ -23,7 +23,8 @@ After an hour's drive through what seems like completely empty land you arrive a
     
 == intro_livingroom ==
 #k_act1/homeInterior
-:grandpa:Grandpa walks into the house and takes a seat. "Welcome home."
+Grandpa walks into the house and takes a seat. 
+:grandpa:"Welcome home."
 :dad:"It hasn't changed at all," says Dad. 
 :grandpa:"Kari, please show our guests to their rooms."
 :kari:"Yes, grandfather."

@@ -43,11 +43,11 @@ public class NewStoryManager : MonoBehaviour {
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         speakerToColor = new Dictionary<string, string>
         {
-            {"kari","#ce6e08ff" },
-            {"mom", "#24069eff" },
-            {"dad", "#fac820ff" },
-            {"grandpa","#edca72ff" },
-            {"player", "#098eddff" }
+            {"kari","#b18829ff" },
+            {"mom", "#a783afff" },
+            {"dad", "#869b63ff" },
+            {"grandpa","#dd503eff" },
+            {"player", "#86c6ceff" }
         };
         story = new Story(inkJSONAsset.text);
         GetTiles();
@@ -116,7 +116,7 @@ public class NewStoryManager : MonoBehaviour {
                         {
                             for(int h = xRange[0];h<= xRange[1]; h++)
                             {
-                                SetTile(new int[2] { j, h }, choice);
+                                SetTile(new int[2] { h, j }, choice);
                             }
                         }
                     }
