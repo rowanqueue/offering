@@ -11,7 +11,7 @@ You know your cousin's hide out is nearby. Hes been gone for so long its startin
  
 == trails ==
 = intro
-The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. You climb up and down hills hoping to spot you cousin's hide out from so far up. This hill inparticular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip the higher you climb under the lose gravel of the trail, you don't feel safe. 
+The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. You climb up and down hills hoping to spot you cousin's hide out from so far up. This hill inparticular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip the higher you climb under the lose gravel of the trail, you don't feel safe. -> main
 = main
     * [Push forward] You take a deep breath and attack the trail. Hiking as fast as you can, ignoring the burning in you calves. You are almost at the top when you trip and tumble down. 
     You get back up at the foot of the trail with some scratches and a bruise. You feel a bit worse.
@@ -21,7 +21,7 @@ The further north you go, the steeper it gets, the more your ankles hate you. Un
     * {Gone_forth} [Push forward again] You throw caution to the wind and try again. This time running up the slope at full speed. You brace yourself mentally for a fall, but you soon realize that you've actually made it. 
     ->cliff
     *[Pace yourself] You decide to hike this steep trail slowly and safely. You zig zag across the slope so you don't fall. You eventually get to the top but it ate up far more time than you wanted it to.
-    ~ Stamina =- 5
+    ~ Stamina -= 5
     ->cliff
     *[Use your hands] You use your hands to secure yourself, out of fear of stubling down this hill. You keep your body low to the ground and scramper up the hill. You look ridiculous.
     When you get to the top, You see your hands are a scraped up, but you made it and thats the most important part. 
@@ -47,9 +47,8 @@ The boat looks just as your cousin described it. You would try and get a closer 
 The summit of this very steep hill overlooks the shore. You find that it ends in a rocky ledge high over the beach. In the distance, you can see, not only the shore but the boat your cousin must have been talking about. You have to find a way down this cliff. -> main
 = main
    * [Climb down the rocky cliff] {not fucked_hands: You find some stable footting on the side of the cliff and decide to may be able to climb down safely. You move carfully only changing your grip when you know its safe. That doesn't stop your hands from shaking though. You are almost to the bottom when your hand slips and you fall backwards. You land in the sand with no injuries but the wind knocked out of you.}
-       ~{not fucked_hands} Stamina = Stamina - 5 
-       {fucked_hands :You find some stable footting on the side of the cliff and decide to may be able to climb down safely. You move carfully only changing your grip when you know its safe. The cuts in your hands start burning, in a laps of focus you let go and fall back on the sand. You feel the impact rattle every bone in your body. You get up in serious pain.} 
-       ~ {fucked_hands} Stamina = Stamina - 15
+        ~Stamina = Stamina - 5
+       {fucked_hands :You find some stable footting on the side of the cliff and decide to may be able to climb down safely. You move carfully only changing your grip when you know its safe. The cuts in your hands start burning, in a laps of focus you let go and fall back on the sand. You feel the impact rattle every bone in your body. You get up in serious pain. {~Stamina = Stamina - 10}} 
     -> shore
     
     *[Find a safer route] You walk along the edge of the cliff looking for a safer point to get onto the  beach. You walk along the coast for what seems like forever until the ledge drops to a safe distance down. You eventually find yourself farther from the boat than ever before. It takes you a very long time to get close.
@@ -74,7 +73,7 @@ Walking upon the sandy shore, you see the rotting old boat up ahead and remember
     ->cave
     
     + [Take a break] You sit at the shore and watch the waves crash on to the sand. You regain some strength from your long journey.
-    ~{long_walk} Stamina = Stamina + 5
+    {long_walk: {~Stamina = Stamina + 5}} 
     ~Stamina = Stamina + 5
     -> cave
     
