@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37fa2f744052274d846ebed8102112a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeSound: {fileID: 8300000, guid: 54863df87b21f834390e774423c2919e, type: 3}
+  typeSound: {fileID: 8300000, guid: 1976018c9f2a04a97845fb3e152f4264, type: 3}
   source: {fileID: 181912059}
 --- !u!1 &187330816
 GameObject:
