@@ -7,7 +7,8 @@
 :kari:"I'm so excited you're here! Did you have a nice dinner?"
 *   [Yes]
 *   [No]
-- :kari:Kari laughs. "Grandpa cooked my favorite meal. I want to show you something. Follow me to the trees!"
+- Kari laughs. 
+    :kari:"Grandpa cooked my favorite meal. I want to show you something. Follow me to the trees!"
 *   ^A,2 ^[Follow]->enterwood1
 
 == enterwood1 ==
