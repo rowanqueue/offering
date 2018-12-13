@@ -10,4 +10,13 @@
 
 //important to weave in details about kids in #3 and #4
 //maybe family #3 and #4 fish for grandpa and they abandon him to fish for themselves
+->act3HomeOutside
+==act3HomeOutside
+//get back home, go inside
+You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or go in through the front.
+*   Sneak in
+*   Walk in
+- Yeah
+//if you sneak in he catches you if you walk in he just assumes you've been out. either way he patches you up and then takes you east.
+
 ->DONE
