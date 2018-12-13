@@ -44,5 +44,20 @@ MonoBehaviour:
     inkAsset: {fileID: 102900000, guid: f4a2386f16457b147b75aa804c89f600, type: 3}
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 4900000, guid: 717e0670aa7a8fb4c8e26118dd099887, type: 3}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 8bd09167b2965c047b5bc8fad491d1c9, type: 3}
+    jsonAssetPath: {fileID: 0}
+    jsonAsset: {fileID: 0}
   pendingCompilationStack: []
-  compilationStack: []
+  compilationStack:
+  - state: 1
+    inkFile:
+      compileAutomatically: 0
+      inkAsset: {fileID: 102900000, guid: 8bd09167b2965c047b5bc8fad491d1c9, type: 3}
+      jsonAssetPath: {fileID: 0}
+      jsonAsset: {fileID: 0}
+    inkAbsoluteFilePath: C:/Users/johnn/Documents/UnityProjects/offering/Assets/Story/Act3.ink
+    jsonAbsoluteFilePath: C:/Users/johnn/Documents/UnityProjects/offering/Assets/Story/Act3.json
+    output: []
+    errorOutput: []
+    timeTaken: 0
