@@ -1,12 +1,14 @@
 //INCLUDE act1.ink
-== Act2 ==
+//INCLUDE Act2
+== ACT2 ==
 ->afterDinner
 == afterDinner ==
+#k_act2/outsideHouse
 :kari:"I'm so excited you're here! Did you have a nice dinner?"
 *   [Yes]
 *   [No]
 - :kari:Kari laughs. "Grandpa cooked my favorite meal. I want to show you something. Follow me to the trees!"
-*   ^A,2^[Follow]->enterwood1
+*   ^A,2 ^[Follow]->enterwood1
 
 == enterwood1 ==
 You've reached the foggy thicket of trees and Kari is speeding right along. 
@@ -29,6 +31,8 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 *   What kind of celebrations? ->cousinConvo_campfire
 *   Who else comes here?->cousinConvo_campfire
 *   What happened to the other people?->cousinConvo_campfire
+* -> 
+    
 - :kari:"Wanna see something funny?"
 *   [Examine wooden sculpture]
 - Huh.
@@ -79,4 +83,5 @@ She leaves and you drift back asleep.
 *   [Get up]
 - You reluctantly get out of bed. 
 //SNEAKING OUT PUZZLE, BEGIN ACT 3
+//INCLUDE Act3
 ->DONE

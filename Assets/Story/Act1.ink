@@ -1,4 +1,5 @@
 INCLUDE prologue.ink
+INCLUDE Act2.ink
 VAR has_drawing = false
 VAR given_drawing = false
 
@@ -72,10 +73,7 @@ Mom interjects: "Actually, why don't they go play outside instead?"
 :kari:"Oh, yes! I know exactly what to show you!"
 
 :grandpa:"Don't go too far," says Grandpa.
+-> ACT2
 //coordinates link to next section
-
-
-
-
 -> DONE
 
