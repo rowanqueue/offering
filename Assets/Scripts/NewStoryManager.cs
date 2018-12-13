@@ -188,7 +188,16 @@ public class NewStoryManager : MonoBehaviour {
                 string[] split = whatToType.Split(':');
                 currentSpeaker = split[1];
                 Debug.Log(currentSpeaker);
-                whatToType = split[2];
+                Debug.Log(split.Length);
+                if(split.Length >= 4)
+                {
+                    whatToType = split[2] + ':' + split[3];
+                }
+                else
+                {
+                    Debug.Log("YOU FUCKED UP THE INK");
+                    whatToType = split[2];
+                }
                 displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
             }
             else { currentSpeaker = ""; }
@@ -200,22 +209,45 @@ public class NewStoryManager : MonoBehaviour {
             if (Time.time > lastTypedTimed + typeSpeed)
             {
                 lastTypedTimed = Time.time;
-                if(currentSpeaker != "")
-                {
-                    displayText.text = displayText.text.Insert(displayText.text.Length - 8, whatToType[0].ToString());
-                }
-                else
-                {
-                    displayText.text += whatToType[0];
-                }
                 //audio
-                if(whatToType[0] == ' ' || whatToType[0] == '\n')
+                if (whatToType[0] == ' ' || whatToType[0] == '\n')
                 {
                     //TextSound.me.PlaySound(currentSpeaker);
                 }
                 else
                 {
                     TextSound.me.PlaySound(currentSpeaker);
+                }
+                if (whatToType[0] == ':')//change in speaker
+                {
+                    if(currentSpeaker != "")//speaker is done
+                    {
+                        currentSpeaker = "";
+                        whatToType = whatToType.Substring(1);
+                    }
+                    else//new speaker
+                    {
+                        string[] split = whatToType.Split(':');
+                        currentSpeaker = split[1];
+                        if (split.Length >= 4)
+                        {
+                            whatToType = split[2] + ':' + split[3];
+                        }
+                        else
+                        {
+                            Debug.Log("YOU FUCKED UP THE INK");
+                            whatToType = split[2];
+                        }
+                        displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
+                    }
+                }
+                if (currentSpeaker != "")
+                {
+                    displayText.text = displayText.text.Insert(displayText.text.Length - 8, whatToType[0].ToString());
+                }
+                else if(whatToType.Length >= 1)
+                {
+                    displayText.text += whatToType[0];
                 }
                 if(whatToType.Length > 1)//keep on typing
                 {
@@ -230,13 +262,51 @@ public class NewStoryManager : MonoBehaviour {
             }
             if (Input.GetMouseButtonDown(0))//click to skip
             {
-                if (currentSpeaker != "")
+                int dieLine = -1;//when hit this, start printing again
+                for (int i = 0; i < whatToType.Length; i++)
                 {
-                    displayText.text = displayText.text.Insert(displayText.text.Length - 8, whatToType);
-                }
-                else
-                {
-                    displayText.text += whatToType;
+                    char c = whatToType[i];
+                    if (i < dieLine)
+                    {
+                        continue;
+                    }
+                    if (c == ':')
+                    {
+                        Debug.Log(whatToType.Substring(i));
+                        if (currentSpeaker != "")//someone is done talking
+                        {
+                            currentSpeaker = "";
+                            continue;
+                        }
+                        else//new person is talking now
+                        {
+                            string check = whatToType.Substring(i);//only check whats at i or past it
+                            string[] split = check.Split(':');
+                            currentSpeaker = split[1];
+                            Debug.Log(currentSpeaker);
+                            Debug.Log(split.Length);
+                            if (split.Length < 4)
+                            {
+                                Debug.Log("YOU FUCKED UP THE INK");
+                            }
+                            else
+                            {
+                                dieLine = i + currentSpeaker.Length+2;
+                            }
+                            displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
+                        }
+                    }
+                    else
+                    {
+                        if (currentSpeaker != "")
+                        {
+                            displayText.text = displayText.text.Insert(displayText.text.Length - 8, c.ToString());
+                        }
+                        else
+                        {
+                            displayText.text += c;
+                        }
+                    }
                 }
                 displayText.text += "\n \n";
                 typing = false;
