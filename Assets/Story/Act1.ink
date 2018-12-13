@@ -8,7 +8,6 @@ VAR given_drawing = false
 == town ==
 = intro
 #s_stop
-
 The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, whale and bird watching, a swimming pool, a golf course, and sightseeing by tractor. 
 *   [Ask about town]
 -   :dad: "When we were kids, nobody ever thought about visiting here. It was just a town of fishermen who couldn't afford to live in Dalvík - with their families of course. They would sell their fish over there and dock their boats here. Now there are lots of tourists coming to see the mountains. There's talk of even developing the area for skiing." 
@@ -23,7 +22,8 @@ After an hour's drive through what seems like completely empty land you arrive a
     
 == intro_livingroom ==
 #k_act1/homeInterior
-:grandpa:Grandpa walks into the house and takes a seat. "Welcome home."
+Grandpa walks into the house and takes a seat. 
+:grandpa:"Welcome home."
 :dad:"It hasn't changed at all," says Dad. 
 :grandpa:"Kari, please show our guests to their rooms."
 :kari:"Yes, grandfather."
