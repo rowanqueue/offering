@@ -6,6 +6,7 @@ using TMPro;
 using Ink.Runtime;
 
 public class NewStoryManager : MonoBehaviour {
+    public string cheatJump;//put knot here
     public TextAsset inkJSONAsset;
     private Story story;
 
@@ -46,6 +47,10 @@ public class NewStoryManager : MonoBehaviour {
             button.gameObject.SetActive(false);
         }
         ResetScene();
+        if(cheatJump != "")
+        {
+            story.ChoosePathString(cheatJump);
+        }
     }
 	void GetTiles()//puts all the tiles into one 2d array
     {
@@ -71,7 +76,7 @@ public class NewStoryManager : MonoBehaviour {
         {
             Choice choice = story.currentChoices[numChoicesDisplayed];
             //TODO:  we'll checck for special choices here
-            //Debug.Log(numChoicesDisplayed - numSpecialChoices);
+            Debug.Log(numChoicesDisplayed - numSpecialChoices);
             Button button = choicesButtons[numChoicesDisplayed - numSpecialChoices];
             string choiceText = choice.text.Trim();
             //grid choice?
