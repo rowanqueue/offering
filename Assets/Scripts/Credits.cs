@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Credits : MonoBehaviour {
@@ -64,6 +65,7 @@ public class Credits : MonoBehaviour {
                     if(destroyThis != null)
                     {
                         Destroy(destroyThis);
+                        SceneManager.LoadScene(2);
                     }
                 }
             }
