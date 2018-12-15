@@ -45,6 +45,12 @@ public class NewStoryManager : MonoBehaviour {
     float maxChoiceOffset;//the furthest the choice offset can go
     Dictionary<string, int> letterToNum;
     Dictionary<string, string> speakerToColor;
+
+
+    //bad not content specific shit
+    public Image staminaBar;
+    public int stamina;
+    Story.VariableObserver observer;
 	void Awake () {
         ambience = transform.GetChild(0).GetComponent<AudioSource>();
         music = transform.GetChild(1).GetComponent<AudioSource>();
@@ -68,6 +74,7 @@ public class NewStoryManager : MonoBehaviour {
         {
             story.ChoosePathString(cheatJump);
         }
+        //story.ObserveVariable("Stamina", (string varName, object full) =>{ stamina = 10; });
     }
 	void GetTiles()//puts all the tiles into one 2d array
     {
@@ -86,6 +93,9 @@ public class NewStoryManager : MonoBehaviour {
         }
     }
 	void Update () {
+        //variables
+        stamina = int.Parse(story.variablesState["Stamina"].ToString());
+        staminaBar.fillAmount = stamina/100f;
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
