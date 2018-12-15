@@ -33,6 +33,12 @@ public class NewStoryManager : MonoBehaviour {
     AudioSource ambience;
     AudioSource music;
 
+    //fade shit
+    public Image fade;
+    public float lerpTime;
+    int lerpState;//0not,1fadingIn,2fadingOut
+    float duration;
+
     public Image displayImage;
 
     //constant
@@ -152,7 +158,21 @@ public class NewStoryManager : MonoBehaviour {
             {
                 if(s[0] == 'v')//visual!!
                 {
-                    thisKnot = s.Split('_')[1].Trim();
+                    string visualCommand = s.Split('_')[1].Trim();
+                    switch (visualCommand)
+                    {
+                        case "fadeIn":
+                            duration = 0;
+                            lerpState = 1;
+                            break;
+                        case "fadeOut":
+                            duration = 0;
+                            lerpState = 2;
+                            break;
+                        default:
+                            thisKnot = visualCommand;
+                            break;
+                    }
                 }
                 if(s[0] == 's')//sound?
                 {
@@ -184,6 +204,9 @@ public class NewStoryManager : MonoBehaviour {
                         case "volumeDown":
                             source.volume -= 0.25f;
                             break;
+                        case "reset":
+                            source.volume = 0.5f;
+                            break;
                         default:
                             source.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
                             source.Play();
@@ -207,10 +230,13 @@ public class NewStoryManager : MonoBehaviour {
                     switch (textCommand)
                     {
                         case "speedUp":
-                            typeSpeed -= 0.01f;
+                            typeSpeed *= 0.5f;
                             break;
                         case "speedDown":
-                            typeSpeed += 0.01f;
+                            typeSpeed *= 2f;
+                            break;
+                        case "reset":
+                            typeSpeed = 0.05f;
                             break;
                     }
                 }
@@ -228,9 +254,13 @@ public class NewStoryManager : MonoBehaviour {
             {
                 string[] split = whatToType.Split('^');
                 whatToType = split[split.Length - 1];
+                if(whatToType.Length <= 0)
+                {
+                    typing = false;
+                }
             }
             //check for current voice (either typing sound or specific voice
-            if (whatToType[0] == ':')
+            if (whatToType.Length > 0 && whatToType[0] == ':')
             {
                 string[] split = whatToType.Split(':');
                 currentSpeaker = split[1];
@@ -409,6 +439,26 @@ public class NewStoryManager : MonoBehaviour {
                 OnClickChoice(hoveredChoice);
                 TextSound.me.PlaySound(currentSpeaker);
             }
+        }
+        if(lerpState != 0)
+        {
+            duration += Time.deltaTime;
+            if(lerpState == 2)//fading in
+            {
+                fade.color = Color.Lerp(Color.clear, Color.black, duration / lerpTime);
+            }
+            if(lerpState == 1)//fading out
+            {
+                fade.color = Color.Lerp(Color.black, Color.clear, duration / lerpTime);
+                if (duration > lerpTime)
+                {
+                    lerpState = 0;
+                }
+            }
+        }
+        else
+        {
+            fade.color = Color.clear;
         }
 	}
     void SetChoice(string text, Button button)
