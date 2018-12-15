@@ -1,11 +1,7 @@
 ==entrance==
 = intro
-
-You are at the point at which the trail from you house ends. You are completely surrounded by a surprising about of trees, a make shift sign posted infront of you seems to have strange runes scrawled over it.    
-
-
+You are at the point at which the trail from you house ends. You are completely surrounded by a surprising about of trees, a make shift sign posted infront of you seems to have strange runes scrawled over it.
 -> main
-
 = main
 //may just be displayed by visuals
     +[Examine Sign]

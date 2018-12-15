@@ -7,7 +7,7 @@
 *   [No] :player: "Ugh! How can you stand eating that fish? I feel like I'll never get that smell out of my nose":
 - Kari laughs. 
     :kari:"Grandpa cooked my favorite meal. I want to show you something. Follow me to the trees!":
-*   ^I:J,3:6 ^[Follow]->enterwood1
+*   ^I:J,3:5 ^[Follow]->enterwood1
 
 == enterwood1 ==
 You've reached the foggy thicket of trees and Kari is speeding right along. 

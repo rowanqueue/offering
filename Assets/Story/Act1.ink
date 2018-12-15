@@ -6,7 +6,7 @@ VAR given_drawing = false
 == town ==
 = intro
 #s_stop
-The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, whale and bird watching, a swimming pool, a golf course, and sightseeing by tractor. 
+The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, whale and bird watching, a swimming pool, a golf course, and sightseeing by tractor.
 *   [Ask about town]
 *   [Sit in silence] ->
 -   :dad: "When we were kids, nobody ever thought about visiting here. It was just a town of fishermen who couldn't afford to live in Dalvík - with their families of course. They would sell their fish over there and dock their boats here. Now there are lots of tourists coming to see the mountains. There's talk of even developing the area for skiing.": 
@@ -56,7 +56,7 @@ You eat ravenously for a bit before realizing Mom hasn't touched her food. Nobod
 -:dad: "Ólafur, we're all so sorry about Fjola. We all know how much she meant to you.":
 Grandpa looks at his plate and smiles. :grandpa:"She was a wonderful woman. It would make her so happy to know you all came to send her off. We missed you all so much.":
 Mom nods, then looks at grandpa. :mom:"We're only staying here for three days. After the wake, we have to leave.":
-Grandpa frowns. :grandpa: "Of course, of course.": After a moment, he turns and looks at you- :grandpa:"What do you think of Iceland so far, little one?":
+Grandpa frowns. :grandpa: "Of course, of course.": After a moment, he turns and looks at you, and asks :grandpa:"What do you think of Iceland so far, little one?":
 *   [It's cold] Grandpa laughs. :grandpa:"You'll adjust to it soon! The Icelandic blood in you will come to the fore, you'll see right away.":
 *   [It's beautiful] Grandpa smiles- :grandpa:"Why that's wonderful. I'm so glad to hear it. This is your home, the home of your forefathers!":
 *   [It's alright I guess] Grandpa smiles: :grandpa:"You'll see, we'll show you a wonderful time here, isn't that right, Kari?": Kari nods. :kari:"Yes, grandfather!":
