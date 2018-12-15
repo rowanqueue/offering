@@ -323,20 +323,42 @@ public class NewStoryManager : MonoBehaviour {
             {
                 displayText.color = Color.white;
             }
-            if (Input.GetMouseButtonDown(0))
+            //see if you're hovering over anything
+            RaycastHit hit;
+            Choice hoveredChoice = null;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                RaycastHit hit;
-                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                Tile tile = hit.collider.GetComponent<Tile>();
+                if (tile != null)
                 {
-                    Tile tile = hit.collider.GetComponent<Tile>();
-                    if(tile != null)
+                    hoveredChoice = tile.choice;
+                }
+            }
+            foreach (Tile[] tileList in tiles)
+            {
+                foreach (Tile tile in tileList)
+                {
+                    if(hoveredChoice != null)
                     {
-                        Debug.Log("fuck");
-                        OnClickChoice(tile.choice);
-                        TextSound.me.PlaySound(currentSpeaker);
+                        if (tile.choice == hoveredChoice)
+                        {
+                            tile.sr.color = Color.white;
+                        }
+                        else
+                        {
+                            tile.sr.color = Color.clear;
+                        }
+                    }
+                    else
+                    {
+                        tile.sr.color = Color.clear;
                     }
                 }
-
+            }
+            if (hoveredChoice != null && Input.GetMouseButtonDown(0))//SELECT CHOICE!!
+            {
+                OnClickChoice(hoveredChoice);
+                TextSound.me.PlaySound(currentSpeaker);
             }
         }
 	}
@@ -366,7 +388,6 @@ public class NewStoryManager : MonoBehaviour {
             int j = 0;
             foreach(Tile tile in tileList)
             {
-                Debug.Log(i + " " + j);
                 tile.sr.enabled = false;
                 tile.bc.enabled = false;
                 j++;
@@ -382,5 +403,6 @@ public class NewStoryManager : MonoBehaviour {
         tile.choice = choice;
         tile.bc.enabled = true;
         tile.sr.enabled = true;
+        tile.sr.color = Color.clear;
     }
 }
