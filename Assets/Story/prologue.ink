@@ -11,10 +11,10 @@ It's been five hours of flying and five hours of driving to get to this ferry, w
     :mom:"Take deep breaths, and focus on the waves. Just listen. There's nowhere else on Earth that sounds like this place.":
         ++ [Listen to the waves.] Your Mom turns to you and asks, :mom:"Are you excited to meet your cousin?":
             *** [Say Yes] :player:"Yeah, definitely,": you say. 
-                :mom:"I’m excited to meet him too,": she replies. <>
+                :mom:"I’m excited to meet him too,": she replies.
             *** [Say No] :player:"Not really,": you say.
-                :mom:"Well, I’m excited to meet him," she replies. <>
-    -:mom:"His mom - your aunt - was my best friend. I think you two will get along famously, even though your grandfather is there.":
+                :mom:"Well, I’m excited to meet him," she replies.
+- :mom:"His mom - your aunt - was my best friend. I think you two will get along famously, even though your grandfather is there.":
 *   [Ask about Grandpa] :player:"Do you think Grandpa will like me?": you ask. 
     
 -   :mom:"Well I think he'll like you very much. I mean... I haven’t seen Grandpa since before you were born but he was a charmer. He loved people - he could talk for hours and hold the attention of fifty people. The thing is... he is a very, very old man now. He might be a bit confused and forgetful. He might say weird things. But I think it's important for you on this trip to try to understand what kind of man he was and where your dad and I came from... we won't be coming back here for a very long time.":

@@ -12,7 +12,7 @@ public class TextSound : MonoBehaviour {
         me = this;
         speakerToVoice = new Dictionary<string, List<AudioClip>>
         {
-            {"player",smorbleVoice },
+            {"player",smorbleVoice},
             {"",new List<AudioClip>(){typeSound} }
         };
 	}

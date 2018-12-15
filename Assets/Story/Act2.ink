@@ -35,7 +35,7 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 - :kari:"Wanna see something funny?":
 *   [Examine wooden sculpture]
 - Huh.
-*   [return] He's gone.->act2Home_outside
+*   [return] He's gone.->entrance
 
 == act2Home_outside ==
 You emerge from the trees and your parents run to you and embrace you. 
