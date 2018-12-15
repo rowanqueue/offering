@@ -3,8 +3,8 @@
 == afterDinner ==
 #k_act2/outsideHouse
 :kari:"I'm so excited you're here! Did you have a nice dinner?":
-*   [Yes]
-*   [No]
+*   [Yes] :player: "Yeah, it was really good, actually.":
+*   [No] :player: "Ugh! How can you stand eating that fish? I feel like I'll never get that smell out of my nose":
 - Kari laughs. 
     :kari:"Grandpa cooked my favorite meal. I want to show you something. Follow me to the trees!":
 *   ^I:J,3:6 ^[Follow]->enterwood1
@@ -40,17 +40,17 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 == act2Home_outside ==
 You emerge from the trees and your parents run to you and embrace you. 
 :mom:"Are you okay?":
-*   Yes
-*   No
+*   [Yes] :player:"Yeah, I... I think so":
+*   [No] :player:"Do I look okay?":
 - :mom: "You look hurt... where is your cousin?":
-*   [I lost him]
-*   [He just disappeared]
-*   [I don't know]
+*   [I lost him] :player: "It's all my fault! I tried my best to find him... but I just ended up losing him out there.":
+*   [He just disappeared] :player:"I have no idea! I turned around and then he was just... gone!":
+*   [I don't know] :player:"I don't know!":
 - :mom:"Okay, okay. We're going to go look for him and get the police. Stay at home, just go to bed and we'll get him back.":
 *   [Okay] :player:"Okay.":
 *   [I want to help] :player:"I want to help." :
 - :mom: "We need you to stay here. Just get into bed, Grandpa will help. We'll be back soon, krútt.":
-
+//add something here about your emotions that makes you stay
 *   [Go inside]->act2Home_inside
 == act2Home_inside ==
 You walk inside with Grandpa. 
@@ -58,7 +58,7 @@ You walk inside with Grandpa.
 *   [Are you concerned?]:player:"Are you scared about Kari?": you ask.
 :grandpa:"Oh, Kari is just out playing. He knows the area well, your parents never listen to me. Here.":
 *   [Do you know where Kari is?] :player:"Oh, Kari is just out playing. He knows the area well, your parents never listen to me. Here.":
-*   [Okay]
+*   [Okay]:player:"Okay.":
 //rewrite this based on act2 damage
 - Grandpa wets a cloth in the sink and cleans you up a bit. He gives you a bandage.
 :grandpa:"Okay, time for bed. Go upstairs.":
