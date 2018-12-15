@@ -11,5 +11,6 @@ public class Tile : MonoBehaviour {
     {
         bc = GetComponent<BoxCollider>();
         sr = GetComponentInChildren<SpriteRenderer>();
+        sr.color = Color.clear;
     }
 }

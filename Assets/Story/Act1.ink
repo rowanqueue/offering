@@ -21,7 +21,7 @@ After an hour's drive through what seems like completely empty land you arrive a
 *   [Help bring the bags in]->intro_livingroom //maybe you click this?
     
 == intro_livingroom ==
-#k_act1/homeInterior
+#v_act1/homeInterior
 Grandpa walks into the house and takes a seat. 
 :grandpa:"Welcome home.":
 :dad:"It hasn't changed at all,": says Dad. 
@@ -31,7 +31,7 @@ Grandpa walks into the house and takes a seat.
 *   ^H:H,2:5 ^[Go upstairs]->intro_upstairs
 
 == intro_upstairs == 
-#k_act1/bedroom
+#v_act1/bedroom
 :kari:"...and you'll be staying in my room! What do you think?": You step into your cousin's room. Drawings of creatures are scattered everywhere, covering almost every surface. 
 *   [It's nice] :player:"It's a nice room. I like your drawings.":
     :kari:"Thank you! Drawing is my favorite. Grandpa likes them too. He says I could be a famous artist one day. Here, I made this for you.":
@@ -49,7 +49,7 @@ Before you can answer, your dad enters the room. :dad:"Dinner is ready, come dow
 *   ^I:J,3:7 ^[Go downstairs]->dinner
 
 ==dinner==
-#k_act1/homeInterior
+#v_act1/homeInterior
 You walk downstairs and a large dinner of lamb, fish stew, potatoes, and freshly baked bread awaits. You are very hungry.
 *   [Dig in]
 You eat ravenously for a bit before realizing Mom hasn't touched her food. Nobody is saying anything. Finally, dad breaks the silence. 

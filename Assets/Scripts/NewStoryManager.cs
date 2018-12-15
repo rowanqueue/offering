@@ -30,7 +30,8 @@ public class NewStoryManager : MonoBehaviour {
     public ScrollRect scrollRect;
 
     //sound shit
-    AudioSource audioLoop;
+    AudioSource ambience;
+    AudioSource music;
 
     public Image displayImage;
 
@@ -39,7 +40,8 @@ public class NewStoryManager : MonoBehaviour {
     Dictionary<string, int> letterToNum;
     Dictionary<string, string> speakerToColor;
 	void Awake () {
-        audioLoop = GetComponent<AudioSource>();
+        ambience = transform.GetChild(0).GetComponent<AudioSource>();
+        music = transform.GetChild(1).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         speakerToColor = new Dictionary<string, string>
         {
@@ -148,12 +150,46 @@ public class NewStoryManager : MonoBehaviour {
             string thisKnot = "";//to check if this is a new knot or not
             foreach(string s in story.currentTags)
             {
-                if(s[0] == 'k')//knot?
+                if(s[0] == 'v')//visual!!
                 {
                     thisKnot = s.Split('_')[1].Trim();
                 }
                 if(s[0] == 's')//sound?
                 {
+                    string[] split = s.Split('_');
+                    AudioSource source = ambience;
+                    if(split.Length == 3)//has a special tag
+                    {
+                        switch (split[2][0])
+                        {
+                            case 'm':
+                                source = music;
+                                break;
+                            case 's':
+                                //implement later!!
+                                source = ambience;
+                                break;
+                        }
+                    }
+
+                    string audioFile = split[1].Trim();
+                    switch (audioFile)
+                    {
+                        case "stop":
+                            source.Stop();
+                            break;
+                        case "volumeUp":
+                            source.volume += 0.25f;
+                            break;
+                        case "volumeDown":
+                            source.volume -= 0.25f;
+                            break;
+                        default:
+                            source.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                            source.Play();
+                            break;
+                    }
+                    /*
                     string audioFile = s.Split('_')[1].Trim();
                     if(audioFile == "stop")
                     {
@@ -163,6 +199,19 @@ public class NewStoryManager : MonoBehaviour {
                     {
                         audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
                         audioLoop.Play();
+                    }*/
+                }
+                if(s[0] == 't')//text command!!
+                {
+                    string textCommand = s.Split('_')[1].Trim();
+                    switch (textCommand)
+                    {
+                        case "speedUp":
+                            typeSpeed -= 0.01f;
+                            break;
+                        case "speedDown":
+                            typeSpeed += 0.01f;
+                            break;
                     }
                 }
             }
@@ -323,20 +372,42 @@ public class NewStoryManager : MonoBehaviour {
             {
                 displayText.color = Color.white;
             }
-            if (Input.GetMouseButtonDown(0))
+            //see if you're hovering over anything
+            RaycastHit hit;
+            Choice hoveredChoice = null;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                RaycastHit hit;
-                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                Tile tile = hit.collider.GetComponent<Tile>();
+                if (tile != null)
                 {
-                    Tile tile = hit.collider.GetComponent<Tile>();
-                    if(tile != null)
+                    hoveredChoice = tile.choice;
+                }
+            }
+            foreach (Tile[] tileList in tiles)
+            {
+                foreach (Tile tile in tileList)
+                {
+                    if(hoveredChoice != null)
                     {
-                        Debug.Log("fuck");
-                        OnClickChoice(tile.choice);
-                        TextSound.me.PlaySound(currentSpeaker);
+                        if (tile.choice == hoveredChoice)
+                        {
+                            tile.sr.color = Color.white;
+                        }
+                        else
+                        {
+                            tile.sr.color = Color.clear;
+                        }
+                    }
+                    else
+                    {
+                        tile.sr.color = Color.clear;
                     }
                 }
-
+            }
+            if (hoveredChoice != null && Input.GetMouseButtonDown(0))//SELECT CHOICE!!
+            {
+                OnClickChoice(hoveredChoice);
+                TextSound.me.PlaySound(currentSpeaker);
             }
         }
 	}
@@ -366,7 +437,6 @@ public class NewStoryManager : MonoBehaviour {
             int j = 0;
             foreach(Tile tile in tileList)
             {
-                Debug.Log(i + " " + j);
                 tile.sr.enabled = false;
                 tile.bc.enabled = false;
                 j++;
@@ -382,5 +452,6 @@ public class NewStoryManager : MonoBehaviour {
         tile.choice = choice;
         tile.bc.enabled = true;
         tile.sr.enabled = true;
+        tile.sr.color = Color.clear;
     }
 }

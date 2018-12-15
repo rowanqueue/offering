@@ -1,7 +1,7 @@
 == ACT2 ==
 ->afterDinner
 == afterDinner ==
-#k_act2/outsideHouse
+#v_act2/outsideHouse
 :kari:"I'm so excited you're here! Did you have a nice dinner?":
 *   [Yes] :player: "Yeah, it was really good, actually.":
 *   [No] :player: "Ugh! How can you stand eating that fish? I feel like I'll never get that smell out of my nose":
