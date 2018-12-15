@@ -31,7 +31,7 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 *   What kind of celebrations? ->cousinConvo_campfire
 *   Who else comes here?->cousinConvo_campfire
 *   What happened to the other people?->cousinConvo_campfire
-* -> 
+* Cool-> 
     
 - :kari:"Wanna see something funny?":
 *   [Examine wooden sculpture]
