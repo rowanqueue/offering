@@ -69,9 +69,12 @@ Finally back in your room, you are exhausted and cannot wait to get into bed.
 You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. Eventually you drift off.
 //fade out
 //slow text
+#t_speedDown
+#t_speedDown
 - :mom: "Krútt... wake up...":
 //fade in
 //regular speed text
+#t_reset
 Your mother shakes you awake. You can't tell what time it is because this bedroom has no windows, but you haven't been asleep long. 
 :mom: "We went to the police across the bay. They're going to come in the morning to look for Kari but in the meantime Dad and I are going out to keep searching. I left you some food in the fridge just in case, but I think Grandpa might be able to cook for you. Please don't sneak out. I love you.":
 She leaves and you drift back asleep.

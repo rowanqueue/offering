@@ -1,7 +1,8 @@
 SCRAMPGINE DOCUMENTATION
 TEXT
-	*Increase Speed: #t_speedUp
-	*Decrease Speed: #t_speedDown
+	Increase Speed: #t_speedUp
+	Decrease Speed: #t_speedDown
+	Reset Speed:	#t_reset
 VISUALS
 	Change Image : 	#v_nameOfFile
 	*Fade Out :	#v_fadeOut
@@ -17,3 +18,4 @@ All sound commands default to ambience, but you can add a tag to the end.
 	Stop Sound : 	#s_stop
 	Increase Volume : #s_volumeUp
 	Decrease Volume : #s_volumeDown
+	Reset Volume :	#s_reset
