@@ -2,6 +2,12 @@
 == act3 == 
 ->act3Boat
 ==act3Boat
+You finally enter the boat and find a mess of drawings, notes, and trinkets. Kari has fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, you assume he must spend a lot of his time here.
+*   :player:Examine drawings:
+*   :player:Examine journals:
+*   :player:Examine s:
+*   Leave boat->
+- hey
 //diary entries:
 //entry #1: today I was out and I saw a man leading a group of people into the mountains. I told grandpa and he was concerned. He forbade me from talking to them. 
 //entry #2: grandpa called a meeting with the kindred to talk about the tourists. (there is grandma/grandpa/kari, cow lady, a third family, and a fourth family) patriarch #3 says we should be open to the tourists, the fishing industry isn't what it was when we started this community. grandpa says this is our land and we need to preserve our way of life. grandma seems uncomfortable but takes his side
@@ -17,6 +23,9 @@ You arrive back at Grandpa's house, exhausted and beaten up from your journey no
 *   Sneak in
 *   Walk in
 - Yeah
-//if you sneak in he catches you if you walk in he just assumes you've been out. either way he patches you up and then takes you east.
+//if you sneak in he catches you if you walk in he assumes you've been out and is fine with it. either way he patches you up and then takes you to cow woman
+
+//act 4 grandpa is mean and cow woman is like but he is your grandson! 
+
 
 ->DONE
