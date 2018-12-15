@@ -64,19 +64,17 @@ public class NewStoryManager : MonoBehaviour {
 	void GetTiles()//puts all the tiles into one 2d array
     {
         tiles = new Tile[10][];
-        int i = 0;
-        foreach(Transform child in tileParent)
+        for(int i = 0;i< tileParent.childCount; i++)
         {
+            Transform child = tileParent.GetChild(i);
             Tile[] row = new Tile[10];
             row[0] = child.GetComponent<Tile>();
-            int j = 1;
-            foreach(Transform grandChild in child)
+            for(int j = 1; j < child.childCount; j++)
             {
+                Transform grandChild = child.GetChild(j);
                 row[j] = grandChild.GetComponent<Tile>();
-                j++;
             }
             tiles[i] = row;
-            i++;
         }
     }
 	void Update () {
@@ -362,12 +360,18 @@ public class NewStoryManager : MonoBehaviour {
             choice.onClick.RemoveAllListeners();
             choice.gameObject.SetActive(false);
         }
+        int i = 0;
         foreach(Tile[] tileList in tiles)
         {
+            int j = 0;
             foreach(Tile tile in tileList)
             {
+                Debug.Log(i + " " + j);
+                tile.sr.enabled = false;
                 tile.bc.enabled = false;
+                j++;
             }
+            i++;
         }
     }
 
@@ -377,5 +381,6 @@ public class NewStoryManager : MonoBehaviour {
         Tile tile = tiles[pos[1]][pos[0]];
         tile.choice = choice;
         tile.bc.enabled = true;
+        tile.sr.enabled = true;
     }
 }
