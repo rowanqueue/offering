@@ -1,6 +1,7 @@
 == ACT2 ==
 ->afterDinner
 == afterDinner ==
+//needs kari added
 #v_act2/outsideHouse
 :kari:"I'm so excited you're here! Did you have a nice dinner?":
 *   [Yes] :player: "Yeah, it was really good, actually.":
@@ -38,6 +39,8 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 *   [return] He's gone.->entrance
 
 == act2Home_outside ==
+//needs parents
+#v_act2/outsideHouseAfter
 You emerge from the trees and your parents run to you and embrace you. 
 :mom:"Are you okay?":
 *   [Yes] :player:"Yeah, I... I think so":
@@ -53,6 +56,8 @@ You emerge from the trees and your parents run to you and embrace you.
 //add something here about your emotions that makes you stay
 *   [Go inside]->act2Home_inside
 == act2Home_inside ==
+//needs just grandpa
+#v_act2/houseInterior
 You walk inside with Grandpa. 
 :grandpa: "Just you and me now, child. You should go to bed like your mother said.":
 *   [Are you concerned?]:player:"Are you scared about Kari?": you ask.
@@ -64,6 +69,8 @@ You walk inside with Grandpa.
 :grandpa:"Okay, time for bed. Go upstairs.":
 *   ^H:H,2:5 ^[Go to bed]->act2Home_bedroom
 == act2Home_bedroom ==
+//get rid of kari, fade in mom
+#v_act2/bedroom
 Finally back in your room, you are exhausted and cannot wait to get into bed. 
 *   ^A:F,5:8 ^[Get into bed]
 You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. Eventually you drift off.
