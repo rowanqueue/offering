@@ -7,7 +7,7 @@ You finally enter the boat and find a mess of drawings, notes, and trinkets. Kar
 
 =Diary
 You pick up a school notebook and begin to read.
-:kari: "I am writing this in english to practice and it feels more secret. today I was out and i saw a man leading a group of strange people into the mountains. I told Grandpa and he was very upset and told me not to talk to them. he called them tourists. later we made really good bread with margret and bjorn johannson and we played outside.":
+:kari: "I am writing this in english to practice and it feels more secret. today I was out and i saw a man leading a group of strange people into the mountains. I told Grandpa and he was very upset and told me not to talk to them. he called them tourists. later we made really good bread with margret and bjorn johannson and we played outside and drew the wights.":
 +  [Next entry]
 *  [Keep looking] You decide to keep looking through the boat. ~seenBoat = seenBoat +1
 ->Insideboat
@@ -28,13 +28,81 @@ You pick up a school notebook and begin to read.
 
 =Insideboat
 VAR seenBoat = 0
-*   [Examine drawings]:player:: ~seenBoat = seenBoat +1
-Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's almost obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting. ->Insideboat
-+   [Examine journal]:player::->Diary
+*   [Examine drawings]:player:You examine the drawings: ~seenBoat = seenBoat +1
+Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
++   [Examine journal]->Diary
 *   [Examine trinkets]:player:~seenBoat = seenBoat +1
 :->Insideboat 
 *  ->
 - hey 
+
+->act3HomeOutside
+==act3HomeOutside
+//get back home, go inside
+You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
+*   Walk in->act3walk
+*   Sneak in->act3Sneak
+
+=act3Sneak
+You open the door and it creaks loudly. You don't see Grandpa. 
+*  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
+
+=act3SneakUpstairs
+Grandpa is standing in Kari's room with an angry look on his face. 
+:grandpa:"Where have you been?"
+*   [Out looking for Kari] 
+    #t_speeddown
+    :grandpa: "Hrmph. Your parents told you to stay in, didn't they? Well I do somewhat admire a rule breaker. Maybe you have a bit of Iceland in you after all. Don't do it again. Now, come downstairs, I am to give you lunch and then we leave":->act3Leaving
+    #t_reset
+*   [Just getting some air]
+    :grandpa: "Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":->act3Leaving
+*   [Wanted to look at the mountains]
+    :grandpa: "They are beautiful. Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":->act3Leaving
+    
+=act3walkIn
+You stroll into the house like you own the place. Grandpa is sitting in his chair. 
+:grandpa: "Oh, hello.":
+#t_speeddown
+*   [Hello grandpa] :player:"Hello grandpa":
+*   [What's up]:player:"What's up.":
+*   [Hey]:player:"Hey.":
+#t_reset
+- Grandpa seems unconcerned. 
+:grandpa:"Hrmph. Where did you go? You seem hurt.":
+#t_speeddown
+
+*   [Just getting some air] :player:"Just... getting some air.":
+#t_reset
+:grandpa: "Ah, good. The air here is the best you will find in the world."
+#t_speeddown
+
+*   [Exploring]:player:"Um... exploring.":
+#t_reset
+:grandpa: "Ah. It's good for you.":
+#t_speeddown
+
+*   [Looking for Kari]:player:"I was looking for Kari":
+#t_reset
+:grandpa: "Hrmph. I told you he is just out playing.":
+
+-:grandpa:"You seem hurt. Here.":
+
+->act3Leaving
+
+=act3Leaving
+- Grandpa cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore."
+    *  [Why?] :player: "Why?":
+    :grandpa:"His family betrayed the kindred. They sold land to the tourist guides, to let them invade and deface our land. Now, I must employ fishermen from across the water.":
+    :player: "Huh.":
+    *  [Okay] :player: "Okay.":
+    -:grandpa:"Time to go.":
+->act3car
+=act3walk
+->act3car
+=act3car
+- You and grandpa get in his car and start to drive west to Audhumbla Ívarsdóttir's house. 
+->DONE
+
 //diary entries:
 //entry #1: today I was out and I saw a man leading a group of people into the mountains. I told grandpa and he was concerned. He forbade me from talking to them. 
 //entry #2: grandpa called a meeting with the kindred to talk about the tourists. (there is grandma/grandpa/kari, cow lady, a third family, and a fourth family) patriarch #3 says we should be open to the tourists, the fishing industry isn't what it was when we started this community. grandpa says this is our land and we need to preserve our way of life. grandma seems uncomfortable but takes his side
@@ -43,21 +111,3 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 
 //important to weave in details about kids in #3 and #4
 //maybe family #3 and #4 fish for grandpa and they abandon him to fish for themselves
-->act3HomeOutside
-==act3HomeOutside
-//get back home, go inside
-You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or go in through the front.
-*   Sneak in->act3Sneak
-*   Walk in->act3walk
-
-=act3Sneak
-You 
-->act3car
-=act3walk
-->act3car
-=act3car
-- Yeah
-//if you sneak in he catches you if you walk in he assumes you've been out and is fine with it. either way he patches you up and then takes you to cow woman
-
-//act 4 grandpa is mean and cow woman is like but he is your grandson! 
-->DONE
