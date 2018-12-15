@@ -1,8 +1,3 @@
-EAST
-
-you enter the thicket just east of your house. You need to find your cousin and not even the raging storm will stop you.
--> entrance
-
 ==entrance==
 = intro
 
@@ -12,7 +7,6 @@ You are at the point at which the trail from you house ends. You are completely 
 -> main
 
 = main
-You currently face north.
 //may just be displayed by visuals
     +[Examine Sign]
     The sign says "Beware the Dragon's Forest! Wander at your own risk!" and has a compass with norse runes replacing the traditional N, E, S, W.
@@ -29,7 +23,6 @@ You see a withered tree with etchings similar to those on the sign.
 = main
 #CORRECT ANSWER: NORTH
 //CLUE: NORTH
-You currently face north.
     +[GO NORTH] -> wood2
     +[GO EAST] 
     You walk on for what feels like forever... all these trees look the same. 
@@ -45,16 +38,11 @@ You currently face north.
     
 == wood2 ==
 The rain is pouring hard, everything is so cold and wet.
-
 Another carved tree catches your eye. 
-
 -> main
-
-
 = main
 #CORRECT ANSWER: EAST
 //CLUE: EAST
-You currently face north.
     +[GO NORTH]
     You walk on for what feels like forever... all these trees look the same. 
     ->entrance
@@ -72,14 +60,12 @@ You currently face north.
 The storm seems to be getting feircer, the lightning startles you every so often. 
 
 You come across an oddly shaped rock with different runes carved deep into its surface. 
-
 -> main
 
 
 = main
 #CORRECT ANSWER: SOUTH
 //CLUE: BACK
-You currently face north.
     +[GO NORTH]
     You walk on for what feels like forever... all these trees look the same. 
     ->entrance
@@ -104,7 +90,6 @@ An extinguished campfire has more runes carved into its fire wood.
 = main
 #CORRECT ANSWER: EAST
 //CLUE: RIGHT
-You currently face north.
     +[GO NORTH]
     You walk on for what feels like forever... all these trees look the same. 
     ->entrance
@@ -129,7 +114,6 @@ Runes are etched all around you, in seemingly random places.
 = main
 #CORRECT ANSWER: NORTH
 //CLUE: FOREWARD
-You currently face north.
     +[GO NORTH]->dragon
     +[GO EAST] 
     You walk on for what feels like forever... all these trees look the same. 
@@ -144,4 +128,4 @@ You currently face north.
     
 == dragon ==
 ooooo spooky dragon rawr XD
--> END
+-> act2Home_inside
