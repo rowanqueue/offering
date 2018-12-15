@@ -31,7 +31,7 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 *   What kind of celebrations? ->cousinConvo_campfire
 *   Who else comes here?->cousinConvo_campfire
 *   What happened to the other people?->cousinConvo_campfire
-* Cool-> 
+* -> 
     
 - :kari:"Wanna see something funny?":
 *   [Examine wooden sculpture]
@@ -86,11 +86,5 @@ You can't tell what time it is because this bedroom has no windows, but you have
 :mom: "We went to the police across the bay. They're going to come in the morning to look for Kari but in the meantime Dad and I are going out to keep searching. I left you some food in the fridge just in case, but I think Grandpa might be able to cook for you. Please don't sneak out. I love you.":
 She leaves and you drift back asleep.
 //fade out
-//fade in, grandpa's here
-:grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
-*   [Refuse]
-*   [Get up]
-- You reluctantly get out of bed. 
-//SNEAKING OUT PUZZLE, BEGIN ACT 3
-//INCLUDE Act3
-->DONE
+#v_fadeOut
+* [Dream] -> ACT3
