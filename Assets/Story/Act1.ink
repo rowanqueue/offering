@@ -8,15 +8,17 @@ VAR given_drawing = false
 #s_stop
 The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, whale and bird watching, a swimming pool, a golf course, and sightseeing by tractor. 
 *   [Ask about town]
+*   [Sit in silence] ->
 -   :dad: "When we were kids, nobody ever thought about visiting here. It was just a town of fishermen who couldn't afford to live in Dalvík - with their families of course. They would sell their fish over there and dock their boats here. Now there are lots of tourists coming to see the mountains. There's talk of even developing the area for skiing.": 
-*   [You drive through a tunnel, into the mountains.]->arrival
+*   [Sit and stare out the window]->arrival
     
 == arrival ==
 After an hour's drive through what seems like completely empty land you arrive at a small house. A man who must be your grandfather waits out front. He hugs your dad and then your mom. You wait in the car and watch. He gestures to you, and you look to your mother. She nods.
 *   [Get out of the car] You get out of the car and walk over, getting a better look at him- Grandpa is a tall man, hunched over a cane but still an imposing figure. To his right, your younger cousin, who smiles at you mouth agape.
 - Grandpa speaks to you in English, finding his way slowly through the words-
 :grandpa: "So you are the one I've waited so long to meet. You look just like your mother.": He looks at you for a moment. Mom doesn't take her eyes off him. :grandpa:"I'm thrilled you are here, please come inside.":
-*   [Help bring the bags in]->intro_livingroom
+*   [Walk in] -> intro_livingroom 
+*   [Help bring the bags in]->intro_livingroom //maybe you click this?
     
 == intro_livingroom ==
 #k_act1/homeInterior
@@ -40,6 +42,7 @@ Grandpa walks into the house and takes a seat.
 - He hands you a drawing of a whale. 
 ~has_drawing = true
 *   [Thanks] :player:"Thanks.": 
+*   [Smile awkwardly] You're not sure what to do with this, exactly.
 - Kari laughs. :kari:"What do you think of my English? I learn at school but Grandpa never allows me to speak it. It always is so funny to hear him use it!":
 Before you can answer, your dad enters the room. :dad:"Dinner is ready, come downstairs.":
 :kari:"Coming!": Kari cheerfully replies.
