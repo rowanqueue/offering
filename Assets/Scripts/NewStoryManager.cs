@@ -201,6 +201,19 @@ public class NewStoryManager : MonoBehaviour {
                         audioLoop.Play();
                     }*/
                 }
+                if(s[0] == 't')//text command!!
+                {
+                    string textCommand = s.Split('_')[1].Trim();
+                    switch (textCommand)
+                    {
+                        case "speedUp":
+                            typeSpeed -= 0.01f;
+                            break;
+                        case "speedDown":
+                            typeSpeed += 0.01f;
+                            break;
+                    }
+                }
             }
             if(currentKnot != thisKnot && thisKnot != "")//changes knots
             {
