@@ -6,6 +6,7 @@ using TMPro;
 using Ink.Runtime;
 
 public class NewStoryManager : MonoBehaviour {
+    public string cheatJump;//put knot here
     public TextAsset inkJSONAsset;
     private Story story;
 
@@ -25,7 +26,7 @@ public class NewStoryManager : MonoBehaviour {
     public string whatToType;
     public float typeSpeed;
     float lastTypedTimed;//last time you typed something
-    string currentSpeaker;//when "", just typing noises
+    public string currentSpeaker;//when "", just typing noises
     public ScrollRect scrollRect;
 
     //sound shit
@@ -36,9 +37,18 @@ public class NewStoryManager : MonoBehaviour {
     //constant
     float maxChoiceOffset;//the furthest the choice offset can go
     Dictionary<string, int> letterToNum;
+    Dictionary<string, string> speakerToColor;
 	void Awake () {
         audioLoop = GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
+        speakerToColor = new Dictionary<string, string>
+        {
+            {"kari","#b18829ff" },
+            {"mom", "#a783afff" },
+            {"dad", "#869b63ff" },
+            {"grandpa","#dd503eff" },
+            {"player", "#86c6ceff" }
+        };
         story = new Story(inkJSONAsset.text);
         GetTiles();
         foreach(Button button in choicesButtons)
@@ -46,6 +56,10 @@ public class NewStoryManager : MonoBehaviour {
             button.gameObject.SetActive(false);
         }
         ResetScene();
+        if(cheatJump != "")
+        {
+            story.ChoosePathString(cheatJump);
+        }
     }
 	void GetTiles()//puts all the tiles into one 2d array
     {
@@ -102,7 +116,7 @@ public class NewStoryManager : MonoBehaviour {
                         {
                             for(int h = xRange[0];h<= xRange[1]; h++)
                             {
-                                SetTile(new int[2] { j, h }, choice);
+                                SetTile(new int[2] { h, j }, choice);
                             }
                         }
                     }
@@ -162,31 +176,78 @@ public class NewStoryManager : MonoBehaviour {
                 displayImage.sprite = Resources.Load<Sprite>(currentKnot);
             }
             //done checking knots!!
+            //get rid of fake tags to make grid work
+            if (whatToType.Contains("^"))
+            {
+                string[] split = whatToType.Split('^');
+                whatToType = split[split.Length - 1];
+            }
             //check for current voice (either typing sound or specific voice
-            if(whatToType[0] == ':')
+            if (whatToType[0] == ':')
             {
                 string[] split = whatToType.Split(':');
                 currentSpeaker = split[1];
                 Debug.Log(currentSpeaker);
-                whatToType = split[2];
+                Debug.Log(split.Length);
+                if(split.Length >= 4)
+                {
+                    whatToType = split[2] + ':' + split[3];
+                }
+                else
+                {
+                    Debug.Log("YOU FUCKED UP THE INK");
+                    whatToType = split[2];
+                }
+                displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
             }
             else { currentSpeaker = ""; }
         }
         //typing
         if (typing)
         {
-            if(Time.time > lastTypedTimed + typeSpeed)
+            displayText.color = Color.white;
+            if (Time.time > lastTypedTimed + typeSpeed)
             {
                 lastTypedTimed = Time.time;
-                displayText.text += whatToType[0];
                 //audio
-                if(whatToType[0] == ' ' || whatToType[0] == '\n')
+                if (whatToType[0] == ' ' || whatToType[0] == '\n')
                 {
                     //TextSound.me.PlaySound(currentSpeaker);
                 }
                 else
                 {
                     TextSound.me.PlaySound(currentSpeaker);
+                }
+                if (whatToType[0] == ':')//change in speaker
+                {
+                    if(currentSpeaker != "")//speaker is done
+                    {
+                        currentSpeaker = "";
+                        whatToType = whatToType.Substring(1);
+                    }
+                    else//new speaker
+                    {
+                        string[] split = whatToType.Split(':');
+                        currentSpeaker = split[1];
+                        if (split.Length >= 4)
+                        {
+                            whatToType = split[2] + ':' + split[3];
+                        }
+                        else
+                        {
+                            Debug.Log("YOU FUCKED UP THE INK");
+                            whatToType = split[2];
+                        }
+                        displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
+                    }
+                }
+                if (currentSpeaker != "")
+                {
+                    displayText.text = displayText.text.Insert(displayText.text.Length - 8, whatToType[0].ToString());
+                }
+                else if(whatToType.Length >= 1)
+                {
+                    displayText.text += whatToType[0];
                 }
                 if(whatToType.Length > 1)//keep on typing
                 {
@@ -201,7 +262,52 @@ public class NewStoryManager : MonoBehaviour {
             }
             if (Input.GetMouseButtonDown(0))//click to skip
             {
-                displayText.text += whatToType;
+                int dieLine = -1;//when hit this, start printing again
+                for (int i = 0; i < whatToType.Length; i++)
+                {
+                    char c = whatToType[i];
+                    if (i < dieLine)
+                    {
+                        continue;
+                    }
+                    if (c == ':')
+                    {
+                        Debug.Log(whatToType.Substring(i));
+                        if (currentSpeaker != "")//someone is done talking
+                        {
+                            currentSpeaker = "";
+                            continue;
+                        }
+                        else//new person is talking now
+                        {
+                            string check = whatToType.Substring(i);//only check whats at i or past it
+                            string[] split = check.Split(':');
+                            currentSpeaker = split[1];
+                            Debug.Log(currentSpeaker);
+                            Debug.Log(split.Length);
+                            if (split.Length < 4)
+                            {
+                                Debug.Log("YOU FUCKED UP THE INK");
+                            }
+                            else
+                            {
+                                dieLine = i + currentSpeaker.Length+2;
+                            }
+                            displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
+                        }
+                    }
+                    else
+                    {
+                        if (currentSpeaker != "")
+                        {
+                            displayText.text = displayText.text.Insert(displayText.text.Length - 8, c.ToString());
+                        }
+                        else
+                        {
+                            displayText.text += c;
+                        }
+                    }
+                }
                 displayText.text += "\n \n";
                 typing = false;
                 whatToType = "";
@@ -211,6 +317,14 @@ public class NewStoryManager : MonoBehaviour {
         }
         else//looking for a choice?
         {
+            if(numSpecialChoices > 0)
+            {
+                displayText.color = Color.grey;
+            }
+            else
+            {
+                displayText.color = Color.white;
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hit;
@@ -260,7 +374,7 @@ public class NewStoryManager : MonoBehaviour {
     //sets tile to active and following specific choice
     void SetTile(int[] pos, Choice choice)
     {
-        Tile tile = tiles[pos[0]][pos[1]];
+        Tile tile = tiles[pos[1]][pos[0]];
         tile.choice = choice;
         tile.bc.enabled = true;
     }
