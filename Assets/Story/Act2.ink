@@ -11,6 +11,7 @@
 *   ^I:J,3:5 ^[Follow]->enterwood1
 
 == enterwood1 ==
+#v_act2/entrance
 You've reached the foggy thicket of trees and Kari is speeding right along. 
 :kari:"Come on, this way!":
 *   [Follow]->enterwood2
@@ -27,11 +28,11 @@ You've reached the foggy thicket of trees and Kari is speeding right along.
 ======== campfire ========  
 The grass gives way to dirt as you reach a clearing between the trees. There is a lean-to and some logs set up as benches around a fire pit. 
 :kari:"We made it, cousin! Oh, this is a very special place. Fifteen or so times a year, this is where grandpa and I gather with his friends for our the celebrations. There is always music and singing and good food! We used to do it more often. There used to be more people too.":->cousinConvo_campfire
-==cousinConvo_campfire==
+== cousinConvo_campfire ==
 *   What kind of celebrations? ->cousinConvo_campfire
 *   Who else comes here?->cousinConvo_campfire
 *   What happened to the other people?->cousinConvo_campfire
-* Cool-> 
+* -> 
     
 - :kari:"Wanna see something funny?":
 *   [Examine wooden sculpture]
@@ -86,11 +87,5 @@ You can't tell what time it is because this bedroom has no windows, but you have
 :mom: "We went to the police across the bay. They're going to come in the morning to look for Kari but in the meantime Dad and I are going out to keep searching. I left you some food in the fridge just in case, but I think Grandpa might be able to cook for you. Please don't sneak out. I love you.":
 She leaves and you drift back asleep.
 //fade out
-//fade in, grandpa's here
-:grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
-*   [Refuse]
-*   [Get up]
-- You reluctantly get out of bed. 
-//SNEAKING OUT PUZZLE, BEGIN ACT 3
-//INCLUDE Act3
-->DONE
+#v_fadeOut
+* [Dream] -> ACT3

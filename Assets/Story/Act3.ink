@@ -1,6 +1,13 @@
-->act3
-== act3 == 
-->act3Boat
+== ACT3 ==
+//fade in, grandpa's here
+#v_act3/bedroom
+#v_fadeIn
+:grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
+*   [Refuse]
+*   [Get up]
+- You reluctantly get out of bed. 
+//SNEAKING OUT PUZZLE
+->trails
 ==act3Boat
 You finally enter the boat and find a mess of drawings, notes, and trinkets. Kari has fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, you assume he must spend a lot of his time here.
 ->Insideboat
@@ -33,21 +40,23 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 +   [Examine journal]->Diary
 *   [Examine trinkets]:player:~seenBoat = seenBoat +1
 :->Insideboat 
-*  ->
-- hey 
-
-->act3HomeOutside
+*  {seenBoat > 3} [Go Home] ->act3HomeOutside
 ==act3HomeOutside
+#v_act3/outsideHouse
 //get back home, go inside
 You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
 *   Walk in->act3walk
 *   Sneak in->act3Sneak
 
 =act3Sneak
+//empty homeInterior
+#v_act3/homeInterior
 You open the door and it creaks loudly. You don't see Grandpa. 
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
+//grandpa in bedroom
+#v_act3/bedroom
 Grandpa is standing in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"
 *   [Out looking for Kari] 
@@ -60,6 +69,8 @@ Grandpa is standing in Kari's room with an angry look on his face.
     :grandpa: "They are beautiful. Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":->act3Leaving
     
 =act3walkIn
+//just grandpa
+#v_act3/homeInteriorGrandpa
 You stroll into the house like you own the place. Grandpa is sitting in his chair. 
 :grandpa: "Oh, hello.":
 #t_speeddown
@@ -90,6 +101,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 ->act3Leaving
 
 =act3Leaving
+#v_act3/homeInteriorGrandpa
 - Grandpa cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore."
     *  [Why?] :player: "Why?":
     :grandpa:"His family betrayed the kindred. They sold land to the tourist guides, to let them invade and deface our land. Now, I must employ fishermen from across the water.":
@@ -100,7 +112,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 =act3walk
 ->act3car
 =act3car
-- You and grandpa get in his car and start to drive west to Audhumbla Ívarsdóttir's house. 
+- You and grandpa get in his car and start to drive west. 
 ->DONE
 
 //diary entries:

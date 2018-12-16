@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Credits : MonoBehaviour {
@@ -11,8 +12,10 @@ public class Credits : MonoBehaviour {
     public string[] textToDisplay;
     float duration;
     int index;
+    GameObject destroyThis;
 	// Use this for initialization
 	void Start () {
+        destroyThis = GameObject.FindGameObjectWithTag("DestroyThis");
         textToDisplay = new string[] { "<b>Lead Writer</b><size=35>\nSpencer Bernstein</size>\n\n<b>Additional Writing</b><size=35>\nParker Crandell, McKenna Flanagan, Ajali Harrison, Rowan Q</size>",
             "<b>Lead Programmer</b><size=35>\nRowan Q</size>\n\n<b>Additional Programming</b><size=35>\nParker Crandell</size>",
             "<b>Lead Puzzle Designer</b><size=35>\nParker Crandell</size>\n\n<b>Additional Puzzle Design</b>\n<size=35>Spencer Bernstein, Rowan Q</size>",
@@ -26,7 +29,12 @@ public class Credits : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        duration += Time.deltaTime;
+        float mod = 1.0f;
+        if (Input.anyKey)
+        {
+            mod = 5.0f;
+        }
+        duration += Time.deltaTime*mod;
         if (state == 0)//lerping in!
         {
             displayText.color = Color.Lerp(Color.black, Color.white, duration/lerpTime);
@@ -57,7 +65,13 @@ public class Credits : MonoBehaviour {
                 else
                 {
                     index--;
+
                     //THIS IS WHERE WE THEN GO INTO THE REAL GAME
+                    if(destroyThis != null)
+                    {
+                        Destroy(destroyThis);
+                        SceneManager.LoadScene(2);
+                    }
                 }
             }
         }
