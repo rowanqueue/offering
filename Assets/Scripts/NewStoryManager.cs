@@ -234,8 +234,12 @@ public class NewStoryManager : MonoBehaviour {
                             lerpState = 1;
                             break;
                         default:
-                            source.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
-                            source.Play();
+                            AudioClip clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                            if(clip != source.clip)
+                            {
+                                source.clip = clip;
+                                source.Play();
+                            }
                             break;
                     }
                     /*
