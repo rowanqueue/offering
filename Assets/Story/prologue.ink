@@ -2,7 +2,7 @@
 #s_audio/waves
 //add in mom and dad
 #v_prologue/prologueArt
-MORNING ON FERRY TO FJALLVIK
+MORNING ON FERRY TO FJALLVIK, ICELAND
 
 You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
 

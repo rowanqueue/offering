@@ -5,6 +5,7 @@ INCLUDE Act3.ink
 //trials
 INCLUDE east.ink
 INCLUDE north.ink
+INCLUDE west.ink
 VAR Stamina = 100
 -> start
 == start ==
