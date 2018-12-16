@@ -42,6 +42,7 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 :->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside
 ==act3HomeOutside
+#s_stop
 #v_act3/outsideHouse
 //get back home, go inside
 You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.

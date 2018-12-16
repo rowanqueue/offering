@@ -5,6 +5,7 @@ VAR Gone_forth = false
 VAR eagle_attempts = 0
 == trails ==
 = intro
+#s_audio/WindStooorm
 #v_act3/northClimbingUpHills
 The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. You climb up and down hills hoping to spot you cousin's hide out from so far up. This hill in particular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip the higher you climb under the loose gravel of the trail; you don't feel safe. -> main
 = main
@@ -63,6 +64,7 @@ The summit of this very steep hill overlooks the shore. It ends in a rocky ledge
     
 == shore == 
 = intro
+#s_audio/waves
 #v_act3/northCoveBoatFAR
 Walking upon the sandy shore, you see the rotting old boat up ahead and it reminds you of going to the Rockaways with your parents. You see a cliff jutting out over the waterline and swear you can hear something over the sound of waves. Pebbles line the shore, smooth as sin as the waves wash over them.-> main
 = main
