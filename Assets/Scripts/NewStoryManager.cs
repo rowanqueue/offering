@@ -30,7 +30,14 @@ public class NewStoryManager : MonoBehaviour {
     public ScrollRect scrollRect;
 
     //sound shit
-    AudioSource audioLoop;
+    AudioSource ambience;
+    AudioSource music;
+
+    //fade shit
+    public Image fade;
+    public float lerpTime;
+    int lerpState;//0not,1fadingIn,2fadingOut
+    float duration;
 
     public Image displayImage;
 
@@ -38,8 +45,15 @@ public class NewStoryManager : MonoBehaviour {
     float maxChoiceOffset;//the furthest the choice offset can go
     Dictionary<string, int> letterToNum;
     Dictionary<string, string> speakerToColor;
+
+
+    //bad not content specific shit
+    public Image staminaBar;
+    public int stamina;
+    Story.VariableObserver observer;
 	void Awake () {
-        audioLoop = GetComponent<AudioSource>();
+        ambience = transform.GetChild(0).GetComponent<AudioSource>();
+        music = transform.GetChild(1).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         speakerToColor = new Dictionary<string, string>
         {
@@ -60,26 +74,28 @@ public class NewStoryManager : MonoBehaviour {
         {
             story.ChoosePathString(cheatJump);
         }
+        //story.ObserveVariable("Stamina", (string varName, object full) =>{ stamina = 10; });
     }
 	void GetTiles()//puts all the tiles into one 2d array
     {
         tiles = new Tile[10][];
-        int i = 0;
-        foreach(Transform child in tileParent)
+        for(int i = 0;i< tileParent.childCount; i++)
         {
+            Transform child = tileParent.GetChild(i);
             Tile[] row = new Tile[10];
             row[0] = child.GetComponent<Tile>();
-            int j = 1;
-            foreach(Transform grandChild in child)
+            for(int j = 1; j < child.childCount; j++)
             {
+                Transform grandChild = child.GetChild(j);
                 row[j] = grandChild.GetComponent<Tile>();
-                j++;
             }
             tiles[i] = row;
-            i++;
         }
     }
 	void Update () {
+        //variables
+        stamina = int.Parse(story.variablesState["Stamina"].ToString());
+        staminaBar.fillAmount = stamina/100f;
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
@@ -150,12 +166,63 @@ public class NewStoryManager : MonoBehaviour {
             string thisKnot = "";//to check if this is a new knot or not
             foreach(string s in story.currentTags)
             {
-                if(s[0] == 'k')//knot?
+                if(s[0] == 'v')//visual!!
                 {
-                    thisKnot = s.Split('_')[1].Trim();
+                    string visualCommand = s.Split('_')[1].Trim();
+                    switch (visualCommand)
+                    {
+                        case "fadeIn":
+                            duration = 0;
+                            lerpState = 1;
+                            break;
+                        case "fadeOut":
+                            duration = 0;
+                            lerpState = 2;
+                            break;
+                        default:
+                            thisKnot = visualCommand;
+                            break;
+                    }
                 }
                 if(s[0] == 's')//sound?
                 {
+                    string[] split = s.Split('_');
+                    AudioSource source = ambience;
+                    if(split.Length == 3)//has a special tag
+                    {
+                        switch (split[2][0])
+                        {
+                            case 'm':
+                                source = music;
+                                break;
+                            case 's':
+                                //implement later!!
+                                source = ambience;
+                                break;
+                        }
+                    }
+
+                    string audioFile = split[1].Trim();
+                    switch (audioFile)
+                    {
+                        case "stop":
+                            source.Stop();
+                            break;
+                        case "volumeUp":
+                            source.volume += 0.25f;
+                            break;
+                        case "volumeDown":
+                            source.volume -= 0.25f;
+                            break;
+                        case "reset":
+                            source.volume = 0.5f;
+                            break;
+                        default:
+                            source.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                            source.Play();
+                            break;
+                    }
+                    /*
                     string audioFile = s.Split('_')[1].Trim();
                     if(audioFile == "stop")
                     {
@@ -165,6 +232,22 @@ public class NewStoryManager : MonoBehaviour {
                     {
                         audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
                         audioLoop.Play();
+                    }*/
+                }
+                if(s[0] == 't')//text command!!
+                {
+                    string textCommand = s.Split('_')[1].Trim();
+                    switch (textCommand)
+                    {
+                        case "speedUp":
+                            typeSpeed *= 0.5f;
+                            break;
+                        case "speedDown":
+                            typeSpeed *= 2f;
+                            break;
+                        case "reset":
+                            typeSpeed = 0.05f;
+                            break;
                     }
                 }
             }
@@ -181,9 +264,13 @@ public class NewStoryManager : MonoBehaviour {
             {
                 string[] split = whatToType.Split('^');
                 whatToType = split[split.Length - 1];
+                if(whatToType.Length <= 0)
+                {
+                    typing = false;
+                }
             }
             //check for current voice (either typing sound or specific voice
-            if (whatToType[0] == ':')
+            if (whatToType.Length > 0 && whatToType[0] == ':')
             {
                 string[] split = whatToType.Split(':');
                 currentSpeaker = split[1];
@@ -325,21 +412,63 @@ public class NewStoryManager : MonoBehaviour {
             {
                 displayText.color = Color.white;
             }
-            if (Input.GetMouseButtonDown(0))
+            //see if you're hovering over anything
+            RaycastHit hit;
+            Choice hoveredChoice = null;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                RaycastHit hit;
-                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                Tile tile = hit.collider.GetComponent<Tile>();
+                if (tile != null)
                 {
-                    Tile tile = hit.collider.GetComponent<Tile>();
-                    if(tile != null)
+                    hoveredChoice = tile.choice;
+                }
+            }
+            foreach (Tile[] tileList in tiles)
+            {
+                foreach (Tile tile in tileList)
+                {
+                    if(hoveredChoice != null)
                     {
-                        Debug.Log("fuck");
-                        OnClickChoice(tile.choice);
-                        TextSound.me.PlaySound(currentSpeaker);
+                        if (tile.choice == hoveredChoice)
+                        {
+                            tile.sr.color = Color.white;
+                        }
+                        else
+                        {
+                            tile.sr.color = Color.clear;
+                        }
+                    }
+                    else
+                    {
+                        tile.sr.color = Color.clear;
                     }
                 }
-
             }
+            if (hoveredChoice != null && Input.GetMouseButtonDown(0))//SELECT CHOICE!!
+            {
+                OnClickChoice(hoveredChoice);
+                TextSound.me.PlaySound(currentSpeaker);
+            }
+        }
+        if(lerpState != 0)
+        {
+            duration += Time.deltaTime;
+            if(lerpState == 2)//fading in
+            {
+                fade.color = Color.Lerp(Color.clear, Color.black, duration / lerpTime);
+            }
+            if(lerpState == 1)//fading out
+            {
+                fade.color = Color.Lerp(Color.black, Color.clear, duration / lerpTime);
+                if (duration > lerpTime)
+                {
+                    lerpState = 0;
+                }
+            }
+        }
+        else
+        {
+            fade.color = Color.clear;
         }
 	}
     void SetChoice(string text, Button button)
@@ -362,12 +491,17 @@ public class NewStoryManager : MonoBehaviour {
             choice.onClick.RemoveAllListeners();
             choice.gameObject.SetActive(false);
         }
+        int i = 0;
         foreach(Tile[] tileList in tiles)
         {
+            int j = 0;
             foreach(Tile tile in tileList)
             {
+                tile.sr.enabled = false;
                 tile.bc.enabled = false;
+                j++;
             }
+            i++;
         }
     }
 
@@ -377,5 +511,7 @@ public class NewStoryManager : MonoBehaviour {
         Tile tile = tiles[pos[1]][pos[0]];
         tile.choice = choice;
         tile.bc.enabled = true;
+        tile.sr.enabled = true;
+        tile.sr.color = Color.clear;
     }
 }

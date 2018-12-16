@@ -1,0 +1,21 @@
+SCRAMPGINE DOCUMENTATION
+TEXT
+	Increase Speed: #t_speedUp
+	Decrease Speed: #t_speedDown
+	Reset Speed:	#t_reset
+VISUALS
+	Change Image : 	#v_nameOfFile
+	*Fade Out :	#v_fadeOut
+	*Fade In :	#v_fadeIn
+	*Enter Object	#v_enter_nameOfFile
+	*Exit Object	#v_exit_nameOfFile
+SOUNDS
+All sound commands default to ambience, but you can add a tag to the end.
+- _a for ambience
+- _s for sound effects
+- _m for music
+	Change Sound : 	#s_nameOfFile
+	Stop Sound : 	#s_stop
+	Increase Volume : #s_volumeUp
+	Decrease Volume : #s_volumeDown
+	Reset Volume :	#s_reset
