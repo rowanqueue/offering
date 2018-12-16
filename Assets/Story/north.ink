@@ -1,107 +1,93 @@
-NORTHff
-VAR wearing_boots = false
-VAR has_stick = false
-VAR has_rope = false
-VAR rope_cliff = false
-VAR coin_visible = false
-VAR has_coin = false
-VAR knows_O = false
-You have been tasked with getting a silver coin.#fuck
+NORTH
+VAR Stamina = 100
+VAR hurt_leg = false
+VAR long_walk = false
+VAR fucked_hands = false
+VAR Gone_forth = false
+You know your cousin's hide out is nearby. Hes been gone for so long its starting to scare you. You really hope hes in there. 
 -> trails
 
+
+ 
 == trails ==
 = intro
-#k_trails
-The further north you go, the hillier it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go, and you catch a whiff of dank water. -> main
+The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. You climb up and down hills hoping to spot you cousin's hide out from so far up. This hill inparticular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip the higher you climb under the lose gravel of the trail, you don't feel safe. -> main
 = main
-    + [GO NORTH] -> brambles
-    + [GO SOUTH] This is a bad idea. Mr. O is there.
-    ~knows_O = true
-    -> main
-    * [Smell water] The smell of the water reminds you of the orphanage, but you’re not sure why. It doesn’t smell like any water you’ve ever known, and frankly it’s bothering you. -> main
-    * {knows_O} [Mr. O?] Yeah, the mullet guy. -> main
+    * [Push forward] You take a deep breath and attack the trail. Hiking as fast as you can, ignoring the burning in you calves. You are almost at the top when you trip and tumble down. 
+    You get back up at the foot of the trail with some scratches and a bruise. You feel a bit worse.
+    ~Gone_forth = true
+    ~Stamina = Stamina - 10 
+    ->main
+    * {Gone_forth} [Push forward again] You throw caution to the wind and try again. This time running up the slope at full speed. You brace yourself mentally for a fall, but you soon realize that you've actually made it. 
+    ->cliff
+    *[Pace yourself] You decide to hike this steep trail slowly and safely. You zig zag across the slope so you don't fall. You eventually get to the top but it ate up far more time than you wanted it to.
+    ~ Stamina -= 5
+    ->cliff
+    *[Use your hands] You use your hands to secure yourself, out of fear of stubling down this hill. You keep your body low to the ground and scramper up the hill. You look ridiculous.
+    When you get to the top, You see your hands are a scraped up, but you made it and thats the most important part. 
+    ~Stamina = Stamina - 5
+    ~fucked_hands = true
+    ->cliff
     
-
-== brambles == 
+    
+== cave ==
 = intro
-#k_brambles
-More and more vegetation crunches under your foot. A dense, waist-high bramble stands between you and a thicket of trees to the west. The horrid smell of the water is stronger here, and you can hear it lapping to the north. -> main
+The boat looks just as your cousin described it. You would try and get a closer look but a massive eagle has nested right near the entrance. She sits at the helm staring at you menacingly waiting for you to make a move. -> main 
 = main
-    + [GO NORTH] -> shore
-    + [GO SOUTH] -> trails
-    + [GO WEST] 
-        {not wearing_boots: You take a step onto the bramble and a thorn drives right through your shoe and into the sole of your foot. You stumble back and pull it out. -> main} 
-        You start to wade through the brambles. The boots protect the soles of your feet but every step you take drives more thorns into your legs and waist. Eventually you make it to the tree line. 
-        -> thicket
-    * [Examine thicket] The brambles here look thornier than any you’ve ever seen, like tiny knives. You don’t want to think about them getting caught up in your feet. -> main
+ + [Approach the eagle] You approach the boat slowly, carefully eyeing the eagle. As soon as you get close it flaps its wings and brandishes its sharp talons. You wont be getting in with the eagle there. ->main
+ 
+ * [Throw a pebble at the eagle] You chuck your rock near the eagle, hoping that will scare it. You are shocked when it actually hits and even more shocked when does not react. It just continues to look at you with a piercing gaze. ->main 
+ 
+ + [Shout at it] Your tired and in pain and you just want to find your cousin and go home. You scream and let out all your anger the best you can. It screaches back flaps its wings and swoops toward you. You close your eyes and duck. You feel wind rush over your head and a talon slash into your shoulder. You stay folded over in fear for a while until you realize the eagle is gone, leaving only a feather behind. You take it, as a reminder and climb into the boat. ->shack
     
     
-== thicket ==
+    
+== cliff ==
 = intro
-#k_thicket
-You exit the brambles into a sparse thicket of trees. There is a particularly tall one that seems to be dying. You look past the trees to see a stark cliff face, upon which you hear a strange sort of rustling. -> main
+The summit of this very steep hill overlooks the shore. You find that it ends in a rocky ledge high over the beach. In the distance, you can see, not only the shore but the boat your cousin must have been talking about. You have to find a way down this cliff. -> main
 = main
-    + [GO NORTH] -> hilltop
-    + [GO EAST] -> brambles
-    * [Examine tree] You look up at the tree that definitely has seen better days. You see a particular branch that looks to be about to fall off. -> main
-    * [Get branch] You reach up and break off a long branch.
-    ~has_stick = true
-    -> main
-    * [Examine cliff] At first it seems like an easy enough slope, but then you notice the dense bushes and slope steepening and decide that it would take way too much effort. -> main
-    * {has_rope} [Use rope on cliff] You throw the rope to the top of the cliff and it latches onto a bush. #item #rope #cliff
-    ~rope_cliff = true
-    -> main
-    +  {rope_cliff} [Climb rope]
-        {not wearing_boots: You can’t get a good footing and after a few minutes of effort slide all the way back to the bottom. -> main}
-        Wearing your handy boots, you are able to slowly make your way up the cliff. It tires you out, but you manage to make it. 
-        -> hilltop
-        
-        
-== hilltop == 
-= intro 
-#k_hilltop
-You are deafened by the cacophony of bird sounds coming from the countless number of birds before you. They seem to cover every space available, leading up to the cliff facing the lake. You see a glint of metal in the center. -> main
-= main
-    + [GO SOUTH] -> thicket
-    * [Examine birds] You see a wide range of birds, mostly crows and sparrows, but with a majestic eagle in the center. -> main
-    * [Examine coin]
-        {not coin_visible: You can barely see a glint from the silvery coin between the constantly moving throng of birds. -> main}
-    * [Make noise] All of the birds, save one, fly off as a single unit over the lake. The eagle flies onto your shoulder, you are terrified. It gently places a metal coin in your open palm before flying away. 
-    -> fake_ending
+   * [Climb down the rocky cliff] {not fucked_hands: You find some stable footting on the side of the cliff and decide to may be able to climb down safely. You move carfully only changing your grip when you know its safe. That doesn't stop your hands from shaking though. You are almost to the bottom when your hand slips and you fall backwards. You land in the sand with no injuries but the wind knocked out of you.}
+        ~Stamina = Stamina - 5
+       {fucked_hands :You find some stable footting on the side of the cliff and decide to may be able to climb down safely. You move carfully only changing your grip when you know its safe. The cuts in your hands start burning, in a laps of focus you let go and fall back on the sand. You feel the impact rattle every bone in your body. You get up in serious pain. {~Stamina = Stamina - 10}} 
+    -> shore
     
+    *[Find a safer route] You walk along the edge of the cliff looking for a safer point to get onto the  beach. You walk along the coast for what seems like forever until the ledge drops to a safe distance down. You eventually find yourself farther from the boat than ever before. It takes you a very long time to get close.
+    You are very tired but safe.
+    ~Stamina = Stamina - 10
+    ~long_walk = true
+    ->shore
+    
+    * [Jump down] There is no time, you know your cousin is down there! You hastily jump of the ledge, hoping the soft sand will cushion your fall. You nearly land on your feet, but collapse to the floor when you land. You feel a serious pain in your leg, its best to keep off of it the rest of the journey.
+    ~Stamina = Stamina - 10
+    ~hurt_leg = true
+    ->shore
     
 == shore == 
 = intro
-#k_shore
-Walking upon the sandy shore, you see a rotting old shack and remember spending time at the beach with your foster parents. You see a cliff jutting out over the waterline and swear you can hear something over the sound of waves. -> main
+
+Walking upon the sandy shore, you see the rotting old boat up ahead and remember spending time at the beach with your foster parents. You see a cliff jutting out over the waterline and swear you can hear something over the sound of waves. Pebbles line the shore made smooth my the waves washing over them. -> main
 = main
-{not wearing_boots: There are a pair of boots by the shore.}
-    + [GO SOUTH] -> brambles
-    + [GO INTO SHACK] -> shack
-    * [Examine shack] This wooden shack is probably missing more planks than it still has left, you’re not sure how its still standing. The mildewy door swaying in the lake breeze. -> main
-    * [Examine cliff] Atop the sheer cliff over the water you see a grassy knoll. You hear some sort of sound, almost as of tons of sheets of paper rustling. -> main
-    * [Examine water] The water looks cleaner than it smells, somehow -> main
-    * [Examine boots] These new boots pristinely sit by the shore, perfectly in a line. If you didn’t know better, you’d say they had never been used before. Picking them up, you realize they are full of water and dump it back into the lake.
-        ~ wearing_boots = true
-        -> main
-        
-        
+    + [Skip a stone] You take a moment to just skip some rocks like you used to do with your dad. This whole ordeal has been so scary and you just now realize how much you wish they were there with you. {fucked_hands: The salt water from the pebble stings your hands.}
+    You start to feel a little better after a while and head over to the boat.
+    ~Stamina = Stamina + 10
+    ->cave
+    
+    + [Take a break] You sit at the shore and watch the waves crash on to the sand. You regain some strength from your long journey.
+    {long_walk: {~Stamina = Stamina + 5}} 
+    ~Stamina = Stamina + 5
+    -> cave
+    
+    + [Walk to the boat] -> cave
+    * [Examine boat] This rickety boat is probably missing more planks than it still has left, you’re not sure how its still standing. The mildewy flag swaying in the lake breeze. -> main
+    * [Examine water] The water seems to be rushing to shore harder than usual. In the distance, you can see waves continously crashing into each other. -> main
+    -> main
+
+ 
 == shack == 
 = intro
-#k_shack
+//we could change the shack in to a boat so we dont have to draw another screen
 As you enter the dusty, grimy shack you instantly understand why your new parents want you to clean your room so often. Apart from the rusting bedframe and what might once have been food on a desk, you see a pile of rope in fairly good condition on top of a shelf. -> main
 = main
-    + [GO OUT] -> shore
     * [Examine bed] The bed sits under a thick layer of dust, still made. You can’t tell the last time someone used it, but you’re betting it wasn’t last night. -> main
     * [Examine desk] On top of the desk you see the mottled old remains of a sketch of an man with a thick beard. Maybe a self portrait? -> main
-    * [Examine shelf] The shelf seems to be almost twice your height, you wonder why the shack’s owner put it so high. You see a pile of rope on top of it. -> main
-    * {not has_rope} [Examine rope] The rope seems a little out of place, being the only thing in the shack that is in good condition. -> main
-    + {not has_rope} [Take rope] The shelf is too high for you to reach. -> main
-    * {has_stick} [Use stick on rope] You knock over the rope, picking up the coil and throwing it over your shoulder. This should come in handy somewhere, right?
-    ~has_rope = true
-    -> main
-    
-    
-== fake_ending ==
-You got the coin!
--> END
+    * [Examine shelf] The shelf seems to be almost twice your height, you wonder why the shack’s owner put it so high. You see a pair of boots. -> main
