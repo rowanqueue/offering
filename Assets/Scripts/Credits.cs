@@ -29,7 +29,12 @@ public class Credits : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        duration += Time.deltaTime;
+        float mod = 1.0f;
+        if (Input.anyKey)
+        {
+            mod = 5.0f;
+        }
+        duration += Time.deltaTime*mod;
         if (state == 0)//lerping in!
         {
             displayText.color = Color.Lerp(Color.black, Color.white, duration/lerpTime);

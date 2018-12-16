@@ -624,6 +624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157733832}
   - component: {fileID: 157733831}
+  - component: {fileID: 157733833}
   m_Layer: 0
   m_Name: StoryManager
   m_TagString: Untagged
@@ -642,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba386069d0150409e4d0349898e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatJump: ACT3
+  cheatJump: 
   inkJSONAsset: {fileID: 4900000, guid: 717e0670aa7a8fb4c8e26118dd099887, type: 3}
   choicesButtons:
   - {fileID: 1582184673}
@@ -676,6 +677,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157733833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 157733830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cdbbdc8993f374caeb268301335e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &171455038 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114127296036356238, guid: e8bfb164d1ba7a1409691e81f3171c12,
