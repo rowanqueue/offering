@@ -100,7 +100,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 =act3walk
 ->act3car
 =act3car
-- You and grandpa get in his car and start to drive west to Audhumbla Ívarsdóttir's house. 
+- You and grandpa get in his car and start to drive west. 
 ->DONE
 
 //diary entries:
