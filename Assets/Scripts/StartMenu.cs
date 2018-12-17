@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour {
     public TMP_Text scrampText;
     public TMP_Text offeringText;
-    public Image enter;
-    public BoxCollider bc;
     public float lerpTime;//time it takes to lerp in and out
-    public float timeToSelect;
-    float actualTime;
     public AudioSource source;
     public AudioSource music;
     bool leaving;
@@ -20,11 +15,7 @@ public class StartMenu : MonoBehaviour {
     Color transparent = new Color(1, 1, 1, 0);
     // Use this for initialization
     void Start () {
-        actualTime = timeToSelect;
         DontDestroyOnLoad(music);
-        scrampText.color = transparent;
-        offeringText.color = transparent;
-        enter.color = transparent;
 	}
 	
 	// Update is called once per frame
@@ -47,8 +38,8 @@ public class StartMenu : MonoBehaviour {
                 source.volume = 0.2f;
             }*/
         }
-        //enterText.color = offeringText.color;
-        if (duration > lerpTime * 3)
+
+        if(duration > lerpTime * 3)
         {
             if(music.isPlaying == false)
             {
@@ -56,32 +47,10 @@ public class StartMenu : MonoBehaviour {
             }
             offeringText.color = Color.Lerp(transparent, Color.white, (duration - lerpTime * 3) / lerpTime);
             music.volume = (duration - lerpTime * 3) / lerpTime;
-            enter.color = offeringText.color;
-        }
-        if(duration > lerpTime * 3.5)
-        {
-            RaycastHit hit;
-            if (leaving == false && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-            {
-                actualTime -= Time.deltaTime;
-            }
-            else
-            {
-                actualTime += Time.deltaTime;
-                if(actualTime > timeToSelect)
-                {
-                    actualTime = timeToSelect;
-                }
-            }
-        }
-        if (leaving) { enter.fillAmount = 0; } else
-        {
-            enter.fillAmount = actualTime / timeToSelect;
         }
         if(duration > lerpTime * 4)
         {
-
-            if (leaving == false && actualTime <= 0)
+            if (leaving == false && Input.anyKeyDown)
             {
                 leaving = true;
                 duration = lerpTime * 4;

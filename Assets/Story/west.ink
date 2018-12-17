@@ -12,24 +12,25 @@ VAR cow2milked = false
 VAR cow3milked = false
 === west ===
 #t_reset
-You have been told to milk a cow. You don't even know how to milk a cow, but Grandpa seemed angry at you so its best to go do it. The fields around you feel quiet and empty.
-    -> lady
+Looking around, the fields around you feel quiet and empty.
+    ->lady
 == lady ==
 = intro
 #s_audio/COW OUTSIDE
 #v_act4/barnEx
 You can still see Grandpa and Audi talking through the window. Every once in a while, he will glance over at you and give you a look you don't understand. With the barn behind you, you are disgusted by the smell of manure drifting through the air.
+You don't even know how to milk a cow, but to protest would be pointless. You roll your sleeves up.
 ->main
 
 = main
     + [Examine Grandpa] He feels like a stranger to you now. You've only known him for a a day or so and he already hates you. Why? What did you do? He changed so quickly, it really scares you. Now you have to milk a cow? You don't even know how to milk a cow! You need to be looking for Kari but you're too scared to tell him that.  
     ->main
     
-    + [Examine Audi] You would talk to her but you don't want get close to Grandpa right now. No one here will help. Your parents are gone, your friends are miles away, your Grandpa refuses to talk to you, and you cousin has dissapeared. You just feel so alone.
-    ->main
+    //+ [Examine Audi] You would talk to her but you don't want get close to Grandpa right now. No one here will help. Your parents are gone, your friends are miles away, your Grandpa refuses to talk to you, and you cousin has dissapeared. You just feel so alone.
+    //->main
 
     + [Go to pasture]You head towards the cow smell reluctantly. You don't want to do this, your stomach churns at the thought of what you have to do. ->pasture
-    +{milk > 2} [Show Grandpa] -> grandpayelling
+    +{cow1milked and cow2milked and cow3milked} [Show Grandpa] -> grandpayelling
         
 == pasture ==
 = intro
@@ -62,7 +63,7 @@ You stop at foot of some rolling hills. You are astonished by the size of this f
     ->main
 
 = cow1
-    You feel the body heat of the cow on your skin. It exhales loudly once you crouch down. You seem more nervous than it does. Its ear seem to twitch constantly and its fur looks surprisingly soft.
+    You feel the body heat of the cow on your skin. It exhales loudly once you crouch down. You seem more nervous than it does. 
     //write text in the above to indicate doing either petting or scratching
     +^A:D,6:7 ^[Pet the Cow]
         Your hands tremble a little bit as you pet the cow. You have never seen an animal of this size in person before. This whole trip has been a stark change from your New York home, leaving you nervous and uncomphotable. The cow, on the other hand, seems at ease even going so far as to move closer to you.  
@@ -107,7 +108,7 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
     +[Go back] ->pasture
 
 = cow2
-    You see the cow periodically rustle through the bushes looking for something. It immediately stops and stares at you when you approach. It looks at you expectantly, mooing directly at you.  
+    You see the cow periodically rustle through the bushes looking for something. It immediately stops and stares at you when you approach.  
     //explain what you do with the cow down here
     + {not cow2Soothed} ^H:J,5:10^[Give The Cow What It Wants]
         {hasBerries: You take some berries out of your pocket to feed the cow some berries. You feel its tounge brush up against your hand as it takes them. It nuzzles your hand once it finishes chewing.}
@@ -137,11 +138,16 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
     
 == pasture3 ==
 = intro
+
 Your feet start to hurt again. You haven't really had a chance to fully recover from yesterday. Everything is moving so fast but it feels like you have made so little progress in finding your cousin.  
  ->main
  
 = main
+#v_act4/hillnonebucket
+{not hasBucket: 
 #v_act4/hillBucket
+}
+
     * ^B:C,8:10^[Examine bucket]
         You see a metal bucket just lying on the floor. It is dented all over and a little dirty but it should do the trick.
         ~hasBucket = true  
@@ -164,7 +170,7 @@ Your feet start to hurt again. You haven't really had a chance to fully recover 
 
     + {not cow3milked} ^F:J,6:8^[Milk Cow]
         {hasBucket:
-        ~cow1milked = true
+        ~cow3milked = true
         }
         {not hasBucket: You are not prepared to do that right now. ->cow3}
         ->cowtail

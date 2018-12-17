@@ -54,8 +54,9 @@ You need to cause a distraction, find a way to lure him into the house.
 +^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
 =UpstairsPuzzle
+#v_enter_act3/papers
 #v_act3/bedroomEmpty
-*[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
+*^E:H,8:8 ^[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
     ~hasPapers = true
     ->UpstairsPuzzle
 +[down] ->livingRoomPuzzle
@@ -109,18 +110,19 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 #v_act3/outsideHouse
 //get back home, go inside
 You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
-*   Walk in->act3walk
-*   Sneak in->act3Sneak
+*   [Walk in]->act3walk
+*   [Sneak in]->act3Sneak
 
 =act3Sneak
 //empty homeInterior
-#v_act3/homeInterior
+#v_act3/insideHOuseEmpty
 You open the door and it creaks loudly. You don't see Grandpa. 
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
 //grandpa in bedroom
 #v_clearScreen
+#v_enter_fadedGRAMPS
 #v_act3/bedroom
 Grandpa is standing in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"

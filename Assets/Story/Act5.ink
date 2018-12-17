@@ -1,5 +1,9 @@
+==ACT5==
+->act5Road
 ==act5Road==
-You run out onto the road, heading for the mountains. You hear your grandfather yelling behind you. He can't chase you, and eventually all you can hear is the wind. You're freezing cold and soon praying to see any sort of car on the road. 
+#v_clearScreen
+#v_act5/road
+You've run out onto the road, heading for the mountains. You hope to god or gods that Audhumbla isn't tricking you. You're freezing cold and soon praying to see any sort of car on the road. 
 
 Sure enough, you see a pickup truck coming up from behind you. 
 *   [Stick your thumb up] You stick your thumb up and the car rolls to a stop next to you.
@@ -9,17 +13,20 @@ Sure enough, you see a pickup truck coming up from behind you.
 *   [Lost my parents] :player:"I lost my parents,": you say.
 *   [Running from crazy man] :player:"I'm running from a crazy man,": you say.
 *   [Need to go skiing] :player:"I need to get to the ski resort,": you say.
-- :driver:"[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
+
+- :dad:[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
 //click car
 *   [Get in]
 #v_fadeOut
-- You drive for
+- You drive for a few miles and it's clear you've entered the mountains. The ground is covered in snow as far as the eye can see. 
+#v_fadeIn
 "This as far as I can go." they say "Good luck out there, kid. You have a rough trip ahead of you." They hand you a blanket and tell you to keep warm. 
 ->mountainBase
 ==mountainBase==
 ->mountain1
 
 ==act5Arrival==
+#v_act5/snowyhouse
 #v_clearScreen
 You finally see the small wooden cabin, just where Kari's map said it would be. The lights are on, but it's quiet. 
 //click door
@@ -68,7 +75,7 @@ VAR grandpaPlanNum = 0
 
 +  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
     :brynja:"A sacrifice.":
-    Ásta glares at Brynja. :asta:"Who knows, he's a crazy old man. If Audhumbla really did send you here, he's alone. He can't hurt you.":->grandpaPlanAsk
+    Ásta glares at Brynja. :asta:"Who knows, he's a crazy old man. If Audhumbla really did send you here, he's alone. He can't hurt you.":->chatpt1
 * ->chatpt2
 
 ->chatpt1
@@ -123,11 +130,17 @@ VAR grandpaPlanNum = 0
 #t_reset
 :asta:"Ye gods, Jorgur. You look awful.":
 He does.
-:grandpa:"There you are, you little asni.": Grandpa lurches forward but Brynja steps between you. 
+:grandpa:"There you are, you little asni.": Grandpa lurches forward but Brynja steps between you. The sleeping kids jolt awake.
 :brynja:"What are you doing with this child, Jorgur?":
 :grandpa:"Agh, stop speaking in his ugly language.":
 :brynja:"I'll speak so the child can understand it. This is madness. You sent Kari out into the wilds? Why?":
-:grandpa:"It's the design of the gods. I needed to distract the parents so the child can be brought to our ritual site. Don't you see? These foul tourists own you, they pillage the land and you bow to them. We need the most acceptible":
+:grandpa:"It's the design of the gods. I needed to distract the parents so the child can be brought to our ritual site. Don't you see? My Fjola died just before the Dísablót falls upon us!":
+
+:asta:"You will not make this innocent child a part of your perversion of our sacred rituals! It won't bring her back, Jorgur!"
+
+:grandpa:"Innocent? He dares to live as an American You don't understand,":
+//These foul tourists own you, they pillage the land and you bow to them.
+// Tonight the first moon of February rises and we will perform the ceremony as intended.
 //once we perform the blot the gods will look upon us favorably
 //fishing will be bountiful and i will build a new community here. my influence will be strong and many will join our cult reborn. 
 //grandpa 
