@@ -1,9 +1,9 @@
 == ACT3 ==
 //fade in, grandpa's here
 #v_act3/bedroom
-#v_fadeIn
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
-*   [Refuse]
+#v_fadeIn
+*   [Refuse] :grandpa:"I'm not asking you again."
 *   [Get up]
 - You reluctantly get out of bed. 
 //SNEAKING OUT PUZZLE
@@ -36,7 +36,7 @@ You pick up a school notebook and begin to read.
 =Insideboat
 VAR seenBoat = 0
 *   [Examine drawings]:player:You examine the drawings: ~seenBoat = seenBoat +1
-Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
+Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. You find a map marked with the ->Insideboat
 +   [Examine journal]->Diary
 *   [Examine trinkets]:player:~seenBoat = seenBoat +1
 :->Insideboat 
