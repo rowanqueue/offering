@@ -7,6 +7,7 @@ using Ink.Runtime;
 
 public class NewStoryManager : MonoBehaviour {
     public string cheatJump;//put knot here
+    public bool gameOver;
     public TextAsset inkJSONAsset;
     private Story story;
 
@@ -54,7 +55,10 @@ public class NewStoryManager : MonoBehaviour {
     //bad not content specific shit
     public Image staminaBar;
     public int stamina;
+    public Image coinBar;
     public int coin;
+    public Image smorbleHead;
+    public List<Sprite> smorbleHeads;
 	void Awake () {
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
@@ -113,6 +117,21 @@ public class NewStoryManager : MonoBehaviour {
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
         coin = int.Parse(story.variablesState["coin"].ToString());
+        coinBar.fillAmount = coin * 0.25f;
+        int stam = 0;
+        if(stamina < 75)
+        {
+            stam = 1;
+            if(stamina < 50)
+            {
+                stam = 2;
+                if(stamina < 25)
+                {
+                    stam = 3;
+                }
+            }
+        }
+        smorbleHead.sprite = smorbleHeads[stam];
         //imageshit
         topImage.enabled = topImageUsed;
         //choices
@@ -392,6 +411,7 @@ public class NewStoryManager : MonoBehaviour {
             {
                 if(whatToType.Length <= 1)
                 {
+                    displayText.text += "\n \n";
                     whatToType = "";
                     typing = false;
                 }

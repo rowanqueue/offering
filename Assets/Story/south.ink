@@ -1,4 +1,5 @@
-"This as far as I can go." they say "Just head up that trail and you should reach the Jóhannsons... Just be careful, Okay kid?" They hand you a blanket and tell you to keep warm. 
+== south == 
+"This as far as I can go." they say "Just head up that trail and you should reach the Jóhannsons... Just be careful, Okay kid?" They hand you a blanket and tell you to keep warm. ->mountain1
 
 == mountain1 == 
 = intro
@@ -10,7 +11,7 @@ You are already very high up. Behind you, you can see the glint of the ocean in 
 //clickable 
 + [Head Back Down the Mountain] There is no going back.->main
 
-+[Examine Sign] The sign point toward the trail. "Stay On The Path! -the Jóhannsons' ski resort" 
++[Examine Sign] The sign point toward the trail. "Stay On The Path! -the Jóhannsons' ski resort" -> main
 
 + [Examine Rocks] Everything here is covered in dense ice. Its a much crueler cold here than it is in New York. The ice is harder and the winds are stronger. Everything is so open, making you feel more vulerable than ever before.->main
 
@@ -74,4 +75,4 @@ And then you stop. You can't push any further. You're stuck. You thrash violentl
 
 ==ending==
 You wipe away the tears and carry on. You see lights in the distance. You realize what they are and start running to the house.  
-->
+->END
