@@ -1,6 +1,3 @@
-== south == 
-"This as far as I can go." they say "Just head up that trail and you should reach the Jóhannsons... Just be careful, Okay kid?" They hand you a blanket and tell you to keep warm. ->mountain1
-
 == mountain1 == 
 = intro
 You are already very high up. Behind you, you can see the glint of the ocean in the horizon. Snow crunches beneath your feet. Coming from New York, you were prepared for snow but not like this. Sleet slashes at your face. The blanket helps but not much. You now face foreward, looking up at the mountain top. A muddy road lies ahead of you. You feel closer to Kari than ever before. Audi told you there would people up here who can help.
