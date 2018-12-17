@@ -7,11 +7,14 @@ VAR given_drawing = false
 = intro
 #s_stop
 //TOO MUCH, ALSO WEIRD??
-The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, whale and bird watching, a swimming pool, a golf course, and sightseeing by tractor.
+The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, skiing, whale watching, and bird watching.
 *   [Ask about town]
 *   [Sit in silence] -> arrival
 -   :dad: "When we were kids, nobody ever thought about visiting here. It was just a town of fishermen who couldn't afford to live in Dalvík - with their families of course. They would sell their fish over there and dock their boats here. Now there are lots of tourists coming to see the mountains. There's talk of even developing the area for skiing.": 
-*   [Sit and stare out the window]->arrival
+*   [Stare out the window]
+-  :dad:"My father lives in town here. We'll go to see him tomorrow, but we're going to have to stay with Grandpa Jorgur, per your mother's request":
+:mom:"He's ":
+->arrival
     
 == arrival ==
 //needs change of people

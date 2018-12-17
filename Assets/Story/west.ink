@@ -12,13 +12,14 @@ VAR cow2milked = false
 VAR cow3milked = false
 === west ===
 #t_reset
-You have been told to milk a cow. You don't even know how to milk a cow, but Grandpa seemed angry at you so its best to go do it. The fields around you feel quiet and empty.
-    -> lady
+Looking around, the fields around you feel quiet and empty.
+    ->lady
 == lady ==
 = intro
 #s_audio/COW OUTSIDE
 #v_act4/barnEx
 You can still see Grandpa and Audi talking through the window. Every once in a while, he will glance over at you and give you a look you don't understand. With the barn behind you, you are disgusted by the smell of manure drifting through the air.
+You don't even know how to milk a cow, but to protest would be pointless. You roll your sleeves up.
 ->main
 
 = main
@@ -62,7 +63,7 @@ You stop at foot of some rolling hills. You are astonished by the size of this f
     ->main
 
 = cow1
-    You feel the body heat of the cow on your skin. It exhales loudly once you crouch down. You seem more nervous than it does. Its ear seem to twitch constantly and its fur looks surprisingly soft.
+    You feel the body heat of the cow on your skin. It exhales loudly once you crouch down. You seem more nervous than it does. 
     //write text in the above to indicate doing either petting or scratching
     +^A:D,6:7 ^[Pet the Cow]
         Your hands tremble a little bit as you pet the cow. You have never seen an animal of this size in person before. This whole trip has been a stark change from your New York home, leaving you nervous and uncomphotable. The cow, on the other hand, seems at ease even going so far as to move closer to you.  
@@ -107,7 +108,7 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
     +[Go back] ->pasture
 
 = cow2
-    You see the cow periodically rustle through the bushes looking for something. It immediately stops and stares at you when you approach. It looks at you expectantly, mooing directly at you.  
+    You see the cow periodically rustle through the bushes looking for something. It immediately stops and stares at you when you approach.  
     //explain what you do with the cow down here
     + {not cow2Soothed} ^H:J,5:10^[Give The Cow What It Wants]
         {hasBerries: You take some berries out of your pocket to feed the cow some berries. You feel its tounge brush up against your hand as it takes them. It nuzzles your hand once it finishes chewing.}
