@@ -138,11 +138,15 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
     
 == pasture3 ==
 = intro
+#v_act4/hillBucket
 Your feet start to hurt again. You haven't really had a chance to fully recover from yesterday. Everything is moving so fast but it feels like you have made so little progress in finding your cousin.  
  ->main
  
 = main
-#v_act4/hillBucket
+{hasBucket: 
+#v_act4/hillnonebucket
+}
+
     * ^B:C,8:10^[Examine bucket]
         You see a metal bucket just lying on the floor. It is dented all over and a little dirty but it should do the trick.
         ~hasBucket = true  

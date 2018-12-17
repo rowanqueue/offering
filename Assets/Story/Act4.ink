@@ -38,8 +38,9 @@ You knock on the door and show Grandpa the bucket of milk. He looks at you and l
         He pulls you by the ear and you yelp in pain. He does not let go. You have trouble breathing and your eyesight is getting blurry. You are terrified.  
         *[Cry out] You try to call out for someone to help but you can't get the words out.
     //throw grandpa, audi in this motherfucker
-    #v_act4/barnInt
+    #v_act4/inBarnOne
     - By the time you reach the barn tears stream down your face. You feel light headed. He continues to yell at you, now mostly in icelandic. He shoves you too the ground, picks you up by the collar, and pushes you toward a cow. You panic, trapped with no one to help you. You feel like blacking out.
+    #v_act4/inBarnTwo
         :grandpa: "You want to be a real man of Iceland use this!" He pulls out a hideous creature out of a nearby crate. It looks like a long, hairy snake made of wrapped in old, crusty fur. On its two ends are wrinkled and swolen screaming faces. Their lips are cracked and swolen, its mouth gaping wide. Grandpa wiggles it around infront of you and you see its beady eyes glazed over with puss. 
         * [Scream] You scream and Grandpa laughs. 
     - :grandpa: "What's the matter? You've never seen a Tilberi before? What have you parents been teaching you? This is our culture! This is how we use to milk the cows! You coward, children here are raised properly, to not fear such silly things."
@@ -49,11 +50,13 @@ You knock on the door and show Grandpa the bucket of milk. He looks at you and l
 == dadEnter ==
 You wait, shocked and unable to move. He turns to you and grins. :grandpa:"Scream if you want child.": 
 
+#v_act4/inBarnThree
 The door of your barn busts open. It's your dad, you call out to him.
 
 :dad:"There you are! Oh no... What did he do?!": He starts to move towards you, you try to warn him but it's too late.
 //add variable that gives you more time with audy
 Grandpa swings back and knocks out your father with a shovel. 
+#v_act4/inBarnFour
 :player:"Dad!":
 Grandpa laughs, winded. :grandpa:"You're not going anywhere,": he wheezes. His hands are on his knees. You have to act now.
 *   [Sprint for the door] You make a break for the door. He tries to lunge at you but he misses. 
