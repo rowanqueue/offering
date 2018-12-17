@@ -41,17 +41,17 @@ VAR hasPapers = false
 You need to cause a distraction, find a way to lure him into the house.
 
 //clickable
-* [Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
+* ^C:F,2:3^[Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
     ~hasLighter = true
     ->livingRoomPuzzle
 
-+ [Click Fireplace] {not hasPapers: You need something to burn if you're going to start a fire.}
++^A:B,4:7^[Click Fireplace] {not hasPapers: You need something to burn if you're going to start a fire.}
     {not hasLighter: You need something to start a fire.}
     {not hasPapers or not hasLighter: ->livingRoomPuzzle }
     {hasPapers and hasLighter: You frantically throw in every thing you can into the fire place and light it on fire. Then hide around the corner.}
     ->puzzleEnd
     
-+ [Click Stairs] ->UpstairsPuzzle
++^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
 =UpstairsPuzzle
 #v_act3/bedroomEmpty
