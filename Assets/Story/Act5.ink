@@ -1,5 +1,5 @@
 ==act5Road==
-You run out onto the road, heading for the mountains. You hear your grandfather yelling behind you. He can't chase you, and eventually all you can hear is the wind. You're freezing cold and soon praying to see any sort of car on the road. 
+You've run out onto the road, heading for the mountains. You hope to god or gods that Audhumbla isn't tricking you. You're freezing cold and soon praying to see any sort of car on the road. 
 
 Sure enough, you see a pickup truck coming up from behind you. 
 *   [Stick your thumb up] You stick your thumb up and the car rolls to a stop next to you.
@@ -9,11 +9,13 @@ Sure enough, you see a pickup truck coming up from behind you.
 *   [Lost my parents] :player:"I lost my parents,": you say.
 *   [Running from crazy man] :player:"I'm running from a crazy man,": you say.
 *   [Need to go skiing] :player:"I need to get to the ski resort,": you say.
+
 - :driver:"[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
 //click car
 *   [Get in]
 #v_fadeOut
-- You drive for
+- You drive for a few miles and it's clear you've entered the mountains. The ground is covered in snow as far as the eye can see. 
+#v_fadeIn
 "This as far as I can go." they say "Good luck out there, kid. You have a rough trip ahead of you." They hand you a blanket and tell you to keep warm. 
 ->mountainBase
 ==mountainBase==

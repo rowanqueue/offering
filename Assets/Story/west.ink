@@ -12,13 +12,14 @@ VAR cow2milked = false
 VAR cow3milked = false
 === west ===
 #t_reset
-You have been told to milk a cow. You don't even know how to milk a cow, but Grandpa seemed angry at you so its best to go do it. The fields around you feel quiet and empty.
+Looking around, the fields around you feel quiet and empty.
     ->lady
 == lady ==
 = intro
 #s_audio/COW OUTSIDE
 #v_act4/barnEx
 You can still see Grandpa and Audi talking through the window. Every once in a while, he will glance over at you and give you a look you don't understand. With the barn behind you, you are disgusted by the smell of manure drifting through the air.
+You don't even know how to milk a cow, but to protest would be pointless. You roll your sleeves up.
 ->main
 
 = main
