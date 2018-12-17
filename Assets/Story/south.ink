@@ -1,6 +1,5 @@
 == mountain1 == 
 = intro
-#v_fadeIn
 You are already very high up. Behind you, you can see the glint of the ocean in the horizon. Snow crunches beneath your feet. Coming from New York, you were prepared for snow but not like this. Sleet slashes at your face. The blanket helps but not much. You now face foreward, looking up at the mountain top. A muddy road lies ahead of you. You feel closer to Kari than ever before. Audi told you there would people up here who can help.
     ->main
     
@@ -9,7 +8,7 @@ You are already very high up. Behind you, you can see the glint of the ocean in 
 //clickable 
 + [Head Back Down the Mountain] There is no going back.->main
 
-+[Examine Sign] The sign point toward the trail. "Stay On The Path! -the Jóhannsons' ski resort" -> main
++[Examine Sign] The sign point toward the trail. "Stay On The Path! -Jóhannson Ski" -> main
 
 + [Examine Rocks] Everything here is covered in dense ice. Its a much crueler cold here than it is in New York. The ice is harder and the winds are stronger. Everything is so open, making you feel more vulerable than ever before.->main
 
@@ -72,5 +71,5 @@ And then you stop. You can't push any further. You're stuck. You thrash violentl
 
 
 ==ending==
-You wipe away the tears and carry on. You see lights in the distance. You realize what they are and start running to the house.  
-->act5Arrival
+You wipe away the tears see lights in the distance. You realize what they are and start running to the house.  
+->END
