@@ -74,7 +74,7 @@ public class NewStoryManager : MonoBehaviour {
             {"grandpa","#dd503eff" },
             {"audie","#ffa332ff" },
             {"brynja","#f1a6fcff" },
-            {"magnus","#50714fff"},
+            {"asta","#50714fff"},
             {"player", "#86c6ceff" }
         };
         story = new Story(inkJSONAsset.text);
