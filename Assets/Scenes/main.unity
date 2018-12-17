@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba386069d0150409e4d0349898e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatJump: 
+  cheatJump: dinner
   inkJSONAsset: {fileID: 4900000, guid: 717e0670aa7a8fb4c8e26118dd099887, type: 3}
   choicesButtons:
   - {fileID: 1582184673}
