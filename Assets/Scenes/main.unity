@@ -731,7 +731,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -912,8 +912,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0080221c81e7511418c63f75d7bfa02b, type: 3}
   - {fileID: 8300000, guid: fbf5a2d80240ccb46b42e449890a22b0, type: 3}
   momVoice:
-  - {fileID: 8300000, guid: 6b1849924fb74fb4b8482ceda8330635, type: 3}
-  - {fileID: 8300000, guid: f9d92851eedc0bf41952cdfef231fd5f, type: 3}
+  - {fileID: 8300000, guid: 34206c52f18b5ca47b20deeb3272971c, type: 3}
+  - {fileID: 8300000, guid: 0355b8f2d84bf5b459d92c32aee20704, type: 3}
 --- !u!1 &215761283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,17 +1361,17 @@ Prefab:
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 129.05003
       objectReference: {fileID: 0}
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 258.1
       objectReference: {fileID: 0}
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
@@ -1386,7 +1386,7 @@ Prefab:
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
@@ -1396,7 +1396,7 @@ Prefab:
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224689391141351890, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
@@ -1436,7 +1436,7 @@ Prefab:
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
@@ -2259,9 +2259,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1173812021
 MonoBehaviour:
@@ -2551,7 +2551,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3642,7 +3642,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3713,9 +3713,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1652268779
 MonoBehaviour:
@@ -4070,9 +4070,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1903354317
 MonoBehaviour:
