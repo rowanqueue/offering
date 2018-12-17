@@ -1,4 +1,4 @@
-==act5Road==
+== ACT5 ==
 You run out onto the road, heading for the mountains. You hear your grandfather yelling behind you. He can't chase you, and eventually all you can hear is the wind. You're freezing cold and soon praying to see any sort of car on the road. 
 
 Sure enough, you see a pickup truck coming up from behind you. 
@@ -9,7 +9,7 @@ Sure enough, you see a pickup truck coming up from behind you.
 *   [Lost my parents] :player:"I lost my parents,": you say.
 *   [Running from crazy man] :player:"I'm running from a crazy man,": you say.
 *   [Need to go skiing] :player:"I need to get to the ski resort,": you say.
-- :driver:"[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
+- :driver:"Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.":
 //click car
 *   [Get in]
 #v_fadeOut

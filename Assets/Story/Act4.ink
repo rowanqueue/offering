@@ -44,4 +44,4 @@ You knock on the door and show Grandpa the bucket of milk. He looks at you and l
         * [Shut your eyes] You squeeze your eyes shut and wish to be anywhere else but here. ->dadEnter
 == dadEnter ==
     Just then the door of your barn busts open. Its your dad, you run towards him.
-    ->END
+    ->ACT5
