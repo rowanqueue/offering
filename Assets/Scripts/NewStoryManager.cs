@@ -220,7 +220,9 @@ public class NewStoryManager : MonoBehaviour {
                 {
                     string[] split = s.Split('_');
                     AudioSource source = ambience;
-                    if(split.Length == 3)//has a special tag
+                    string audioFile = split[1].Trim();
+                    bool effect = false;
+                    if (split.Length == 3)//has a special tag
                     {
                         switch (split[2][0])
                         {
@@ -231,57 +233,48 @@ public class NewStoryManager : MonoBehaviour {
                                 source = music2;
                                 break;
                             case 's':
-                                //implement later!!
-                                source = ambience;
+                                effect = true;
+                                AudioManager.me.PlaySound(Resources.Load<AudioClip>(audioFile));
                                 break;
                         }
                     }
-
-                    string audioFile = split[1].Trim();
-                    switch (audioFile)
+                    if(effect == false)
                     {
-                        case "stop":
-                            source.Stop();
-                            break;
-                        case "volumeUp":
-                            source.volume += source.volume*0.25f;
-                            break;
-                        case "volumeDown":
-                            source.volume -= source.volume*0.25f;
-                            break;
-                        case "reset":
-                            source.volume = 0.6f;
-                            break;
-                        case "lerpUp":
-                            whatTolerp = 1;
-                            duration = 0;
-                            lerpState = 2;
-                            break;
-                        case "lerpDown":
-                            whatTolerp = 1;
-                            duration = 0;
-                            lerpState = 1;
-                            break;
-                        default:
-                            AudioClip clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
-                            if(clip != source.clip)
-                            {
-                                source.clip = clip;
-                                source.Play();
-                            }
-                            break;
+                        switch (audioFile)
+                        {
+                            case "stop":
+                                source.Stop();
+                                break;
+                            case "volumeUp":
+                                source.volume += source.volume * 0.25f;
+                                break;
+                            case "volumeDown":
+                                source.volume -= source.volume * 0.25f;
+                                break;
+                            case "reset":
+                                source.volume = 0.6f;
+                                break;
+                            case "lerpUp":
+                                whatTolerp = 1;
+                                duration = 0;
+                                lerpState = 2;
+                                break;
+                            case "lerpDown":
+                                whatTolerp = 1;
+                                duration = 0;
+                                lerpState = 1;
+                                break;
+                            default:
+                                AudioClip clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                                if (clip != source.clip)
+                                {
+                                    source.clip = clip;
+                                    source.Play();
+                                }
+                                break;
+                        }
                     }
-                    /*
-                    string audioFile = s.Split('_')[1].Trim();
-                    if(audioFile == "stop")
-                    {
-                        audioLoop.Stop();
-                    }
-                    else
-                    {
-                        audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
-                        audioLoop.Play();
-                    }*/
+    
                 }
                 if(s[0] == 't')//text command!!
                 {
