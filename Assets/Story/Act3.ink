@@ -24,7 +24,7 @@ You pick up a school notebook and begin to read.
 ~seenBoat = seenBoat +1
 ->Insideboat
 
-- :kari: "Today grandpa made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson said that we should be open to the tourists and fishing isn't as good anymore and Grandpa said that we need to protect our land. Grandpa got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandpa really mad. when we got home he didn't want to bake with me.":
+- :kari: "Today grandpa made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson. he said that we should be open to the tourists and fishing isn't as good anymore and Grandpa said that we need to protect our land. Grandpa got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandpa really mad. when we got home he didn't want to bake with me.":
 +   [Next entry]
 +  [Keep looking] You decide to keep looking through the boat. 
 ~seenBoat = seenBoat +1
@@ -46,9 +46,9 @@ VAR seenBoat = 0
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary
-//*   [Examine trinkets]:player:
-//~seenBoat = seenBoat +1
-//:->Insideboat 
+*   [Examine trinkets] Scattered around the boat you see a tiny hammer, a bowl, a 
+~seenBoat = seenBoat +1
+->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside
 ==act3HomeOutside
 #v_clearScreen

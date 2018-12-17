@@ -35,7 +35,7 @@ You currently face north.
     You walk on for what feels like forever... all these trees look the same.  ->entrance
     
     
-=======
+
     //+[Examine Sign]
     //The sign says "Beware the Dragon's Forest! Wander at your own risk!" and has a compass with norse runes replacing the traditional N, E, S, W.
     //->main

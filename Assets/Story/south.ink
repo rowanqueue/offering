@@ -1,4 +1,4 @@
-"This as far as I can go." they say "Good luck out there, kid. You have a rough trip ahead of you." They hand you a blanket and tell you to keep warm. 
+
 
 == mountain1 == 
 = intro

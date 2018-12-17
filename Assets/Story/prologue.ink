@@ -4,6 +4,7 @@
 
 //add in mom and dad
 #v_prologue/prologueArt
+
 FERRY TO FJALLVIK, NORTHERN ICELAND - MORNING
 
 You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
