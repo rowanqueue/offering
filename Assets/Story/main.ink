@@ -8,6 +8,7 @@ INCLUDE east.ink
 INCLUDE north.ink
 INCLUDE west.ink
 VAR Stamina = 100
+VAR coin = 0
 -> start
 == start ==
 -> beginning

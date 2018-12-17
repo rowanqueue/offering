@@ -1,35 +1,18 @@
 ==entrance==
 = intro
 #s_audio/ThunderRain
-You are at the point at which the trail from you house ends. You are completely surrounded by a surprising about of trees, a make shift sign posted infront of you seems to have strange runes scrawled over it.
+#v_act2/entrance
+//You are at the point at which the trail from you house ends. You are completely surrounded by a surprising about of trees, a make shift sign posted infront of you seems to have strange runes scrawled over it.
+You are lost and confused in the middle of this forest. You are completely surrounded by a surprising amount of trees, and you see a strange rune carved on a tree.
 -> main
 = main
 //may just be displayed by visuals
-    +[Examine Sign]
-    The sign says "Beware the Dragon's Forest! Wander at your own risk!" and has a compass with norse runes replacing the traditional N, E, S, W.
+    //+[Examine Sign]
+    //The sign says "Beware the Dragon's Forest! Wander at your own risk!" and has a compass with norse runes replacing the traditional N, E, S, W.
     ->main
-    +[GO NORTH] -> wood1
-    
-== wood1 ==
-The trees continue to close in on you and its already becoming difficult for you to find your way.
-
-You see a withered tree with etchings similar to those on the sign. 
-
--> main
-
-= main
-#CORRECT ANSWER: NORTH
-//CLUE: NORTH
     +[GO NORTH] -> wood2
-    +[GO EAST] 
-    You walk on for what feels like forever... all these trees look the same. 
-    ->entrance
-    +[GO SOUTH] 
-    You walk on for what feels like forever... all these trees look the same. 
-    ->entrance
-    +[GO WEST]
-    You walk on for what feels like forever... all these trees look the same.  ->entrance
 == wood2 ==
+#v_act2/forest2
 The rain is pouring hard, everything is so cold and wet.
 Another carved tree catches your eye. 
 -> main
@@ -50,6 +33,7 @@ Another carved tree catches your eye.
     
     
 == wood3 ==
+#v_act2/forest3
 The storm seems to be getting feircer, the lightning startles you every so often. 
 
 You come across an oddly shaped rock with different runes carved deep into its surface. 
@@ -73,6 +57,7 @@ You come across an oddly shaped rock with different runes carved deep into its s
     
     
 == wood4 ==
+#v_act2/forest4
 The winds are cruel and endless. It makes you feel as through a huge beast was looming over you.
 
 An extinguished campfire has more runes carved into its fire wood.
@@ -97,6 +82,7 @@ An extinguished campfire has more runes carved into its fire wood.
     
     
 == wood5 ==
+#v_act2/forest5
 You hear flashes and roars all around you. You tremble in fear.
 
 Runes are etched all around you, in seemingly random places. 
@@ -107,7 +93,7 @@ Runes are etched all around you, in seemingly random places.
 = main
 #CORRECT ANSWER: NORTH
 //CLUE: FOREWARD
-    +[GO NORTH]->dragon
+    +[GO NORTH]->act2Home_outside
     +[GO EAST] 
     You walk on for what feels like forever... all these trees look the same. 
     ->entrance
@@ -116,9 +102,3 @@ Runes are etched all around you, in seemingly random places.
     ->entrance
     +[GO WEST]
     You walk on for what feels like forever... all these trees look the same.  ->entrance
-    
-    
-    
-== dragon ==
-ooooo spooky dragon rawr XD
--> act2Home_inside

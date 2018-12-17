@@ -51,7 +51,7 @@ public class NewStoryManager : MonoBehaviour {
     //bad not content specific shit
     public Image staminaBar;
     public int stamina;
-    Story.VariableObserver observer;
+    public int coin;
 	void Awake () {
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
@@ -108,6 +108,7 @@ public class NewStoryManager : MonoBehaviour {
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
+        coin = int.Parse(story.variablesState["coin"].ToString());
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {

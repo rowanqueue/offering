@@ -9,6 +9,7 @@
 //SNEAKING OUT PUZZLE
 ->trails
 ==act3Boat
+~coin +=1
 You finally enter the boat and find a mess of drawings, notes, and trinkets. Kari has fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, you assume he must spend a lot of his time here.
 ->Insideboat
 
