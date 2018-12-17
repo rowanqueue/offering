@@ -11,6 +11,7 @@ VAR cow1milked = false
 VAR cow2milked = false
 VAR cow3milked = false
 === west ===
+#t_reset
 You have been told to milk a cow. You don't even know how to milk a cow, but Grandpa seemed angry at you so its best to go do it. The fields around you feel quiet and empty.
     ->lady
 == lady ==
