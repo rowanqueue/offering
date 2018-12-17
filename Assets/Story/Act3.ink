@@ -54,8 +54,9 @@ You need to cause a distraction, find a way to lure him into the house.
 +^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
 =UpstairsPuzzle
+#v_enter_act3/papers
 #v_act3/bedroomEmpty
-*[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
+*^E:H,8:8 ^[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
     ~hasPapers = true
     ->UpstairsPuzzle
 +[down] ->livingRoomPuzzle
