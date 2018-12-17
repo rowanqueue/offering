@@ -1,6 +1,6 @@
 == mountain1 == 
 = intro
-You are already very high up. Behind you, you can see the glint of the ocean in the horizon. Snow crunches beneath your feet. Coming from New York, you were prepared for the snow but not like this. Sleet slashes at your face. The blanket helps but not much. You now face foreward, looking up at the mountain top. A muddy road lies ahead of you. You feel closer to Kari than every before. Audi told you there would people  up here who can help.
+You are already very high up. Behind you, you can see the glint of the ocean in the horizon. Snow crunches beneath your feet. Coming from New York, you were prepared for snow but not like this. Sleet slashes at your face. The blanket helps but not much. You now face foreward, looking up at the mountain top. A muddy road lies ahead of you. You feel closer to Kari than ever before. Audi told you there would people up here who can help.
     ->main
     
  =main
@@ -30,11 +30,11 @@ With the wind blowing in your face, its hard to tell whats in front of you. Look
 
 //new screen
 ==mountain2 ==
-The higher you climb the icyier it gets. The ground has slowly been hardening beneath you and it is now to the point where you start to slip. 
+The higher you climb the icier it gets. The ground has slowly been hardening beneath you and it is now to the point where you start to slip. 
 
 //non clickable 
 + [Walk in the Snow] 
-You remeber what happened on the beach and you decide not to take you chances. You move away from the rocky terrain and find an area that is covered in snow. Its is surprisingly deep and some snow seeps into your boots. You feel a shock as the snow starts to chill your feet, but its still better than slipping and falling.
+You remember what happened on the beach and you decide not to take you chances. You move away from the rocky terrain and find an area that is covered in snow. Its is surprisingly deep and some snow seeps into your boots. You feel a shock as the snow starts to chill your feet, but its still better than slipping and falling.
     ~Stamina -= 5
     ->mountain3
 
@@ -43,7 +43,7 @@ You keep your steps light and careful. You are so high up and the last thing you
     ->mountain3
     
 + [Grab a Walking Stick]
-You find an old branch on the ground and decide it would make the perfect companion to traversing this mountain. When you put your weight on it, you immeadiately slip and fall. You land on your arm sevearly bruising it. You brace yourself ready to tumble down the side of the mountain but that moment never happens. You just get back up and push your self to go further.
+You find an old branch on the ground and decide it would make the perfect companion to traversing this mountain. When you put your weight on it, you immediately slip and fall. You land on your arm sevearly bruising it. You brace yourself ready to tumble down the side of the mountain but that moment never happens. You just get back up and push your self to go further.
     ~Stamina -= 10
     ->mountain3
     
@@ -51,18 +51,18 @@ You find an old branch on the ground and decide it would make the perfect compan
 
 //same screen
 == mountain3 ==
-You no longer know where you are and the terrain ahead is not exactly walkable. Boulders about the size of you seem to have fallen over the cliff above blocking your path foreward. You stop and take in the situation. Lost in the mountains, alone. If you die, no one will be able to find your body. Your parents will have lost two children and it will have been all your fault. You have no idea how you're going to climb over these massive rocks but you need to, you need to end this no matter what happens to you.
+You no longer know where you are and the terrain ahead is not exactly walkable. Boulders about the size of you seem to have fallen over the cliff above blocking your path forward. You stop and take in the situation- Lost in the mountains, alone. If you die, no one will be able to find your body. Your parents will have two lost children and it will have been all your fault. You have no idea how you're going to climb over these massive rocks but you need to, you need to end this no matter what happens to you.
 ->main
 =main
 //non clickable 
 + [Use Your Blankets A Rope]
-You wrap your blanket around sharp point in the rocks and pull yourself up on top. You make it through safely but you blanket is now mangled and soaking we. You throw it aside and soon realize how warm it was keeping you. You are shivering the rest of the way.
+You wrap your blanket around sharp point in the rocks and pull yourself up on top. You make it through safely but your blanket is now mangled and soaking wet. You throw it aside and soon realize how warm it was keeping you. You are shivering the rest of the way.
     ~Stamina -= 5
     ->ending
     
 + [Squeeze through the Gaps]
-You try to squeeze through the gaps of the boulders. Very quickly you realize how tight these gaps are but you dont want to risk climbing again. You desperately squeeze you self as far as you can.
-And then you stop. You can't push any further. You're stuck. You thrash violently trying to pull the left half of your body through. You're so close, so close, please. You cry for your parents, for anybody but nobody comes. You go limp. You are tired, confused and scared. You just want to give up and just as you start to slide down the gap and fall to the floor. It takes you a second to realize what happened. You wiggle free, sit down  take a breath, and force your self foreward.
+You try to squeeze through the gaps of the boulders. Very quickly you realize how tight these gaps are but you don't want to risk climbing again. You desperately squeeze yourself as far as you can.
+And then you stop. You can't push any further. You're stuck. You thrash violently trying to pull the left half of your body through. You're so close, so close, please. You cry for your parents, for anybody but nobody comes. You go limp. You are tired, confused and scared. You just want to give up and just as you start to slide down the gap and fall to the floor. It takes you a second to realize what happened. You wiggle free, sit down,  take a breath, and force yourself foreward.
 ~Stamina -= 10
 ->ending
     
