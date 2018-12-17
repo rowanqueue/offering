@@ -1,3 +1,5 @@
+==ACT5==
+->act5Road
 ==act5Road==
 #v_clearScreen
 #v_act5/road
@@ -12,7 +14,7 @@ Sure enough, you see a pickup truck coming up from behind you.
 *   [Running from crazy man] :player:"I'm running from a crazy man,": you say.
 *   [Need to go skiing] :player:"I need to get to the ski resort,": you say.
 
-- :driver:"[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
+- :dad:[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
 //click car
 *   [Get in]
 #v_fadeOut
@@ -24,7 +26,7 @@ Sure enough, you see a pickup truck coming up from behind you.
 ->mountain1
 
 ==act5Arrival==
-#v_act5/snowy_house
+#v_act5/snowyhouse
 #v_clearScreen
 You finally see the small wooden cabin, just where Kari's map said it would be. The lights are on, but it's quiet. 
 //click door
