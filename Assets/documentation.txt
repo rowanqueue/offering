@@ -7,8 +7,9 @@ VISUALS
 	Change Image : 	#v_nameOfFile
 	Fade Out :	#v_fadeOut
 	Fade In :	#v_fadeIn
-	*Enter Object	#v_enter_nameOfFile
-	*Exit Object	#v_exit_nameOfFile
+	Enter Object	#v_enter_nameOfFile
+	Exit Object	#v_exit
+	Clear Screen : #v_clearScreen
 SOUNDS
 All sound commands default to ambience, but you can add a tag to the end.
 - _a for ambience
