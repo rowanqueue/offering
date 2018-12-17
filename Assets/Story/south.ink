@@ -1,5 +1,6 @@
 == mountain1 == 
 = intro
+#v_fadeIn
 You are already very high up. Behind you, you can see the glint of the ocean in the horizon. Snow crunches beneath your feet. Coming from New York, you were prepared for snow but not like this. Sleet slashes at your face. The blanket helps but not much. You now face foreward, looking up at the mountain top. A muddy road lies ahead of you. You feel closer to Kari than ever before. Audi told you there would people up here who can help.
     ->main
     
@@ -72,4 +73,4 @@ And then you stop. You can't push any further. You're stuck. You thrash violentl
 
 ==ending==
 You wipe away the tears and carry on. You see lights in the distance. You realize what they are and start running to the house.  
-->END
+->act5Arrival
