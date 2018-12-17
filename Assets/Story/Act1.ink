@@ -6,6 +6,7 @@ VAR given_drawing = false
 == town ==
 = intro
 #s_stop
+#v_act1/dock
 //TOO MUCH, ALSO WEIRD??
 The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, skiing, whale watching, and bird watching.
 *   [Ask about town]
