@@ -194,6 +194,9 @@ public class NewStoryManager : MonoBehaviour {
                             duration = 0;
                             lerpState = 2;
                             break;
+                        case "clearScreen":
+                            displayText.text = "";
+                            break;
                         default:
                             thisKnot = visualCommand;
                             break;
@@ -284,7 +287,6 @@ public class NewStoryManager : MonoBehaviour {
             {
                 currentKnot = thisKnot;
                 //this is where you could reset the scene
-                displayText.text = "";
                 displayImage.sprite = Resources.Load<Sprite>(currentKnot);
             }
             //done checking knots!!
@@ -322,7 +324,7 @@ public class NewStoryManager : MonoBehaviour {
         if (typing)
         {
             displayText.color = Color.white;
-            if (Time.time > lastTypedTimed + typeSpeed)
+            if (Time.time > lastTypedTimed + typeSpeed && whatToType.Length >= 1)
             {
                 lastTypedTimed = Time.time;
                 //audio
@@ -372,6 +374,14 @@ public class NewStoryManager : MonoBehaviour {
                 else//finish typing this chunk
                 {
                     displayText.text += "\n \n";//paragraph break (makes an empty line after it)
+                    whatToType = "";
+                    typing = false;
+                }
+            }
+            else
+            {
+                if(whatToType.Length <= 1)
+                {
                     whatToType = "";
                     typing = false;
                 }

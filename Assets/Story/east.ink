@@ -1,5 +1,7 @@
-== entrance == 
+== entrance ==
+#v_clearScreen
 #s_audio/ThunderRain
+#s_audio/SpoopyPiano_m
 #v_act2/entrance
 You are lost and confused in the middle of this forest. You are completely surrounded by a surprising amount of trees, and you see a strange rune carved on a tree.
 -> main

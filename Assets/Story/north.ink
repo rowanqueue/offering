@@ -5,6 +5,7 @@ VAR Gone_forth = false
 VAR eagle_attempts = 0
 == trails ==
 = intro
+#v_clearScreen
 #s_audio/WindStooorm
 #v_act3/northClimbingUpHills
 The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. You climb up and down hills hoping to spot you cousin's hide out from so far up. This hill in particular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip the higher you climb under the loose gravel of the trail; you don't feel safe. -> main
@@ -28,21 +29,23 @@ The further north you go, the steeper it gets, the more your ankles hate you. Un
     
 == cave ==
 = intro
+#v_clearScreen
 #v_act3/northBoat
 The boat looks just as Kari described it. You would try and get a closer look but a massive eagle has nested right near the entrance. She sits at the helm staring at you, menacingly waiting for you to make a move. -> main 
 = main
- * [Approach the eagle] 
+ * [Approach the eagle]
     ~eagle_attempts+=1
     You approach the boat slowly, carefully eyeing the eagle. As soon as you get close it flaps its wings and brandishes its sharp talons. You wont be getting in with the eagle there.->main
- * [Throw a pebble at the eagle] 
+ * [Throw a pebble at the eagle]
     ~eagle_attempts+=1
-    You chuck your rock near the eagle, hoping that will scare it. You are shocked when it actually hits. And even more shocked when does not react. It just continues to look at you with its piercing gaze. ->main 
- * {eagle_attempts > 1} [Shout at it] 
+    You chuck your rock near the eagle, hoping that will scare it. You are shocked when it actually hits. And even more shocked when does not react. It just continues to look at you with its piercing gaze.->main 
+ * {eagle_attempts > 1} [Shout at it]
  #t_speedUp
  #t_speedUp
     You're tired and in pain and you just want to find Kari and go home. You scream and let out all your anger the best you can. It screeches back, flaps its wings, and swoops toward you. You close your eyes and duck. You feel wind rush over your head and a talon slash into your shoulder. 
     #t_reset
-    You stay folded over in fear for a while until you no longer hear the flapping of the eagle's wings, leaving only a feather behind. You take it, as a reminder, and climb into the boat. ->act3Boat
+    You stay folded over in fear for a while until you no longer hear the flapping of the eagle's wings, leaving only a feather behind. You take it, as a reminder.
+    ** [Enter Boat]->act3Boat
     
     
     

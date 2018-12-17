@@ -1,4 +1,6 @@
 == ACT4 ==
+#v_clearScreen
+#s_audio/Farm_m
 #v_act4/barnEx
 //throw grandpa and audi here
 You drive up to a decrepit old farm. It’s definitely not Dad’s parents’ place by the water. Grandpa answers your question before you ask it. 
@@ -22,7 +24,8 @@ She smiles.
 #t_slowdown
 :audie:milk the cows.”:
 -> west
-== grandpayelling == 
+== grandpayelling ==
+#v_clearScreen
 You knock on the door and show Grandpa the bucket of milk. He looks at you and looks at the bucket and snarls. 
         :grandpa: "What is this? You call this milk? You are useless! Just like the rest of them, useless burdens on our town! Look at this, its pink! How dare you hurt those cows with your stupid city boy hands. Did you even strip them? Are you trying to make me sick?"
         *[Try to explain] You stammer trying to find a response but you're too scared. You don't know what hes capable of. You don't want him to hurt you. 
