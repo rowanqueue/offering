@@ -26,11 +26,11 @@ You don't even know how to milk a cow, but to protest would be pointless. You ro
     + [Examine Grandpa] He feels like a stranger to you now. You've only known him for a a day or so and he already hates you. Why? What did you do? He changed so quickly, it really scares you. Now you have to milk a cow? You don't even know how to milk a cow! You need to be looking for Kari but you're too scared to tell him that.  
     ->main
     
-    + [Examine Audi] You would talk to her but you don't want get close to Grandpa right now. No one here will help. Your parents are gone, your friends are miles away, your Grandpa refuses to talk to you, and you cousin has dissapeared. You just feel so alone.
-    ->main
+    //+ [Examine Audi] You would talk to her but you don't want get close to Grandpa right now. No one here will help. Your parents are gone, your friends are miles away, your Grandpa refuses to talk to you, and you cousin has dissapeared. You just feel so alone.
+    //->main
 
     + [Go to pasture]You head towards the cow smell reluctantly. You don't want to do this, your stomach churns at the thought of what you have to do. ->pasture
-    +{milk > 2} [Show Grandpa] -> grandpayelling
+    +{cow1milked and cow2milked and cow3milked} [Show Grandpa] -> grandpayelling
         
 == pasture ==
 = intro
@@ -138,13 +138,14 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
     
 == pasture3 ==
 = intro
-#v_act4/hillBucket
+
 Your feet start to hurt again. You haven't really had a chance to fully recover from yesterday. Everything is moving so fast but it feels like you have made so little progress in finding your cousin.  
  ->main
  
 = main
-{hasBucket: 
 #v_act4/hillnonebucket
+{not hasBucket: 
+#v_act4/hillBucket
 }
 
     * ^B:C,8:10^[Examine bucket]
@@ -169,7 +170,7 @@ Your feet start to hurt again. You haven't really had a chance to fully recover 
 
     + {not cow3milked} ^F:J,6:8^[Milk Cow]
         {hasBucket:
-        ~cow1milked = true
+        ~cow3milked = true
         }
         {not hasBucket: You are not prepared to do that right now. ->cow3}
         ->cowtail

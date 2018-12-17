@@ -1,7 +1,7 @@
 == ACT4 ==
 #v_clearScreen
 #s_audio/Farm_m
-#v_act4/barnEx
+#v_act4/westDoorOpen
 //throw grandpa and audi here
 You drive up to a decrepit old farm. It’s definitely not Dad’s parents’ place by the water. Grandpa answers your question before you ask it. 
 ~coin +=1
@@ -25,6 +25,7 @@ She smiles.
 #t_speedDown
 :audie:milk the cows.”:
 
+#v_act4/barnEx
 Grandpa heads inside and they slam the door in your face, laughing.
 -> west
 == grandpayelling ==
@@ -33,7 +34,7 @@ You knock on the door and show Grandpa the bucket of milk. He looks at you and l
         :grandpa: "What is this? You call this milk? You are useless! Just like the rest of them, useless burdens on our town! Look at this, its pink! How dare you hurt those cows with your stupid city boy hands. Did you even strip them? Are you trying to make me sick?"
         *[Try to explain] You stammer trying to find a response but you're too scared. You don't know what he's capable of. You don't want him to hurt you. 
     - :grandpa: "Useless, stupid boy! I'll show you how someone of my blood should milk a cow."
-    Audhumbla calls from inside - :audy:"That's enough, Jorgur. Bring the boy inside!":
+    Audhumbla calls from inside - :audie:"That's enough, Jorgur. Bring the boy inside!":
     Grandpa snaps back, :grandpa:"Quiet Audhumbla! This is my grandchild and I will do as I please.":
         He pulls you by the ear and you yelp in pain. He does not let go. You have trouble breathing and your eyesight is getting blurry. You are terrified.  
         *[Cry out] You try to call out for someone to help but you can't get the words out.
@@ -70,4 +71,4 @@ You tear out of the barn and run straight into Audhumbla. She looks down at you 
 *   [Then help me!]
 - :audie:"Wait okay! To the south, down that road... some old members of the kindred run a ski mountain - find them!":
 With no time to think, you take off towards the mountains.
-->mountain1
+->ACT5
