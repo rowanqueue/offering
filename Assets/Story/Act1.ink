@@ -29,7 +29,9 @@ Grandpa walks into the house and takes a seat.
 :grandpa:"Welcome home.":
 :dad:"It hasn't changed at all,": says Dad. 
 :grandpa:"Kari, please show our guests to their rooms.":
-:kari:"Yes, grandfather.":
+
+:kari:"Yes, grandfather.": He looks at you. 
+:kari:"Cousin! Follow me upstairs!": 
 
 *   ^H:H,2:5 ^[Go upstairs]->intro_upstairs
 
