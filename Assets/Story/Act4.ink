@@ -1,6 +1,7 @@
 == ACT4 == 
 You drive up to a decrepit old farm. It’s definitely not Dad’s parents’ place by the water. Grandpa answers your question before you ask it. 
-:grandpa: “This is Audhumbla Ívarsdóttir’s house. She is the only remaining member of my kindred. Everyone else abandoned us to live with comforts, they abandoned the ways of our forefathers. I want you to see the life that we have.”:
+//COIN ACTIVATE
+:grandpa: “This is Audhumbla Ívarsdóttir’s house. She is the only remaining member of my kindred. Everyone else abandoned the ways of our forefathers to live with modern comforts. I want you to see the life that we have.”:
 
 *    [What about other grandparents?] :player:”What about my other grandparents?”: you ask.
     :grandpa:”They can wait. I don’t care to see them. It’s been two years since I talked to them last.”:
