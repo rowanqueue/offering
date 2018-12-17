@@ -15,7 +15,6 @@ INCLUDE Epilogue
 
 VAR Stamina = 100
 VAR coin = 0
-->act5Arrival
 -> start
 == start ==
 -> beginning
