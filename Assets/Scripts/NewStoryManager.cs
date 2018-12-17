@@ -32,6 +32,7 @@ public class NewStoryManager : MonoBehaviour {
     //sound shit
     AudioSource ambience;
     AudioSource music;
+    AudioSource music2;
 
     //fade shit
     public Image fade;
@@ -62,6 +63,7 @@ public class NewStoryManager : MonoBehaviour {
         {
             music = transform.GetChild(1).GetComponent<AudioSource>();
         }
+        music2 = transform.GetChild(2).GetComponent<AudioSource>();
         ambience = transform.GetChild(0).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         speakerToColor = new Dictionary<string, string>
@@ -212,6 +214,9 @@ public class NewStoryManager : MonoBehaviour {
                         {
                             case 'm':
                                 source = music;
+                                break;
+                            case '2':
+                                source = music2;
                                 break;
                             case 's':
                                 //implement later!!
