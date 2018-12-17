@@ -76,7 +76,7 @@ You walk inside with Grandpa.
 *   [Do you know where Kari is?] :player:"Oh, Kari is just out playing. He knows the area well, your parents never listen to me. Here.":
 *   [Okay]:player:"Okay.":
 //rewrite this based on act2 damage
-~Stamina += 15
+~Stamina += 5
 - Grandpa wets a cloth in the sink and cleans you up a bit. He gives you a bandage.
 :grandpa:"Okay, time for bed. Go upstairs.":
 *   ^H:H,2:5 ^[Go to bed]->act2Home_bedroom
@@ -89,6 +89,7 @@ Finally back in your room, you are exhausted and cannot wait to get into bed.
 You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. 
 #v_fadeOut
 Eventually you drift off.
+~Stamina += 10
 #t_speedDown
 #t_speedDown
 - :mom: "Krútt... wake up...":
@@ -100,4 +101,6 @@ You can't tell what time it is because this bedroom has no windows, but you have
 She leaves and you drift back asleep.
 //fade out
 #v_fadeOut
-* [Dream] -> ACT3
+* [Dream] 
+~Stamina += 10
+-> ACT3

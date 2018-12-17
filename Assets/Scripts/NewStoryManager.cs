@@ -71,8 +71,8 @@ public class NewStoryManager : MonoBehaviour {
             {"kari","#b18829ff" },
             {"mom", "#a783afff" },
             {"dad", "#869b63ff" },
-            {"grandpa","#dd503eff" },
-            {"audie","#ffa332ff" },
+            {"grandpa","#dd503eff"},
+            {"audie","#ffa332ff"  },
             {"brynja","#f1a6fcff" },
             {"asta","#50714fff"},
             {"player", "#86c6ceff" }

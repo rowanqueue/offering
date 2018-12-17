@@ -52,6 +52,7 @@ You find an old branch on the ground and decide it would make the perfect compan
 //new screen
 == mountain3 ==
 You no longer know where you are and the terrain ahead is not exactly walkable. Boulders about the size of you seem to have fallen over the cliff above blocking your path foreward. You stop and take in the situation. Lost in the mountains, alone. If you die, no one will be able to find your body. Your parents will have lost two children and it will have been all your fault. You have no idea how you're going to climb over these massive rocks but you need to, you need to end this no matter what happens to you.
+-> main
 =main
 //non clickable 
 + [Use Your Blankets A Rope]
@@ -60,7 +61,7 @@ You wrap your blanket around sharp point in the rocks and pull yourself up on to
     ->mountain4
     
 + [Squeeze through the Gaps]
-You try to squeeze through the gaps 
+You try to squeeze through the gaps -> mountain4
     
 + [Find a Safer Path] You walk around the cliffside looking for a better path. You frantically pace around not ready to risk your life climbing something again. You search a bit more. And then a bit more. There has to be a better way. You are unable to find one. 
     ->main
