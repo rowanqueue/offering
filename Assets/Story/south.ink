@@ -1,13 +1,13 @@
 == mountain1 == 
 = intro
-#v_fadeIn
+#v_act5/snowentrance
 You are already very high up. Behind you, you can see the glint of the ocean in the horizon. Snow crunches beneath your feet. Coming from New York, you were prepared for snow but not like this. Sleet slashes at your face. The blanket helps but not much. You now face foreward, looking up at the mountain top. A muddy road lies ahead of you. You feel closer to Kari than ever before. Audi told you there would people up here who can help.
     ->main
     
  =main
  
 //clickable 
-+ [Head Back Down the Mountain] There is no going back.->main
+//+ [Head Back Down the Mountain] There is no going back.->main
 
 +[Examine Sign] The sign point toward the trail. "Stay On The Path! -Jóhannson Ski" -> main
 
@@ -31,6 +31,7 @@ With the wind blowing in your face, its hard to tell whats in front of you. Look
 
 //new screen
 ==mountain2 ==
+#v_act5/snowymountain
 The higher you climb the icier it gets. The ground has slowly been hardening beneath you and it is now to the point where you start to slip. 
 
 //non clickable 
@@ -52,6 +53,7 @@ You find an old branch on the ground and decide it would make the perfect compan
 
 //same screen
 == mountain3 ==
+#v_act5/snowyrockypath
 You no longer know where you are and the terrain ahead is not exactly walkable. Boulders about the size of you seem to have fallen over the cliff above blocking your path forward. You stop and take in the situation- Lost in the mountains, alone. If you die, no one will be able to find your body. Your parents will have two lost children and it will have been all your fault. You have no idea how you're going to climb over these massive rocks but you need to, you need to end this no matter what happens to you.
 ->main
 =main
@@ -72,10 +74,5 @@ And then you stop. You can't push any further. You're stuck. You thrash violentl
 
 
 ==ending==
-<<<<<<< HEAD
 You wipe away the tears see lights in the distance. You realize what they are and start running to the house.  
-->END
-=======
-You wipe away the tears and carry on. You see lights in the distance. You realize what they are and start running to the house.  
 ->act5Arrival
->>>>>>> 95b6881e00952d04f6bb0e1c7e9173039f54140c

@@ -30,7 +30,8 @@ You've reached the foggy thicket of trees and Kari is speeding right along.
 *   ^G:H,9:10 ^[Follow]->campfire
 
 ======== campfire ========
-#v_act2/entrance
+#v_act2/meadowcampfire
+#v_enter_act2/entranceKARI
 #s_audio/Piano LeadUp_m
 ~coin +=1
 The grass gives way to dirt as you reach a clearing between the trees. There is a lean-to and some logs set up as benches around a fire pit. 
@@ -44,6 +45,7 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 #s_audio/ThunderRain
 - :kari:"Wanna see something funny?":
 *   [Examine wooden sculpture]
+#v_exit
 - Huh. Where did he go?
 *   [Start looking for him] He's gone. 
 -> entrance
