@@ -53,8 +53,16 @@ public class NewStoryManager : MonoBehaviour {
     public int stamina;
     Story.VariableObserver observer;
 	void Awake () {
+        GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
+        if(musicFind != null)
+        {
+            music = musicFind.GetComponent<AudioSource>();
+        }
+        else
+        {
+            music = transform.GetChild(1).GetComponent<AudioSource>();
+        }
         ambience = transform.GetChild(0).GetComponent<AudioSource>();
-        music = transform.GetChild(1).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         speakerToColor = new Dictionary<string, string>
         {
@@ -63,8 +71,8 @@ public class NewStoryManager : MonoBehaviour {
             {"dad", "#869b63ff" },
             {"grandpa","#dd503eff" },
             {"audi","#ffa332ff" },
-            {"southWoman","#f1a6fcff" },
-            { "southMan","#50714fff"},
+            {"brynja","#f1a6fcff" },
+            {"magnus","#50714fff"},
             {"player", "#86c6ceff" }
         };
         story = new Story(inkJSONAsset.text);
@@ -215,13 +223,13 @@ public class NewStoryManager : MonoBehaviour {
                             source.Stop();
                             break;
                         case "volumeUp":
-                            source.volume += 0.25f;
+                            source.volume += source.volume*0.25f;
                             break;
                         case "volumeDown":
-                            source.volume -= 0.25f;
+                            source.volume -= source.volume*0.25f;
                             break;
                         case "reset":
-                            source.volume = 0.5f;
+                            source.volume = 0.6f;
                             break;
                         case "lerpUp":
                             whatTolerp = 1;

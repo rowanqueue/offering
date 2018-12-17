@@ -911,6 +911,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df53df637fb9782439830edfdb87e99c, type: 3}
   - {fileID: 8300000, guid: 0080221c81e7511418c63f75d7bfa02b, type: 3}
   - {fileID: 8300000, guid: fbf5a2d80240ccb46b42e449890a22b0, type: 3}
+  momVoice:
+  - {fileID: 8300000, guid: 6b1849924fb74fb4b8482ceda8330635, type: 3}
+  - {fileID: 8300000, guid: f9d92851eedc0bf41952cdfef231fd5f, type: 3}
 --- !u!1 &215761283
 GameObject:
   m_ObjectHideFlags: 0
@@ -3526,7 +3529,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

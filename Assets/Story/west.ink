@@ -27,7 +27,6 @@ You can still see Grandpa and Audi talking through the window. Every once in a w
 
     + [Go to pasture] You head towards the cow smell reluctantly. You don't want to do this, your stomach churns at the thought of what you have to do. 
     ->pasture
-    //this needs to be split into at least 3 things
     +{milk > 2} [Show Grandpa] -> grandpayelling
         
 == pasture ==
@@ -36,14 +35,15 @@ You stop at foot of some rolling hills. You are astonished by the size of this f
  ->main
  
 = main
-    + {!eatenBerries and !hasBerries} [Examine bushes] ->bushes
+    + {!eatenBerries or !hasBerries} [Examine bushes] ->bushes
     + [Examine cow] 
-        {hasBucket: ->cow1} 
         {cow1milked : This was a nice cow -> main}
+        {hasBucket: ->cow1} 
         You don't feel like your ready to do that yet. 
         ->main
     +[Go forward] ->pasture2
     +[Go right] ->pasture3
+    +[Go back] -> lady
     
 = bushes
     You look at the bushes and find brightly colored berries hanging from the branches. 
@@ -73,11 +73,16 @@ You stop at foot of some rolling hills. You are astonished by the size of this f
             ->cow1
     
     + { not cow1milked}[Milk Cow]
-        {cow1Soothed and hasBucket} ~milk += 1
-        {cow1Soothed and hasBucket} ~cow1milked = true
+        {cow1Soothed and hasBucket:
+        ~milk += 1
+        }
+        {cow1Soothed and hasBucket: 
+            ~cow1milked = true
+        }
         {hasBucket and cow1Soothed: You pull out the bucket, sit down, and stare at the udders. You don't like how they feel in your hands. They're fleshy, moist, and warm to the touch. You feel sick every time you squeeze them. You try not to gag while the bucket fills. ->main}
         {not hasBucket: You are not prepared to do that right now. ->cow1}
         {not cow1Soothed: You reach down and the cow stomps her foot. You are scared to go any further. ->cow1}
+    + [Step Away] -> main
     
     
 == pasture2 ==
@@ -91,8 +96,8 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
         ->main
         
     + [Examine cow] 
-        {hasBucket: ->cow2} 
         {cow2milked: This was also a nice cow. -> main}
+        {hasBucket: ->cow2} 
         You don't feel like your ready to do that yet. 
         ->main
         
@@ -103,17 +108,26 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
 
     + [Give The Cow What It Wants]
         {hasBerries: You take some berries out of your pocket to feed the cow some berries. You feel its tounge brush up against your hand as it takes them. It nuzzles your hand once it finishes chewing.}
-        {hasBerries} ~ cow2Soothed = true
+        {hasBerries:
+            ~cow2Soothed = true
+        }
         {not hasBerries: You don't know what you can do.}
         ->cow2
     
     + {not cow2milked} [Milk Cow]
-        {cow2Soothed and hasBucket} ~cow2milked = true
-        {hasBucket and cow2Soothed} ~milk += 1
+        {cow2Soothed and hasBucket:
+            ~cow2milked = true
+        }
+        {hasBucket and cow2Soothed:
+            ~milk += 1
+        }
         {hasBucket and cow2Soothed: You tug on the udders hoping to get this over with as soon as possible. The cow cries out in pain and knocks you to the ground when you get up you see the bucket contains drops of blood. ->main}
         {not hasBucket: You are not prepared to do that right now. ->cow2}
-        {not cow2Soothed} ~stamina -= 5
+        {not cow2Soothed:
+            ~stamina -= 5
+        }
         {not cow2Soothed: You get closer and the cow squeals and stomps off angrily, stepping on your foot on the way out. ->cow2}
+    + [Step Away] -> main
     
     
     
@@ -130,8 +144,8 @@ Your feet start to hurt again. You haven't really had a chance to fully recover 
         ->main
         
     + [Examine cow] 
-        {hasBucket: ->cow3} 
         {cow3milked: This was the nicest cow of all. -> main}
+        {hasBucket: ->cow3} 
         You don't feel like your ready to do that yet. 
         ->main
         
@@ -145,12 +159,16 @@ Your feet start to hurt again. You haven't really had a chance to fully recover 
         ->cow3
 
     + {not cow3milked} [Milk Cow]
-        {hasBucket} ~cow1milked = true
+        {hasBucket:
+        ~cow1milked = true
+        }
         {not hasBucket: You are not prepared to do that right now. ->cow3}
         ->cowtail
+    + [Step Away] -> main
         
     = cowtail
         You sit down to milk the cow and the cow turns away. You try to move with it, being careful of its feet. Once you finally settle it down, the cow slaps you in the face with its tail. You move around hoping to get out of its reach but the cow moves with you. You start to get angry.
+            ~cow3milked = true
                 *[Swat the tail away] You get frustrated and slap the tail out of your face. This startles the cow and it kicks its hind legs. They narrowly miss you. But if it hadn't you would have been seriously injured. You hastily squeeze the milk you need ignoring every swat in the face.
                     ~stamina -= 15
                     ~milk += 1

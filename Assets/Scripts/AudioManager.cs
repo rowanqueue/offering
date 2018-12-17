@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour {
     public static AudioManager me;
     public GameObject audioPrefab;
     public AudioSource[] sounds;
+    float baseVolume;
 	// Use this for initialization
 	void Awake () {
         me = this;
@@ -15,6 +16,7 @@ public class AudioManager : MonoBehaviour {
             GameObject obj = Instantiate(audioPrefab, transform);
             sounds[i] = obj.GetComponent<AudioSource>();
         }
+        baseVolume = sounds[0].volume;
 	}
     private void Update()
     {
@@ -38,7 +40,7 @@ public class AudioManager : MonoBehaviour {
             }
             audio.clip = clip;
             audio.Play();
-            audio.volume = 1;
+            audio.volume = baseVolume;
             break;
         }
     }
