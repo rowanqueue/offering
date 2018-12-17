@@ -3,7 +3,7 @@
 == afterDinner ==
 //needs kari added
 #v_clearScreen
-#v_act2/outsideHouse
+#v_act2/outsideHouseSecond
 :kari:"I'm so excited you're here! Did you have a nice dinner?":
 *   [Yes] :player: "Yeah, it was really good, actually.":
 *   [No] :player: "Ugh! How can you stand eating that fish? I feel like I'll never get that smell out of my nose":
@@ -12,24 +12,29 @@
 *   ^I:J,3:5 ^[Follow]->enterwood1
 
 == enterwood1 ==
+#v_enter_act2/forrest5KARI
 #v_act2/forest5
 You've reached the foggy thicket of trees and Kari is speeding right along. 
 :kari:"Come on, this way!":
 *   ^A:B,6:7^[Follow]->enterwood2
 == enterwood2 ==
+#v_enter_act2/forrest4KARI
 #v_act2/forest4
 :kari:"Over here!":
 *   ^G:H,6:7^[Follow]->enterwood3
 == enterwood3 ==
+#v_enter_act2/forrest3KARI
 #v_act2/forest3
 :kari:"Just a bit further!":
 *   ^A:B,6:7 ^[Follow]->enterwood4
 == enterwood4 ==
+#v_enter_act2/forrest2KARI
 #v_act2/forest2
 :kari:"We're almost there, it's just through here!":
 *   ^G:H,9:10 ^[Follow]->campfire
 
 ======== campfire ========
+#v_enter_act2/entranceKARI
 #v_act2/entrance
 #s_audio/Piano LeadUp_m
 ~coin +=1
@@ -51,7 +56,7 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 //needs parents
 #v_clearScreen
 #s_audio/WAVESMENUSPROLOGUE_m
-#v_act2/outsideHouseAfter
+#v_act2/outsideHouseThird
 You emerge from the trees and your parents run to you and embrace you. 
 :mom:"Are you okay?":
 *   [Yes] :player:"Yeah, I... I think so":
@@ -68,7 +73,7 @@ You emerge from the trees and your parents run to you and embrace you.
 *   [Go inside]->act2Home_inside
 == act2Home_inside ==
 //needs just grandpa
-#v_act2/houseInterior
+#v_act2/insideHouseJustGramps
 You walk inside with Grandpa. 
 :grandpa: "Just you and me now, child. You should go to bed like your mother said.":
 *   [Are you concerned?]:player:"Are you scared about Kari?": you ask.
@@ -76,23 +81,28 @@ You walk inside with Grandpa.
 *   [Do you know where Kari is?] :player:"Oh, Kari is just out playing. He knows the area well, your parents never listen to me. Here.":
 *   [Okay]:player:"Okay.":
 //rewrite this based on act2 damage
-~Stamina += 15
+{Stamina < 75::grandpa: "You look tired, child. Not use to the outdoors, eh. Come here let me help you"}
+{Stamina < 75:
+ ~Stamina += 15
+ }
 - Grandpa wets a cloth in the sink and cleans you up a bit. He gives you a bandage.
 :grandpa:"Okay, time for bed. Go upstairs.":
 *   ^H:H,2:5 ^[Go to bed]->act2Home_bedroom
 == act2Home_bedroom ==
 //get rid of kari, fade in mom
 #v_clearScreen
-#v_act2/bedroom
+#v_act2/bedroomEMPTY
 Finally back in your room, you are exhausted and cannot wait to get into bed. 
 *   ^A:F,5:8 ^[Get into bed]
 You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. 
 #v_fadeOut
+~Stamina += 5
 Eventually you drift off.
 #t_speedDown
 #t_speedDown
 - :mom: "Krútt... wake up...":
 #t_reset
+#v_enter_act2/fadedMom
 Your mother shakes you awake. 
 #v_fadeIn
 You can't tell what time it is because this bedroom has no windows, but you haven't been asleep long. 
@@ -100,4 +110,6 @@ You can't tell what time it is because this bedroom has no windows, but you have
 She leaves and you drift back asleep.
 //fade out
 #v_fadeOut
+#v_exit_
+~Stamina += 5
 * [Dream] -> ACT3

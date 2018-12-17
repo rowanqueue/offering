@@ -7,40 +7,10 @@ You are lost and confused in the middle of this forest. You are completely surro
 -> main
 = main
 //may just be displayed by visuals
-<<<<<<< HEAD
-    +[Examine Sign]
-    The sign says "Beware the Dragon's Forest! Wander at your own risk!" and has a compass with norse runes replacing the traditional N, E, S, W.
-    ->main
-    +[GO NORTH] -> wood1
-    
-== wood1 ==
-The trees continue to close in on you and its already becoming difficult for you to find your way.
-
-You see a withered tree with etchings similar to those on the sign. 
-
--> main
-
-= main
-#CORRECT ANSWER: NORTH
-//CLUE: NORTH
-You currently face north.
-    +[GO NORTH] -> wood2
-    +[GO EAST] 
-    You walk on for what feels like forever... all these trees look the same. 
-    ->entrance
-    +[GO SOUTH] 
-    You walk on for what feels like forever... all these trees look the same. 
-    ->entrance
-    +[GO WEST]
-    You walk on for what feels like forever... all these trees look the same.  ->entrance
-    
-    
-
     //+[Examine Sign]
     //The sign says "Beware the Dragon's Forest! Wander at your own risk!" and has a compass with norse runes replacing the traditional N, E, S, W.
     //->main
     +^G:H,5:7 ^[GO NORTH] -> wood2
->>>>>>> origin/master
 == wood2 ==
 #v_act2/forest2
 The rain is pouring hard, everything is so cold and wet.
