@@ -3,7 +3,7 @@
 == afterDinner ==
 //needs kari added
 #v_clearScreen
-#v_act2/outsideHouse
+#v_act2/outsideHouseSecond
 :kari:"I'm so excited you're here! Did you have a nice dinner?":
 *   [Yes] :player: "Yeah, it was really good, actually.":
 *   [No] :player: "Ugh! How can you stand eating that fish? I feel like I'll never get that smell out of my nose":
@@ -83,7 +83,7 @@ You walk inside with Grandpa.
 == act2Home_bedroom ==
 //get rid of kari, fade in mom
 #v_clearScreen
-#v_act2/bedroom
+#v_act2/bedroomEMPTY
 Finally back in your room, you are exhausted and cannot wait to get into bed. 
 *   ^A:F,5:8 ^[Get into bed]
 You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. 

@@ -15,7 +15,7 @@ The ferry pulls into the harbor and you drive off the boat in the rental car. Th
     
 == arrival ==
 //needs change of people
-#v_act1/outsideHouse
+#v_act1/outsideHouseFirst
 After an hour's drive through what seems like completely empty land you arrive at a small house. A man who must be your grandfather waits out front. He hugs your dad and then your mom. You wait in the car and watch. He gestures to you, and you look to your mother. She nods.
 *   [Get out of the car] You get out of the car and walk over, getting a better look at him- Grandpa is a tall man, hunched over a cane but still an imposing figure. To his right, your younger cousin, who smiles at you mouth agape.
 - Grandpa speaks to you in English, finding his way slowly through the words-
