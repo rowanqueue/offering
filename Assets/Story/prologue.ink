@@ -1,11 +1,12 @@
 == beginning == 
 #s_audio/waves
+#s_audio/WAVESMENUSPROLOGUE_m
+
 //add in mom and dad
 #v_prologue/prologueArt
 FERRY TO FJALLVIK, NORTHERN ICELAND - MORNING
 
 You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
-
 //It's been five hours of flying and five hours of driving to get to this ferry, which Dad assures you is the only way to get to Fjallvík. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area.
 It feels like forever since you left New York, and every minute you spend on this ferry makes you crankier. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you finally arrive at your grandfather's house. You wish your parents hadn't come from a town so far out in the middle of nowhere.
 
