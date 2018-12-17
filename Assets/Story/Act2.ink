@@ -14,19 +14,19 @@
 #v_act2/forest5
 You've reached the foggy thicket of trees and Kari is speeding right along. 
 :kari:"Come on, this way!":
-*   [Follow]->enterwood2
+*   ^A:B,6:7^[Follow]->enterwood2
 == enterwood2 ==
 #v_act2/forest4
 :kari:"Over here!":
-*   [Follow]->enterwood3
+*   ^G:H,6:7^[Follow]->enterwood3
 == enterwood3 ==
 #v_act2/forest3
 :kari:"Just a bit further!":
-*   [Follow]->enterwood4
+*   ^A:B,6:7 ^[Follow]->enterwood4
 == enterwood4 ==
 #v_act2/forest2
 :kari:"We're almost there, it's just through here!":
-*   [Follow]->campfire
+*   ^G:H,9:10 ^[Follow]->campfire
 
 ======== campfire ========
 #v_act2/entrance
@@ -37,15 +37,14 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 *   What kind of celebrations? ->cousinConvo_campfire
 *   Who else comes here?->cousinConvo_campfire
 *   What happened to the other people?->cousinConvo_campfire
-+ -> 
-
++ -> fuck
+== fuck ==
 #s_audio/ThunderRain
-#s_lerpUp
 - :kari:"Wanna see something funny?":
 *   [Examine wooden sculpture]
 - Huh. Where did he go?
-*   [return] He's gone.->entrance
-
+*   [Start looking for him] He's gone. 
+-> entrance
 == act2Home_outside ==
 //needs parents
 #v_act2/outsideHouseAfter
