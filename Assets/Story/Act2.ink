@@ -37,10 +37,20 @@ You've reached the foggy thicket of trees and Kari is speeding right along.
 The grass gives way to dirt as you reach a clearing between the trees. There is a lean-to and some logs set up as benches around a fire pit. 
 :kari:"We made it, cousin! Oh, this is a very special place. Fifteen or so times a year, this is where grandpa and I gather with his friends for our the celebrations. There is always music and singing and good food! We used to do it more often. There used to be more people too.":->cousinConvo_campfire
 == cousinConvo_campfire ==
-*   What kind of celebrations? 
-    Asatru! Grandpa told me you don't practice but you should, it's wonderful!->cousinConvo_campfire
-*   Who else comes here?->cousinConvo_campfire
-*   What happened to the other people?->cousinConvo_campfire
+
+*   [Celebrations?] :player:"Celebrations?":
+    :kari:"We perform every blót here, throughout the year. It's an Asatru ritual.":
+    **  [Asatru?] :player:"What is Asatru?" 
+    :kari:"Grandpa told me you do not practice but it is hard for me to believe! You don't even know what it is?":
+        ***   [A little] :player:"A little,": you reply.
+                "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
+        ***   [Yes] :player:"I do, but remind me...":
+                "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
+        ***   [No]:player:"Not at all,": you reply.
+        "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
+*   [Who else comes here?]
+->cousinConvo_campfire
+
 + -> fuck
 == fuck ==
 #s_audio/ThunderRain
