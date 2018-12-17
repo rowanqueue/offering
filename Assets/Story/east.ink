@@ -41,8 +41,6 @@ You currently face north.
     You walk on for what feels like forever... all these trees look the same.  ->entrance
     
     
-    
-    
 == wood2 ==
 The rain is pouring hard, everything is so cold and wet.
 
