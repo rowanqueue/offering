@@ -31,7 +31,7 @@ You pick up a school notebook and begin to read.
 +  [Keep looking] You decide to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
-- :kari:"i have not written in this diary in a few months. grandpa does not allow me to speak english anymore or talk to the geirssons. the johannsons left the kindred too. I miss playing with björn and margrét johannson a lot but grandpa says i can not see them either. he has been very mean and yells a lot. he does not talk to grandma any more. at least auntie audie is still okay to talk to. i often sneak out to stay at her house in the west and she gives me milk. it does not seem like grandpa notices.":
+- :kari:"i have not written in this diary in a few months. grandpa does not allow me to speak english anymore or talk to the geirssons. the Johannsons left the kindred too. I miss playing with bJörn and margrét Johannson a lot but grandpa says i can not see them either. he has been very mean and yells a lot. he does not talk to grandma any more. at least auntie audy is still okay to talk to. i often sneak out to stay at her house in the west and she gives me milk. it does not seem like grandpa notices.":
     +  [Keep looking] You decide to keep looking through the boat. 
     ~seenBoat = seenBoat +1
     ->Insideboat
