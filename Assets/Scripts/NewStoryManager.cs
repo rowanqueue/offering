@@ -7,6 +7,7 @@ using Ink.Runtime;
 
 public class NewStoryManager : MonoBehaviour {
     public string cheatJump;//put knot here
+    public bool gameOver;
     public TextAsset inkJSONAsset;
     private Story story;
 

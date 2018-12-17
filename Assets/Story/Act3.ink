@@ -3,7 +3,8 @@ VAR hasPapers = false
 == ACT3 ==
 //fade in, grandpa's here
 #v_clearScreen
-#v_act3/bedroom
+#v_act3/bedroomEmpty
+#v_enter_fadedGRAMPS
 #v_fadeIn
 #s_audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
@@ -26,6 +27,7 @@ VAR hasPapers = false
     ->leaveHouse
     
 =leaveHouse
+#v_act3/insideHouseEmpty
     Grandpa heads out the front door. You sit down at the table and try to make yourself breakfast. Your parents still aren't home, neither is Kari. You don't think Grandpa understands how serious this is. You need to find Kari yourself.
     You get up, put on your coat and boots and leave through the front door. 
     Grandpa stops you.
@@ -52,7 +54,7 @@ You need to cause a distraction, find a way to lure him into the house.
 + [Click Stairs] ->UpstairsPuzzle
 
 =UpstairsPuzzle
-
+#v_act3/bedroomEmpty
 *[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
     ~hasPapers = true
     ->UpstairsPuzzle
