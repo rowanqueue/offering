@@ -11,11 +11,12 @@ public class Credits : MonoBehaviour {
     public int state;//0lerpingin,1staying,1lerpingout
     public string[] textToDisplay;
     float duration;
+    float durationVolume;
     int index;
-    GameObject destroyThis;
+    AudioSource destroyThis;
 	// Use this for initialization
 	void Start () {
-        destroyThis = GameObject.FindGameObjectWithTag("DestroyThis");
+        destroyThis = GameObject.FindGameObjectWithTag("DestroyThis").GetComponent<AudioSource>();
         textToDisplay = new string[] { "<b>Lead Writer</b><size=35>\nSpencer Bernstein</size>\n\n<b>Additional Writing</b><size=35>\nParker Crandell, McKenna Flanagan, Ajali Harrison, Rowan Q</size>",
             "<b>Lead Programmer</b><size=35>\nRowan Q</size>\n\n<b>Additional Programming</b><size=35>\nParker Crandell</size>",
             "<b>Lead Puzzle Designer</b><size=35>\nParker Crandell</size>\n\n<b>Additional Puzzle Design</b>\n<size=35>Spencer Bernstein, Rowan Q</size>",
@@ -35,6 +36,11 @@ public class Credits : MonoBehaviour {
             mod = 5.0f;
         }
         duration += Time.deltaTime*mod;
+        if(index >= textToDisplay.Length - 1)
+        {
+            durationVolume += Time.deltaTime * mod;
+            destroyThis.volume = Mathf.Lerp(1, 0.15f, durationVolume/(stayTime + lerpTime*2));
+        }
         if (state == 0)//lerping in!
         {
             displayText.color = Color.Lerp(Color.black, Color.white, duration/lerpTime);
@@ -69,7 +75,7 @@ public class Credits : MonoBehaviour {
                     //THIS IS WHERE WE THEN GO INTO THE REAL GAME
                     if(destroyThis != null)
                     {
-                        Destroy(destroyThis);
+                        //Destroy(destroyThis);
                         SceneManager.LoadScene(2);
                     }
                 }
