@@ -32,6 +32,11 @@ public class StartMenu : MonoBehaviour {
         {
             scrampText.color = Color.Lerp(Color.white, transparent, (duration - lerpTime * 2) / lerpTime);
             source.volume = 1 - (duration - lerpTime * 2) / lerpTime;
+            /*source.volume = 1 - (duration - lerpTime * 2) / lerpTime;
+            if (source.volume < 0.2f)
+            {
+                source.volume = 0.2f;
+            }*/
         }
 
         if(duration > lerpTime * 3)

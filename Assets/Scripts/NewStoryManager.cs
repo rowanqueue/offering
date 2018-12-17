@@ -36,6 +36,7 @@ public class NewStoryManager : MonoBehaviour {
     //fade shit
     public Image fade;
     public float lerpTime;
+    int whatTolerp;//0visual,1sound
     int lerpState;//0not,1fadingIn,2fadingOut
     float duration;
 
@@ -52,8 +53,16 @@ public class NewStoryManager : MonoBehaviour {
     public int stamina;
     Story.VariableObserver observer;
 	void Awake () {
+        GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
+        if(musicFind != null)
+        {
+            music = musicFind.GetComponent<AudioSource>();
+        }
+        else
+        {
+            music = transform.GetChild(1).GetComponent<AudioSource>();
+        }
         ambience = transform.GetChild(0).GetComponent<AudioSource>();
-        music = transform.GetChild(1).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         speakerToColor = new Dictionary<string, string>
         {
@@ -61,6 +70,9 @@ public class NewStoryManager : MonoBehaviour {
             {"mom", "#a783afff" },
             {"dad", "#869b63ff" },
             {"grandpa","#dd503eff" },
+            {"audi","#ffa332ff" },
+            {"brynja","#f1a6fcff" },
+            {"magnus","#50714fff"},
             {"player", "#86c6ceff" }
         };
         story = new Story(inkJSONAsset.text);
@@ -172,10 +184,12 @@ public class NewStoryManager : MonoBehaviour {
                     switch (visualCommand)
                     {
                         case "fadeIn":
+                            whatTolerp = 0;
                             duration = 0;
                             lerpState = 1;
                             break;
                         case "fadeOut":
+                            whatTolerp = 0;
                             duration = 0;
                             lerpState = 2;
                             break;
@@ -209,17 +223,31 @@ public class NewStoryManager : MonoBehaviour {
                             source.Stop();
                             break;
                         case "volumeUp":
-                            source.volume += 0.25f;
+                            source.volume += source.volume*0.25f;
                             break;
                         case "volumeDown":
-                            source.volume -= 0.25f;
+                            source.volume -= source.volume*0.25f;
                             break;
                         case "reset":
-                            source.volume = 0.5f;
+                            source.volume = 0.6f;
+                            break;
+                        case "lerpUp":
+                            whatTolerp = 1;
+                            duration = 0;
+                            lerpState = 2;
+                            break;
+                        case "lerpDown":
+                            whatTolerp = 1;
+                            duration = 0;
+                            lerpState = 1;
                             break;
                         default:
-                            source.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
-                            source.Play();
+                            AudioClip clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                            if(clip != source.clip)
+                            {
+                                source.clip = clip;
+                                source.Play();
+                            }
                             break;
                     }
                     /*
@@ -453,16 +481,38 @@ public class NewStoryManager : MonoBehaviour {
         if(lerpState != 0)
         {
             duration += Time.deltaTime;
-            if(lerpState == 2)//fading in
+            if(whatTolerp == 0)//visuals
             {
-                fade.color = Color.Lerp(Color.clear, Color.black, duration / lerpTime);
-            }
-            if(lerpState == 1)//fading out
-            {
-                fade.color = Color.Lerp(Color.black, Color.clear, duration / lerpTime);
-                if (duration > lerpTime)
+                if (lerpState == 2)//fading in
                 {
-                    lerpState = 0;
+                    fade.color = Color.Lerp(Color.clear, Color.black, duration / lerpTime);
+                }
+                if (lerpState == 1)//fading out
+                {
+                    fade.color = Color.Lerp(Color.black, Color.clear, duration / lerpTime);
+                    if (duration > lerpTime)
+                    {
+                        lerpState = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (lerpState == 2)//fading in
+                {
+                    ambience.volume = Mathf.Lerp(0.0f, 0.5f, duration / (lerpTime*4f));
+                    if(duration > (lerpTime*4f))
+                    {
+                        lerpState = 0;
+                    }
+                }
+                if (lerpState == 1)//fading out
+                {
+                    ambience.volume = Mathf.Lerp(0.5f, 0.0f, duration / lerpTime);
+                    if (duration > lerpTime)
+                    {
+                        lerpState = 0;
+                    }
                 }
             }
         }

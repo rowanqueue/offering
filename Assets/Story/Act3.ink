@@ -1,9 +1,9 @@
 == ACT3 ==
 //fade in, grandpa's here
 #v_act3/bedroom
-:grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
 #v_fadeIn
-*   [Refuse] :grandpa:"I'm not asking you again."
+:grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
+*   [Refuse]
 *   [Get up]
 - You reluctantly get out of bed. 
 //SNEAKING OUT PUZZLE
@@ -16,32 +16,38 @@ You finally enter the boat and find a mess of drawings, notes, and trinkets. Kar
 You pick up a school notebook and begin to read.
 :kari: "I am writing this in english to practice and it feels more secret. today I was out and i saw a man leading a group of strange people into the mountains. I told Grandpa and he was very upset and told me not to talk to them. he called them tourists. later we made really good bread with margret and bjorn johannson and we played outside and drew the wights.":
 +  [Next entry]
-*  [Keep looking] You decide to keep looking through the boat. ~seenBoat = seenBoat +1
++  [Keep looking] You decide to keep looking through the boat. 
+~seenBoat = seenBoat +1
 ->Insideboat
 
 - :kari: "Today grandpa made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson said that we should be open to the tourists and fishing isn't as good anymore and Grandpa said that we need to protect our land. Grandpa got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandpa really mad. when we got home he didn't want to bake with me.":
 +   [Next entry]
-*  [Keep looking] You decide to keep looking through the boat. ~seenBoat = seenBoat +1
++  [Keep looking] You decide to keep looking through the boat. 
+~seenBoat = seenBoat +1
 ->Insideboat
 
 - :kari: "Grandpa has been quiet and mean. he found out Mr geirson sold some land to the man. grandma said maybe we should try to change and he was mean to her. i told grandpa that today was the day for eyvind kinnrifi and he told me it wasnt and he would not forget that even though it was the 9 february. he got really really mad and confused and punished me and i ran here to my boat.":
 +   [Next entry]
-*  [Keep looking] You decide to keep looking through the boat. ~seenBoat = seenBoat +1
++  [Keep looking] You decide to keep looking through the boat. 
+~seenBoat = seenBoat +1
 ->Insideboat
 - :kari:"i have not written in this diary in a few months. grandpa does not allow me to speak english anymore or talk to the geirssons. the johannsons left the kindred too. I miss playing with björn and margrét johannson a lot but grandpa says i can not see them either. he has been very mean and yells a lot. he does not talk to grandma any more. at least auntie audie is still okay to talk to. i often sneak out to stay at her house in the west and she gives me milk. it does not seem like grandpa notices.":
-
-*  [Keep looking] You decide to keep looking through the boat. ~seenBoat = seenBoat +1
-->Insideboat
+    +  [Keep looking] You decide to keep looking through the boat. 
+    ~seenBoat = seenBoat +1
+    ->Insideboat
 
 =Insideboat
 VAR seenBoat = 0
-*   [Examine drawings]:player:You examine the drawings: ~seenBoat = seenBoat +1
-Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. You find a map marked with the ->Insideboat
+*   [Examine drawings]:player:You examine the drawings: 
+~seenBoat = seenBoat +1
+Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary
-*   [Examine trinkets]:player:~seenBoat = seenBoat +1
+*   [Examine trinkets]:player:
+~seenBoat = seenBoat +1
 :->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside
 ==act3HomeOutside
+#s_stop
 #v_act3/outsideHouse
 //get back home, go inside
 You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
@@ -113,7 +119,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 ->act3car
 =act3car
 - You and grandpa get in his car and start to drive west. 
-->DONE
+->ACT4
 
 //diary entries:
 //entry #1: today I was out and I saw a man leading a group of people into the mountains. I told grandpa and he was concerned. He forbade me from talking to them. 

@@ -1,5 +1,6 @@
 ==entrance==
 = intro
+#s_audio/ThunderRain
 You are at the point at which the trail from you house ends. You are completely surrounded by a surprising about of trees, a make shift sign posted infront of you seems to have strange runes scrawled over it.
 -> main
 = main
@@ -28,10 +29,6 @@ You see a withered tree with etchings similar to those on the sign.
     ->entrance
     +[GO WEST]
     You walk on for what feels like forever... all these trees look the same.  ->entrance
-    
-    
-    
-    
 == wood2 ==
 The rain is pouring hard, everything is so cold and wet.
 Another carved tree catches your eye. 

@@ -81,7 +81,7 @@ Mom interjects- :mom:"Actually, why don't they go play outside instead?":
 :kari:"Oh, yes! I know exactly what to show you!":
 
 :grandpa:"Don't go too far,": says Grandpa.
-* [Follow Kari outside]-> ACT2
+*^J:J,3:7 ^[Follow Kari outside]-> ACT2
 //coordinates link to next section
 -> DONE
 

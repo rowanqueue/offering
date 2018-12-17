@@ -5,8 +5,8 @@ TEXT
 	Reset Speed:	#t_reset
 VISUALS
 	Change Image : 	#v_nameOfFile
-	*Fade Out :	#v_fadeOut
-	*Fade In :	#v_fadeIn
+	Fade Out :	#v_fadeOut
+	Fade In :	#v_fadeIn
 	*Enter Object	#v_enter_nameOfFile
 	*Exit Object	#v_exit_nameOfFile
 SOUNDS
@@ -19,3 +19,5 @@ All sound commands default to ambience, but you can add a tag to the end.
 	Increase Volume : #s_volumeUp
 	Decrease Volume : #s_volumeDown
 	Reset Volume :	#s_reset
+	*Lerp Volume Up : #s_lerpUp
+	*Lerp Volume Down : #s_lerpDown
