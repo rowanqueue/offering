@@ -1,4 +1,3 @@
-->act5Arrival
 ==act5Arrival==
 You finally see the small wooden cabin, just where Kari's map said it would be. The lights are on, but it's quiet. 
 //click door

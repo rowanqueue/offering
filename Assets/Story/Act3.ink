@@ -1,7 +1,9 @@
 == ACT3 ==
 //fade in, grandpa's here
+#v_clearScreen
 #v_act3/bedroom
 #v_fadeIn
+#s_audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
 *   [Refuse]
 *   [Get up]
@@ -9,6 +11,8 @@
 //SNEAKING OUT PUZZLE
 ->trails
 ==act3Boat
+#v_clearScreen
+~coin +=1
 You finally enter the boat and find a mess of drawings, notes, and trinkets. Kari has fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, you assume he must spend a lot of his time here.
 ->Insideboat
 
@@ -42,11 +46,12 @@ VAR seenBoat = 0
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary
-*   [Examine trinkets]:player:
-~seenBoat = seenBoat +1
-:->Insideboat 
+//*   [Examine trinkets]:player:
+//~seenBoat = seenBoat +1
+//:->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside
 ==act3HomeOutside
+#v_clearScreen
 #s_stop
 #v_act3/outsideHouse
 //get back home, go inside
@@ -62,6 +67,7 @@ You open the door and it creaks loudly. You don't see Grandpa.
 
 =act3SneakUpstairs
 //grandpa in bedroom
+#v_clearScreen
 #v_act3/bedroom
 Grandpa is standing in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"
@@ -76,6 +82,7 @@ Grandpa is standing in Kari's room with an angry look on his face.
     
 =act3walkIn
 //just grandpa
+#v_clearScreen
 #v_act3/homeInteriorGrandpa
 You stroll into the house like you own the place. Grandpa is sitting in his chair. 
 :grandpa: "Oh, hello.":

@@ -23,7 +23,7 @@ public class Credits : MonoBehaviour {
             "<b>Lead Artist</b><size=35>\nAjali Harrison</size>\n\n<b>Additional Art</b><size=35>\nMcKenna Flanagan</size>",
             "<b>Lead Sound Designer</b><size=35>\nChristian Weinschenk</size>",
             "<b>Music</b><size=35>\nChristian Weinschenk & Spencer Bernstein</size>",
-            "Everybody else!!"
+            "Everybody else!"
  };
         displayText.text = textToDisplay[index];
 	}

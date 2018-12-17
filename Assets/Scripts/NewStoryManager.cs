@@ -51,7 +51,7 @@ public class NewStoryManager : MonoBehaviour {
     //bad not content specific shit
     public Image staminaBar;
     public int stamina;
-    Story.VariableObserver observer;
+    public int coin;
 	void Awake () {
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
@@ -70,7 +70,7 @@ public class NewStoryManager : MonoBehaviour {
             {"mom", "#a783afff" },
             {"dad", "#869b63ff" },
             {"grandpa","#dd503eff" },
-            {"audi","#ffa332ff" },
+            {"audie","#ffa332ff" },
             {"brynja","#f1a6fcff" },
             {"magnus","#50714fff"},
             {"player", "#86c6ceff" }
@@ -108,6 +108,7 @@ public class NewStoryManager : MonoBehaviour {
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
+        coin = int.Parse(story.variablesState["coin"].ToString());
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
@@ -192,6 +193,9 @@ public class NewStoryManager : MonoBehaviour {
                             whatTolerp = 0;
                             duration = 0;
                             lerpState = 2;
+                            break;
+                        case "clearScreen":
+                            displayText.text = "";
                             break;
                         default:
                             thisKnot = visualCommand;
@@ -283,7 +287,6 @@ public class NewStoryManager : MonoBehaviour {
             {
                 currentKnot = thisKnot;
                 //this is where you could reset the scene
-                displayText.text = "";
                 displayImage.sprite = Resources.Load<Sprite>(currentKnot);
             }
             //done checking knots!!
@@ -321,7 +324,7 @@ public class NewStoryManager : MonoBehaviour {
         if (typing)
         {
             displayText.color = Color.white;
-            if (Time.time > lastTypedTimed + typeSpeed)
+            if (Time.time > lastTypedTimed + typeSpeed && whatToType.Length >= 1)
             {
                 lastTypedTimed = Time.time;
                 //audio
@@ -371,6 +374,14 @@ public class NewStoryManager : MonoBehaviour {
                 else//finish typing this chunk
                 {
                     displayText.text += "\n \n";//paragraph break (makes an empty line after it)
+                    whatToType = "";
+                    typing = false;
+                }
+            }
+            else
+            {
+                if(whatToType.Length <= 1)
+                {
                     whatToType = "";
                     typing = false;
                 }
