@@ -3,7 +3,7 @@
 == afterDinner ==
 //needs kari added
 #v_clearScreen
-#v_act2/outsideHouse
+#v_act2/outsideHouseSecond
 :kari:"I'm so excited you're here! Did you have a nice dinner?":
 *   [Yes] :player: "Yeah, it was really good, actually.":
 *   [No] :player: "Ugh! How can you stand eating that fish? I feel like I'll never get that smell out of my nose":
@@ -76,8 +76,10 @@ You walk inside with Grandpa.
 *   [Do you know where Kari is?] :player:"Oh, Kari is just out playing. He knows the area well, your parents never listen to me. Here.":
 *   [Okay]:player:"Okay.":
 //rewrite this based on act2 damage
-{Stamina < 80::Grandpa: "You look tired, child. Not use to the outdoors, eh. Come here let me help you"}
-{Stamina < 80} ~Stamina += 15
+{Stamina < 75::grandpa: "You look tired, child. Not use to the outdoors, eh. Come here let me help you"}
+{Stamina < 75:
+ ~Stamina += 15
+ }
 - Grandpa wets a cloth in the sink and cleans you up a bit. He gives you a bandage.
 :grandpa:"Okay, time for bed. Go upstairs.":
 *   ^H:H,2:5 ^[Go to bed]->act2Home_bedroom
@@ -89,6 +91,7 @@ Finally back in your room, you are exhausted and cannot wait to get into bed.
 *   ^A:F,5:8 ^[Get into bed]
 You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. 
 #v_fadeOut
+~Stamina += 5
 Eventually you drift off.
 #t_speedDown
 #t_speedDown
@@ -101,4 +104,5 @@ You can't tell what time it is because this bedroom has no windows, but you have
 She leaves and you drift back asleep.
 //fade out
 #v_fadeOut
+~Stamina += 5
 * [Dream] -> ACT3
