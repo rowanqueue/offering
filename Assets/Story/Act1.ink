@@ -50,11 +50,13 @@ Grandpa walks into the house and takes a seat.
 *   [Thanks] :player:"Thanks.": 
 *   [Smile awkwardly] You're not sure what to do with this, exactly.
 - Kari laughs. :kari:"What do you think of my English? I learn at school but Grandpa never allows me to speak it. It always is so funny to hear him use it!":
+#v_enter_act1/fadedDad
 Before you can answer, your dad enters the room. :dad:"Dinner is ready, come downstairs.":
 :kari:"Coming!": Kari cheerfully replies.
 *   ^I:J,3:7 ^[Go downstairs]->dinner
 
 ==dinner==
+#v_exit
 #v_act1/homeInterior
 You walk downstairs and a large dinner of lamb, fish stew, potatoes, and freshly baked bread awaits. You are very hungry.
 *   [Dig in]

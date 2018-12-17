@@ -42,6 +42,8 @@ public class NewStoryManager : MonoBehaviour {
     float duration;
 
     public Image displayImage;
+    public Image topImage;//where to put stuff that comes in
+    bool topImageUsed;
 
     //constant
     float maxChoiceOffset;//the furthest the choice offset can go
@@ -111,6 +113,8 @@ public class NewStoryManager : MonoBehaviour {
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
         coin = int.Parse(story.variablesState["coin"].ToString());
+        //imageshit
+        topImage.enabled = topImageUsed;
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
@@ -198,6 +202,14 @@ public class NewStoryManager : MonoBehaviour {
                             break;
                         case "clearScreen":
                             displayText.text = "";
+                            break;
+                        case "enter":
+                            string file = s.Split('_')[2].Trim();
+                            topImage.sprite = Resources.Load<Sprite>(file);
+                            topImageUsed = true;
+                            break;
+                        case "exit":
+                            topImageUsed = false;
                             break;
                         default:
                             thisKnot = visualCommand;

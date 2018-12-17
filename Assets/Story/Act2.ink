@@ -86,7 +86,7 @@ You walk inside with Grandpa.
 #v_act2/bedroomEMPTY
 Finally back in your room, you are exhausted and cannot wait to get into bed. 
 *   ^A:F,5:8 ^[Get into bed]
-You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. 
+You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house.
 #v_fadeOut
 Eventually you drift off.
 ~Stamina += 10
