@@ -50,6 +50,7 @@ Grandpa walks into the house and takes a seat.
 *   [Thanks] :player:"Thanks.": 
 *   [Smile awkwardly] You're not sure what to do with this, exactly.
 - Kari laughs. :kari:"What do you think of my English? I learn at school but Grandpa never allows me to speak it. It always is so funny to hear him use it!":
+//more
 #v_enter_act1/fadedDad
 Before you can answer, your dad enters the room. :dad:"Dinner is ready, come downstairs.":
 :kari:"Coming!": Kari cheerfully replies.
@@ -77,9 +78,12 @@ After a moment, he turns and looks at you, and asks :grandpa:"What do you think 
     ~given_drawing = true
 {given_drawing: :grandpa:"Ah, Kari drew for you. How lucky you are! Did your parents teach you the meaning of the whale?":->whale_story}
 = whale_story
-*   [Say No]
+*   [Lie] :player:"Yes,": you say.
+    Grandpa looks at you intently.
+*   [Tell the truth] :player:"No,": you say
+    Grandpa looks at you intently.
 //WEIRD MOMENT!!
-- :grandpa: "Well there are obviously many whales here in Iceland. I can have my men take you out to find some if you want. But legend tells of a king who sent a wizard to Iceland, disguised as a whale. The whale tried to find the weaknesses of Iceland but the four landvættir, land wights, protected it. Say, why don't we all take a family photo?":
+- :grandpa: "There are four landvættir, land wights, protected it. Say, why don't we all take a family photo?":
 Mom interjects- :mom:"Actually, why don't they go play outside instead?":
 
 :kari:"Oh, yes! I know exactly what to show you!":

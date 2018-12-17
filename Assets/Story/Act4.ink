@@ -8,7 +8,6 @@ You drive up to a decrepit old farm. It’s definitely not Dad’s parents’ pl
 :grandpa: “This is Audhumbla Ívarsdóttir’s house. She is the only remaining member of my kindred. Everyone else abandoned us to live with comforts, they abandoned the ways of our forefathers. I want you to see the life that we have.”:
 
 *    [What about other grandparents?] :player:”What about my other grandparents?”: you ask.
-    :grandpa:”They can wait. I don’t care to see them. It’s been two years since I talked to them last.”:
 *    [Are we going to stay here for long?] :grandpa:”That is up to you.”:
 
 -You pull in and get out of the car. It takes Grandpa a second. You both walk over to the house and Grandpa knocks on her door.

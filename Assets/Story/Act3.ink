@@ -3,7 +3,8 @@ VAR hasPapers = false
 == ACT3 ==
 //fade in, grandpa's here
 #v_clearScreen
-#v_act3/bedroom
+#v_act3/bedroomEmpty
+#v_enter_fadedGRAMPS
 #v_fadeIn
 #s_audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
@@ -11,7 +12,7 @@ VAR hasPapers = false
 *   [Get up]
 - You reluctantly get out of bed. 
 
-*   [Ask About Kari] You get up in a daze, then suddenly realize the events of last nigh. You ask where Kari is.
+*   [Ask About Kari] You get up in a daze, then suddenly realize the events of last night. You ask where Kari is.
     :grandpa: "He didn't come home last night. Probably sleeping over at Audhumbla's or the Jóhannsons. You don't understand, child, our kindred are unafraid of the land. She is far less cruel than the city you live in." 
     You are unsatified with that answer, you need reassurance that Kari is safe.
     :grandpa: "Come downstairs. Make yourself something to eat. I will be hard at work outside."
@@ -26,6 +27,7 @@ VAR hasPapers = false
     ->leaveHouse
     
 =leaveHouse
+#v_act3/insideHouseEmpty
     Grandpa heads out the front door. You sit down at the table and try to make yourself breakfast. Your parents still aren't home, neither is Kari. You don't think Grandpa understands how serious this is. You need to find Kari yourself.
     You get up, put on your coat and boots and leave through the front door. 
     Grandpa stops you.
@@ -39,28 +41,28 @@ VAR hasPapers = false
 You need to cause a distraction, find a way to lure him into the house.
 
 //clickable
-* [Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
+* ^C:F,2:3^[Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
     ~hasLighter = true
     ->livingRoomPuzzle
 
-+ [Click Fireplace] {not hasPapers: You need something to burn if you're going to start a fire.}
++^A:B,4:7^[Click Fireplace] {not hasPapers: You need something to burn if you're going to start a fire.}
     {not hasLighter: You need something to start a fire.}
-    {not hasPapers or not hasLighter} ->livingRoomPuzzle
+    {not hasPapers or not hasLighter: ->livingRoomPuzzle }
     {hasPapers and hasLighter: You frantically throw in every thing you can into the fire place and light it on fire. Then hide around the corner.}
     ->puzzleEnd
     
-+ [Click Stairs] ->UpstairsPuzzle
++^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
 =UpstairsPuzzle
-
-+[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
+#v_act3/bedroomEmpty
+*[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
     ~hasPapers = true
     ->UpstairsPuzzle
 +[down] ->livingRoomPuzzle
 
 =puzzleEnd
 Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. You can hear his shouting in the distance but you don't care. You have to save your cousin.
-->trails
+* [Head North] ->trails
 ==act3Boat
 #v_clearScreen
 ~coin +=1
@@ -75,7 +77,7 @@ You pick up a school notebook and begin to read.
 ~seenBoat = seenBoat +1
 ->Insideboat
 
-- :kari: "Today grandpa made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson said that we should be open to the tourists and fishing isn't as good anymore and Grandpa said that we need to protect our land. Grandpa got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandpa really mad. when we got home he didn't want to bake with me.":
+- :kari: "Today grandpa made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson. he said that we should be open to the tourists and fishing isn't as good anymore and Grandpa said that we need to protect our land. Grandpa got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandpa really mad. when we got home he didn't want to bake with me.":
 +   [Next entry]
 +  [Keep looking] You decide to keep looking through the boat. 
 ~seenBoat = seenBoat +1
@@ -86,7 +88,7 @@ You pick up a school notebook and begin to read.
 +  [Keep looking] You decide to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
-- :kari:"i have not written in this diary in a few months. grandpa does not allow me to speak english anymore or talk to the geirssons. the johannsons left the kindred too. I miss playing with björn and margrét johannson a lot but grandpa says i can not see them either. he has been very mean and yells a lot. he does not talk to grandma any more. at least auntie audie is still okay to talk to. i often sneak out to stay at her house in the west and she gives me milk. it does not seem like grandpa notices.":
+- :kari:"i have not written in this diary in a few months. grandpa does not allow me to speak english anymore or talk to the geirssons. the Johannsons left the kindred too. I miss playing with bJörn and margrét Johannson a lot but grandpa says i can not see them either. he has been very mean and yells a lot. he does not talk to grandma any more. at least auntie audy is still okay to talk to. i often sneak out to stay at her house in the west and she gives me milk. it does not seem like grandpa notices.":
     +  [Keep looking] You decide to keep looking through the boat. 
     ~seenBoat = seenBoat +1
     ->Insideboat
@@ -97,7 +99,7 @@ VAR seenBoat = 0
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary
-*   [Examine trinkets] There are some trinkets here.
+*   [Examine trinkets] Scattered around the boat you see a tiny hammer, a bowl, a 
 ~seenBoat = seenBoat +1
 ->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside
