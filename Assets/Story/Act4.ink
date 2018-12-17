@@ -21,8 +21,11 @@ Suddenly the door swings open, and Audhumbla towers over you. She’s younger th
 :grandpa:”This one has been out exploring. She thinks she’s one of the kindred.”:
 She smiles. 
 :audie: ”I guess she’ll have to work like one. Go on, child. Go...:
-#t_slowdown
+#t_speedDown
+#t_speedDown
 :audie:milk the cows.”:
+
+Grandpa heads inside and they slam the door in your face.
 -> west
 == grandpayelling ==
 #v_clearScreen
