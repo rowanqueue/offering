@@ -46,7 +46,7 @@ VAR seenBoat = 0
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary
-*   [Examine trinkets] Scattered around the boat you see a tiny hammer, a bowl, a 
+*   [Examine trinkets] Scattered around the boat you see a tiny hammer, a bowl, a knife, some branches, and a hollowed-out horn.
 ~seenBoat = seenBoat +1
 ->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside

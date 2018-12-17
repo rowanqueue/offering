@@ -70,7 +70,7 @@ VAR grandpaPlanNum = 0
 
 +  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
     :brynja:"A sacrifice.":
-    Ásta glares at Brynja. :asta:"Who knows, he's a crazy old man. If Audhumbla really did send you here, he's alone. He can't hurt you.":->grandpaPlanAsk
+    Ásta glares at Brynja. :asta:"Who knows, he's a crazy old man. If Audhumbla really did send you here, he's alone. He can't hurt you.":->chatpt1
 * ->chatpt2
 
 ->chatpt1
@@ -125,11 +125,17 @@ VAR grandpaPlanNum = 0
 #t_reset
 :asta:"Ye gods, Jorgur. You look awful.":
 He does.
-:grandpa:"There you are, you little asni.": Grandpa lurches forward but Brynja steps between you. 
+:grandpa:"There you are, you little asni.": Grandpa lurches forward but Brynja steps between you. The sleeping kids jolt awake.
 :brynja:"What are you doing with this child, Jorgur?":
 :grandpa:"Agh, stop speaking in his ugly language.":
 :brynja:"I'll speak so the child can understand it. This is madness. You sent Kari out into the wilds? Why?":
-:grandpa:"It's the design of the gods. I needed to distract the parents so the child can be brought to our ritual site. Don't you see? These foul tourists own you, they pillage the land and you bow to them. We need the most acceptible":
+:grandpa:"It's the design of the gods. I needed to distract the parents so the child can be brought to our ritual site. Don't you see? My Fjola died just before the Dísablót falls upon us!":
+
+:asta:"You will not make this innocent child a part of your perversion of our sacred rituals! It won't bring her back, Jorgur!"
+
+:grandpa:"Innocent? He dares to live as an American You don't understand,":
+//These foul tourists own you, they pillage the land and you bow to them.
+// Tonight the first moon of February rises and we will perform the ceremony as intended.
 //once we perform the blot the gods will look upon us favorably
 //fishing will be bountiful and i will build a new community here. my influence will be strong and many will join our cult reborn. 
 //grandpa 
