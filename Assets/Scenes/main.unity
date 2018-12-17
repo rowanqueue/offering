@@ -662,6 +662,7 @@ MonoBehaviour:
   displayImage: {fileID: 1390343420}
   staminaBar: {fileID: 1224324272}
   stamina: 0
+  coin: 0
 --- !u!4 &157733832
 Transform:
   m_ObjectHideFlags: 0
@@ -3033,7 +3034,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2225875cd3ab27e4e82b8cf1df3af7ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23c31bcecd3d9234399ff46ff011d603, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

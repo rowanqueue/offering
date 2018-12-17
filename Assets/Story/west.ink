@@ -12,9 +12,9 @@ VAR cow3milked = false
 === west ===
 You have been told to milk a cow. You don't even know how to milk a cow, but Grandpa seemed angry at you so its best to go do it. The fields around you feel quiet and empty.
     ->lady
-    
 == lady ==
 = intro
+#v_act4/barnEx
 You can still see Grandpa and Audi talking through the window. Every once in a while, he will glance over at you and give you a look you don't understand. With the barn behind you, you are disgusted by the smell of manure drifting through the air.
 ->main
 
@@ -35,6 +35,7 @@ You stop at foot of some rolling hills. You are astonished by the size of this f
  ->main
  
 = main
+#v_act4/hillBushes
     + {!eatenBerries or !hasBerries} [Examine bushes] ->bushes
     + [Examine cow] 
         {cow1milked : This was a nice cow -> main}
@@ -91,6 +92,7 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
  ->main
  
 = main
+#v_act4/hill
     * [Examine sky] 
         The clouds are thin, as if they were smeared across the sky. It looks like its getting late. You are cold, you want to go home.
         ->main
@@ -138,6 +140,7 @@ Your feet start to hurt again. You haven't really had a chance to fully recover 
  ->main
  
 = main
+#v_act4/hillBucket
     * [Examine bucket] 
         You see a metal bucket just lying on the floor. It is dented all over and a little dirty but it should do the trick.
         ~hasBucket = true  

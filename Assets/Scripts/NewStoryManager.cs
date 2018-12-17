@@ -70,7 +70,7 @@ public class NewStoryManager : MonoBehaviour {
             {"mom", "#a783afff" },
             {"dad", "#869b63ff" },
             {"grandpa","#dd503eff" },
-            {"audi","#ffa332ff" },
+            {"audie","#ffa332ff" },
             {"brynja","#f1a6fcff" },
             {"magnus","#50714fff"},
             {"player", "#86c6ceff" }
