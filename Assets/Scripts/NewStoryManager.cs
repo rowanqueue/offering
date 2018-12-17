@@ -7,7 +7,6 @@ using Ink.Runtime;
 
 public class NewStoryManager : MonoBehaviour {
     public string cheatJump;//put knot here
-    public bool gameOver;
     public TextAsset inkJSONAsset;
     private Story story;
 
@@ -43,8 +42,6 @@ public class NewStoryManager : MonoBehaviour {
     float duration;
 
     public Image displayImage;
-    public Image topImage;//where to put stuff that comes in
-    bool topImageUsed;
 
     //constant
     float maxChoiceOffset;//the furthest the choice offset can go
@@ -55,10 +52,7 @@ public class NewStoryManager : MonoBehaviour {
     //bad not content specific shit
     public Image staminaBar;
     public int stamina;
-    public Image coinBar;
     public int coin;
-    public Image smorbleHead;
-    public List<Sprite> smorbleHeads;
 	void Awake () {
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
@@ -77,8 +71,8 @@ public class NewStoryManager : MonoBehaviour {
             {"kari","#b18829ff" },
             {"mom", "#a783afff" },
             {"dad", "#869b63ff" },
-            {"grandpa","#dd503eff"},
-            {"audie","#ffa332ff"  },
+            {"grandpa","#dd503eff" },
+            {"audie","#ffa332ff" },
             {"brynja","#f1a6fcff" },
             {"asta","#50714fff"},
             {"player", "#86c6ceff" }
@@ -117,23 +111,6 @@ public class NewStoryManager : MonoBehaviour {
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
         coin = int.Parse(story.variablesState["coin"].ToString());
-        coinBar.fillAmount = coin * 0.25f;
-        int stam = 0;
-        if(stamina < 75)
-        {
-            stam = 1;
-            if(stamina < 50)
-            {
-                stam = 2;
-                if(stamina < 25)
-                {
-                    stam = 3;
-                }
-            }
-        }
-        smorbleHead.sprite = smorbleHeads[stam];
-        //imageshit
-        topImage.enabled = topImageUsed;
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
@@ -222,14 +199,6 @@ public class NewStoryManager : MonoBehaviour {
                         case "clearScreen":
                             displayText.text = "";
                             break;
-                        case "enter":
-                            string file = s.Split('_')[2].Trim();
-                            topImage.sprite = Resources.Load<Sprite>(file);
-                            topImageUsed = true;
-                            break;
-                        case "exit":
-                            topImageUsed = false;
-                            break;
                         default:
                             thisKnot = visualCommand;
                             break;
@@ -239,9 +208,7 @@ public class NewStoryManager : MonoBehaviour {
                 {
                     string[] split = s.Split('_');
                     AudioSource source = ambience;
-                    string audioFile = split[1].Trim();
-                    bool effect = false;
-                    if (split.Length == 3)//has a special tag
+                    if(split.Length == 3)//has a special tag
                     {
                         switch (split[2][0])
                         {
@@ -252,48 +219,57 @@ public class NewStoryManager : MonoBehaviour {
                                 source = music2;
                                 break;
                             case 's':
-                                effect = true;
-                                AudioManager.me.PlaySound(Resources.Load<AudioClip>(audioFile));
+                                //implement later!!
+                                source = ambience;
                                 break;
                         }
                     }
-                    if(effect == false)
+
+                    string audioFile = split[1].Trim();
+                    switch (audioFile)
                     {
-                        switch (audioFile)
-                        {
-                            case "stop":
-                                source.Stop();
-                                break;
-                            case "volumeUp":
-                                source.volume += source.volume * 0.25f;
-                                break;
-                            case "volumeDown":
-                                source.volume -= source.volume * 0.25f;
-                                break;
-                            case "reset":
-                                source.volume = 0.6f;
-                                break;
-                            case "lerpUp":
-                                whatTolerp = 1;
-                                duration = 0;
-                                lerpState = 2;
-                                break;
-                            case "lerpDown":
-                                whatTolerp = 1;
-                                duration = 0;
-                                lerpState = 1;
-                                break;
-                            default:
-                                AudioClip clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
-                                if (clip != source.clip)
-                                {
-                                    source.clip = clip;
-                                    source.Play();
-                                }
-                                break;
-                        }
+                        case "stop":
+                            source.Stop();
+                            break;
+                        case "volumeUp":
+                            source.volume += source.volume*0.25f;
+                            break;
+                        case "volumeDown":
+                            source.volume -= source.volume*0.25f;
+                            break;
+                        case "reset":
+                            source.volume = 0.6f;
+                            break;
+                        case "lerpUp":
+                            whatTolerp = 1;
+                            duration = 0;
+                            lerpState = 2;
+                            break;
+                        case "lerpDown":
+                            whatTolerp = 1;
+                            duration = 0;
+                            lerpState = 1;
+                            break;
+                        default:
+                            AudioClip clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                            if(clip != source.clip)
+                            {
+                                source.clip = clip;
+                                source.Play();
+                            }
+                            break;
                     }
-    
+                    /*
+                    string audioFile = s.Split('_')[1].Trim();
+                    if(audioFile == "stop")
+                    {
+                        audioLoop.Stop();
+                    }
+                    else
+                    {
+                        audioLoop.clip = Resources.Load<AudioClip>(s.Split('_')[1].Trim());
+                        audioLoop.Play();
+                    }*/
                 }
                 if(s[0] == 't')//text command!!
                 {
@@ -411,7 +387,6 @@ public class NewStoryManager : MonoBehaviour {
             {
                 if(whatToType.Length <= 1)
                 {
-                    displayText.text += "\n \n";
                     whatToType = "";
                     typing = false;
                 }
