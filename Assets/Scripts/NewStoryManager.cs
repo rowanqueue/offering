@@ -54,6 +54,7 @@ public class NewStoryManager : MonoBehaviour {
     //bad not content specific shit
     public Image staminaBar;
     public int stamina;
+    public Image coinBar;
     public int coin;
 	void Awake () {
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
@@ -113,6 +114,7 @@ public class NewStoryManager : MonoBehaviour {
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
         coin = int.Parse(story.variablesState["coin"].ToString());
+        coinBar.fillAmount = coin * 0.25f;
         //imageshit
         topImage.enabled = topImageUsed;
         //choices
@@ -392,6 +394,7 @@ public class NewStoryManager : MonoBehaviour {
             {
                 if(whatToType.Length <= 1)
                 {
+                    displayText.text += "\n \n";
                     whatToType = "";
                     typing = false;
                 }

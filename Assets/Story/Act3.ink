@@ -11,7 +11,7 @@ VAR hasPapers = false
 *   [Get up]
 - You reluctantly get out of bed. 
 
-*   [Ask About Kari] You get up in a daze, then suddenly realize the events of last nigh. You ask where Kari is.
+*   [Ask About Kari] You get up in a daze, then suddenly realize the events of last night. You ask where Kari is.
     :grandpa: "He didn't come home last night. Probably sleeping over at Audhumbla's or the Jóhannsons. You don't understand, child, our kindred are unafraid of the land. She is far less cruel than the city you live in." 
     You are unsatified with that answer, you need reassurance that Kari is safe.
     :grandpa: "Come downstairs. Make yourself something to eat. I will be hard at work outside."
@@ -45,7 +45,7 @@ You need to cause a distraction, find a way to lure him into the house.
 
 + [Click Fireplace] {not hasPapers: You need something to burn if you're going to start a fire.}
     {not hasLighter: You need something to start a fire.}
-    {not hasPapers or not hasLighter} ->livingRoomPuzzle
+    {not hasPapers or not hasLighter: ->livingRoomPuzzle }
     {hasPapers and hasLighter: You frantically throw in every thing you can into the fire place and light it on fire. Then hide around the corner.}
     ->puzzleEnd
     
@@ -53,14 +53,14 @@ You need to cause a distraction, find a way to lure him into the house.
 
 =UpstairsPuzzle
 
-+[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
+*[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
     ~hasPapers = true
     ->UpstairsPuzzle
 +[down] ->livingRoomPuzzle
 
 =puzzleEnd
 Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. You can hear his shouting in the distance but you don't care. You have to save your cousin.
-->trails
+* [Head North] ->trails
 ==act3Boat
 #v_clearScreen
 ~coin +=1

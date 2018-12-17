@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba386069d0150409e4d0349898e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatJump: dinner
+  cheatJump: 
   inkJSONAsset: {fileID: 4900000, guid: 717e0670aa7a8fb4c8e26118dd099887, type: 3}
   choicesButtons:
   - {fileID: 1582184673}
@@ -663,6 +663,7 @@ MonoBehaviour:
   topImage: {fileID: 1674938961}
   staminaBar: {fileID: 1224324272}
   stamina: 0
+  coinBar: {fileID: 1788745244}
   coin: 0
 --- !u!4 &157733832
 Transform:
@@ -910,13 +911,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeSound: {fileID: 8300000, guid: 54863df87b21f834390e774423c2919e, type: 3}
   smorbleVoice:
-  - {fileID: 8300000, guid: aedb276e5c4a163408e8c7fa3302edd2, type: 3}
-  - {fileID: 8300000, guid: df53df637fb9782439830edfdb87e99c, type: 3}
-  - {fileID: 8300000, guid: 0080221c81e7511418c63f75d7bfa02b, type: 3}
-  - {fileID: 8300000, guid: fbf5a2d80240ccb46b42e449890a22b0, type: 3}
+  - {fileID: 8300000, guid: add3c533c1896cb42becb96d39908265, type: 3}
+  - {fileID: 8300000, guid: 30f237e211bcd474aa1d86bb84496f9d, type: 3}
   momVoice:
-  - {fileID: 8300000, guid: d9bef75fcc06ca34c97ad27301d7266b, type: 3}
-  - {fileID: 8300000, guid: add7acb6dc4a086448083ce23bbe1438, type: 3}
+  - {fileID: 8300000, guid: ddab906e5d72da5499d7e2080c10aa02, type: 3}
+  - {fileID: 8300000, guid: 49ece6cc66f77b84789f2e80ee985308, type: 3}
+  cowLadyVoice:
+  - {fileID: 8300000, guid: 989401140ea1f3341864f0b65026c3bd, type: 3}
+  - {fileID: 8300000, guid: 0b767348e16fec04b98461d95091792d, type: 3}
+  dadVoice:
+  - {fileID: 8300000, guid: 5ec25a4bdae795a4597bfd78a991eae1, type: 3}
+  - {fileID: 8300000, guid: a62bd988dba8ca249b9cd23e3a42565a, type: 3}
+  kariVoice:
+  - {fileID: 8300000, guid: 0e3fbc5c976752a45a1bc70ea2365796, type: 3}
+  - {fileID: 8300000, guid: d467dccd0da328344a05431a417679e0, type: 3}
+  sw1Voice:
+  - {fileID: 8300000, guid: 1bdc15f9cff54b542a2eb6f36e64089d, type: 3}
+  - {fileID: 8300000, guid: 5d02289767309c84f84a6c0b077376e7, type: 3}
+  sw2Voice:
+  - {fileID: 8300000, guid: ba31695e838ea73418dede392053dee4, type: 3}
+  - {fileID: 8300000, guid: a4f5ec488d5dcbf4bab716ddde2884cd, type: 3}
+  grandpaVoice:
+  - {fileID: 8300000, guid: dae91562f19ce054cab753ff5cda279b, type: 3}
+  - {fileID: 8300000, guid: 435c6b646e467494bb1cee53a3f5292f, type: 3}
 --- !u!1 &215761283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1766,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &582451637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582451638}
+  - component: {fileID: 582451640}
+  - component: {fileID: 582451639}
+  m_Layer: 5
+  m_Name: CoinBackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &582451638
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 582451637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1264687721}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -251.99997, y: -185.8}
+  m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &582451639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 582451637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 7bda841bd77d0084eb458a76183e8540, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &582451640
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 582451637}
+  m_CullTransparentMesh: 0
 --- !u!1001 &676619593
 Prefab:
   m_ObjectHideFlags: 0
@@ -2162,7 +2248,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2631,6 +2717,8 @@ RectTransform:
   - {fileID: 66059198}
   - {fileID: 115605534}
   - {fileID: 1224324271}
+  - {fileID: 582451638}
+  - {fileID: 1788745243}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3993,6 +4081,75 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674938959}
+  m_CullTransparentMesh: 0
+--- !u!1 &1788745242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788745243}
+  - component: {fileID: 1788745245}
+  - component: {fileID: 1788745244}
+  m_Layer: 5
+  m_Name: Coin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1788745243
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788745242}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999998, y: 0.99999994, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1264687721}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -252, y: -185.8}
+  m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1788745244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788745242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 7bda841bd77d0084eb458a76183e8540, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 0.25
+  m_FillClockwise: 0
+  m_FillOrigin: 1
+--- !u!222 &1788745245
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788745242}
   m_CullTransparentMesh: 0
 --- !u!1 &1863848736
 GameObject:
