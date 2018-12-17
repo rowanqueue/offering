@@ -32,6 +32,7 @@ public class NewStoryManager : MonoBehaviour {
     //sound shit
     AudioSource ambience;
     AudioSource music;
+    AudioSource music2;
 
     //fade shit
     public Image fade;
@@ -51,7 +52,7 @@ public class NewStoryManager : MonoBehaviour {
     //bad not content specific shit
     public Image staminaBar;
     public int stamina;
-    Story.VariableObserver observer;
+    public int coin;
 	void Awake () {
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
@@ -62,6 +63,7 @@ public class NewStoryManager : MonoBehaviour {
         {
             music = transform.GetChild(1).GetComponent<AudioSource>();
         }
+        music2 = transform.GetChild(2).GetComponent<AudioSource>();
         ambience = transform.GetChild(0).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
         speakerToColor = new Dictionary<string, string>
@@ -70,9 +72,9 @@ public class NewStoryManager : MonoBehaviour {
             {"mom", "#a783afff" },
             {"dad", "#869b63ff" },
             {"grandpa","#dd503eff" },
-            {"audi","#ffa332ff" },
+            {"audie","#ffa332ff" },
             {"brynja","#f1a6fcff" },
-            {"magnus","#50714fff"},
+            {"asta","#50714fff"},
             {"player", "#86c6ceff" }
         };
         story = new Story(inkJSONAsset.text);
@@ -108,6 +110,7 @@ public class NewStoryManager : MonoBehaviour {
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
+        coin = int.Parse(story.variablesState["coin"].ToString());
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
@@ -193,6 +196,9 @@ public class NewStoryManager : MonoBehaviour {
                             duration = 0;
                             lerpState = 2;
                             break;
+                        case "clearScreen":
+                            displayText.text = "";
+                            break;
                         default:
                             thisKnot = visualCommand;
                             break;
@@ -208,6 +214,9 @@ public class NewStoryManager : MonoBehaviour {
                         {
                             case 'm':
                                 source = music;
+                                break;
+                            case '2':
+                                source = music2;
                                 break;
                             case 's':
                                 //implement later!!
@@ -283,7 +292,6 @@ public class NewStoryManager : MonoBehaviour {
             {
                 currentKnot = thisKnot;
                 //this is where you could reset the scene
-                displayText.text = "";
                 displayImage.sprite = Resources.Load<Sprite>(currentKnot);
             }
             //done checking knots!!
@@ -321,7 +329,7 @@ public class NewStoryManager : MonoBehaviour {
         if (typing)
         {
             displayText.color = Color.white;
-            if (Time.time > lastTypedTimed + typeSpeed)
+            if (Time.time > lastTypedTimed + typeSpeed && whatToType.Length >= 1)
             {
                 lastTypedTimed = Time.time;
                 //audio
@@ -371,6 +379,14 @@ public class NewStoryManager : MonoBehaviour {
                 else//finish typing this chunk
                 {
                     displayText.text += "\n \n";//paragraph break (makes an empty line after it)
+                    whatToType = "";
+                    typing = false;
+                }
+            }
+            else
+            {
+                if(whatToType.Length <= 1)
+                {
                     whatToType = "";
                     typing = false;
                 }
