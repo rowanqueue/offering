@@ -15,7 +15,7 @@ INCLUDE Epilogue
 
 VAR Stamina = 100
 VAR coin = 0
-->campfire
+//->campfire
 -> start
 == start ==
 -> beginning

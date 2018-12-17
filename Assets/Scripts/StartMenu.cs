@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour {
     public TMP_Text scrampText;
     public TMP_Text offeringText;
+    public Image enter;
+    public float holdTime;
+    float actualTime;
     public float lerpTime;//time it takes to lerp in and out
     public AudioSource source;
     public AudioSource music;
@@ -15,6 +19,7 @@ public class StartMenu : MonoBehaviour {
     Color transparent = new Color(1, 1, 1, 0);
     // Use this for initialization
     void Start () {
+        actualTime = holdTime;
         DontDestroyOnLoad(music);
 	}
 	
@@ -48,9 +53,29 @@ public class StartMenu : MonoBehaviour {
             offeringText.color = Color.Lerp(transparent, Color.white, (duration - lerpTime * 3) / lerpTime);
             music.volume = (duration - lerpTime * 3) / lerpTime;
         }
+        if(duration > lerpTime * 3.5f)
+        {
+            RaycastHit hit;
+            Debug.Log("5");
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                actualTime -= Time.deltaTime;
+                Debug.Log("4");
+            }
+            else
+            {
+                actualTime += Time.deltaTime;
+                if(actualTime > holdTime)
+                {
+                    actualTime = holdTime;
+                }
+            }
+        }
+        enter.fillAmount = actualTime/holdTime;
+        enter.color = offeringText.color;
         if(duration > lerpTime * 4)
         {
-            if (leaving == false && Input.anyKeyDown)
+            if (leaving == false && actualTime < 0)
             {
                 leaving = true;
                 duration = lerpTime * 4;
