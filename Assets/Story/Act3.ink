@@ -1,15 +1,69 @@
+VAR hasLighter = false
+VAR hasPapers = false
 == ACT3 ==
 //fade in, grandpa's here
 #v_clearScreen
-#v_act3/bedroom
+#v_act3/bedroomEmpty
+#v_enter_fadedGRAMPS
 #v_fadeIn
 #s_audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
 *   [Refuse]
 *   [Get up]
 - You reluctantly get out of bed. 
-//SNEAKING OUT PUZZLE
-->trails
+
+*   [Ask About Kari] You get up in a daze, then suddenly realize the events of last night. You ask where Kari is.
+    :grandpa: "He didn't come home last night. Probably sleeping over at Audhumbla's or the Jóhannsons. You don't understand, child, our kindred are unafraid of the land. She is far less cruel than the city you live in." 
+    You are unsatified with that answer, you need reassurance that Kari is safe.
+    :grandpa: "Come downstairs. Make yourself something to eat. I will be hard at work outside."
+    ->askGramp
+    
+=askGramp
+    +[Press Further]
+    :grandpa: "I said come downstairs. Don't doubt my family's strength, Kari is far better at navigating this land then you will ever be!"
+     You head downstairs but can't help but worry about your cousin.
+    ->leaveHouse
+    +[Drop It] You head downstairs but can't help but worry about your cousin.
+    ->leaveHouse
+    
+=leaveHouse
+#v_act3/insideHouseEmpty
+    Grandpa heads out the front door. You sit down at the table and try to make yourself breakfast. Your parents still aren't home, neither is Kari. You don't think Grandpa understands how serious this is. You need to find Kari yourself.
+    You get up, put on your coat and boots and leave through the front door. 
+    Grandpa stops you.
+    :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that" 
+    He glares at you until you head back inside. You can tell there will be no chance to reason with them.
+    + [Try the Back Door] You try to sneak throught he back door but it seems to be locked inside and out. You are going to need to do something more drastic.
+    ->livingRoomPuzzle
+    + [Climb through The Window] You would but you're pretty sure that he would see you. You are going to need to do something more drastic.
+    ->livingRoomPuzzle
+=livingRoomPuzzle
+You need to cause a distraction, find a way to lure him into the house.
+
+//clickable
+* ^C:F,2:3^[Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
+    ~hasLighter = true
+    ->livingRoomPuzzle
+
++^A:B,4:7^[Click Fireplace] {not hasPapers: You need something to burn if you're going to start a fire.}
+    {not hasLighter: You need something to start a fire.}
+    {not hasPapers or not hasLighter: ->livingRoomPuzzle }
+    {hasPapers and hasLighter: You frantically throw in every thing you can into the fire place and light it on fire. Then hide around the corner.}
+    ->puzzleEnd
+    
++^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
+
+=UpstairsPuzzle
+#v_enter_act3/papers
+#v_act3/bedroomEmpty
+*^E:H,8:8 ^[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
+    ~hasPapers = true
+    ->UpstairsPuzzle
++[down] ->livingRoomPuzzle
+
+=puzzleEnd
+Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. You can hear his shouting in the distance but you don't care. You have to save your cousin.
+* [Head North] ->trails
 ==act3Boat
 #v_clearScreen
 ~coin +=1
@@ -46,7 +100,7 @@ VAR seenBoat = 0
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary
-*   [Examine trinkets] Scattered around the boat you see a tiny hammer, a bowl, a knife, some branches, and a hollowed-out horn.
+*   [Examine trinkets] Scattered around the boat you see a tiny hammer, a bowl, a 
 ~seenBoat = seenBoat +1
 ->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside
@@ -56,18 +110,19 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 #v_act3/outsideHouse
 //get back home, go inside
 You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
-*   Walk in->act3walk
-*   Sneak in->act3Sneak
+*   [Walk in]->act3walk
+*   [Sneak in]->act3Sneak
 
 =act3Sneak
 //empty homeInterior
-#v_act3/homeInterior
+#v_act3/insideHOuseEmpty
 You open the door and it creaks loudly. You don't see Grandpa. 
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
 //grandpa in bedroom
 #v_clearScreen
+#v_enter_fadedGRAMPS
 #v_act3/bedroom
 Grandpa is standing in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"

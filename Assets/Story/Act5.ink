@@ -1,4 +1,6 @@
 ==act5Road==
+#v_clearScreen
+#v_act5/road
 You've run out onto the road, heading for the mountains. You hope to god or gods that Audhumbla isn't tricking you. You're freezing cold and soon praying to see any sort of car on the road. 
 
 Sure enough, you see a pickup truck coming up from behind you. 
@@ -22,6 +24,7 @@ Sure enough, you see a pickup truck coming up from behind you.
 ->mountain1
 
 ==act5Arrival==
+#v_act5/snowy_house
 #v_clearScreen
 You finally see the small wooden cabin, just where Kari's map said it would be. The lights are on, but it's quiet. 
 //click door
