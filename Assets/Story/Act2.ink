@@ -14,24 +14,32 @@
 
 == enterwood1 ==
 #v_act2/forest5
+#v_enter_act2/forrest5KARI
 #s_audio/FootStep(Outside)_s
 You've reached the foggy thicket of trees and Kari is speeding right along. 
 :kari:"Come on, this way!":
+
 *   ^A:B,6:7^[Follow]->enterwood2
 == enterwood2 ==
 #v_act2/forest4
+#v_enter_act2/forrest4KARI
 #s_audio/FootStep(Outside)_s
 :kari:"Over here!":
+
 *   ^G:H,6:7^[Follow]->enterwood3
 == enterwood3 ==
 #v_act2/forest3
+#v_enter_act2/forrest3KARI
 #s_audio/FootStep(Outside)_s
 :kari:"Just a bit further!":
+
 *   ^A:B,6:7 ^[Follow]->enterwood4
 == enterwood4 ==
 #v_act2/forest2
+#v_enter_act2/forrest2KARI
 #s_audio/FootStep(Outside)_s
 :kari:"We're almost there, it's just through here!":
+
 *   ^G:H,9:10 ^[Follow]->campfire
 
 ======== campfire ========
@@ -48,32 +56,35 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
     **  [Asatru?] :player:"What is Asatru?" 
     :kari:"Grandpa told me you don't practice it but it's hard for me to believe! You don't even know what it is?":
         ***   [A little] :player:"A little,": you reply.
-                "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
+                :kari:"Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.:->cousinConvo_campfire
         ***   [Yes] :player:"I do, but remind me...":
-                "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
+                :kari:"Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.:->cousinConvo_campfire
         ***   [No]:player:"Not at all,": you reply.
-        "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
-*   [Who else comes here?] Well, it used to be Aunt Sigrún, Grandpa Jorgur, Grandma Fjola, Einar, Ólafur, Helga, Björn, Margrét, Ásta, Brynja, and Audhumbla. Now it’s just me, Audy, and Grandpa. 
+        :kari:"Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.:->cousinConvo_campfire
+*   [Who else comes here?] :kari:"Well, it used to be Aunt Sigrún, Grandpa Jorgur, Grandma Fjola, Einar, Ólafur, Helga, Björn, Margrét, Ásta, Brynja, and Audhumbla. Now it’s just me, Audy, and Grandpa.":
 ->cousinConvo_campfire
 
 + -> fuck
 == fuck ==
 #s_audio/ThunderRain
-- :kari:"Hey, wanna see something funny? Look at this sculpture, heh heh.":
+- :kari:"Hey, don't you think this sculpture is funny?": Kari laughs.
 *   [Examine wooden sculpture]
 #v_exit
 #v_act2/dickZoom
+- You can't help but laugh too.
 *   [Return]
 #v_act2/meadowcampfire
-- He's gone.
-*   [Call out] :player:"Kari?": 
+- He's gone. 
+:player:"Kari?": 
+*   [Call out] 
 -> entrance
 == act2Home_outside ==
 //needs parents
 #v_clearScreen
 #s_audio/WAVESMENUSPROLOGUE_m
-#v_act2/outsideHouseAfter
-You emerge from the trees and your parents run to you and embrace you. 
+#v_act2/outsideHouseThird
+
+You emerge from the trees and your parents run to you and embrace you. You've never seen them this nervous. Dad is seemingly unable to speak.
 :mom:"Are you okay?":
 *   [Yes] :player:"Yeah, I... I think so":
 *   [No] :player:"Do I look okay?":
@@ -88,8 +99,9 @@ You emerge from the trees and your parents run to you and embrace you.
 //add something here about your emotions that makes you stay
 *   [Go inside]->act2Home_inside
 == act2Home_inside ==
+//ART PROBLEM
 //needs just grandpa
-#v_act2/houseInterior
+#v_act2/insideHouseJustGramps
 You walk inside with Grandpa. 
 :grandpa: "Just you and me now, child. You should go to bed like your mother said.":
 *   [Are you concerned?]:player:"Are you scared about Kari?": you ask.
@@ -104,7 +116,7 @@ You walk inside with Grandpa.
 == act2Home_bedroom ==
 //get rid of kari, fade in mom
 #v_clearScreen
-#v_act2/bedroom
+#v_act2/bedroomEMPTY
 Finally back in your room, you are exhausted and cannot wait to get into bed. 
 *   ^A:F,5:8 ^[Get into bed]
 You toss and turn thinking about your cousin, possibly lost or hurt in the vast outdoors that surrounds the house. 
@@ -114,11 +126,13 @@ Eventually you drift off.
 #t_speedDown
 - :mom: "Krútt... wake up...":
 #t_reset
+#v_enter_act2/fadedMOM
 Your mother shakes you awake. 
 #v_fadeIn
 You can't tell what time it is because this bedroom has no windows, but you haven't been asleep long. 
 :mom: "We went to the police across the bay. They're going to come in the morning to look for Kari but in the meantime Dad and I are going out to keep searching. I left you some food in the fridge just in case, but I think Grandpa might be able to cook for you. Please don't sneak out. I love you.":
 She leaves and you drift back asleep.
-//fade out
 #v_fadeOut
+
+//fade out
 * [Dream] -> ACT3

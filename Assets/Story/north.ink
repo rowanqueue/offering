@@ -9,7 +9,7 @@ VAR eagle_attempts = 0
 #s_audio/WindStooorm
 #s_audio/Somber_m
 #v_act3/northClimbingUpHills
-The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. You climb up and down hills hoping to spot you cousin's hide out from so far up. This hill in particular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip the higher you climb under the loose gravel of the trail; you don't feel safe. -> main
+You decide to start your search by following the map Kari left. You soon regret it. The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common and more treacherous. You climb up hills hoping to spot you cousin's secret hideout, and down them when you find you can't see a thing. This hill in particular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip under the loose gravel of the trail; you don't feel safe. -> main
 = main
     * [Push forward] You take a deep breath and attack the trail. Hiking as fast as you can, ignoring the burning in you calves. You are almost at the top when you trip and tumble down. 
     You get back up at the foot of the trail with some scratches and a bruise. You feel a bit worse.
@@ -36,7 +36,7 @@ The boat looks just as Kari described it. You would try and get a closer look bu
 = main
  * [Approach the eagle]
     ~eagle_attempts+=1
-    You approach the boat slowly, carefully eyeing the eagle. As soon as you get close it flaps its wings and brandishes its sharp talons. You wont be getting in with the eagle there.->main
+    You approach the boat slowly, carefully eyeing the eagle. As soon as you get close it flaps its wings and brandishes its sharp talons. You won't be getting in with the eagle there.->main
  * [Throw a pebble at the eagle]
     ~eagle_attempts+=1
     You chuck your rock near the eagle, hoping that will scare it. You are shocked when it actually hits. And even more shocked when does not react. It just continues to look at you with its piercing gaze.->main 
@@ -55,7 +55,7 @@ The boat looks just as Kari described it. You would try and get a closer look bu
 #v_act3/northHilltop
 The summit of this very steep hill overlooks the shore. It ends in a rocky ledge high over the beach. In the distance, you can see, the boat Kari must have been talking about sitting on the shore. You have to find a way down this cliff. -> main
 = main
-   * [Climb down the rocky cliff] {not fucked_hands: You find some stable footing on the side of the cliff and think you might be able to climb down safely. You move carefully, only changing your grip when you know its safe. That doesn't stop your hands from shaking though. You are almost to the bottom when your hand slips and you fall backwards. You land in the sand with no injuries but the wind knocked out of you.}
+   * [Climb down the rocky cliff] {not fucked_hands: You find some stable footing on the side of the cliff and think you might be able to climb down safely. You move carefully, only changing your grip when you know it's safe. That doesn't stop your hands from shaking though. You are almost to the bottom when your hand slips and you fall backwards. You land in the sand with no injuries but the wind knocked out of you.}
     ~Stamina = Stamina - 5
       {fucked_hands :You find some stable footing on the side of the cliff and think you might be able to climb down safely. You move carefully only changing your grip when you know its safe. The cuts in your hands start burning, in a lapse of focus you let go and fall back on the sand. You feel the impact rattle every bone in your body. {~Stamina = Stamina - 10}} -> shore
     

@@ -5,7 +5,7 @@
 //add in mom and dad
 #v_prologue/prologueArt
 
-FERRY TO FJALLVIK, NORTHERN ICELAND - MORNING
+FERRY TO FJALLVÍK, NORTHERN ICELAND - MORNING
 
 You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
 //It's been five hours of flying and five hours of driving to get to this ferry, which Dad assures you is the only way to get to Fjallvík. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area.
@@ -29,7 +29,9 @@ It feels like forever since you left New York, and every minute you spend on thi
     //TOO MUCH TEXT!!
 -   :mom:"Well I think he'll like you very much. I mean... I haven’t seen Grandpa since before you were born but he loved people.:
 
-:mom:The thing is... he is a very, very old man now. He might be a bit confused and forgetful. He might say weird things. But I think it's important for you on this trip to try to understand what kind of man he was and where your dad and I came from... we won't be coming back here for a very long time.":
+:mom:The thing is... he is a very, very old man now. He might be a bit confused and forgetful. He might say weird things. But I think you're old enough now...": She trails off. 
+
+:mom:"it's important for you on this trip to try to understand what kind of man he was and where your dad and I came from... we won't be coming back here for a very long time.":
     -> ACT1
 
         

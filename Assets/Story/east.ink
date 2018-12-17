@@ -3,7 +3,8 @@
 #s_audio/ThunderRain
 #s_audio/SpoopyPiano_m
 #v_act2/entrance
-You call for Kari and hear no response. You are now lost and confused, surrounded by seemingly endless trees with strange runes carved into them.
+:player:"Kari!": 
+You call for Kari and hear no response. You are lost and confused, surrounded by seemingly endless trees with strange runes carved into them.
 -> main
 = main
 //may just be displayed by visuals
@@ -29,7 +30,7 @@ Another carved tree catches your eye. -> main
 == wood3 ==
 #v_act2/forest3
 #s_audio/FootStep(Outside)_s
-The storm seems to be getting feircer, the lightning startles you every so often. 
+The storm seems to be getting fiercer, the lightning startles you every so often. 
 You come across an oddly shaped rock with different runes carved deep into its surface. -> main
 = main
 #CORRECT ANSWER: SOUTH

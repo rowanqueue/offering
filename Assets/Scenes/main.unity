@@ -644,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cheatJump: 
+  gameOver: 0
   inkJSONAsset: {fileID: 4900000, guid: 717e0670aa7a8fb4c8e26118dd099887, type: 3}
   choicesButtons:
   - {fileID: 1582184673}
@@ -654,16 +655,17 @@ MonoBehaviour:
   displayText: {fileID: 2076484021}
   typing: 0
   whatToType: 
-  typeSpeed: 0.03
+  typeSpeed: 0.025
   currentSpeaker: 
   scrollRect: {fileID: 66059201}
   fade: {fileID: 115605535}
   lerpTime: 1
   displayImage: {fileID: 1390343420}
+  topImage: {fileID: 1674938961}
   staminaBar: {fileID: 1224324272}
   stamina: 0
-  coin: 0
   coinBar: {fileID: 1788745244}
+  coin: 0
   smorbleHead: {fileID: 1800769829}
   smorbleHeads:
   - {fileID: 21300000, guid: 6891e3d13745a91428ab2558286cb049, type: 3}
@@ -921,6 +923,20 @@ MonoBehaviour:
   momVoice:
   - {fileID: 8300000, guid: ddab906e5d72da5499d7e2080c10aa02, type: 3}
   - {fileID: 8300000, guid: 49ece6cc66f77b84789f2e80ee985308, type: 3}
+  cowLadyVoice:
+  - {fileID: 8300000, guid: 989401140ea1f3341864f0b65026c3bd, type: 3}
+  - {fileID: 8300000, guid: 0b767348e16fec04b98461d95091792d, type: 3}
+  dadVoice:
+  - {fileID: 8300000, guid: 5ec25a4bdae795a4597bfd78a991eae1, type: 3}
+  - {fileID: 8300000, guid: a62bd988dba8ca249b9cd23e3a42565a, type: 3}
+  kariVoice:
+  - {fileID: 8300000, guid: 0e3fbc5c976752a45a1bc70ea2365796, type: 3}
+  - {fileID: 8300000, guid: d467dccd0da328344a05431a417679e0, type: 3}
+  sw1Voice: []
+  sw2Voice: []
+  grandpaVoice:
+  - {fileID: 8300000, guid: dae91562f19ce054cab753ff5cda279b, type: 3}
+  - {fileID: 8300000, guid: 435c6b646e467494bb1cee53a3f5292f, type: 3}
 --- !u!1 &215761283
 GameObject:
   m_ObjectHideFlags: 0
@@ -3237,7 +3253,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48a936bd8ee95d94488d016b9fcf6308, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b1c403301b181343a80f29268789d08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
