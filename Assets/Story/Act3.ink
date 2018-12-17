@@ -4,17 +4,18 @@ VAR hasPapers = false
 //fade in, grandpa's here
 #v_clearScreen
 #v_act3/bedroomEmpty
-#v_enter_fadedGRAMPS
+#v_enter_act3/fadedGRAMPS
 #v_fadeIn
 #s_audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
 *   [Refuse]
 *   [Get up]
+#v_fadeIn
 - You reluctantly get out of bed. 
 
-*   [Ask About Kari] You get up in a daze, then suddenly realize the events of last night. You ask where Kari is.
+*   [Ask about Kari] You get up in a daze, then suddenly realize the events of last night. You ask where Kari is.
     :grandpa: "He didn't come home last night. Probably sleeping over at Audhumbla's or the Jóhannsons. You don't understand, child, our kindred are unafraid of the land. She is far less cruel than the city you live in." 
-    You are unsatified with that answer, you need reassurance that Kari is safe.
+    You are unsatified with that answer and feel horribly guilty. If Kari isn't safe, it's your fault.
     :grandpa: "Come downstairs. Make yourself something to eat. I will be hard at work outside."
     ->askGramp
     
@@ -27,21 +28,22 @@ VAR hasPapers = false
     ->leaveHouse
     
 =leaveHouse
+#v_exit
 #v_act3/insideHouseEmpty
-    Grandpa heads out the front door. You sit down at the table and try to make yourself breakfast. Your parents still aren't home, neither is Kari. You don't think Grandpa understands how serious this is. You need to find Kari yourself.
+    Grandpa heads out the front door. You sit down at the table and try to make yourself breakfast. Your parents still aren't home, and neither is Kari. It doesn't take long for you to decide what you need to do.
     You get up, put on your coat and boots and leave through the front door. 
     Grandpa stops you.
     :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that" 
     He glares at you until you head back inside. You can tell there will be no chance to reason with them.
-    + [Try the Back Door] You try to sneak throught he back door but it seems to be locked inside and out. You are going to need to do something more drastic.
+   
     ->livingRoomPuzzle
-    + [Climb through The Window] You would but you're pretty sure that he would see you. You are going to need to do something more drastic.
-    ->livingRoomPuzzle
+    
 =livingRoomPuzzle
-You need to cause a distraction, find a way to lure him into the house.
-
+#v_act3/insideHouseEmpty
++ ^B:C,2:3^[Climb through the window] You could climb out the window but Grandpa would see you. You are going to need to do something more drastic. Cause a distraction, find a way to lure him into the house.
+    ->livingRoomPuzzle
 //clickable
-* ^C:F,2:3^[Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
+* ^D:F,2:3^[Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
     ~hasLighter = true
     ->livingRoomPuzzle
 
@@ -55,14 +57,17 @@ You need to cause a distraction, find a way to lure him into the house.
 
 =UpstairsPuzzle
 #v_enter_act3/papers
+{hasPapers:
+#v_exit
+}
 #v_act3/bedroomEmpty
-*^E:H,8:8 ^[Click Papers] You pick up Kari's drawings. He wouldn't mind burning a few drawings if it meant saving his life.
+* ^G:H,8:8 ^[Click Papers] You pick up Kari's drawings. He wouldn't mind losing a few drawings if it meant saving his life. You glance over the papers and realize one of them features a map to a spot north of the house. You decide to pocket it.
     ~hasPapers = true
     ->UpstairsPuzzle
-+[down] ->livingRoomPuzzle
++ ^I:J,3:7 ^[down]->livingRoomPuzzle
 
 =puzzleEnd
-Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. You can hear his shouting in the distance but you don't care. You have to save your cousin.
+Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. You can hear his shouting in the distance but you don't care. You have to find your cousin. 
 * [Head North] ->trails
 ==act3Boat
 #v_clearScreen
@@ -100,7 +105,7 @@ VAR seenBoat = 0
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary
-*   [Examine trinkets] Scattered around the boat you see a tiny hammer, a bowl, a 
+*   [Examine trinkets] Scattered around the boat you see a bowl with some runes carved in it, some little hammers, twigs, a knife, and a hollowed-out horn.
 ~seenBoat = seenBoat +1
 ->Insideboat 
 *  {seenBoat > 3} [Go Home] ->act3HomeOutside
@@ -109,36 +114,41 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 #s_stop
 #v_act3/outsideHouse
 //get back home, go inside
-You arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
-*   [Walk in]->act3walk
+You'd seen enough in the boat and decided to stop back home before heading out to meet Audhumbla. Finally, you arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
+*   [Walk in]->act3walkIn
 *   [Sneak in]->act3Sneak
 
 =act3Sneak
 //empty homeInterior
-#v_act3/insideHOuseEmpty
+#v_act3/insideHouseEmpty
 You open the door and it creaks loudly. You don't see Grandpa. 
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
 //grandpa in bedroom
 #v_clearScreen
-#v_enter_fadedGRAMPS
+#v_enter_act3/fadedGRAMPS
 #v_act3/bedroom
 Grandpa is standing in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"
 *   [Out looking for Kari] 
     #t_speeddown
-    :grandpa: "Hrmph. Your parents told you to stay in, didn't they? Well I do somewhat admire a rule breaker. Maybe you have a bit of Iceland in you after all. Don't do it again. Now, come downstairs, I am to give you lunch and then we leave":->act3Leaving
+    :grandpa: "Hrmph. Your parents told you to stay in, didn't they?: 
+    :grandpa:Well I do like a rebel. Maybe you have a bit of Iceland in you after all. But don't do it again. Now, come downstairs. I am to give you lunch and then we leave":
+    ->act3Leaving
     #t_reset
 *   [Just getting some air]
-    :grandpa: "Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":->act3Leaving
+    :grandpa: "Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":
+    ->act3Leaving
 *   [Wanted to look at the mountains]
-    :grandpa: "They are beautiful. Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":->act3Leaving
+    :grandpa: "They are beautiful. Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":
+    ->act3Leaving
     
 =act3walkIn
 //just grandpa
 #v_clearScreen
-#v_act3/homeInteriorGrandpa
+#v_act3/insideHouseEmpty
+#v_enter_act3/fadedGRAMPS
 You stroll into the house like you own the place. Grandpa is sitting in his chair. 
 :grandpa: "Oh, hello.":
 #t_speeddown
@@ -169,8 +179,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 ->act3Leaving
 
 =act3Leaving
-#v_act3/homeInteriorGrandpa
-- Grandpa cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore."
+- Grandpa cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
     *  [Why?] :player: "Why?":
     :grandpa:"His family betrayed the kindred. They sold land to the tourist guides, to let them invade and deface our land. Now, I must employ fishermen from across the water.":
     :player: "Huh.":
@@ -181,6 +190,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 ->act3car
 =act3car
 - You and grandpa get in his car and start to drive west. 
+#v_exit
 ->ACT4
 
 //diary entries:

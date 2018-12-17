@@ -5,7 +5,7 @@
 //add in mom and dad
 #v_prologue/prologueArt
 
-FERRY TO FJALLVIK, NORTHERN ICELAND - MORNING
+FERRY TO FJALLVÍK, NORTHERN ICELAND - MORNING
 
 You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
 //It's been five hours of flying and five hours of driving to get to this ferry, which Dad assures you is the only way to get to Fjallvík. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area.
@@ -13,10 +13,11 @@ It feels like forever since you left New York, and every minute you spend on thi
 
 //    * [Complain] :player:"Mom, I feel sick,": you say.
     * [Ask how much longer] :player:"How long is this going to take, Mom?": you ask.
-    * [Complain] :player:"Mom, this is taking forever!":
+    * [Complain about feeling sick] :player:"Mom, I feel sick":
 -   She puts her hands on your shoulders.
     :mom:"Take deep breaths, and focus on the waves. Just listen. There's nowhere else on Earth that sounds like this place.":
-        * [Listen to the waves] You breath in and listen.#s_volumeUp #s_volumeUp
+        * [Listen to the waves] You breath in and listen.
+        #s_volumeUp #s_volumeUp
         * [Roll your eyes] You scoff and roll your eyes at your Mom. She's always trying to make you appreciate nature.
 -   Your Mom turns to you and asks, :mom:"Are you excited to meet your cousin?":
         * [Say Yes] :player:"Yeah, definitely,": you say.
@@ -24,9 +25,13 @@ It feels like forever since you left New York, and every minute you spend on thi
         * [Say No] :player:"Not really,": you say.
                 :mom:"Well, I’m excited to meet him," she replies.
 - :mom:"His mom - your aunt - was my best friend. I think you two will get along famously. ":#s_reset
-*   [Ask about Grandpa] :player:"Do you think Grandpa Jorgur will like me?": you ask. 
+*   [Ask about meeting Grandpa] :player:"Do you think Grandpa Jorgur will like me?":
     //TOO MUCH TEXT!!
--   :mom:"Well I think he'll like you very much. I mean... I haven’t seen Grandpa since before you were born but he loved people. The thing is... he is a very, very old man now. He might be a bit confused and forgetful. He might say weird things. But I think it's important for you on this trip to try to understand what kind of man he was and where your dad and I came from... we won't be coming back here for a very long time.":
+-   :mom:"Well I think he'll like you very much. I mean... I haven’t seen Grandpa since before you were born but he loved people.:
+
+:mom:The thing is... he is a very, very old man now. He might be a bit confused and forgetful. He might say weird things. But I think you're old enough now...": She trails off. 
+
+:mom:"it's important for you on this trip to try to understand what kind of man he was and where your dad and I came from... we won't be coming back here for a very long time.":
     -> ACT1
 
         

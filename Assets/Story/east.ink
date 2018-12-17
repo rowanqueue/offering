@@ -3,7 +3,8 @@
 #s_audio/ThunderRain
 #s_audio/SpoopyPiano_m
 #v_act2/entrance
-You are lost and confused in the middle of this forest. You are completely surrounded by a surprising amount of trees, and you see a strange rune carved on a tree.
+:player:"Kari!": 
+You call for Kari and hear no response. You are lost and confused, surrounded by seemingly endless trees with strange runes carved into them.
 -> main
 = main
 //may just be displayed by visuals
@@ -13,6 +14,7 @@ You are lost and confused in the middle of this forest. You are completely surro
     +^G:H,5:7 ^[GO NORTH] -> wood2
 == wood2 ==
 #v_act2/forest2
+#s_audio/FootStep(Outside)_s
 The rain is pouring hard, everything is so cold and wet.
 Another carved tree catches your eye. -> main
 = main
@@ -27,7 +29,8 @@ Another carved tree catches your eye. -> main
         ->entrance
 == wood3 ==
 #v_act2/forest3
-The storm seems to be getting feircer, the lightning startles you every so often. 
+#s_audio/FootStep(Outside)_s
+The storm seems to be getting fiercer, the lightning startles you every so often. 
 You come across an oddly shaped rock with different runes carved deep into its surface. -> main
 = main
 #CORRECT ANSWER: SOUTH
@@ -50,6 +53,7 @@ You come across an oddly shaped rock with different runes carved deep into its s
     
 == wood4 ==
 #v_act2/forest4
+#s_audio/FootStep(Outside)_s
 The winds are cruel and endless. It makes you feel as through a huge beast was looming over you.
 An extinguished campfire has more runes carved into its fire wood. -> main
 = main
@@ -74,6 +78,7 @@ An extinguished campfire has more runes carved into its fire wood. -> main
     
 == wood5 ==
 #v_act2/forest5
+#s_audio/FootStep(Outside)_s
 You hear flashes and roars all around you. You tremble in fear.
 Runes are etched all around you, in seemingly random places. -> main
 = main
