@@ -16,9 +16,13 @@ Another carved tree catches your eye. -> main
 = main
 #CORRECT ANSWER: EAST
 //CLUE: EAST
-    +^G:H,6:7 ^[GO NORTH]You walk on for what feels like forever... all these trees look the same. ->entrance
+    +^G:H,6:7 ^[GO NORTH]You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
+        ->entrance
     +^I:J,7:8 ^[GO EAST] -> wood3
-    +^G:H,9:10 ^[GO SOUTH] You walk on for what feels like forever... all these trees look the same.  ->entrance
+    +^G:H,9:10 ^[GO SOUTH] You walk on for what feels like forever... all these trees look the same.  
+        ~Stamina -= 5
+        ->entrance
 == wood3 ==
 #v_act2/forest3
 The storm seems to be getting feircer, the lightning startles you every so often. 
@@ -28,13 +32,16 @@ You come across an oddly shaped rock with different runes carved deep into its s
 //CLUE: BACK
     +^G:H,5:7^[GO NORTH]
     You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
     ->entrance
     +^I:J,7:8^[GO EAST] 
     You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
     ->entrance
     +^G:H,9:10^[GO SOUTH]  -> wood4
     +^A:B,6:7 ^[GO WEST]
     You walk on for what feels like forever... all these trees look the same.  
+        ~Stamina -= 5
     ->entrance
     
     
@@ -48,13 +55,17 @@ An extinguished campfire has more runes carved into its fire wood. -> main
 //CLUE: RIGHT
     +^G:H,6:7^[GO NORTH]
     You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
     ->entrance
     +^I:J,6:8^[GO EAST] -> wood5
     +^G:H,9:10^[GO SOUTH] 
     You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
     ->entrance
     +^A:B,6:7^[GO WEST]
-    You walk on for what feels like forever... all these trees look the same.  ->entrance
+    You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
+    ->entrance
     
     
     
@@ -69,9 +80,13 @@ Runes are etched all around you, in seemingly random places. -> main
     +^G:H,5:7^[GO NORTH]->act2Home_outside
     +^I:J,6:8^[GO EAST] 
     You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
     ->entrance
     +^G:H,9:10^[GO SOUTH] 
     You walk on for what feels like forever... all these trees look the same. 
+        ~Stamina -= 5
     ->entrance
     +^A:B,6:7^[GO WEST]
-    You walk on for what feels like forever... all these trees look the same.  ->entrance
+    You walk on for what feels like forever... all these trees look the same.  
+        ~Stamina -= 5
+    ->entrance

@@ -72,6 +72,7 @@ You walk inside with Grandpa.
 *   [Do you know where Kari is?] :player:"Oh, Kari is just out playing. He knows the area well, your parents never listen to me. Here.":
 *   [Okay]:player:"Okay.":
 //rewrite this based on act2 damage
+~Stamina += 15
 - Grandpa wets a cloth in the sink and cleans you up a bit. He gives you a bandage.
 :grandpa:"Okay, time for bed. Go upstairs.":
 *   ^H:H,2:5 ^[Go to bed]->act2Home_bedroom
