@@ -15,7 +15,7 @@ You finally see the small wooden cabin, just where Kari's map said it would be. 
 //click door again
 *   [Go inside]->act5insideHouse
 =act5insideHouse
-You enter the small cabin and the warmth feels amazing. There are two rooms - one a sort of kitchen and one lined with beds (in which there are two kids sleeping). The woman whispers into the house in Icelandic and a man comes out from the kitchen.
+You enter the small cabin and the warmth feels amazing. There are two rooms - one a sort of kitchen and one lined with beds (in which there are two kids sleeping). The woman whispers into the house in Icelandic and someone comes out from the kitchen.
 :brynja:"My name is Brynja,": the woman says. :brynja:"This is my wife, Ásta."
 :asta:"What are you doing here, little one?":
 *   [Trying to find Kari] :player:"I'm trying to find Kari,": you say. :player:"Have you seen him?":
@@ -27,9 +27,10 @@ They share a look. :brynja:"We assumed as much. Your cousin left us this note. W
 
 -:kari:"Dear Jóhannson family, 
 i hope you are well. i am sorry for writing in english but grandpa jorgur cannot read it. i wanted to tell you that grandma Fjola died but we are doing ok. my cousin and aunt and uncle have come to visit. grandpa tells me they are bad people but i really like to see them. i have been staying outside away from our house to fool them like he told me. grandpa said my cousin will help the kindred get strong again. the blót is tomorrow. he told me never to talk to you again but i miss playing with björn and margrét and wanted to say i hope you and grandpa make up and join us again.":
+You look up at 
 ->chatpt1
 =chatpt1
-*   [Why does grandpa hate us?]->chatpt1
+*   [Why does grandpa hate me?]->chatpt1
 
 *   [What is grandpa going to do?]->chatpt1
 
@@ -51,9 +52,11 @@ i hope you are well. i am sorry for writing in english but grandpa jorgur cannot
 :grandpa:"Ásta. Brynja."
 #t_reset
 :asta:"Ye gods, Jorgur. You look awful.":
+He does.
 
+:grandpa:"There you are, you little asni. ":
 //once we perform the blot the gods will look upon us favorably
-//fishing will be bountiful and 
+//fishing will be bountiful and i will build a new community here. my influence will be strong and many will join our cult reborn. 
 //grandpa 
 
 
