@@ -11,10 +11,18 @@ VAR given_drawing = false
 The ferry pulls into the harbor and you drive off the boat in the rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way you pass a fish market and a general store, along with some tour advertisements for hiking, skiing, whale watching, and bird watching.
 *   [Ask about town]
 *   [Sit in silence] -> arrival
--   :dad: "When we were kids, nobody ever thought about visiting here. It was just a town of fishermen who couldn't afford to live in Dalvík - with their families of course. They would sell their fish over there and dock their boats here. Now there are lots of tourists coming to see the mountains. There's talk of even developing the area for skiing.": 
+-   Dad begins to tell you about Fjallvík. :dad: "When we were kids, nobody ever thought about visiting here. It was just a town of fishermen who couldn't afford to live in Dalvík - with their families of course. They would sell their fish over there and dock their boats here. Now there are lots of tourists coming to see the mountains. There's talk of even developing the area for skiing.": 
 *   [Stare out the window]
+*   [Look at the floor]
+*   [Stare out the other window]
 -  :dad:"My father lives in town here. We'll go to see him tomorrow, but we're going to have to stay with Grandpa Jorgur, per your mother's request":
-:mom:"He's ":
+:mom:"He's mourning. We have to keep him company.":
+Dad turns to you. :dad:"Trust me, she'll be singing a different tune by tomorrow morning.":
+:mom:"Keep your eyes on the road!"
+*   [Ugh]
+*   [Sigh]
+*   [Groan]
+-
 ->arrival
     
 == arrival ==
@@ -23,9 +31,11 @@ The ferry pulls into the harbor and you drive off the boat in the rental car. Th
 After an hour's drive through what seems like completely empty land you arrive at a small house. A man who must be your grandfather waits out front. He hugs your dad and then your mom. You wait in the car and watch. He gestures to you, and you look to your mother. She nods.
 *   [Get out of the car] You get out of the car and walk over, getting a better look at him- Grandpa is a tall man, hunched over a cane but still an imposing figure. To his right, your younger cousin, who smiles at you mouth agape.
 - Grandpa speaks to you in English, finding his way slowly through the words-
-:grandpa: "So you are the one I've waited so long to meet. You look just like your mother.": He looks at you for a moment. Mom doesn't take her eyes off him. :grandpa:"I'm thrilled you are here, please come inside.":
-*   [Walk in] -> intro_livingroom 
-*   [Help bring the bags in]->intro_livingroom //maybe you click this?
+:grandpa: "So you are the one I've waited so long to meet. You look just like your mother.": 
+He looks at you for a moment. Mom doesn't take her eyes off him.
+:grandpa:"I'm thrilled you are here. Please, come inside.":
+*   [Go in] -> intro_livingroom 
+//*   [Help with bags]->intro_livingroom //maybe you click this?
     
 == intro_livingroom ==
 #v_act1/homeInterior
@@ -39,10 +49,13 @@ Grandpa walks into the house and takes a seat.
 
 *   ^H:H,2:5 ^[Go upstairs]->intro_upstairs
 
+
 == intro_upstairs ==
 //needs dad floated in
 #v_act1/bedroom
-:kari:"...and you'll be staying in my room! What do you think?": You step into your cousin's room. Drawings of creatures are scattered everywhere, covering almost every surface. 
+#s_audio/FootStep(Inside)_s
+:kari:"...and you'll be staying in my room! What do you think?":
+You step into your cousin's room. Drawings of creatures are scattered everywhere, covering almost every surface. 
 *   [It's nice] :player:"It's a nice room. I like your drawings.":
     :kari:"Thank you! Drawing is my favorite. Grandpa likes them too. He says I could be a famous artist one day. Here, I made this for you.":
 *   [Weird drawings] :player:"Your drawings are funny.":
@@ -55,7 +68,7 @@ Grandpa walks into the house and takes a seat.
 *   [Smile awkwardly] You're not sure what to do with this, exactly.
 - Kari laughs. :kari:"What do you think of my English? I learn at school but Grandpa never allows me to speak it. It always is so funny to hear him use it!":
 //more
-#v_enter_act1/fadedDad
+#v_enter_act1/fadedDAD
 Before you can answer, your dad enters the room. :dad:"Dinner is ready, come downstairs.":
 :kari:"Coming!": Kari cheerfully replies.
 *   ^I:J,3:7 ^[Go downstairs]->dinner
@@ -63,6 +76,7 @@ Before you can answer, your dad enters the room. :dad:"Dinner is ready, come dow
 ==dinner==
 #v_exit
 #v_act1/homeInterior
+#s_audio/FootStep(Inside)_s
 You walk downstairs and a large dinner of lamb, fish stew, potatoes, and freshly baked bread awaits. You are very hungry.
 *   [Dig in]
 //WEIRD MOMENT

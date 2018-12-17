@@ -73,6 +73,9 @@ public class StartMenu : MonoBehaviour {
         }
         enter.fillAmount = actualTime/holdTime;
         enter.color = offeringText.color;
+        if(actualTime < 0){
+            enter.fillAmount = 0;
+        }
         if(duration > lerpTime * 4)
         {
             if (leaving == false && actualTime < 0)

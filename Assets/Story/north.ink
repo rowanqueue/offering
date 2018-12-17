@@ -7,6 +7,7 @@ VAR eagle_attempts = 0
 = intro
 #v_clearScreen
 #s_audio/WindStooorm
+#s_audio/Somber_m
 #v_act3/northClimbingUpHills
 The further north you go, the steeper it gets, the more your ankles hate you. Underbrush and vegetation become more common the further you go. You climb up and down hills hoping to spot you cousin's hide out from so far up. This hill in particular is precariously steep, but you can hear the ocean just ahead. Your feet begin to slip the higher you climb under the loose gravel of the trail; you don't feel safe. -> main
 = main

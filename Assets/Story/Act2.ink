@@ -4,6 +4,7 @@
 //needs kari added
 #v_clearScreen
 #v_act2/outsideHouse
+#s_audio/FootStep(Outside)_s
 :kari:"I'm so excited you're here! Did you have a nice dinner?":
 *   [Yes] :player: "Yeah, it was really good, actually.":
 *   [No] :player: "Ugh! How can you stand eating that fish? I feel like I'll never get that smell out of my nose":
@@ -13,19 +14,23 @@
 
 == enterwood1 ==
 #v_act2/forest5
+#s_audio/FootStep(Outside)_s
 You've reached the foggy thicket of trees and Kari is speeding right along. 
 :kari:"Come on, this way!":
 *   ^A:B,6:7^[Follow]->enterwood2
 == enterwood2 ==
 #v_act2/forest4
+#s_audio/FootStep(Outside)_s
 :kari:"Over here!":
 *   ^G:H,6:7^[Follow]->enterwood3
 == enterwood3 ==
 #v_act2/forest3
+#s_audio/FootStep(Outside)_s
 :kari:"Just a bit further!":
 *   ^A:B,6:7 ^[Follow]->enterwood4
 == enterwood4 ==
 #v_act2/forest2
+#s_audio/FootStep(Outside)_s
 :kari:"We're almost there, it's just through here!":
 *   ^G:H,9:10 ^[Follow]->campfire
 
@@ -41,24 +46,27 @@ The grass gives way to dirt as you reach a clearing between the trees. There is 
 *   [Celebrations?] :player:"Celebrations?":
     :kari:"We perform every blót here, throughout the year. It's an Asatru ritual.":
     **  [Asatru?] :player:"What is Asatru?" 
-    :kari:"Grandpa told me you do not practice but it is hard for me to believe! You don't even know what it is?":
+    :kari:"Grandpa told me you don't practice it but it's hard for me to believe! You don't even know what it is?":
         ***   [A little] :player:"A little,": you reply.
                 "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
         ***   [Yes] :player:"I do, but remind me...":
                 "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
         ***   [No]:player:"Not at all,": you reply.
         "Asatru is a religion. We worship the old gods! The REAL, true gods of Iceland.->cousinConvo_campfire
-*   [Who else comes here?]
+*   [Who else comes here?] Well, it used to be Aunt Sigrún, Grandpa Jorgur, Grandma Fjola, Einar, Ólafur, Helga, Björn, Margrét, Ásta, Brynja, and Audhumbla. Now it’s just me, Audy, and Grandpa. 
 ->cousinConvo_campfire
 
 + -> fuck
 == fuck ==
 #s_audio/ThunderRain
-- :kari:"Wanna see something funny?":
+- :kari:"Hey, wanna see something funny? Look at this sculpture, heh heh.":
 *   [Examine wooden sculpture]
 #v_exit
-- Huh. Where did he go?
-*   [Start looking for him] He's gone. 
+#v_act2/dickZoom
+*   [Return]
+#v_act2/meadowcampfire
+- He's gone.
+*   [Call out] :player:"Kari?": 
 -> entrance
 == act2Home_outside ==
 //needs parents

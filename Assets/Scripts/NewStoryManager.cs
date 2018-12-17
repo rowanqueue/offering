@@ -53,6 +53,9 @@ public class NewStoryManager : MonoBehaviour {
     public Image staminaBar;
     public int stamina;
     public int coin;
+    public Image coinBar;
+    public Image smorbleHead;
+    public List<Sprite> smorbleHeads;
 	void Awake () {
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
@@ -111,6 +114,18 @@ public class NewStoryManager : MonoBehaviour {
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         staminaBar.fillAmount = stamina/100f;
         coin = int.Parse(story.variablesState["coin"].ToString());
+        coinBar.fillAmount = 0.25f*coin;
+        int st = 0;
+        if(stamina < 75){
+            st = 1;
+            if(stamina < 50){
+                st = 2;
+                if(stamina < 25){
+                    st = 3;
+                }
+            }
+        }
+        smorbleHead.sprite = smorbleHeads[st];
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
@@ -385,8 +400,9 @@ public class NewStoryManager : MonoBehaviour {
             }
             else
             {
-                if(whatToType.Length <= 1)
+                if(whatToType.Length < 1)
                 {
+                    displayText.text += "\n \n";
                     whatToType = "";
                     typing = false;
                 }
