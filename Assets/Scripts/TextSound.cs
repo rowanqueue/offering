@@ -7,12 +7,14 @@ public class TextSound : MonoBehaviour {
     public AudioClip typeSound;
     public Dictionary<string, List<AudioClip>> speakerToVoice;
     public List<AudioClip> smorbleVoice;
+    public List<AudioClip> momVoice;
 	// Use this for initialization
 	void Awake () {
         me = this;
         speakerToVoice = new Dictionary<string, List<AudioClip>>
         {
-            {"player",smorbleVoice },
+            {"player",smorbleVoice},
+            {"mom",momVoice },
             {"",new List<AudioClip>(){typeSound} }
         };
 	}
@@ -22,7 +24,7 @@ public class TextSound : MonoBehaviour {
         //until everyone has a voice, use smorble's
         if(speaker != "")
         {
-            speaker = "player";
+            speaker = "mom";
         }
         if (speakerToVoice.ContainsKey(speaker))
         {
