@@ -53,14 +53,12 @@ public class StartMenu : MonoBehaviour {
             offeringText.color = Color.Lerp(transparent, Color.white, (duration - lerpTime * 3) / lerpTime);
             music.volume = (duration - lerpTime * 3) / lerpTime;
         }
-        if(duration > lerpTime * 3.5f)
+        if(leaving == false && duration > lerpTime * 3.5f)
         {
             RaycastHit hit;
-            Debug.Log("5");
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 actualTime -= Time.deltaTime;
-                Debug.Log("4");
             }
             else
             {
