@@ -72,17 +72,7 @@ public class NewStoryManager : MonoBehaviour {
         music2 = transform.GetChild(2).GetComponent<AudioSource>();
         ambience = transform.GetChild(0).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
-        speakerToColor = new Dictionary<string, string>
-        {
-            {"kari","#b18829ff" },
-            {"mom", "#a783afff" },
-            {"dad", "#869b63ff" },
-            {"grandpa","#dd503eff"},
-            {"audie","#ffa332ff"  },
-            {"brynja","#f1a6fcff" },
-            {"asta","#50714fff"},
-            {"player", "#86c6ceff" }
-        };
+        speakerToColor = new Dictionary<string, string>{};
         story = new Story(inkJSONAsset.text);
         GetTiles();
         foreach(Button button in choicesButtons)
@@ -328,6 +318,14 @@ public class NewStoryManager : MonoBehaviour {
                 {
                     typing = false;
                 }
+            }
+            if(whatToType[0] == '[')
+            {
+                string[] split = whatToType.Split('[')[1].Split(':');
+                speakerToColor.Add(split[0], '#' + split[1]);
+                TextSound.me.AddCharacter(split[0], split[2]);
+                whatToType = "";
+                typing = false;
             }
             //check for current voice (either typing sound or specific voice
             if (whatToType.Length > 0 && whatToType[0] == ':')

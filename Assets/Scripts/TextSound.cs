@@ -14,29 +14,18 @@ public class TextSound : MonoBehaviour {
         {
             {"",new List<AudioClip>(){typeSound} }
         };
-        foreach(string character in characters)
-        {
-            AudioClip[] voiceArr = Resources.LoadAll<AudioClip>("audio/voices/" + character);
-            List<AudioClip> voice = new List<AudioClip>();
-            foreach(AudioClip clip in voiceArr)
-            {
-                voice.Add(clip);
-            }
-            speakerToVoice.Add(character, voice);
-        }
-        /*speakerToVoice = new Dictionary<string, List<AudioClip>>
-        {
-            {"player",smorbleVoice},
-            {"mom",momVoice },
-            {"audie",cowLadyVoice },
-            {"dad",dadVoice },
-            {"kari",kariVoice },
-            {"grandpa",grandpaVoice },
-            {"brynja",sw1Voice },
-            {"asta",sw2Voice },
-            {"",new List<AudioClip>(){typeSound} }
-        };*/
 	}
+    public void AddCharacter(string character, string filePosition)
+    {
+        AudioClip[] voiceArr = Resources.LoadAll<AudioClip>(filePosition + character);
+        List<AudioClip> voice = new List<AudioClip>();
+        foreach (AudioClip clip in voiceArr)
+        {
+            voice.Add(clip);
+        }
+        speakerToVoice.Add(character, voice);
+        characters.Add(character);
+    }
     public void PlaySound(string speaker)
     {
         AudioClip clip = typeSound;
