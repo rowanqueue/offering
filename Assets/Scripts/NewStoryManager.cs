@@ -53,7 +53,6 @@ public class NewStoryManager : MonoBehaviour {
 
 
     //bad not content specific shit
-    public Image staminaBar;
     public int stamina;
     public Image coinBar;
     public int coin;
@@ -80,11 +79,29 @@ public class NewStoryManager : MonoBehaviour {
             button.gameObject.SetActive(false);
         }
         ResetScene();
+        //read through the people playing the parts here
+        for(int i = 0; i < 50; i++)
+        {
+            if (story.canContinue)
+            {
+                whatToType = story.Continue().Trim();
+                if (whatToType[0] == '[')
+                {
+                    string[] split = whatToType.Split('[')[1].Split(':');
+                    speakerToColor.Add(split[0], '#' + split[1]);
+                    TextSound.me.AddCharacter(split[0], split[2]);
+                }
+                if (whatToType == "BEGIN")
+                {
+                    whatToType = "";
+                    break;
+                }
+            }
+        }
         if(cheatJump != "")
         {
             story.ChoosePathString(cheatJump);
         }
-        //story.ObserveVariable("Stamina", (string varName, object full) =>{ stamina = 10; });
     }
 	void GetTiles()//puts all the tiles into one 2d array
     {
@@ -105,7 +122,6 @@ public class NewStoryManager : MonoBehaviour {
 	void Update () {
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
-        staminaBar.fillAmount = stamina/100f;
         coin = int.Parse(story.variablesState["coin"].ToString());
         coinBar.fillAmount = coin * 0.25f;
         int stam = 0;
@@ -135,6 +151,7 @@ public class NewStoryManager : MonoBehaviour {
             //grid choice?
             if (choiceText.Contains("^"))
             {
+                List<Tile> tilesCanClick = new List<Tile>();
                 string[] allText = choiceText.Split('^');
                 for(int i = 0; i < allText.Length; i++)
                 {
@@ -160,7 +177,7 @@ public class NewStoryManager : MonoBehaviour {
                         {
                             for(int h = xRange[0];h<= xRange[1]; h++)
                             {
-                                SetTile(new int[2] { h, j }, choice);
+                                tilesCanClick.Add(SetTile(new int[2] { h, j }, choice));
                             }
                         }
                     }
@@ -170,10 +187,28 @@ public class NewStoryManager : MonoBehaviour {
                         //subtract 1 from numbers bc tile grid is from 1-10, tile array is from 0-9
                         int x = letterToNum[posText[0].ToUpper()] - 1;
                         int y = int.Parse(posText[1]) - 1;
-                        SetTile(new int[2] { x, y }, choice);
+                        tilesCanClick.Add(SetTile(new int[2] { x, y }, choice));
                     }
                 }
                 numSpecialChoices++;
+                //here we are done
+                Vector2 averagePos = Vector2.zero;
+                for(int i = 0; i < tilesCanClick.Count; i++)
+                {
+                    averagePos += (Vector2)tilesCanClick[i].transform.position;
+                }
+                averagePos = averagePos / tilesCanClick.Count;
+                Tile closestTile = tilesCanClick[0];
+                for(int i = 1; i < tilesCanClick.Count; i++)
+                {
+                    //check if new one is closer than closest
+                    if(Vector2.Distance(averagePos,closestTile.transform.position) > Vector2.Distance(averagePos,tilesCanClick[i].transform.position))
+                    {
+                        closestTile = tilesCanClick[i];
+                    }
+                }
+                closestTile.sr.enabled = true;
+                closestTile.sr.color = Color.grey;
             }
             else
             {
@@ -479,6 +514,7 @@ public class NewStoryManager : MonoBehaviour {
             {
                 displayText.color = Color.white;
             }
+
             //see if you're hovering over anything
             RaycastHit hit;
             Choice hoveredChoice = null;
@@ -502,12 +538,12 @@ public class NewStoryManager : MonoBehaviour {
                         }
                         else
                         {
-                            tile.sr.color = Color.clear;
+                            tile.sr.color = Color.grey;
                         }
                     }
                     else
                     {
-                        tile.sr.color = Color.clear;
+                        tile.sr.color = Color.grey;
                     }
                 }
             }
@@ -595,12 +631,13 @@ public class NewStoryManager : MonoBehaviour {
     }
 
     //sets tile to active and following specific choice
-    void SetTile(int[] pos, Choice choice)
+    Tile SetTile(int[] pos, Choice choice)
     {
         Tile tile = tiles[pos[1]][pos[0]];
         tile.choice = choice;
         tile.bc.enabled = true;
-        tile.sr.enabled = true;
+        //tile.sr.enabled = true;
         tile.sr.color = Color.clear;
+        return tile;
     }
 }

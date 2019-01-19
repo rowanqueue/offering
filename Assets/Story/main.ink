@@ -6,6 +6,7 @@
 [audie:ffa332ff:audio/voices/
 [brynja:f1a6fcff:audio/voices/
 [asta:50714fff:audio/voices/
+BEGIN
 INCLUDE prologue.ink
 INCLUDE Act1.ink
 INCLUDE Act2.ink
