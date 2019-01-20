@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CheatStarter : MonoBehaviour {
+    bool cheating;
     public int act;
 	// Use this for initialization
 	void Start () {
@@ -11,6 +12,20 @@ public class CheatStarter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.P))
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                cheating = !cheating;
+            }
+        }
+        if (cheating)
+        {
+            Cheat();
+        }
+    }
+    void Cheat()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             act = 0;

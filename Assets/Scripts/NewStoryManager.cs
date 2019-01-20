@@ -133,6 +133,7 @@ public class NewStoryManager : MonoBehaviour {
         }
     }
 	void Update () {
+        scrollRect.verticalNormalizedPosition = 0;
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         coin = int.Parse(story.variablesState["coin"].ToString());
