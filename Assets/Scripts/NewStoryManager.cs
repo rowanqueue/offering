@@ -399,7 +399,7 @@ public class NewStoryManager : MonoBehaviour {
         //typing
         if (typing)
         {
-            displayText.color = Color.white;
+            displayText.color = Color.black;
             if (Time.time > lastTypedTimed + typeSpeed && whatToType.Length >= 1)
             {
                 lastTypedTimed = Time.time;
@@ -526,7 +526,7 @@ public class NewStoryManager : MonoBehaviour {
             }
             else
             {
-                displayText.color = Color.white;
+                displayText.color = Color.black;
             }
 
             //see if you're hovering over anything
