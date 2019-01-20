@@ -98,6 +98,19 @@ public class NewStoryManager : MonoBehaviour {
                 }
             }
         }
+        CheatStarter cs = GameObject.FindObjectOfType<CheatStarter>();
+        if(cs != null)
+        {
+            if(new List<int> { 1, 2, 3, 4, 5 }.Contains(cs.act))
+            {
+                cheatJump = "ACT" + cs.act;
+            }
+            else
+            {
+                cheatJump = "";
+            }
+            Destroy(cs);
+        }
         if(cheatJump != "")
         {
             story.ChoosePathString(cheatJump);
