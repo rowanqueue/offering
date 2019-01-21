@@ -6,21 +6,59 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour {
+    public bool hasSave;
     public TMP_Text scrampText;
     public TMP_Text offeringText;
-    public Image enter;
+    public Collider enterNo;
+    public Collider enterWith;
+    public Collider continueWith;
     public float holdTime;
-    float actualTime;
+    float actualTimeEnter;
+    float actualTimeContinue;
     public float lerpTime;//time it takes to lerp in and out
     public AudioSource source;
     public AudioSource music;
+
+    public Image sneakPeek;
+    public List<Sprite> actImages;
+    public int act;
+    public CheatStarter cs;
+
     bool leaving;
     float duration;
     Color transparent = new Color(1, 1, 1, 0);
+    Image enter;
+    Image continueButton;
     // Use this for initialization
     void Start () {
-        actualTime = holdTime;
+        actualTimeEnter = holdTime;
+        actualTimeContinue = holdTime;
         DontDestroyOnLoad(music);
+        //check for saves
+        string checkPoint = PlayerPrefs.GetString("save").ToLower();
+        Debug.Log(checkPoint);
+        if(checkPoint != null && checkPoint != "")
+        {
+            hasSave = true;
+        }
+        else
+        {
+            hasSave = false;
+        }
+        if (!hasSave)
+        {
+            enter = enterNo.GetComponent<Image>();
+        }
+        else
+        {
+            enter = enterWith.GetComponent<Image>();
+            //playerprefs sets act here
+            act = new List<string>() {"act0","act1","act2","act3","act4","act5" }.IndexOf(checkPoint);
+            sneakPeek.sprite = actImages[act - 1];
+
+        }
+        enter.transform.parent.gameObject.SetActive(true);
+        continueButton = continueWith.GetComponent<Image>();
 	}
 	
 	// Update is called once per frame
@@ -58,38 +96,89 @@ public class StartMenu : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                actualTime -= Time.deltaTime;
+                if(hit.collider.name == "Start")
+                {
+                    actualTimeEnter -= Time.deltaTime;
+                }
+                else
+                {
+                    actualTimeEnter += Time.deltaTime;
+                    if (actualTimeEnter > holdTime)
+                    {
+                        actualTimeEnter = holdTime;
+                    }
+                }
+                if(hit.collider.name == "Continue")
+                {
+                    actualTimeContinue -= Time.deltaTime;
+                }
+                else
+                {
+                    actualTimeContinue += Time.deltaTime;
+                    if (actualTimeContinue > holdTime)
+                    {
+                        actualTimeContinue = holdTime;
+                    }
+                }
+
             }
             else
             {
-                actualTime += Time.deltaTime;
-                if(actualTime > holdTime)
+                actualTimeEnter += Time.deltaTime;
+                if(actualTimeEnter > holdTime)
                 {
-                    actualTime = holdTime;
+                    actualTimeEnter = holdTime;
+                }
+                actualTimeContinue += Time.deltaTime;
+                if (actualTimeContinue > holdTime)
+                {
+                    actualTimeContinue = holdTime;
                 }
             }
         }
-        enter.fillAmount = actualTime/holdTime;
-        enter.color = offeringText.color;
-        if(actualTime < 0){
+        enter.fillAmount = actualTimeEnter/holdTime;
+        if(actualTimeEnter < 0)
+        {
             enter.fillAmount = 0;
+        }
+        if(actualTimeContinue < 0)
+        {
+            continueButton.fillAmount = 0;
         }
         if(duration > lerpTime * 4)
         {
-            if (leaving == false && actualTime < 0)
+            if (leaving == false)
             {
-                leaving = true;
-                duration = lerpTime * 4;
-                //SceneManager.LoadScene(1);
+                if(actualTimeEnter < 0 || actualTimeContinue < 0)
+                {
+                    leaving = true;
+                    duration = lerpTime * 4;
+                }
             }
             if (leaving)
             {
                 offeringText.color = Color.Lerp(Color.white, transparent, (duration - lerpTime * 4) / lerpTime);
                 if(duration > lerpTime * 5)
                 {
-                    SceneManager.LoadScene(1);
+                    if(actualTimeEnter < 0)
+                    {
+                        SceneManager.LoadScene(1);
+                    }
+                    if(actualTimeContinue < 0)
+                    {
+                        cs.act = act;
+                        SceneManager.LoadScene(2);
+                    }
                 }
             }
         }
-	}
+        enter.color = offeringText.color;
+        if (hasSave)
+        {
+            continueButton.fillAmount = actualTimeContinue / holdTime;
+            continueButton.color = offeringText.color;
+            sneakPeek.transform.parent.GetComponent<Image>().color = offeringText.color;
+            sneakPeek.color = offeringText.color;
+        }
+    }
 }

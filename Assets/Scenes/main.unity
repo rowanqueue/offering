@@ -306,6 +306,16 @@ Prefab:
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.24528301
       objectReference: {fileID: 0}
+    - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8bfb164d1ba7a1409691e81f3171c12, type: 2}
   m_IsPrefabAsset: 0
@@ -1886,6 +1896,16 @@ Prefab:
         type: 2}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.24528301
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8bfb164d1ba7a1409691e81f3171c12, type: 2}
@@ -4197,7 +4217,7 @@ Prefab:
     - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
         type: 2}
@@ -4207,7 +4227,7 @@ Prefab:
     - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
         type: 2}
@@ -4318,6 +4338,16 @@ Prefab:
         type: 2}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.24528301
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334686514381584, guid: e8bfb164d1ba7a1409691e81f3171c12,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8bfb164d1ba7a1409691e81f3171c12, type: 2}

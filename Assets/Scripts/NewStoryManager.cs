@@ -350,6 +350,12 @@ public class NewStoryManager : MonoBehaviour {
                             break;
                     }
                 }
+                if(s[0] == 'c')
+                {
+                    string[] split = s.Split('_');
+                    PlayerPrefs.SetString("save", split[1]);
+                    PlayerPrefs.Save();
+                }
             }
             if(currentKnot != thisKnot && thisKnot != "")//changes knots
             {

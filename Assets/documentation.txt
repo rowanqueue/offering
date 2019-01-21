@@ -2,6 +2,10 @@ SCRAMPGINE DOCUMENTATION
 Ink must start with character definitions and then a single line with the word BEGIN written
 CHARACTER DEFINITION
 [charactername:color:voicelocation]
+SAVING AND CHECKPOINTS
+Checkpoints are made by writing:
+
+#check_nameofcheckpoint
 TILES!!
 The grid runs from A1 to J10
 

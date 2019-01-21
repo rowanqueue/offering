@@ -1,4 +1,5 @@
 == ACT4 ==
+#check_act4
 #v_clearScreen
 #s_audio/Farm_m
 #v_act4/westDoorOpen
