@@ -36,6 +36,8 @@ public class NewStoryManager : MonoBehaviour {
     AudioSource music2;
 
     //fade shit
+    public float switchDuration;
+    public Sprite nextImage;
     public Image fade;
     public float lerpTime;
     int whatTolerp;//0visual,1sound
@@ -59,7 +61,9 @@ public class NewStoryManager : MonoBehaviour {
     public int coin;
     public Image smorbleHead;
     public List<Sprite> smorbleHeads;
+    public Color teal;
 	void Awake () {
+        switchDuration = 20f;
         coinTimes = new List<float>() { 0, 0, 0, 0 };
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
@@ -148,6 +152,23 @@ public class NewStoryManager : MonoBehaviour {
             coinImages[i].enabled = true;
             coinImages[i].color = Color.Lerp(Color.clear, Color.white, coinTimes[i]);
             coinTimes[i] += Time.deltaTime*2f;
+        }
+        if(switchDuration < 2)
+        {
+            switchDuration += Time.deltaTime;
+            if(switchDuration < 1)
+            {
+                displayImage.color = Color.Lerp(Color.white, teal, switchDuration);
+            }
+            if(switchDuration > 1)
+            {
+                if(nextImage != null)
+                {
+                    displayImage.sprite = nextImage;
+                    nextImage = null;
+                }
+                displayImage.color = Color.Lerp(teal, Color.white, switchDuration-1);
+            }
         }
         //coinBar.fillAmount = coin * 0.25f;
         /*int stam = 0;
@@ -373,7 +394,13 @@ public class NewStoryManager : MonoBehaviour {
             {
                 currentKnot = thisKnot;
                 //this is where you could reset the scene
-                displayImage.sprite = Resources.Load<Sprite>(currentKnot);
+                //displayImage.sprite = Resources.Load<Sprite>(currentKnot);
+                nextImage = Resources.Load<Sprite>(currentKnot);
+                switchDuration = 0;
+                if(displayImage.sprite == null)
+                {
+                    switchDuration = 1.0f;
+                }
             }
             //done checking knots!!
             //get rid of fake tags to make grid work
