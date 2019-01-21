@@ -54,11 +54,13 @@ public class NewStoryManager : MonoBehaviour {
 
     //bad not content specific shit
     public int stamina;
-    public Image coinBar;
+    public List<Image> coinImages;
+    public List<float> coinTimes;
     public int coin;
     public Image smorbleHead;
     public List<Sprite> smorbleHeads;
 	void Awake () {
+        coinTimes = new List<float>() { 0, 0, 0, 0 };
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
         if(musicFind != null)
         {
@@ -137,8 +139,18 @@ public class NewStoryManager : MonoBehaviour {
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
         coin = int.Parse(story.variablesState["coin"].ToString());
-        coinBar.fillAmount = coin * 0.25f;
-        int stam = 0;
+        for(int i = 0; i < coinImages.Count; i++)
+        {
+            coinImages[i].enabled = false;
+        }
+        for(int i = 0; i < coin; i++)
+        {
+            coinImages[i].enabled = true;
+            coinImages[i].color = Color.Lerp(Color.clear, Color.white, coinTimes[i]);
+            coinTimes[i] += Time.deltaTime*2f;
+        }
+        //coinBar.fillAmount = coin * 0.25f;
+        /*int stam = 0;
         if(stamina < 75)
         {
             stam = 1;
@@ -151,7 +163,7 @@ public class NewStoryManager : MonoBehaviour {
                 }
             }
         }
-        smorbleHead.sprite = smorbleHeads[stam];
+        smorbleHead.sprite = smorbleHeads[stam];*/
         //imageshit
         topImage.enabled = topImageUsed;
         //choices
@@ -374,7 +386,7 @@ public class NewStoryManager : MonoBehaviour {
                     typing = false;
                 }
             }
-            if(whatToType[0] == '[')
+            if(whatToType.Length > 0 && whatToType[0] == '[')
             {
                 string[] split = whatToType.Split('[')[1].Split(':');
                 speakerToColor.Add(split[0], '#' + split[1]);
@@ -401,6 +413,12 @@ public class NewStoryManager : MonoBehaviour {
                 displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
             }
             else { currentSpeaker = ""; }
+            if(whatToType.Length < 1)
+            {
+                displayText.text += "\n";
+                whatToType = "";
+                typing = false;
+            }
         }
         //typing
         if (typing)

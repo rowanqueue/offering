@@ -72,7 +72,7 @@ Grandpa rushes in clearly confused about the fire. You take that chance to bolt 
 * [Head North] ->trails
 ==act3Boat
 #v_clearScreen
-~coin +=1
+~coin = 2
 You finally enter the boat and find a mess of drawings, notes, and trinkets. Kari has fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, you assume he must spend a lot of his time here.
 ->Insideboat
 

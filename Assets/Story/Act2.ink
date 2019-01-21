@@ -47,7 +47,7 @@ You've reached the foggy thicket of trees and Kari is speeding right along.
 #v_act2/meadowcampfire
 #v_enter_act2/entranceKARI
 #s_audio/Piano LeadUp_m
-~coin +=1
+~coin = 1
 The grass gives way to dirt as you reach a clearing between the trees. There is a lean-to and some logs set up as benches around a fire pit. 
 :kari:"We made it, cousin! Oh, this is a very special place. Fifteen or so times a year, this is where grandpa and I gather with his friends for our the celebrations. There is always music and singing and good food! We used to do it more often. There used to be more people too.":->cousinConvo_campfire
 == cousinConvo_campfire ==

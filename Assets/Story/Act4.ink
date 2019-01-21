@@ -5,7 +5,7 @@
 #v_act4/westDoorOpen
 //throw grandpa and audi here
 You drive up to a decrepit old farm. It’s definitely not Dad’s parents’ place by the water. Grandpa answers your question before you ask it. 
-~coin +=1
+~coin = 3
 :grandpa: “This is Audhumbla Ívarsdóttir’s house. She is the only remaining member of my kindred. Everyone else abandoned us to live with comforts, they abandoned the ways of our forefathers. I want you to see the life that we have.”:
 
 *    [What about other grandparents?] :player:”What about my other grandparents?”: you ask.

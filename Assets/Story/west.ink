@@ -41,9 +41,7 @@ You stop at foot of some rolling hills. You are astonished by the size of this f
     + {not eatenBerries or not hasBerries} ^H:J,7:9 ^[Examine bushes] ->bushes
     + ^A:F,6:7 ^A:D,8:10 ^E,8^[Examine cow]
         {cow1milked : This was a nice cow -> main}
-        {hasBucket: ->cow1}
-        You don't feel like your ready to do that yet. 
-        ->main
+        {hasBucket: ->cow1} You don't feel like your ready to do that yet. ->main
     +[Go forward] ->pasture2
     +[Go right] ->pasture3
     +[Go back] -> lady
@@ -101,9 +99,7 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
         
     + ^H:J,5:10^[Examine cow]
         {cow2milked: This was also a nice cow. -> main}
-        {hasBucket: ->cow2} 
-        You don't feel like your ready to do that yet. 
-        ->main
+        {hasBucket: ->cow2} You don't feel like your ready to do that yet. ->main
         
     +[Go back] ->pasture
 
