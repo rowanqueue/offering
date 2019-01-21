@@ -24,7 +24,7 @@ public class Credits : MonoBehaviour {
             "<b>Lead Puzzle Designer</b><size=35>\nParker Crandell</size>\n\n<b>Additional Puzzle Design</b>\n<size=35>Spencer Bernstein, Rowan Q</size>",
             "<b>Lead Programmer</b><size=35>\nRowan Q</size>\n\n<b>Additional Programming</b><size=35>\nParker Crandell</size>",
             "<b>Lead Writer</b><size=35>\nSpencer Bernstein</size>\n\n<b>Additional Writing</b><size=35>\nParker Crandell, McKenna Flanagan, Ajali Harrison, Rowan Q</size>",
-            "<b>Special thanks to</b<size=35>\nNaomi, Isabella, Jason, Jeremiah, and Mom</size>>"
+            "<b>Special thanks to</b><size=35>\nNaomi, Isabella, Jason, Jeremaiah, and Mom</size>"
  };
         displayText.text = textToDisplay[index];
 	}

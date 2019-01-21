@@ -1,6 +1,7 @@
 ==ACT5==
 ->act5Road
 ==act5Road==
+#check_act5
 #v_clearScreen
 #v_act5/road
 You've run out onto the road, heading for the mountains. You hope to god or gods that Audhumbla isn't tricking you. You're freezing cold and soon praying to see any sort of car on the road. 

@@ -5,6 +5,7 @@ VAR given_drawing = false
 -> town
 == town ==
 = intro
+#check_act1
 #s_stop
 #v_act1/dock
 //TOO MUCH, ALSO WEIRD??

@@ -53,7 +53,6 @@ public class NewStoryManager : MonoBehaviour {
 
 
     //bad not content specific shit
-    public Image staminaBar;
     public int stamina;
     public Image coinBar;
     public int coin;
@@ -72,17 +71,7 @@ public class NewStoryManager : MonoBehaviour {
         music2 = transform.GetChild(2).GetComponent<AudioSource>();
         ambience = transform.GetChild(0).GetComponent<AudioSource>();
         letterToNum = new Dictionary<string, int>{{ "A",1 },{ "B",2 },{ "C",3 },{ "D",4 },{ "E",5 },{ "F",6 },{ "G",7 },{ "H",8 },{ "I",9 },{ "J",10 }};
-        speakerToColor = new Dictionary<string, string>
-        {
-            {"kari","#b18829ff" },
-            {"mom", "#a783afff" },
-            {"dad", "#869b63ff" },
-            {"grandpa","#dd503eff"},
-            {"audie","#ffa332ff"  },
-            {"brynja","#f1a6fcff" },
-            {"asta","#50714fff"},
-            {"player", "#86c6ceff" }
-        };
+        speakerToColor = new Dictionary<string, string>{};
         story = new Story(inkJSONAsset.text);
         GetTiles();
         foreach(Button button in choicesButtons)
@@ -90,11 +79,42 @@ public class NewStoryManager : MonoBehaviour {
             button.gameObject.SetActive(false);
         }
         ResetScene();
+        //read through the people playing the parts here
+        for(int i = 0; i < 50; i++)
+        {
+            if (story.canContinue)
+            {
+                whatToType = story.Continue().Trim();
+                if (whatToType[0] == '[')
+                {
+                    string[] split = whatToType.Split('[')[1].Split(':');
+                    speakerToColor.Add(split[0], '#' + split[1]);
+                    TextSound.me.AddCharacter(split[0], split[2]);
+                }
+                if (whatToType == "BEGIN")
+                {
+                    whatToType = "";
+                    break;
+                }
+            }
+        }
+        CheatStarter cs = GameObject.FindObjectOfType<CheatStarter>();
+        if(cs != null)
+        {
+            if(new List<int> { 1, 2, 3, 4, 5 }.Contains(cs.act))
+            {
+                cheatJump = "ACT" + cs.act;
+            }
+            else
+            {
+                cheatJump = "";
+            }
+            Destroy(cs);
+        }
         if(cheatJump != "")
         {
             story.ChoosePathString(cheatJump);
         }
-        //story.ObserveVariable("Stamina", (string varName, object full) =>{ stamina = 10; });
     }
 	void GetTiles()//puts all the tiles into one 2d array
     {
@@ -113,9 +133,9 @@ public class NewStoryManager : MonoBehaviour {
         }
     }
 	void Update () {
+        scrollRect.verticalNormalizedPosition = 0;
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
-        staminaBar.fillAmount = stamina/100f;
         coin = int.Parse(story.variablesState["coin"].ToString());
         coinBar.fillAmount = coin * 0.25f;
         int stam = 0;
@@ -145,6 +165,7 @@ public class NewStoryManager : MonoBehaviour {
             //grid choice?
             if (choiceText.Contains("^"))
             {
+                List<Tile> tilesCanClick = new List<Tile>();
                 string[] allText = choiceText.Split('^');
                 for(int i = 0; i < allText.Length; i++)
                 {
@@ -170,7 +191,7 @@ public class NewStoryManager : MonoBehaviour {
                         {
                             for(int h = xRange[0];h<= xRange[1]; h++)
                             {
-                                SetTile(new int[2] { h, j }, choice);
+                                tilesCanClick.Add(SetTile(new int[2] { h, j }, choice));
                             }
                         }
                     }
@@ -180,10 +201,28 @@ public class NewStoryManager : MonoBehaviour {
                         //subtract 1 from numbers bc tile grid is from 1-10, tile array is from 0-9
                         int x = letterToNum[posText[0].ToUpper()] - 1;
                         int y = int.Parse(posText[1]) - 1;
-                        SetTile(new int[2] { x, y }, choice);
+                        tilesCanClick.Add(SetTile(new int[2] { x, y }, choice));
                     }
                 }
                 numSpecialChoices++;
+                //here we are done
+                Vector2 averagePos = Vector2.zero;
+                for(int i = 0; i < tilesCanClick.Count; i++)
+                {
+                    averagePos += (Vector2)tilesCanClick[i].transform.position;
+                }
+                averagePos = averagePos / tilesCanClick.Count;
+                Tile closestTile = tilesCanClick[0];
+                for(int i = 1; i < tilesCanClick.Count; i++)
+                {
+                    //check if new one is closer than closest
+                    if(Vector2.Distance(averagePos,closestTile.transform.position) > Vector2.Distance(averagePos,tilesCanClick[i].transform.position))
+                    {
+                        closestTile = tilesCanClick[i];
+                    }
+                }
+                closestTile.sr.enabled = true;
+                closestTile.sr.color = Color.grey;
             }
             else
             {
@@ -311,6 +350,12 @@ public class NewStoryManager : MonoBehaviour {
                             break;
                     }
                 }
+                if(s[0] == 'c')
+                {
+                    string[] split = s.Split('_');
+                    PlayerPrefs.SetString("save", split[1]);
+                    PlayerPrefs.Save();
+                }
             }
             if(currentKnot != thisKnot && thisKnot != "")//changes knots
             {
@@ -328,6 +373,14 @@ public class NewStoryManager : MonoBehaviour {
                 {
                     typing = false;
                 }
+            }
+            if(whatToType[0] == '[')
+            {
+                string[] split = whatToType.Split('[')[1].Split(':');
+                speakerToColor.Add(split[0], '#' + split[1]);
+                TextSound.me.AddCharacter(split[0], split[2]);
+                whatToType = "";
+                typing = false;
             }
             //check for current voice (either typing sound or specific voice
             if (whatToType.Length > 0 && whatToType[0] == ':')
@@ -352,7 +405,7 @@ public class NewStoryManager : MonoBehaviour {
         //typing
         if (typing)
         {
-            displayText.color = Color.white;
+            displayText.color = Color.black;
             if (Time.time > lastTypedTimed + typeSpeed && whatToType.Length >= 1)
             {
                 lastTypedTimed = Time.time;
@@ -479,8 +532,9 @@ public class NewStoryManager : MonoBehaviour {
             }
             else
             {
-                displayText.color = Color.white;
+                displayText.color = Color.black;
             }
+
             //see if you're hovering over anything
             RaycastHit hit;
             Choice hoveredChoice = null;
@@ -504,12 +558,12 @@ public class NewStoryManager : MonoBehaviour {
                         }
                         else
                         {
-                            tile.sr.color = Color.clear;
+                            tile.sr.color = Color.grey;
                         }
                     }
                     else
                     {
-                        tile.sr.color = Color.clear;
+                        tile.sr.color = Color.grey;
                     }
                 }
             }
@@ -597,12 +651,13 @@ public class NewStoryManager : MonoBehaviour {
     }
 
     //sets tile to active and following specific choice
-    void SetTile(int[] pos, Choice choice)
+    Tile SetTile(int[] pos, Choice choice)
     {
         Tile tile = tiles[pos[1]][pos[0]];
         tile.choice = choice;
         tile.bc.enabled = true;
-        tile.sr.enabled = true;
+        //tile.sr.enabled = true;
         tile.sr.color = Color.clear;
+        return tile;
     }
 }

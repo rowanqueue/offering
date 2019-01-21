@@ -2,6 +2,7 @@ VAR hasLighter = false
 VAR hasPapers = false
 == ACT3 ==
 //fade in, grandpa's here
+#check_act3
 #v_clearScreen
 #v_act3/bedroomEmpty
 #v_enter_act3/fadedGRAMPS

@@ -5,31 +5,27 @@ using UnityEngine;
 public class TextSound : MonoBehaviour {
     public static TextSound me;
     public AudioClip typeSound;
+    public List<string> characters;
     public Dictionary<string, List<AudioClip>> speakerToVoice;
-    public List<AudioClip> smorbleVoice;
-    public List<AudioClip> momVoice;
-    public List<AudioClip> cowLadyVoice;
-    public List<AudioClip> dadVoice;
-    public List<AudioClip> kariVoice;
-    public List<AudioClip> sw1Voice;
-    public List<AudioClip> sw2Voice;
-    public List<AudioClip> grandpaVoice;
 	// Use this for initialization
 	void Awake () {
         me = this;
         speakerToVoice = new Dictionary<string, List<AudioClip>>
         {
-            {"player",smorbleVoice},
-            {"mom",momVoice },
-            {"audie",cowLadyVoice },
-            {"dad",dadVoice },
-            {"kari",kariVoice },
-            {"grandpa",grandpaVoice },
-            {"brynja",sw1Voice },
-            {"asta",sw2Voice },
             {"",new List<AudioClip>(){typeSound} }
         };
 	}
+    public void AddCharacter(string character, string filePosition)
+    {
+        AudioClip[] voiceArr = Resources.LoadAll<AudioClip>(filePosition + character);
+        List<AudioClip> voice = new List<AudioClip>();
+        foreach (AudioClip clip in voiceArr)
+        {
+            voice.Add(clip);
+        }
+        speakerToVoice.Add(character, voice);
+        characters.Add(character);
+    }
     public void PlaySound(string speaker)
     {
         AudioClip clip = typeSound;
