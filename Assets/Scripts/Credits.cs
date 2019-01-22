@@ -13,9 +13,12 @@ public class Credits : MonoBehaviour {
     float duration;
     float durationVolume;
     int index;
+    bool speedy;
+    float speedyTime;
     AudioSource destroyThis;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
+        speedy = false;
         destroyThis = GameObject.FindGameObjectWithTag("DestroyThis").GetComponent<AudioSource>();
         textToDisplay = new string[] {
             "<b>Lead Artist</b><size=35>\nAjali Harrison</size>\n\n<b>Additional Art</b><size=35>\nMcKenna Flanagan</size>",
@@ -27,14 +30,23 @@ public class Credits : MonoBehaviour {
             "<b>Special thanks to</b><size=35>\nNaomi, Isabella, Jason, Jeremaiah, and Mom</size>"
  };
         displayText.text = textToDisplay[index];
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
         float mod = 1.0f;
-        if (Input.anyKey)
+        if (Input.anyKey || speedy)
         {
             mod = 5.0f;
+        }
+        if (Input.anyKeyDown)
+        {
+            speedy = true;
+            speedyTime = Time.time;
+        }
+        if(speedy && Time.time > speedyTime + 1.0f)
+        {
+            speedy = false;
         }
         duration += Time.deltaTime*mod;
         if(index >= textToDisplay.Length - 1)

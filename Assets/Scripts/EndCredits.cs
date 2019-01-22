@@ -14,12 +14,15 @@ public class EndCredits : MonoBehaviour
     float duration;
     float durationVolume;
     int index;
+    bool speedy;
+    float speedyTime;
     AudioSource destroyThis;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        PlayerPrefs.DeleteAll();
         GameObject find = GameObject.FindGameObjectWithTag("DestroyThis");
-        if(find == null)
+        if (find == null)
         {
             destroyThis = GetComponent<AudioSource>();
         }
@@ -40,9 +43,18 @@ public class EndCredits : MonoBehaviour
     void Update()
     {
         float mod = 1.0f;
-        if (Input.anyKey)
+        if (Input.anyKey || speedy)
         {
             mod = 5.0f;
+        }
+        if (Input.anyKeyDown)
+        {
+            speedy = true;
+            speedyTime = Time.time;
+        }
+        if (speedy && Time.time > speedyTime + 1.0f)
+        {
+            speedy = false;
         }
         duration += Time.deltaTime * mod;
         if (index >= textToDisplay.Length - 1)
