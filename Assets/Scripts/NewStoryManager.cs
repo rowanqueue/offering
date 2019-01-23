@@ -255,7 +255,8 @@ public class NewStoryManager : MonoBehaviour {
                     }
                 }
                 closestTile.sr.enabled = true;
-                closestTile.sr.color = Color.grey;
+                //closestTile.sr.color = Color.grey;
+                closestTile.ps.Play();
             }
             else
             {
@@ -599,16 +600,16 @@ public class NewStoryManager : MonoBehaviour {
                     {
                         if (tile.choice == hoveredChoice)
                         {
-                            tile.sr.color = Color.white;
+                            tile.ps.startColor = Color.grey;
                         }
                         else
                         {
-                            tile.sr.color = Color.grey;
+                            tile.ps.startColor = Color.white;
                         }
                     }
                     else
                     {
-                        tile.sr.color = Color.grey;
+                        tile.ps.startColor = Color.white;
                     }
                 }
             }
@@ -689,6 +690,7 @@ public class NewStoryManager : MonoBehaviour {
             {
                 tile.sr.enabled = false;
                 tile.bc.enabled = false;
+                tile.ps.Stop();
                 j++;
             }
             i++;
