@@ -61,8 +61,15 @@ public class NewStoryManager : MonoBehaviour {
     public int coin;
     public Image smorbleHead;
     public List<Sprite> smorbleHeads;
+    //screen switching
+    public Image screenSwitch;
     public Color teal;
-	void Awake () {
+    public Color clear;
+    float totalSwitchTime = 1.5f;
+    float half;
+    void Awake () {
+        clear = new Color(teal.r, teal.g, teal.b, 0f);
+        half = totalSwitchTime * 0.5f;
         switchDuration = 20f;
         coinTimes = new List<float>() { 0, 0, 0, 0 };
         GameObject musicFind = GameObject.FindGameObjectWithTag("DestroyThis");
@@ -153,21 +160,31 @@ public class NewStoryManager : MonoBehaviour {
             coinImages[i].color = Color.Lerp(Color.clear, Color.white, coinTimes[i]);
             coinTimes[i] += Time.deltaTime*2f;
         }
-        if(switchDuration < 2)
+        if(switchDuration < totalSwitchTime)
         {
             switchDuration += Time.deltaTime;
-            if(switchDuration < 1)
+            if(switchDuration < half && nextImage != null)
             {
-                displayImage.color = Color.Lerp(Color.white, teal, switchDuration);
+                screenSwitch.color = Color.Lerp(clear, teal, switchDuration/half);
             }
-            if(switchDuration > 1)
+            else
             {
-                if(nextImage != null)
+                if (nextImage != null)
                 {
+                    switchDuration -= half * 0.25f;
                     displayImage.sprite = nextImage;
                     nextImage = null;
                 }
-                displayImage.color = Color.Lerp(teal, Color.white, switchDuration-1);
+                screenSwitch.color = Color.Lerp(teal, clear, (switchDuration - half) / half);
+            }
+        }
+        else
+        {
+            screenSwitch.color = Color.clear;
+            if(nextImage != null)
+            {
+                displayImage.sprite = nextImage;
+                nextImage = null;
             }
         }
         //coinBar.fillAmount = coin * 0.25f;
@@ -400,7 +417,7 @@ public class NewStoryManager : MonoBehaviour {
                 switchDuration = 0;
                 if(displayImage.sprite == null)
                 {
-                    switchDuration = 1.0f;
+                    switchDuration = half;
                 }
             }
             //done checking knots!!
