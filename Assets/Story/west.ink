@@ -65,18 +65,18 @@ You stop at foot of some rolling hills. You are astonished by the size of this f
 = cow1
     You feel the body heat of the cow on your skin. It exhales loudly once you crouch down. You seem more nervous than it does. 
     //write text in the above to indicate doing either petting or scratching
-    +^A:D,6:7 ^[Pet the Cow]
+    +[Pet the Cow]
         Your hands tremble a little bit as you pet the cow. You have never seen an animal of this size in person before. This whole trip has been a stark change from your New York home, leaving you nervous and uncomphotable. The cow, on the other hand, seems at ease even going so far as to move closer to you.  
             ~cow1Soothed = true
             ->cow1
     
-    +^E:F,6:7 ^[Scratch Behind Its Ears]
+    *[Scratch Behind Its Ears]
         You try scratching behind her ears, like a dog. It snorts furiously and trashs her head angrily. This scares you even more. You don't know how to approach these animals. If you can't even soothe them properly, how are you going to milk them?
             ~stamina -= 5
             ~cow1Soothed = false
             ->cow1
     
-    + { not cow1milked}^A:E,9:10 ^[Milk Cow]
+    + { not cow1milked}[Milk Cow]
         {cow1Soothed and hasBucket:
         ~milk += 1
         }
@@ -110,7 +110,7 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
 = cow2
     You see the cow periodically rustle through the bushes looking for something. It immediately stops and stares at you when you approach.  
     //explain what you do with the cow down here
-    + {not cow2Soothed} ^H:J,5:10^[Give The Cow What It Wants]
+    + {not cow2Soothed}[Give The Cow What It Wants]
         {hasBerries: You take some berries out of your pocket to feed the cow some berries. You feel its tounge brush up against your hand as it takes them. It nuzzles your hand once it finishes chewing.}
         {hasBerries:
             ~cow2Soothed = true
@@ -118,7 +118,7 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
         {not hasBerries: You don't know what you can do.}
         ->cow2
     
-    + {not cow2milked and cow2Soothed} ^H:J,5:10^[Milk Cow]
+    + {not cow2milked and cow2Soothed}[Milk Cow]
         {cow2Soothed and hasBucket:
             ~cow2milked = true
         }
@@ -164,11 +164,11 @@ Your feet start to hurt again. You haven't really had a chance to fully recover 
 = cow3
     This cow fidgets constantly, sporadically swatting its tail and kicking its feet.  
 
-    + ^E:F,9:10 ^[Talk to the cow]
+    +[Talk to the cow]
         You apologize for what you are about to do. You don't want to hurt it and your not here by choice. It seems to stop kicking and stay still.
         ->cow3
 
-    + {not cow3milked} ^F:J,6:8^[Milk Cow]
+    + {not cow3milked} [Milk Cow]
         {hasBucket:
         ~cow3milked = true
         }
