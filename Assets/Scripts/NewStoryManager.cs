@@ -202,8 +202,6 @@ public class NewStoryManager : MonoBehaviour {
             }
         }
         smorbleHead.sprite = smorbleHeads[stam];*/
-        //imageshit
-        topImage.enabled = topImageUsed;
         //choices
 		if(story.currentChoices.Count > numChoicesDisplayed && typing == false)
         {
@@ -315,9 +313,15 @@ public class NewStoryManager : MonoBehaviour {
                         case "enter":
                             string file = s.Split('_')[2].Trim();
                             topImage.sprite = Resources.Load<Sprite>(file);
-                            topImageUsed = true;
+                            whatTolerp = 2;
+                            duration = 0;
+                            lerpState = 1;
+                            topImage.color = Color.clear;
                             break;
                         case "exit":
+                            whatTolerp = 2;
+                            duration = 0;
+                            lerpState = 2;
                             topImageUsed = false;
                             break;
                         default:
@@ -654,7 +658,7 @@ public class NewStoryManager : MonoBehaviour {
                     }
                 }
             }
-            else
+            else if(whatTolerp == 1)//audio
             {
                 if (lerpState == 2)//fading in
                 {
@@ -668,6 +672,20 @@ public class NewStoryManager : MonoBehaviour {
                 {
                     ambience.volume = Mathf.Lerp(0.5f, 0.0f, duration / lerpTime);
                     if (duration > lerpTime)
+                    {
+                        lerpState = 0;
+                    }
+                }
+            }else if(whatTolerp == 2)//fade in enter stuff
+            {
+                if(lerpState == 1)
+                {
+                    topImage.color = Color.Lerp(new Color(1,1,1,0), Color.white, duration / lerpTime);
+                }
+                if(lerpState == 2)
+                {
+                    topImage.color = Color.Lerp(Color.white, new Color(1,1,1,0), duration / lerpTime);
+                    if(duration > lerpTime)
                     {
                         lerpState = 0;
                     }

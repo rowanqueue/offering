@@ -359,8 +359,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251, y: 40}
-  m_SizeDelta: {x: 275.1, y: 362.1}
+  m_AnchoredPosition: {x: 252.13, y: 34.6}
+  m_SizeDelta: {x: 272.85, y: 351.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66059199
 MonoBehaviour:
@@ -1369,27 +1369,27 @@ Prefab:
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_textInfo.characterCount
-      value: 996
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_textInfo.spaceCount
-      value: 197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_textInfo.wordCount
-      value: 189
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_textInfo.lineCount
-      value: 29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_textInfo.pageCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
@@ -1429,20 +1429,7 @@ Prefab:
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_text
-      value: "Alex found a nook in the ferry where she couldn't see the water. Even
-        though her dad told her that being inside would only make her more seasick,
-        she preferred it to being on the deck. Looking at the coast of rural Iceland
-        just made Alex want to go home. She wished her parents hadn't come from a
-        town so far away, and her stomach churned thinking about how much more time
-        she'll have to spend in the rental car before arriving at her Grandfather's
-        house. At least here it was quiet, and she could draw until her mother found
-        her.\n \n<color=#a783afff>\"Jesus, Alex, what are you doing down here? I can
-        barely breathe with all these fumes, and - if a brake malfunctions? A car
-        could start rolling and run you over. Get your head out of your notebook.\"</color>\n
-        \nAlex's mom took away her journal and pencils.\n \n<color=#a783afff>\"Listen
-        to me, Alex. I know you don't know much about where we're going, but that's
-        why you have to trust me, and do exactly what I say. No running off. Just
-        be good for two days, and then we leave. Understand?\"</color>\n \n"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
@@ -1611,7 +1598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.04, y: 442.83}
+  m_AnchoredPosition: {x: -2.040039, y: 442.83}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1001 &564167738
@@ -2756,6 +2743,7 @@ RectTransform:
   - {fileID: 1224324271}
   - {fileID: 582451638}
   - {fileID: 1788745243}
+  - {fileID: 1872224719}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2888,6 +2876,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1282511825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282511827}
+  - component: {fileID: 1282511826}
+  m_Layer: 0
+  m_Name: VolumeHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1282511826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282511825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b251c6ab465b0a4bb871015df5ede34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0
+  volumeImage: {fileID: 1872224717}
+  volumeOn:
+  - {fileID: 21300000, guid: 0d1d4f9d3cda1614384ec1401c626d78, type: 3}
+  - {fileID: 21300000, guid: 4626d253121a406499e1fa3ffcb3c04c, type: 3}
+  - {fileID: 21300000, guid: c4a663329faad98488a665ea051eb915, type: 3}
+  volumeMute: {fileID: 21300000, guid: 140cbc0bd20bf364bb5f56c2c7ac1d52, type: 3}
+--- !u!4 &1282511827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282511825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.5833244, y: -0.37292528, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &1294149742
 Material:
   serializedVersion: 6
@@ -3650,8 +3685,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000186555, y: 0.000022293738}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12.200005, y: 0}
+  m_SizeDelta: {x: -12.2, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1583118389
 MonoBehaviour:
@@ -4129,6 +4164,75 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1872224716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872224719}
+  - component: {fileID: 1872224718}
+  - component: {fileID: 1872224717}
+  m_Layer: 5
+  m_Name: Volume!!
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1872224717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872224716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1872224718
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872224716}
+  m_CullTransparentMesh: 0
+--- !u!224 &1872224719
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872224716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1264687721}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -369.1, y: 211.89}
+  m_SizeDelta: {x: 29.7, y: 25.777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1900336056
 Prefab:
