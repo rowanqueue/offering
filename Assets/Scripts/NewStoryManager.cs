@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Ink.Runtime;
+using UnityEngine.SceneManagement;
 
 public class NewStoryManager : MonoBehaviour {
     public string cheatJump;//put knot here
@@ -288,6 +289,10 @@ public class NewStoryManager : MonoBehaviour {
             scrollRect.verticalNormalizedPosition = 0;
             typing = true;
             whatToType = story.Continue().Trim();
+            if(whatToType == "END")
+            {
+                SceneManager.LoadScene(3);
+            }
             //checking knots!!
             string thisKnot = "";//to check if this is a new knot or not
             foreach(string s in story.currentTags)
@@ -538,8 +543,13 @@ public class NewStoryManager : MonoBehaviour {
             }
             if (Input.GetMouseButtonDown(0))//click to skip
             {
+                int length = 50;
+                if(whatToType.Length < length)
+                {
+                    length = whatToType.Length;
+                }
                 int dieLine = -1;//when hit this, start printing again
-                for (int i = 0; i < whatToType.Length; i++)
+                for (int i = 0; i < length; i++)
                 {
                     char c = whatToType[i];
                     if (i < dieLine)
@@ -584,9 +594,19 @@ public class NewStoryManager : MonoBehaviour {
                         }
                     }
                 }
-                displayText.text += "\n \n";
+                /*displayText.text += "\n \n";
                 typing = false;
-                whatToType = "";
+                whatToType = "";*/
+                if(length == whatToType.Length)
+                {
+                    displayText.text += "\n \n";
+                    typing = false;
+                    whatToType = "";
+                }
+                else
+                {
+                    whatToType = whatToType.Substring(length);
+                }
                 TextSound.me.PlaySound(currentSpeaker);
             }
             scrollRect.verticalNormalizedPosition = 0;

@@ -1,5 +1,6 @@
 SCRAMPGINE DOCUMENTATION
 Ink must start with character definitions and then a single line with the word BEGIN written
+Ink must end with the word END written on a single line
 CHARACTER DEFINITION
 [charactername:color:voicelocation]
 SAVING AND CHECKPOINTS
