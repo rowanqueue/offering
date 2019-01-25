@@ -10,7 +10,8 @@ public class EndCredits : MonoBehaviour
     public float lerpTime;//time it takes to lerp in and out
     public float stayTime;//time text stays up
     public int state;//0lerpingin,1staying,1lerpingout
-    public string[] textToDisplay;
+    public TextAsset endCredits;
+    List<string> textToDisplay;
     float duration;
     float durationVolume;
     int index;
@@ -30,12 +31,46 @@ public class EndCredits : MonoBehaviour
         {
             destroyThis = find.GetComponent<AudioSource>();
         }
-        textToDisplay = new string[] {"<b>Music</b><size=35>\nChristian Weinschenk & Spencer Bernstein</size>",
+        string[] split = endCredits.text.Split('\n');
+        textToDisplay = new List<string>();
+        int indexHere = 0;
+        bool bold = true;
+        foreach (string s in split)
+        {
+            Debug.Log(s);
+            string line = "";
+            if (s.Length < 2)
+            {
+                indexHere++;
+            }
+            else
+            {
+                if (bold)
+                {
+                    line = "<b>" + s + "</b><size=35>\n";
+                }
+                else
+                {
+                    line = s + "</size>\n\n";
+                }
+                Debug.Log(index);
+                if (textToDisplay.Count == indexHere)
+                {
+                    textToDisplay.Add(line);
+                }
+                else
+                {
+                    textToDisplay[indexHere] += line;
+                }
+                bold = !bold;
+            }
+        }
+        /*textToDisplay = new string[] {"<b>Music</b><size=35>\nChristian Weinschenk & Spencer Bernstein</size>",
           "<b>Log</b><size=35>\nSpencer Bernstein</size>",
           "<b>I coded this</b><size=35>\nRowan Q</size>",
           "<b>No, really</b><size=35>\nRowan Q</size>"
 
- };
+ };*/
         displayText.text = textToDisplay[index];
     }
 
@@ -57,7 +92,7 @@ public class EndCredits : MonoBehaviour
             speedy = false;
         }
         duration += Time.deltaTime * mod;
-        if (index >= textToDisplay.Length - 1)
+        if (index >= textToDisplay.Count - 1)
         {
             durationVolume += Time.deltaTime * mod;
             destroyThis.volume = Mathf.Lerp(1, 0.15f, durationVolume / (stayTime + lerpTime * 2));
@@ -83,7 +118,7 @@ public class EndCredits : MonoBehaviour
             if (duration > lerpTime * 2 + stayTime)
             {
                 index++;
-                if (index < textToDisplay.Length)
+                if (index < textToDisplay.Count)
                 {
                     state = 0;
                     duration = 0;

@@ -239,7 +239,7 @@ MonoBehaviour:
   lerpTime: 1
   stayTime: 2
   state: 0
-  textToDisplay: []
+  startCredits: {fileID: 4900000, guid: d7a234474dd2b33459a4f06fe43fe839, type: 3}
 --- !u!4 &404088422
 Transform:
   m_ObjectHideFlags: 0

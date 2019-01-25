@@ -240,7 +240,7 @@ MonoBehaviour:
   lerpTime: 1
   stayTime: 2
   state: 0
-  textToDisplay: []
+  endCredits: {fileID: 4900000, guid: 2fbbe2218817c814d802e3d5f6968cbb, type: 3}
 --- !u!4 &404088422
 Transform:
   m_ObjectHideFlags: 0
