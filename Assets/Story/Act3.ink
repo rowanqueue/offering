@@ -1,8 +1,8 @@
 VAR hasLighter = false
 VAR hasPapers = false
+VAR foundClues = false
 == ACT3 ==
 //fade in, grandpa's here
-#check_act3
 #v_clearScreen
 #v_act3/bedroomEmpty
 #v_enter_act3/fadedGRAMPS
@@ -17,62 +17,123 @@ VAR hasPapers = false
 *   [Ask about Kari] You get up in a daze, then suddenly realize the events of last night. You ask where Kari is.
     :grandpa: "He didn't come home last night. Probably sleeping over at Audhumbla's or the Jóhannsons. You don't understand, child, our kindred are unafraid of the land. She is far less cruel than the city you live in." 
     You are unsatified with that answer and feel horribly guilty. If Kari isn't safe, it's your fault.
-    :grandpa: "Come downstairs. Make yourself something to eat. I will be hard at work outside."
+    :grandpa: "Come downstairs. I've already made breakfast while you slept in. I will be hard at work outside."
     ->askGramp
     
 =askGramp
     +[Press Further]
     :grandpa: "I said come downstairs. Don't doubt my family's strength, Kari is far better at navigating this land then you will ever be!"
      You head downstairs but can't help but worry about your cousin.
-    ->leaveHouse
+    ->breakfast
     +[Drop It] You head downstairs but can't help but worry about your cousin.
-    ->leaveHouse
+    ->breakfast
     
-=leaveHouse
+=breakfast
 #v_exit
 #v_act3/insideHouseEmpty
-    Grandpa heads out the front door. You sit down at the table and try to make yourself breakfast. Your parents still aren't home, and neither is Kari. It doesn't take long for you to decide what you need to do.
+Grandpa drops a plate of oatmeal and a dolop of white stuff you don't reconize. He stares at you.
+    +[Ask About the Breakfast]You ask what the white stuff is and Grandpa scoffs.
+    :grandpa: "Its skyr!"
+    Grandpa's face begins you turn red.
+    :grandpa: "It's like yogurt. Gah! What does your family teach you? How dare they let our culture die like this."
+    He storms out and you feel relieved.
+    ->eat 
+    
+    +[Take A Bite] You take a spoonful of the white yogurt-like substance. It's thick, creamy, but still sweet. Grandpa grunts, he seems glad you enjoy it. 
+    :grandpa: "I put sugar in the oatmeal. I know how they spoil you in America."
+    He hobbles out the door
+    ->eat
+    
+=eat
+    Your parents still aren't home, and neither is Kari.
+    //Third person
+    Alex sits alone at the table.
+    *[It was your fault] The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!"
+    she says to herself. ->livingRoomPuzzle
+    *[Take a bite] She takes a bite of her oatmeal. ->eat2
+=eat2
+    *[Kari could be dead] The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!"
+    She says to herself.
+    ->livingRoomPuzzle
+    *[Take another bite] She takes another bite of her skyr. ->eat3
+=eat3
+    *[If you hadn't been to childish] The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!"
+    She says to herself. ->livingRoomPuzzle
+    *[Drink some milk] She sips some of her milk. ->eat4 
+=eat4
+    *[Everyone will hate you]  The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!" 
+    She says to herself. ->livingRoomPuzzle
+    *[Keep eating] She keeps eating. ->eat5 
+=eat5
+    *[Everyone hates you]  The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!"
+    She says to herself. ->livingRoomPuzzle
+    *[Keep eating] She keeps eating. ->eat5
+    /*
     You get up, put on your coat and boots and leave through the front door. 
     Grandpa stops you.
     :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that" 
     He glares at you until you head back inside. You can tell there will be no chance to reason with them.
-   
-    ->livingRoomPuzzle
-    
-=livingRoomPuzzle
-#v_act3/insideHouseEmpty
-+ ^B:C,2:3^[Climb through the window] You could climb out the window but Grandpa would see you. You are going to need to do something more drastic. Cause a distraction, find a way to lure him into the house.
-    ->livingRoomPuzzle
-//clickable
-* ^D:F,2:3^[Click Cabinets] You open up some cabniets to get some ideas. You see a lighter and take it.
-    ~hasLighter = true
-    ->livingRoomPuzzle
+   */
 
-+^A:B,4:7^[Click Fireplace] {not hasPapers: You need something to burn if you're going to start a fire.}
-    {not hasLighter: You need something to start a fire.}
-    {not hasPapers or not hasLighter: ->livingRoomPuzzle }
-    {hasPapers and hasLighter: You frantically throw in every thing you can into the fire place and light it on fire. Then hide around the corner.}
+=livingRoomPuzzle
+{not foundClues: Alex gets up, determined to save her cousin. She just has to figure out how.}
+{foundClues: Alex surveys the room deciding how she would sneak out of the house.}
+#v_act3/insideHouseEmpty
++ ^B:C,2:3^[The window]
+    {not foundClues: 
+    Alex looks out the window perhaps hoping to see Kari. Unfortunately, all she finds are the rolling hills to the north and her grandfather occationally walk past to water the plant.
+    ->livingRoomPuzzle
+    }
+    Alex sees hills that look alot like the ones on the map. She clenches her fists and wairs for her grandfather to turn the corner. She then opens the window and bolts for the hills. 
     ->puzzleEnd
+//clickable
++ ^D:F,2:3^[The Cabinets]
+    {not foundClues: 
+    Where ever Alex ends up going, she know it will probably be along journey. She stocks up on some snacks for her eventual journey. 
+    ->livingRoomPuzzle
+    } 
+    Alex comes to the realization that shes not getting out of this house while her Grandfather guards the outside. She decides to break one of the shelves. With a loud crack, she snaps out a shelf in the cabinet, spilling the contents it supported. She frantically ducks out of sight as her Grandfather burst through the door to investigates. She, then, takes that chance to bolt through the door, knowing he won't ever be able to catch up. 
+    ->puzzleEnd
+
++^A:B,4:7^[Click Fireplace] 
+    {not foundClues: 
+    A shiver goes down Alex's spine. She cozys up next to the lit fireplace, just for a little while. For that short while, she felt like she was home again.
+    ->livingRoomPuzzle 
+    }
+    lex comes to the realization that shes not getting out of this house while her Grandfather guards the outside. She starts frantically throwing things into the fire until smoke filles the house. She frantically ducks out of sight as her Grandfather burst through the door to investigates. She, then, takes that chance to bolt through the door, knowing he won't ever be able to catch up.
+    ->puzzleEnd
+    
++{hasPapers}^J:J,3:7^[Front Door]  Alex gets up, puts on her coat and boots and leaves through the front door. 
+    Grandpa stops her.
+    :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that" 
+    He glares at her until she head back inside. Alex can tell there will be no chance to reason with them.
+    ~foundClues = true
+    ->livingRoomPuzzle
     
 +^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
-=UpstairsPuzzle
+= UpstairsPuzzle
 #v_enter_act3/papers
 {hasPapers:
 #v_exit
 }
 #v_act3/bedroomEmpty
-* ^G:H,8:8 ^[Click Papers] You pick up Kari's drawings. He wouldn't mind losing a few drawings if it meant saving his life. You glance over the papers and realize one of them features a map to a spot north of the house. You decide to pocket it.
+* ^G:H,8:8 ^[Click Papers] Alex picks up Kari's drawings. Sifting through them, she desperately looks for a clue, a message, anything that could guide her to Kari. She has to squint to make out what they are, which only serves to remind her how young Kari and how much danger he could be in.
+One drawing takes her particularly long to decipher. But it soon dawns on her what it is: a map. There seems to be a path through the mountains that leads to shore. At the top right of the map is a boat circled in red. :player: "If Kari is anywhere it's there." She says.
     ~hasPapers = true
     ->UpstairsPuzzle
+* ^A:F,5:8 ^ [The Bed] Alex had hardly slept at all the night before, seeing Kari's empty bed only makes her feel worse. ->UpstairsPuzzle
 + ^I:J,3:7 ^[down]->livingRoomPuzzle
 
 =puzzleEnd
-Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. You can hear his shouting in the distance but you don't care. You have to find your cousin. 
+Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. Alex hears her Grandfather's shouting in the distance but she does not care. She needs to find her cousin. 
 * [Head North] ->trails
+
 ==act3Boat
 #v_clearScreen
-~coin = 2
+~coin +=1
+Your heart sinks as you realize Kari really isn't in here. Once again you are lost and alone in the Icelandic wilderness. And now you have to go back to your parents and grandpa empty handed and in huge trouble. 
+
 You finally enter the boat and find a mess of drawings, notes, and trinkets. Kari has fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, you assume he must spend a lot of his time here.
 ->Insideboat
 
