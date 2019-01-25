@@ -14,7 +14,7 @@ VAR eagle_gone =false
 #s_audio/WindStooorm
 #s_audio/Somber_m
 #v_act3/northClimbingUpHills
-Alex tries to follow Kari's map as best she can. She can still feel her heart pounding from the escape. Staying inside just did not sit right with you, and you're sure everything will be fine once you bring Kari home. ->main
+Alex tried to follow Kari's map the best she could. She can still feel her heart pounding from the escape. Staying inside just did not sit right with you, and you're sure everything will be fine once you bring Kari home. ->main
 =main
 *[Look at map again] Kari's drawings are crude but surprisingly helpful when it comes to finding this hideout. From what you can tell it might be some kind of abandond boat. Thats pretty cool, you wish you had this kind of freedom when you were a kid. ->main
 *[Take in the scenery] Your mom would always talk about how beautiful Iceland was and now you can see why. The landscape is so vast and colorful, it gives you a sense of clarity you have never felt before. ->main

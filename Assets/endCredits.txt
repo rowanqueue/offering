@@ -1,5 +1,60 @@
-Log
+Producer
+Rowan Q
+
+Creative Director
 Spencer Bernstein
 
+Cast
+Alex - Spencer Bernstein
+Kari - Rowan Q
+Grandpa - Parker Crandell
+Mom - Ajali Harrison
+Dad - Christian Weinschenk
+Audie - McKenna Flanagan
+
+<size=100><color=#ca8227ff><font="Block Berthold BQ Regular SDF">scramp</font></color></size>
+
+<align="right">Cover Art
+Music
+Spencer Bernstein                     Puzzle Design
+UI & UX
+Writing
+</align>
+
+<align="right">Programming
+Puzzle Design
+Parker Crandell                            Social Media
+UI & UX
+Writing
+</align>
+<align="right">Environment Art
+McKenna Flanagan                                  Logo
+Writing
+</align>
+<align="right">Character Art
+Ajali Harrison                           Environment Art
+Writing
+</align>
+
+<align="right">Programming
+Project Management
+Rowan Q                                    Puzzle Design
+UI & UX
+Writing
+</align>
+
+<align="right">Music
+Christian Weinschenk                Sound Design
+Sound Mixing
+</align>
+
 Special thanks to
-Naomi Clark, Isabella Djurovic
+Naomi Clark, Isabella Djurovic, Nicole Porter
+
+
+Thanks to
+Jesse Fuchs
+
+<size=40>Log</size>
+Spencer Bernstein
+/

@@ -37,7 +37,6 @@ public class EndCredits : MonoBehaviour
         bool bold = true;
         foreach (string s in split)
         {
-            Debug.Log(s);
             string line = "";
             if (s.Length < 2)
             {

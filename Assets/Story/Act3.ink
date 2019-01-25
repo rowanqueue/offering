@@ -48,8 +48,7 @@ Grandpa drops a plate of oatmeal and a dolop of white stuff you don't reconize. 
     Your parents still aren't home, and neither is Kari.
     //Third person
     Alex sits alone at the table.
-    *[It was your fault] The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!"
-    she says to herself. ->livingRoomPuzzle
+    *[It was your fault] The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!": she says to herself. ->livingRoomPuzzle
     *[Take a bite] She takes a bite of her oatmeal. ->eat2
 =eat2
     *[Kari could be dead] The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!"
@@ -65,8 +64,7 @@ Grandpa drops a plate of oatmeal and a dolop of white stuff you don't reconize. 
     She says to herself. ->livingRoomPuzzle
     *[Keep eating] She keeps eating. ->eat5 
 =eat5
-    *[Everyone hates you]  The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!"
-    She says to herself. ->livingRoomPuzzle
+    *[Everyone hates you]  The guilt cuts deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!": She says to herself. ->livingRoomPuzzle
     *[Keep eating] She keeps eating. ->eat5
     /*
     You get up, put on your coat and boots and leave through the front door. 
@@ -76,8 +74,8 @@ Grandpa drops a plate of oatmeal and a dolop of white stuff you don't reconize. 
    */
 
 =livingRoomPuzzle
-{not foundClues: Alex gets up, determined to save her cousin. She just has to figure out how.}
-{foundClues: Alex surveys the room deciding how she would sneak out of the house.}
+{not foundClues: Alex gets up, determined to save her cousin. She just has to figure out how. <>}
+{foundClues: Alex surveys the room deciding how she would sneak out of the house. <>}
 #v_act3/insideHouseEmpty
 + ^B:C,2:3^[The window]
     {not foundClues: 
@@ -105,7 +103,7 @@ Grandpa drops a plate of oatmeal and a dolop of white stuff you don't reconize. 
     
 +{hasPapers}^J:J,3:7^[Front Door]  Alex gets up, puts on her coat and boots and leaves through the front door. 
     Grandpa stops her.
-    :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that" 
+    :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that":
     He glares at her until she head back inside. Alex can tell there will be no chance to reason with them.
     ~foundClues = true
     ->livingRoomPuzzle
@@ -113,14 +111,14 @@ Grandpa drops a plate of oatmeal and a dolop of white stuff you don't reconize. 
 +^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
 = UpstairsPuzzle
+{not hasPapers:
 #v_enter_act3/papers
-{hasPapers:
-#v_exit
 }
 #v_act3/bedroomEmpty
 * ^G:H,8:8 ^[Click Papers] Alex picks up Kari's drawings. Sifting through them, she desperately looks for a clue, a message, anything that could guide her to Kari. She has to squint to make out what they are, which only serves to remind her how young Kari and how much danger he could be in.
-One drawing takes her particularly long to decipher. But it soon dawns on her what it is: a map. There seems to be a path through the mountains that leads to shore. At the top right of the map is a boat circled in red. :player: "If Kari is anywhere it's there." She says.
+One drawing takes her particularly long to decipher. But it soon dawns on her what it is- a map. There seems to be a path through the mountains that leads to shore. At the top right of the map is a boat circled in red. :player: "If Kari is anywhere it's there.": She says.
     ~hasPapers = true
+#v_exit
     ->UpstairsPuzzle
 * ^A:F,5:8 ^ [The Bed] Alex had hardly slept at all the night before, seeing Kari's empty bed only makes her feel worse. ->UpstairsPuzzle
 + ^I:J,3:7 ^[down]->livingRoomPuzzle
@@ -163,7 +161,7 @@ You pick up a school notebook and begin to read.
 
 =Insideboat
 VAR seenBoat = 0
-*   [Examine drawings]:player:You examine the drawings: 
+*   [Examine drawings] You examine the drawings. 
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
 +   [Examine journal]->Diary

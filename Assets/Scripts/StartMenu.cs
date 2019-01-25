@@ -167,6 +167,7 @@ public class StartMenu : MonoBehaviour {
                     if(actualTimeContinue < 0)
                     {
                         cs.act = act;
+                        Destroy(music.gameObject);
                         SceneManager.LoadScene(2);
                     }
                 }
