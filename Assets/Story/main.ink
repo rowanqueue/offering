@@ -1,11 +1,11 @@
-[player:86c6ceff:audio/voices/
-[kari:b18829ff:audio/voices/
-[mom:a783afff:audio/voices/
-[dad:869b63ff:audio/voices/
-[grandpa:dd503eff:audio/voices/
-[audie:ffa332ff:audio/voices/
-[brynja:f1a6fcff:audio/voices/
-[asta:50714fff:audio/voices/
+[player:5da4b3ff:audio/voices/
+[kari:a88533ff:audio/voices/
+[mom:9b67a7ff:audio/voices/
+[dad:677b46ff:audio/voices/
+[grandpa:ae2a19ff:audio/voices/
+[audie:ef8100ff:audio/voices/
+[brynja:df48c1ff:audio/voices/
+[asta:156546ff:audio/voices/
 BEGIN
 INCLUDE prologue.ink
 INCLUDE Act1.ink
