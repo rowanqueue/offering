@@ -541,7 +541,7 @@ public class NewStoryManager : MonoBehaviour {
                     typing = false;
                 }
             }
-            if (Input.GetMouseButtonDown(0))//click to skip
+            if (Input.GetMouseButtonDown(0) && whatToType.Length > 3)//click to skip
             {
                 int length = 50;
                 if(whatToType.Length < length)
@@ -549,8 +549,10 @@ public class NewStoryManager : MonoBehaviour {
                     length = whatToType.Length;
                 }
                 int dieLine = -1;//when hit this, start printing again
+                int actualGottenTo = 0;
                 for (int i = 0; i < length; i++)
                 {
+                    actualGottenTo = i;
                     char c = whatToType[i];
                     if (i < dieLine)
                     {
@@ -566,6 +568,7 @@ public class NewStoryManager : MonoBehaviour {
                         }
                         else//new person is talking now
                         {
+                            /*
                             string check = whatToType.Substring(i);//only check whats at i or past it
                             string[] split = check.Split(':');
                             currentSpeaker = split[1];
@@ -579,7 +582,8 @@ public class NewStoryManager : MonoBehaviour {
                             {
                                 dieLine = i + currentSpeaker.Length+2;
                             }
-                            displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";
+                            displayText.text += "<color=" + speakerToColor[currentSpeaker] + "></color>";*/
+                            break;
                         }
                     }
                     else
@@ -597,7 +601,8 @@ public class NewStoryManager : MonoBehaviour {
                 /*displayText.text += "\n \n";
                 typing = false;
                 whatToType = "";*/
-                if(length == whatToType.Length)
+                Debug.Log(length + " " + actualGottenTo);
+                if(length == whatToType.Length && actualGottenTo == length-1)
                 {
                     displayText.text += "\n \n";
                     typing = false;
@@ -605,7 +610,16 @@ public class NewStoryManager : MonoBehaviour {
                 }
                 else
                 {
-                    whatToType = whatToType.Substring(length);
+                    if (actualGottenTo < length-1)
+                    {
+                        Debug.Log('a');
+                        whatToType = whatToType.Substring(actualGottenTo);
+                    }
+                    else
+                    {
+                        Debug.Log('b');
+                        whatToType = whatToType.Substring(actualGottenTo+1);
+                    }
                 }
                 TextSound.me.PlaySound(currentSpeaker);
             }

@@ -43,17 +43,30 @@ UI & UX
 Writing
 </align>
 
-<align="right">Music
-Christian Weinschenk                Sound Design
-Sound Mixing
+<align="right">Audio Post Production
+Christian Weinschenk         Music Composition
+Sound Design
 </align>
 
 Special thanks to
-Naomi Clark, Isabella Djurovic, Nicole Porter
-
+Naomi Clark
+Isabella Djurovic
+Nicole Porter
 
 Thanks to
 Jesse Fuchs
+Ryan Waller
+Amir Moverman
+Austin Biss
+Rachel Geng
+
+to
+Jeremaiah
+
+Playtesters
+Jason
+Nic Howe
+Anneliese Lee-Reid
 
 <size=40>Log</size>
 Spencer Bernstein

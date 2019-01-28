@@ -17,28 +17,27 @@ VAR eagle_gone =false
 Alex tried to follow Kari's map as best she could, just looking at it gave her hope that Kari was okay. She could still feel her heart pounding from the escape. Staying inside just did not sit right with her. The air was chilly but refreshing, a perfect time to explore the beautiful landscape around her, but she was on a mission. ->main
 
 =main
-*[Look at map again] Kari's drawings were crude but surprisingly helpful when it came to finding the hideout. From what Alex can tell it was some kind of boat. Alex felt a little envious after that, She wished she could have a secret boat hideout. ->main
+*[Alex looked at map again] Kari's drawings were crude but surprisingly helpful when it came to finding the hideout. From what Alex could tell it was some kind of boat. Alex felt a little envious after that, she wished she could have a secret boat hideout. ->main
 
-*[Take in the scenery] Your mom would always talk about how beautiful Iceland was and now you can see why. The landscape is so vast and colorful, it gives you a sense of clarity you have never felt before. ->main
+*[Alex took in the scenery] Alex's mom would always talk about how beautiful Iceland was and looking around, she could finally see why. The landscape was so vast and colorful, it gave her a sense of clarity she had never felt before. ->main
 
-+[Venture on] Kari has to be at this hideout, where else would he have run off to? You are just glad you found his drawings when you did. Maybe when you find him you, he can show you more sights around iceland.  ->trails2
++[Alex ventured on] Kari had to be at this hideout, where else would he have run off to? Alex was just glad that she found his drawings when she did. She thought that maybe when she found him, he could show her more sights around iceland.  ->trails2
 
 ==trails2 ==
-
- You climb up and down hills hoping to spot you cousin's secret hideout. This hill in particular is precariously steep, but you can hear the ocean just ahead.  Your feet begin to slip under the loose gravel of the trail; you don't feel safe. -> main
+ Alex climbed up and down hills hoping to spot her cousin's secret hideout. This hill in particular is precariously steep, but she could hear the ocean just ahead. Her feet began to slip under the loose gravel of the trail; she didn't feel safe. -> main
 = main
-    * [Push forward] You take a deep breath and attack the trail. Hiking as fast as you can, ignoring the burning in you calves. You are almost at the top when you trip and tumble down. 
-    You get back up at the foot of the trail with some scratches and a bruise. You feel a bit worse.
+    * [Alex pushed forward] Alex took a deep breath and attacked the trail. Hiking as fast as she could, ignoring the burning in her calves. She was almost at the top when she tripped and tumbled down. 
+    She got back up at the foot of the trail with some scratches and a bruise. She felt a bit worse.
     ~Gone_forth = true
-    ~Stamina = Stamina - 10 
+    ~Stamina = Stamina - 10
     ->main
-    * {Gone_forth} [Push forward again] You throw caution to the wind and try again. This time running up the slope at full speed. You squeeze your eyes shut, preparing mentally for a fall, but when you open them you realize that you've actually made it to the top.
+    * {Gone_forth} [She pushed forward again] She threw caution to the wind and tried again. This time running up the slope at full speed. She squeezed her eyes shut, preparing mentally for a fall, but when she opened them she realized that she had actually made it to the top.
     ->cliff
-    *[Pace yourself] You decide to hike this steep trail slowly and safely. You zig zag across the slope so you don't fall. You eventually get to the top but it ate up far more time than you wanted it to.
+    *[Alex paced herself] She decided to hike this steep trail slowly and safely. She zig-zagged across the slope so she didn't fall. She eventually got to the top but it ate up far more time than she wanted it to.
     ~ Stamina -= 5
     ->cliff
-    *[Use your hands] You use your hands to secure yourself, out of fear of stubling down this hill. You keep your body low to the ground and scramper up the hill. You just know that you look absolutely ridiculous.
-    When you get to the top and unclench your hands, you notice that they are raw and bloody, but you made it and thats the most important part. 
+    *[Alex used her hands] She used her hands to secure herself, out of fear of stubling down the hill. She kept her body low to the ground and scampered up the hill. She just knew that she looked absolutely ridiculous.
+    When she got to the top and unclenched her hands, finally noticing that they were raw and bloody, but she made it and that was the most important part. 
     ~Stamina = Stamina - 5
     ~fucked_hands = true
     ->cliff
@@ -48,38 +47,38 @@ Alex tried to follow Kari's map as best she could, just looking at it gave her h
 = intro
 #v_clearScreen
 #v_act3/northBoat
-You approach the boat in Kari's drawings and call out his name. There is no answer. That cant be right, he has to be here. He must be sleeping. This place is in all of his drawings. Where else could he have gone?
-You try and get a closer look and finally notice the massive eagle that has nested on the hull of the boat, right near the entrance. She sits at the helm staring at you, menacingly waiting for you to make a move. Maybe Kari won't come out because he's afraid of it. You need to get rid of it.  -> main 
+She approached the boat from Kari's drawings and called out his name. There was no answer. That can't be right, he had to be here. He must be sleeping. This place was in all of his drawings. Where else could he have gone?
+She tried to get a closer look and finally noticed the massive eagle that had nested on the hull of the boat, right near the entrance. It sat at the helm staring at Alex, menacingly waiting for her to make a move. Maybe Kari wouldn't come out because he was afraid. Alex needed to get rid of it.  -> main 
 = main
- * [Approach the eagle]
+ * [Alex approached the eagle]
     ~eagle_attempts+=1
-    You approach the boat slowly, carefully eyeing the eagle. As soon as you get close it flaps its wings and brandishes its sharp talons. You won't be getting in with the eagle there.->main
- * [Throw a pebble at the eagle]
+    Alex approached the boat slowly, carefully eyeing the eagle. As soon as she got close, it flapped its wings and brandished its sharp talons. She wouldn't be getting in with the eagle still there.->main
+ * [Alex threw a pebble at the eagle]
     ~eagle_attempts+=1
-    You chuck a pebble near the eagle, hoping that will scare it. You are shocked when it actually hits. And even more shocked when does not react. It just continues to look at you with its piercing gaze.
+    She chucked a pebble near the eagle, hoping that that would scare it. She was shocked when it actually hit. And even more shocked when the eagle does not react. It just continued to look at her with its piercing gaze.
     ->main
     
- * [Look for another way in]
+ * [Alex looked for another way in]
     ~eagle_attempts+=1
-    You walk around to the front of the boat, making sure you keep your distance of the bird. {hurt_leg:You suddenly feel a sharp pain in the leg you hurt while jumping. It brings you to your knees and you lay in the sand for a bit until it goes away. You limp the rest of the way there.} The hull of the boat towers over you and it metal warped and rusted over.
-     You find no way in. 
+    She walked around to the front of the boat, making sure she kept her distance from the bird. {hurt_leg:She suddenly felt a sharp pain in the leg she hurt while jumping. It brings her to her knees and Alex laid in the sand until it went away. She limped the rest of the way there.} The hull of the boat, with its warped and rusted metal, towered over her.
+     Alex found no way in. 
     ->main
     
- * [Kick up sand]
+ * [Alex kicked up sand]
     ~eagle_attempts+=1
-    You start stomping and kicking hoping that if you cause enough commotion the eagle with just leave. But it doesn't, it just stares at you, unamused by your tanturm.
+    Alex started stomping and kicking, hoping that if she caused enough commotion the eagle would just leave. But it didn't, it just stared at her, unamused by her tantrum.
     ->main
     
- * {eagle_attempts > 2} [Shout]
+ * {eagle_attempts > 2} [Alex shouted]
  #t_speedUp
-    You're tired and in pain and you just want to find Kari and go home. You are so frustrated you start to cry. You yell out for Kari. He has to be there, you worked so hard to get here. 
-    It screeches back, flaps its wings, and swoops toward you. You close your eyes and duck. 
-    You feel wind rush over your head and a talon slash into your shoulder. 
+    She was tired and in pain and she just wanted to find Kari and go home. You was so frustrated that she started to cry. Alex yelled out for Kari. He has to be there, she had worked so hard to get here. 
+    It screeched back, flapped its wings, and swooped toward Alex. She closed her eyes and ducked. 
+    She felt wind rush over her head and a talon slash into her shoulder.
  #t_reset
-    You stay folded over in fear for a while until you no longer hear the flapping of the eagle's wings, leaving only a feather behind. You take it, as a reminder.
+    Alex stayed folded over in fear for a while until she no longer heard the flapping of the eagle's wings, leaving only a feather behind. She took it, as a reminder.
     ~eagle_gone = true
     ->main
-  * {eagle_gone}[Enter Boat]//->act3Boat
+  * {eagle_gone}[Alex entered the boat]//->act3Boat
   ->shore
    
     
@@ -88,35 +87,33 @@ You try and get a closer look and finally notice the massive eagle that has nest
 == cliff == 
 = intro
 #v_act3/northHilltop
-The summit of this very steep hill overlooks the shore. It ends in a rocky ledge high over the beach. In the distance, you can see, the boat Kari must have been talking about sitting on the shore. You have to find a way down this cliff. -> main
+The summit of this very steep hill overlooked the shore. It ended in a rocky ledge high over the beach. In the distance, she could see the boat Kari that must have been talking about sitting on the shore. She had to find a way down this cliff. -> main
 = main
-   * [Climb down the rocky cliff] {not fucked_hands: You find some stable footing on the side of the cliff and think you might be able to climb down safely. That doesn't stop your hands from shaking though. You are almost to the bottom when your hand slips and you fall backwards. You land in the sand with no injuries but the wind knocked out of you.}
+   * [Alex climbed down the rocky cliff] {not fucked_hands: She found some stable footing on the side of the cliff and thought she might be able to climb down safely. That didn't keep her hands from shaking though. She was almost to the bottom when her hand slipped and she fell backwards. She landed in the sand with no injuries but the wind knocked out of her.}
     ~Stamina = Stamina - 5
-      {fucked_hands :You find some stable footing on the side of the cliff and think you might be able to climb down safely. You move carefully only changing your grip when you know its safe. The cuts in your hands start burning, in a lapse of focus you let go and fall back on the sand. You feel the impact rattle every bone in your body. {~Stamina = Stamina - 10}} -> shore
+      {fucked_hands :She found some stable footing on the side of the cliff and thought she might be able to climb down safely. She moved carefully only changing her grip when she knew it was safe. The cuts in her hands started burning, in a lapse of focus she let go and fell back on the sand. She felt the impact rattle every bone in her body. {~Stamina = Stamina - 10}} -> shore
     
-    *[Find a smaller ledge] You walk along the edge of the cliff looking for a safer point to get onto the  beach. You walk along the coast for what seems like forever until the ledge drops to a safe distance down. You eventually lose sight of the boat.
+    *[Alex looked for a smaller ledge] She walked along the edge of the cliff looking for a safer point to get onto the beach. She walked along the coast for what seemed like forever until the ledge dropped to a safe distance down. She eventually lost sight of the boat. ->longWalk
     
-    ->longWalk
-    
-    * [Jump down] There is no time, you just know your cousin is down there! You hastily jump of the ledge, hoping the soft sand will cushion your fall. You nearly land on your feet, but collapse to the floor when you land. You feel a serious pain in your leg, its best to keep off of it the rest of the journey.
+    * [Alex jumped down] There was no time, Alex just knew Kari was down there! She hastily jumped off the ledge, hoping the soft sand would cushion her fall. She nearly landed on her feet, but collapsed to the ground when she landed. She felt a serious pain in her leg, and thought it would be best to keep off of it the rest of the journey.
     ~Stamina = Stamina - 10
     ~hurt_leg = true
     ->shore
 = longWalk
-You are lost.
-You walk along the shore hoping to pick up on any landmark that lead you back to the boat. You wander for so long you begin to doubt you are going in the right direction.
+Alex was lost.
+She walked along the shore hoping to pick up on any landmark that would lead her back to the boat. She wandered for so long she began to doubt she was going in the right direction.
 ~Stamina = Stamina -5
-+[Turn around]
++[Alex turned around]
 ~forward = true
 ->longWalk
     
-+[Carry on] 
++[Alex carried on] 
     {forward: 
     ~forward = false
     ->longWalk
     }
     
-    You finally find the boat. You are out of breath, tired, and trembling but you made it.
+    Alex finally found the boat. She was out of breath, tired, and trembling but she made it.
     ->shore
     
 
@@ -126,35 +123,35 @@ You walk along the shore hoping to pick up on any landmark that lead you back to
 = intro
 #s_audio/waves
 #v_act3/northCoveBoatFAR
-Walking upon the sandy shore, you see the rotting old boat up ahead and it reminds you of going to the Rockaways with your parents. You see a cliff jutting out over the waterline and swear you can hear something over the sound of waves. Pebbles line the shore, smooth as sin as the waves wash over them. It might be a good time to look around.-> main
+Walking upon the sandy shore, Alex saw the rotting old boat up ahead and it reminded her of going to the Rockaways with her parents. Pebbles lined the shore, smooth as sin as the waves washed over them. She thoguht it might finally be a good time to look around.-> main
 = main
-    *^D:F,9:10 ^[Skip a stone] You take a moment to just skip some rocks like you used to do with your Dad. This whole ordeal has been so scary and you just now realize how much you wish they were here with you. {fucked_hands: The salt water from the pebble stings your hands.}
-    You start to feel a little better after a while and take a breath.
+    *^D:F,9:10 ^[Alex skipped a stone] She took a moment to just skip some rocks like she used to do with Dad. Everything so far had been so scary and Alex just now realized how much she wished her parents were here with her now. {fucked_hands: The salt water from the pebble stung her hands.}
+    She started to feel a little better after a while and took a breath.
     ~Stamina = Stamina + 3
     ->main
     
-    *[Take a break] You sit at the shore and watch the waves crash on to the sand. You regain some strength from your long journey.
+    *[Alex took a break] Alex sat by the shore and watched the waves as they crashed onto the sand. She regained some strength from her long journey.
     {long_walk: 
     ~Stamina = Stamina + 3
     }
     -> main
     
-    *[listen to the waves] You remeber what your mother told you and take in the sounds of the ocean. You think back to the ordeal at the cliff and shudder. You wish your mom was actually here.
+    *[Alex listened to the waves] She remembered what her mother told her and take in the sounds of the ocean. She thought back to the ordeal at the cliff and shuddered. She wished her mom was actually there with her.
     ~Stamina = Stamina + 3
     ~shore_attempts = shore_attempts + 1
     ->main 
     
-    +{shore_attempts > 2}[Walk to the boat] -> cave
+    +{shore_attempts > 0}[Alex walked to the boat] -> cave
      //Coordinates needed!!!!!!!
-    *^I:J,4:5^[Examine boat] This rickety boat is probably missing more planks than it still has left, you’re not sure how its still standing. The mildewy flag swaying in the lake breeze. 
+    *^I:J,4:5^[Alex examined the boat] The rickety boat wass probably missing more planks than it still had left, Alex wasn't exactly sure how it was still standing. The mildewy flag was swaying in the ocean breeze. 
     ~shore_attempts = shore_attempts + 1
     -> main
-    *^I:J,2:3^[Examine cliff] You take a minute to look back at what you just did and shudder. That was so dangerous! How does Kari do this? But all the cuts and bruises will be worth it once you bring Kari back home.
+    *^I:J,2:3^[Alex examined the cliff] Alex took a minute to look back at what she just did and shudder. That was so dangerous! How does Kari do this? But all the cuts and bruises would be worth it once she brought Kari home.
     ~shore_attempts = shore_attempts + 1
     ->main
-    *^A:E,5:7 ^[Examine water] The water seems to be rushing to shore harder than usual. In the distance, you can see waves continously crashing into each other.
-    ~shore_attempts = shore_attempts + 1
-    -> main
+    //*^A:E,5:7 ^[Examine water] The water seems to be rushing to shore harder than usual. In the distance, you can see waves continously crashing into each other.
+    //~shore_attempts = shore_attempts + 1
+    //-> main
 
  
 //== shack == 

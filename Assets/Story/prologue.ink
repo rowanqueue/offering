@@ -7,7 +7,9 @@
 
 //Kari face lit by the fire with grandpa's hand on his shoulder
 //match-cut to alex sitting next to a car, drawing
-Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she preferred it to being on the deck. Looking at the coast of rural Iceland just made Alex want to go home. She wished her parents hadn't come from a town so far away, and her stomach churned thinking about how much more time she'll have to spend in the rental car before arriving at her Grandfather's house. At least here it was quiet, and she could draw until her mother found her.
+Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she preferred it to being on the deck. Looking at the coast of rural Iceland just made Alex want to go home.
+
+She wished her parents hadn't come from a town so far away, and her stomach churned thinking about how much more time she'll have to spend in the rental car before arriving at her Grandfather's house. At least here it was quiet, and she could draw until her mother found her.
 //reverse shot for ALEX POV, we see she is sitting in a bay of cars, her mom standing there
 
 //If a brake malfunctions
@@ -18,8 +20,9 @@ Alex's mom took away her journal and pencils.
 
 //haven't told you about what we're doing there?
 :mom:"Listen to me, Alex. I know you don't know much about where we're going, but that's why you have to trust me, and do exactly what I say. No running off. Just be good for two days, and then we leave. Understand?":
-
+//ADD THE ABILITY TO SAY NO
 *   Alex nodded yes.
+*   Alex rolled her eyes. [] Her mom scoffed before saying, <>
 
 - :mom:"Come back up to the deck with me.":
 
