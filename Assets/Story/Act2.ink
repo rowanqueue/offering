@@ -95,10 +95,10 @@ The lizard fell to the ground and started to crawl away towards the tree line.
 
 *   [Alex followed Kari] Kari had made up his mind, and Alex felt safer with him than without him. She started to chase after him.
 ~followedKari = true
-->entrance
+->eaststart
 *   [Alex turned back] Kari had made up his mind, and Alex knew that to protest would be pointless. Her parents would already be mad at her for being gone so long, following Kari now would be too much. She figured she could manage getting back to Grandfather's house if she just followed the stream. 
 ~followedKari = false
--> entrance
+-> eaststart
 
 //IF YOU FOLLOW KARI:
 //He appears in the next screen, but not in the one after. Text says you can still hear him but you can't tell from where. You call his name and he calls back, but you're unsure. Once you get to the stream, the text is like well, you decide to go home.

@@ -282,7 +282,6 @@ public class NewStoryManager : MonoBehaviour {
             }
             numChoicesDisplayed++;
         }
-
         //text
         if(story.canContinue && typing == false)
         {

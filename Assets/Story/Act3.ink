@@ -31,15 +31,15 @@ VAR foundClues = false
 =breakfast
 #v_exit
 #v_act3/insideHouseEmpty
-Grandpa plopped a plate of oatmeal and a dolop of white stuff Alex didn't reconize onto the table. Alex took a seat at the table as he stared directly at her.
+Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't reconize onto the table. Alex took a seat at the table as he stared directly at her.
     +[Alex asked about the breakfast]Alex asked what the white stuff was and Grandpa scoffed.
     :grandpa: "Its skyr!"
-    Grandpa's face began to turn red.
+    Grandfather's face began to turn red.
     :grandpa: "It's like yogurt. Gah!": He threw his hands into the air. :grandpa:"What does your family teach you? How dare they let our culture die like this.":
     He stormed out and Alex felt relieved.
     ->eat 
     
-    +[Alex took a bite] Alex took a spoonful of the white yogurt-like substance. It was thick, creamy, but still sweet. Grandpa grunted, he actually seemed glad that she enjoyed it. 
+    +[Alex took a bite] Alex took a spoonful of the white yogurt-like substance. It was thick, creamy, but still sweet. Grandfather grunted, he actually seemed glad that she enjoyed it. 
     :grandpa: "I put sugar in the oatmeal. I know how they spoil you in America."
     He hobbled out the door.
     ->eat
@@ -99,7 +99,7 @@ Grandpa plopped a plate of oatmeal and a dolop of white stuff Alex didn't reconi
     ->puzzleEnd
     
 +{hasPapers}^J:J,3:7^[Front Door]  Alex got up, put on her coat and boots and left through the front door. 
-    Grandpa stopped her.
+    Grandfather stopped her.
     :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that":
     He glared at her until she headed back inside. Alex can tell there will be no chance to reason with him.
     ~foundClues = true
@@ -134,19 +134,19 @@ You finally enter the boat and find a mess of drawings, notes, and trinkets. Kar
 
 =Diary
 You pick up a school notebook and begin to read.
-:kari: "I am writing this in english to practice and it feels more secret. today I was out and i saw a man leading a group of strange people into the mountains. I told Grandpa and he was very upset and told me not to talk to them. he called them tourists. later we made really good bread with margret and bjorn johannson and we played outside and drew the wights.":
+:kari: "I am writing this in english to practice and it feels more secret. today I was out and i saw a man leading a group of strange people into the mountains. I told Grandfather and he was very upset and told me not to talk to them. he called them tourists. later we made really good bread with margret and bjorn johannson and we played outside and drew the wights.":
 +  [Next entry]
 +  [Keep looking] You decide to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
 
-- :kari: "Today grandpa made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson. he said that we should be open to the tourists and fishing isn't as good anymore and Grandpa said that we need to protect our land. Grandpa got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandpa really mad. when we got home he didn't want to bake with me.":
+- :kari: "Today grandfather made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson. he said that we should be open to the tourists and fishing isn't as good anymore and Grandfather said that we need to protect our land. Grandfather got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandfather really mad. when we got home he didn't want to bake with me.":
 +   [Next entry]
 +  [Keep looking] You decide to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
 
-- :kari: "Grandpa has been quiet and mean. he found out Mr geirson sold some land to the man. grandma said maybe we should try to change and he was mean to her. i told grandpa that today was the day for eyvind kinnrifi and he told me it wasnt and he would not forget that even though it was the 9 february. he got really really mad and confused and punished me and i ran here to my boat.":
+- :kari: "Grandfather has been quiet and mean. he found out Mr geirson sold some land to the man. grandma said maybe we should try to change and he was mean to her. i told grandpa that today was the day for eyvind kinnrifi and he told me it wasnt and he would not forget that even though it was the 9 february. he got really really mad and confused and punished me and i ran here to my boat.":
 +   [Next entry]
 +  [Keep looking] You decide to keep looking through the boat. 
 ~seenBoat = seenBoat +1
@@ -171,14 +171,14 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 #s_stop
 #v_act3/outsideHouse
 //get back home, go inside
-You'd seen enough in the boat and decided to stop back home before heading out to meet Audhumbla. Finally, you arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
+You'd seen enough in the boat and decided to stop back home before heading out to meet Audhumbla. Finally, you arrive back at Grandfather's house, exhausted and beaten up from your journey north. Through the window you can see Grandfather napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
 *   [Walk in]->act3walkIn
 *   [Sneak in]->act3Sneak
 
 =act3Sneak
 //empty homeInterior
 #v_act3/insideHouseEmpty
-You open the door and it creaks loudly. You don't see Grandpa. 
+You open the door and it creaks loudly. You don't see Grandfather
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
@@ -186,7 +186,7 @@ You open the door and it creaks loudly. You don't see Grandpa.
 #v_clearScreen
 #v_enter_act3/fadedGRAMPS
 #v_act3/bedroom
-Grandpa is standing in Kari's room with an angry look on his face. 
+Grandfather is standing in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"
 *   [Out looking for Kari] 
     #t_speeddown
@@ -206,14 +206,14 @@ Grandpa is standing in Kari's room with an angry look on his face.
 #v_clearScreen
 #v_act3/insideHouseEmpty
 #v_enter_act3/fadedGRAMPS
-You stroll into the house like you own the place. Grandpa is sitting in his chair. 
+You stroll into the house like you own the place. Grandfather is sitting in his chair. 
 :grandpa: "Oh, hello.":
 #t_speeddown
-*   [Hello grandpa] :player:"Hello grandpa":
+*   [Hello grandpa] :player:"Hello grandfather":
 *   [What's up]:player:"What's up.":
 *   [Hey]:player:"Hey.":
 #t_reset
-- Grandpa seems unconcerned. 
+- Grandfather seems unconcerned. 
 :grandpa:"Hrmph. Where did you go? You seem hurt.":
 #t_speeddown
 
@@ -236,7 +236,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 ->act3Leaving
 
 =act3Leaving
-- Grandpa cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
+- Grandfather cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
     *  [Why?] :player: "Why?":
     :grandpa:"His family betrayed the kindred. They sold land to the tourist guides, to let them invade and deface our land. Now, I must employ fishermen from across the water.":
     :player: "Huh.":
@@ -246,7 +246,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 =act3walk
 ->act3car
 =act3car
-- You and grandpa get in his car and start to drive west. 
+- You and grandfather get in his car and start to drive west. 
 #v_exit
 ->ACT4
 

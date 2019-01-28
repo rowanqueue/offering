@@ -39,13 +39,13 @@ The ferry pulled into the harbor and Alex's family drove off in their rental car
     
 == arrival ==
 //needs change of people
-Alex spent the next fourty minutes managing her nausea as her father drove them through vast expanses of completely empty land - a tunnel burrowed through the snowy grey mountains behind the port to reveal a wide green valley with no civilization in sight.  Eventually, Alex's family pulled up to a small house. An old man who Alex knew must be her grandfather stood out front.
+Alex spent the next forty minutes managing her nausea as her father drove them through vast expanses of completely empty land - a tunnel burrowed through the snowy grey mountains behind the port to reveal a wide green valley with no civilization in sight.  Eventually, Alex's family pulled up to a small house. An old man who Alex knew must be her grandfather stood out front.
 #v_act1/outsideHouseFirst
 
 //Alex had the thought that she had never seen so far in one direction. 
 :mom:"Don't bring anything out of the car, Alex.":
 
-Her parents got out of the car, and to prove a point Alex waited for her mother's approval to follow. Grandfather shook dad's hand, and then him and Mom looked at eachother and said a few words. Alex watched intently. Grandfather gestured towards her, and mom motioned for her to come out of the car.
+Her parents got out of the car, and to prove a point Alex waited for her mother's approval to follow. Grandfather shook dad's hand, and then him and Mom looked at each other and said a few words. Alex watched intently. Grandfather gestured towards her, and mom motioned for her to come out of the car.
 
 *   [Alex got out of the car] Alex got out of the car and walked to the house, getting a better look at him - she realized that were her Grandfather not hunched over a cane he would be an enormously tall man. Even like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of resting frown many old men have but there was something so relaxed about him that Alex felt even more small. 
 
