@@ -78,8 +78,7 @@ She tried to get a closer look and finally noticed the massive eagle that had ne
     Alex stayed folded over in fear for a while until she no longer heard the flapping of the eagle's wings, leaving only a feather behind. She took it, as a reminder.
     ~eagle_gone = true
     ->main
-  * {eagle_gone}[Alex entered the boat]//->act3Boat
-  ->shore
+  * {eagle_gone}[Alex entered the boat]->act3Boat
    
     
     
