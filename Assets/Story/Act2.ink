@@ -6,7 +6,8 @@ VAR followedKari = false
 #check_act2
 #v_clearScreen
 #v_act2/outsideHouse
-#s_audio/FootStep(Outside)_s
+#s_act2/Audio/FootStep(Outside)_s
+#s_act2/Audio/PianoLeadUp_m
 :kari:"Sorry about that. Grandfather can get upset sometimes. Did you enjoy dinner?":
 *   [Alex said yes] :player: "Yeah, it was pretty good, actually. Besides the smell.":
 *   [Alex said no] :player: "How can you stand eating that fish? I feel like I'll never get the smell out of my nose":
@@ -45,7 +46,7 @@ Alex wasn't sure how far she'd gone or how long it took by the time the cousins 
     **  [How does it work?] :player:"How does it work?": she asked.
     -> wightPower
 == wightPower ==
-#s_audio/ThunderRain
+#s_act2/Audio/ThunderRain
 - Kari pulled out a piece of bread he had bitten into the shape of a horse
 :kari:"Do you want to meet one of the land wights?":
 *   [Alex wanted to]
@@ -121,7 +122,7 @@ The lizard fell to the ground and started to crawl away towards the tree line.
 == act2Home_outside ==
 //needs parents
 #v_clearScreen
-#s_audio/WAVESMENUSPROLOGUE_m
+#s_stop_m
 #v_act2/outsideHouseThird
 
 Alex emerged from the trees and her parents ran to embrace her. She'd never seen them this upset. Dad was seemingly unable to speak.
@@ -155,6 +156,7 @@ Alex emerged from the trees and her parents ran to embrace her. She'd never seen
 //ART PROBLEM
 //needs just grandpa
 #v_act2/insideHouseJustGramps
+#s_stop
 Alex walked inside with Grandpa. 
 :grandpa: "Just you and me now, child. You should go to bed like your mother said.":
 *   [Are you concerned?]:player:"Are you scared about Kari?": you ask.

@@ -7,7 +7,7 @@ VAR foundClues = false
 #v_act3/bedroomEmpty
 #v_enter_act3/fadedGRAMPS
 #v_fadeIn
-#s_audio/Somber_m
+#s_act3/Audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
 //*   [Alex refused]
 *   [Alex got up]

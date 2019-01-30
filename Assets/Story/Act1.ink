@@ -29,8 +29,8 @@ The ferry pulled into the harbor and Alex's family drove off in their rental car
 //Dad turns to Alex. :dad:"Trust me, she'll be singing a different tune by tomorrow morning.":
 //:mom:"Keep your eyes on the road!"
 //MAKE THIS MORE DRAMATICALLY INTERESTING
-*   [cool]
--
+//*   [cool]
+//-
 ->arrival
     
 == arrival ==
@@ -91,7 +91,7 @@ Kari's head shoots down towards his feet.
 == intro_upstairs ==
 //needs dad floated in
 #v_act1/bedroom
-#s_audio/FootStep(Inside)_s
+#s_act1/Audio/FootStep(Inside)_s
 - :kari:"...and this is my room! What do you think?":
 Alex stepped into her cousin's room. There were drawings scattered everywhere, on almost every surface. Alex had wished her parents would let her keep her room like this, but seeing it for herself she started to understand why they made her keep clean. Looking closer, Alex realized that almost all the drawings were of the same four creatures over and over - what looked to be a dragon, a bird, a bull, and a giant.
 
@@ -162,7 +162,7 @@ Before Alex could respond, her dad entered the room. :dad:"Dinner is ready, kids
 ==dinner==
 #v_exit
 #v_act1/homeInterior
-#s_audio/FootStep(Inside)_s
+#s_act1/Audio/FootStep(Inside)_s
 //dinner is actually gross and small
 Alex walked downstairs and Jorgur instructed everyone bring their bowl up to the counter. He ladled out fish stew and hunks of bread. Alex still felt sort of sick from traveling, and the strong odor was unappetizing.
 

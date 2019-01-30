@@ -16,7 +16,8 @@ Alex looked around, the fields around her feeling quiet and empty.
     ->lady
 == lady ==
 = intro
-#s_audio/COW OUTSIDE
+#s_act4/Audio/COW OUTSIDE
+#s_stop_m
 #v_act4/barnEx
 Alex could still see Grandfather and Audi talking through the window. Every once in a while, he would glance over at her and gave her a look she didn't understand. With the barn behind her, she was disgusted by the smell of manure drifting through the air.
 She didn't even know how to milk a cow, but to protest would be pointless. She rolled her sleeves up.

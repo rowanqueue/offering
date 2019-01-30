@@ -11,8 +11,8 @@ VAR eagle_gone =false
 == trails ==
 = intro
 #v_clearScreen
-#s_audio/WindStooorm
-#s_audio/Somber_m
+#s_act3/Audio/WindStooorm
+#s_act3/Audio/Somber_m
 #v_act3/northClimbingUpHills
 Alex tried to follow Kari's map as best she could, just looking at it gave her hope that Kari was okay. She could still feel her heart pounding from the escape. Staying inside just did not sit right with her. The air was chilly but refreshing, a perfect time to explore the beautiful landscape around her, but she was on a mission. ->main
 
@@ -120,7 +120,7 @@ She walked along the shore hoping to pick up on any landmark that would lead her
 
 == shore == 
 = intro
-#s_audio/waves
+#s_act3/Audio/WavesWav
 #v_act3/northCoveBoatFAR
 Walking upon the sandy shore, Alex saw the rotting old boat up ahead and it reminded her of going to the Rockaways with her parents. Pebbles lined the shore, smooth as sin as the waves washed over them. She thoguht it might finally be a good time to look around.-> main
 = main

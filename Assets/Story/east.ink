@@ -1,7 +1,7 @@
 ==eaststart==
 #v_clearScreen
-#s_audio/ThunderRain
-#s_audio/SpoopyPiano_m
+#s_act2/Audio/ThunderRain
+#s_act2/Audio/SpoopyPiano_m
 #v_act2/entrance
 {followedKari:
 :player:"Kari!": Alex desperately called for Kari, but heard no response. <>

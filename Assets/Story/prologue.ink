@@ -1,5 +1,4 @@
 == beginning == 
-#s_act1/Audio/waves
 #s_act1/Audio/WAVESMENUSPROLOGUE_m
 
 //add in mom and dad
@@ -30,7 +29,7 @@ Alex's mom took away her journal and pencils.
 
 *   [go up]
 //On the deck, clear screen
-
+#s_act1/Audio/WavesWav
 - Alex and her mom walked onto the deck and found her father. 
 
 
