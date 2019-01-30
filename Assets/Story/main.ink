@@ -14,6 +14,7 @@ INCLUDE Act3.ink
 INCLUDE Act4.ink
 INCLUDE Act5.ink
 INCLUDE Act6.ink
+INCLUDE epilogue.ink
 //trials
 INCLUDE east.ink
 INCLUDE north.ink

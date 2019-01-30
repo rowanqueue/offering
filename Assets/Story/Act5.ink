@@ -72,12 +72,12 @@ You look up at Brynja and Ásta.->chatpt1
 VAR hateAskNum = 0
 VAR kindredAskNum = 0
 VAR grandpaPlanNum = 0
-+   [Why does grandpa hate me?]:brynja:"The way he sees it, his kindred betrayed him. We survived for years by fishing but we couldn't keep up with the times. The tourism industry is a betrayal of what he thinks is an authentic Icelandic life.": -> grandpaHateAsk
+*   [Why does grandpa hate me?]:brynja:"The way he sees it, his kindred betrayed him. We survived for years by fishing but we couldn't keep up with the times. The tourism industry is a betrayal of what he thinks is an authentic Icelandic life.": -> grandpaHateAsk
     
-+  [What was the kindred like?] Ásta and Brynja both start to speak, then Brynja motions to Ásta. :asta:"For a time it was nice. It was like a family, we shared everything. We could nearly sustain ourselves... I had so much time to enjoy life. We felt like rebels, and Jorgur was our mighty leader. In our eyes he could do no wrong. Things really changed.": 
+*  [What was the kindred like?] Ásta and Brynja both start to speak, then Brynja motions to Ásta. :asta:"For a time it was nice. It was like a family, we shared everything. We could nearly sustain ourselves... I had so much time to enjoy life. We felt like rebels, and Jorgur was our mighty leader. In our eyes he could do no wrong. Things really changed.": 
 ->kindredAsk
 
-+  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
+*  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
     :brynja:"A sacrifice.":
     Ásta glares at Brynja. :asta:"Who knows, he's a crazy old man. If Audhumbla really did send you here, he's alone. He can't hurt you.":->chatpt1
 * ->chatpt2
@@ -122,7 +122,6 @@ VAR grandpaPlanNum = 0
 
 
 =chatpt2
-
 ->chatend
 =chatend
 :brynja:"Come," Brynja said, putting on her coat, "we have to get you back to your mother.": 
