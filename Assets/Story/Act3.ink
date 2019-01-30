@@ -86,7 +86,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
     {not foundClues: 
     Where ever Alex ended up going, she knew it will probably be a long journey. She stocked up on some snacks for her eventual journey, stuffing her pockets.//with what?
     ->livingRoomPuzzle
-    } 
+    }
     Alex came to the realization that she was not getting out of this house while her Grandfather guarded the outside. She decided to break one of the shelves. With a loud crack, she snapped out a shelf in the cabinet, spilling the contents it supported. She frantically ducked out of sight as her Grandfather burst through the door to investigate. She then took the chance to bolt through the door, knowing he wouldn't be able to catch up. 
     ->puzzleEnd
 
@@ -171,14 +171,13 @@ Heaps of half-finished papers lie around the boat. Over and over you see the sam
 #s_stop
 #v_act3/outsideHouse
 //get back home, go inside
-You'd seen enough in the boat and decided to stop back home before heading out to meet Audhumbla. Finally, you arrive back at Grandfather's house, exhausted and beaten up from your journey north. Through the window you can see Grandfather napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
-*   [Walk in]->act3walkIn
-*   [Sneak in]->act3Sneak
-
+Alex had seen enough in the boat and decided to stop back home before heading out to meet Audhumbla. Finally, she arrived back at Grandfather's house, exhausted and beaten up from her journey north. Through the window she could see Grandfather napping in his chair. She could try to sneak back in or greet him like nothing is wrong.
+*   [Alex walked in]->act3walkIn
+*   [Alex snuck in]->act3Sneak
 =act3Sneak
 //empty homeInterior
 #v_act3/insideHouseEmpty
-You open the door and it creaks loudly. You don't see Grandfather
+Alex opened the door and it creaked loudly. She didn't see Grandfather
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
@@ -186,7 +185,7 @@ You open the door and it creaks loudly. You don't see Grandfather
 #v_clearScreen
 #v_enter_act3/fadedGRAMPS
 #v_act3/bedroom
-Grandfather is standing in Kari's room with an angry look on his face. 
+Grandfather was standing in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"
 *   [Out looking for Kari] 
     #t_speeddown
@@ -206,14 +205,14 @@ Grandfather is standing in Kari's room with an angry look on his face.
 #v_clearScreen
 #v_act3/insideHouseEmpty
 #v_enter_act3/fadedGRAMPS
-You stroll into the house like you own the place. Grandfather is sitting in his chair. 
+Alex strolled into the house like she owned the place. Grandfather was sitting in his chair. 
 :grandpa: "Oh, hello.":
 #t_speeddown
-*   [Hello grandpa] :player:"Hello grandfather":
+*   [Hello grandfather] :player:"Hello grandfather":
 *   [What's up]:player:"What's up.":
 *   [Hey]:player:"Hey.":
 #t_reset
-- Grandfather seems unconcerned. 
+- Grandfather seemed unconcerned. 
 :grandpa:"Hrmph. Where did you go? You seem hurt.":
 #t_speeddown
 
@@ -236,7 +235,7 @@ You stroll into the house like you own the place. Grandfather is sitting in his 
 ->act3Leaving
 
 =act3Leaving
-- Grandfather cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
+- Grandfather cleaned Alex up a bit and gave her a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
     *  [Why?] :player: "Why?":
     :grandpa:"His family betrayed the kindred. They sold land to the tourist guides, to let them invade and deface our land. Now, I must employ fishermen from across the water.":
     :player: "Huh.":
@@ -246,7 +245,7 @@ You stroll into the house like you own the place. Grandfather is sitting in his 
 =act3walk
 ->act3car
 =act3car
-- You and grandfather get in his car and start to drive west.
+- Alex and Grandfather got in his car and started to drive west.
 #v_exit
 ->ACT4
 

@@ -24,7 +24,6 @@ The ferry pulled into the harbor and Alex's family drove off in their rental car
 *   [Alex stared out the window]
 
 -  :dad:"Now there are lots of tourists coming to see the mountains. They're even developing the area for skiing. My father lives in town here. After dinner we'll go to their place to stay the night.":
-
 //:mom:"He's mourning. We have to keep him company.":
 //Dad turns to Alex. :dad:"Trust me, she'll be singing a different tune by tomorrow morning.":
 //:mom:"Keep your eyes on the road!"
@@ -32,7 +31,6 @@ The ferry pulled into the harbor and Alex's family drove off in their rental car
 //*   [cool]
 //-
 ->arrival
-    
 == arrival ==
 //needs change of people
 Alex spent the next forty minutes managing her nausea as her father drove them through vast expanses of completely empty land - a tunnel burrowed through the snowy grey mountains behind the port to reveal a wide green valley with no civilization in sight.  Eventually, Alex's family pulled up to a small house. An old man who Alex knew must be her grandfather stood out front.
