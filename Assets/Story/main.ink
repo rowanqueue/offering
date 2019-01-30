@@ -19,8 +19,6 @@ INCLUDE east.ink
 INCLUDE north.ink
 INCLUDE west.ink
 INCLUDE south.ink
-INCLUDE Epilogue
-
 
 VAR Stamina = 100
 VAR coin = 0

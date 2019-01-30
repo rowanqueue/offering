@@ -1,7 +1,6 @@
 VAR has_drawing = false
 VAR given_drawing = false
 VAR wight_drawn = 0
-
 == ACT1 ==
 -> town
 == town ==
@@ -11,9 +10,8 @@ VAR wight_drawn = 0
 #v_act1/dock
 //TOO MUCH, ALSO WEIRD??
 The ferry pulled into the harbor and Alex's family drove off in their rental car. The town of Fjallvík is small, it takes less than five minutes to drive slowly to its limits. On the way Alex noticed a fish market, a school house, and a general store, along with some tour advertisements for hiking, skiing, horse stables, and fishing.
-
 *   [Alex sat in silence]
-*   [Alex started sketching]
+*   (sketch)[Alex started sketching]
 //alex asked about something?
 
 //Something innocent
@@ -21,9 +19,7 @@ The ferry pulled into the harbor and Alex's family drove off in their rental car
 
 -:dad:"When I was a kid, there wasn't anything here except for a small dock that your grandfather built. I would go out fishing with him every morning and sell what we caught at the market back across the bay in Dalvík. 
 //people in dalvik made fun of them? gave them bad deals? nine virtues? ahhh
-
-
-*   [Alex drew]
+*   {sketch} [Alex continued to draw]
 *   [Alex looked at the floor]
 *   [Alex stared out the window]
 
@@ -47,15 +43,15 @@ Alex spent the next forty minutes managing her nausea as her father drove them t
 
 Her parents got out of the car, and to prove a point Alex waited for her mother's approval to follow. Grandfather shook dad's hand, and then him and Mom looked at each other and said a few words. Alex watched intently. Grandfather gestured towards her, and mom motioned for her to come out of the car.
 
-*   [Alex got out of the car] Alex got out of the car and walked to the house, getting a better look at him - she realized that were her Grandfather not hunched over a cane he would be an enormously tall man. Even like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of resting frown many old men have but there was something so relaxed about him that Alex felt even more small. 
+*   [Alex got out of the car] Alex got out of the car and walked to the house, getting a better look at him - she realized that they were her Grandfather not hunched over a cane he would be an enormously tall man. Even like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of resting frown many old men have but there was something so relaxed about him that Alex felt even smaller.
 
     To his right, she realized, was her younger cousin, hiding behind her grandfather's legs. Alex estimated the boy was around two years younger than her. He stared at her, mesmerized. 
     
 *   [Alex refused to get out of the car] Alex refused to get out of the car, and slowly her mom walked over to her. Suddenly, she jerked the door open. Alex flinched, but when she looked up her mom was just staring at the ground. Alex slid out of the back seat and walked to the porch, Fjola following behind.
 
-    Alex got out of the car and walked to the house, getting a better look at her Grandfather - she realized that were he not hunched over a cane he would be an enormously tall man. Even like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of resting frown many old men have but there was something so relaxed about him that Alex felt even more small. 
+    Alex got out of the car and walked to the house, getting a better look at her Grandfather - she realized that were he not hunched over a cane he would be an enormously tall man. Even like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of resting frown many old men have but there was something so relaxed about him that Alex felt even more small.
 
-    To his right was Alex's younger cousin, a boy Alex estimated was around two years younger than her. He beamed at her, mesmerized. 
+    To his right was Alex's younger cousin, a boy Alex estimated was around two years younger than her. He beamed at her, mesmerized.
 
 - Grandfather spoke to Alex in English, finding his way slowly through the words-
 :grandpa: "So you are the one I've waited so long to meet. You look just like your mother.": 

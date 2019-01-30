@@ -14,7 +14,7 @@ She was completely lost. Thunder crashed above her while the rain seeped through
 //uSE ALTERNATIVES FOR WHEN YOU MAKE A MISTAKE
 = main
 {followedKari:
-:player:"Kaaarrriiii!": 
+:player:"Kaaarrriiii!":
 }
 //may just be displayed by visuals
     //+[Examine Sign]

@@ -12,101 +12,97 @@ VAR cow2milked = false
 VAR cow3milked = false
 === west ===
 #t_reset
-Looking around, the fields around you feel quiet and empty.
+Alex looked around, the fields around her feeling quiet and empty.
     ->lady
 == lady ==
 = intro
 #s_audio/COW OUTSIDE
 #v_act4/barnEx
-You can still see Grandpa and Audi talking through the window. Every once in a while, he will glance over at you and give you a look you don't understand. With the barn behind you, you are disgusted by the smell of manure drifting through the air.
-You don't even know how to milk a cow, but to protest would be pointless. You roll your sleeves up.
+Alex could still see Grandfather and Audi talking through the window. Every once in a while, he would glance over at her and gave her a look she didn't understand. With the barn behind her, she was disgusted by the smell of manure drifting through the air.
+She didn't even know how to milk a cow, but to protest would be pointless. She rolled her sleeves up.
 ->main
 
 = main
-    + [Examine Grandpa] He feels like a stranger to you now. You've only known him for a a day or so and he already hates you. Why? What did you do? He changed so quickly, it really scares you. Now you have to milk a cow? You don't even know how to milk a cow! You need to be looking for Kari but you're too scared to tell him that.  
+    * [Alex examined her Grandfather] Alex realized that he felt like a stranger to her now. She had only known him for a day or so and he already hated her. Why? What did she do? He changed so quickly, it really scared her. Now she had to milk a cow? She didn't even know how to milk a cow! She needed to be looking for Kari but she was too scared to tell him that.  
     ->main
     
     //+ [Examine Audi] You would talk to her but you don't want get close to Grandpa right now. No one here will help. Your parents are gone, your friends are miles away, your Grandpa refuses to talk to you, and you cousin has dissapeared. You just feel so alone.
     //->main
-
-    + [Go to pasture]You head towards the cow smell reluctantly. You don't want to do this, your stomach churns at the thought of what you have to do. ->pasture
-    +{cow1milked and cow2milked and cow3milked} [Show Grandpa] -> grandpayelling
+    + [Alex went to the pasture]She headed towards the cow smell reluctantly. She didn't want to do this, her stomach churned at the thought of what she had to do. ->pasture
+    +{cow1milked and cow2milked and cow3milked} [Alex showed her Grandfather the milk] -> grandpayelling
         
 == pasture ==
 = intro
 #v_clearScreen
-You stop at foot of some rolling hills. You are astonished by the size of this farm. You see cows roaming all around, lazily chewing grass. Speckled bushes sprout wildly along the field to your right. ->main
+She stopped at the foot of some rolling hills. She was astonished by the size of this farm. She saw cows roaming all around, lazily chewing grass. Speckled bushes sprouted wildly along the field to her right. ->main
 = main
 #v_act4/hillBushes
     + {not eatenBerries or not hasBerries} ^H:J,7:9 ^[Examine bushes] ->bushes
     + ^A:F,6:7 ^A:D,8:10 ^E,8^[Examine cow]
         {cow1milked : This was a nice cow -> main}
-        {hasBucket: ->cow1} You don't feel like your ready to do that yet. ->main
-    +[Go forward] ->pasture2
-    +[Go right] ->pasture3
-    +[Go back] -> lady
+        {hasBucket: ->cow1} She didn't feel like she was ready to do that yet. ->main
+    +[Alex went forward] ->pasture2
+    +[Alex went right] ->pasture3
+    +[Alex headed back to the barn.] -> lady
     
 = bushes
-    You look at the bushes and find brightly colored berries hanging from the branches. 
-    *[Eat Berries] You shove some berries in your mouth. Their sweet taste make you feel a little better and they make you feel light headed.
+    Alex looked at the bushes and found brightly colored berries hanging from the branches. 
+    *[Alex ate some berries] Alex shoved some berries in her mouth. Their sweet taste made her feel a little better and they made her feel light headed.
     ~stamina += 10
     ~eatenBerries = true
     ->bushes
     
-    *[Put Berries in Pocket] You pocket some berries for later, they have to be here for a reason. 
+    *[Alex put some berries in her pocket] Alex pocketed some berries for later, they had to be here for a reason, right?
     ~hasBerries = true
     ->bushes
-    
-    +[Step Away] You remind yourself of the task at hand and decide to move on. 
-    ->main
+    *->main
 
 = cow1
-    You feel the body heat of the cow on your skin. It exhales loudly once you crouch down. You seem more nervous than it does. 
+    Alex felt the body heat of the cow on her skin. It exhaled loudly once she crouched down. It seemed more nervous than she did, but she could barely believe it. 
     //write text in the above to indicate doing either petting or scratching
-    +[Pet the Cow]
-        Your hands tremble a little bit as you pet the cow. You have never seen an animal of this size in person before. This whole trip has been a stark change from your New York home, leaving you nervous and uncomphotable. The cow, on the other hand, seems at ease even going so far as to move closer to you.  
+    +[Alex pet the cow]
+        Alex's hands trembled a little bit as she pet the cow. She had never seen an animal of this size in person before. This whole trip had been a stark change from her New York home, leaving her nervous and uncompfortable. The cow, on the other hand, seemed at ease even going so far as to move closer to you.  
             ~cow1Soothed = true
             ->cow1
     
-    *[Scratch Behind Its Ears]
-        You try scratching behind her ears, like a dog. It snorts furiously and trashs her head angrily. This scares you even more. You don't know how to approach these animals. If you can't even soothe them properly, how are you going to milk them?
+    *[Alex scratched behind its ears]
+        Alex tried scratching behind her ears, like a dog. It snorted furiously and trashed her head angrily. This scared her even more. She didn't know how to approach these animals. If she couldn't even soothe them properly, how was she going to milk them?
             ~stamina -= 5
             ~cow1Soothed = false
             ->cow1
     
-    + { not cow1milked}[Milk Cow]
+    + { not cow1milked}[Alex milked the cow]
         {cow1Soothed and hasBucket:
         ~milk += 1
         }
         {cow1Soothed and hasBucket: 
             ~cow1milked = true
         }
-        {hasBucket and cow1Soothed: You pull out the bucket, sit down, and stare at the udders. You don't like how they feel in your hands. They're fleshy, moist, and warm to the touch. You feel sick every time you squeeze them. You try not to gag while the bucket fills. ->main}
-        {not hasBucket: You are not prepared to do that right now. ->cow1}
-        {not cow1Soothed: You reach down and the cow stomps her foot. You are scared to go any further. ->cow1}
-    + [Step Away] -> main
+        {hasBucket and cow1Soothed: She pulled out the bucket, sat down, and stared at the udders. She didn't like how they felt in her hands. They were fleshy, moist, and warm to the touch. She felt sick every time she squeezed them. Alex tried not to gag while the bucket filled. ->main}
+        {not hasBucket: She was not prepared to do that right now. ->cow1}
+        {not cow1Soothed: She reached down and the cow stomped her foot. She was scared to go any further. ->cow1}
+    *-> main
     
     
 == pasture2 ==
 = intro
-Audi's property goes on for what seemes like miles. You have yet to even see a fence anywhere. The cows seem to just wander where they please.   
+Audi's property went on for what seemed like miles. She had yet to even see a fence anywhere. The cows seemed to just wander where they pleased.   
  ->main
 = main
 #v_act4/hill
     * ^A:J,1:4^[Examine sky]
-        The clouds are thin, as if they were smeared across the sky. It looks like its getting late. You are cold, you want to go home.
+        The clouds were thin, as if they were smeared across the sky. It looked like it was getting late. Alex was cold, you wanted to go home.
         ->main
-        
     + ^H:J,5:10^[Examine cow]
         {cow2milked: This was also a nice cow. -> main}
-        {hasBucket: ->cow2} You don't feel like your ready to do that yet. ->main
+        {hasBucket: ->cow2}Alex didn't feel like she was ready to do that yet. ->main
         
-    +[Go back] ->pasture
+    +[Alex went back] ->pasture
 
 = cow2
-    You see the cow periodically rustle through the bushes looking for something. It immediately stops and stares at you when you approach.  
+    Alex saw the cow periodically rustle through the bushes looking for something. It immediately stopped and stared at her when she approached.
     //explain what you do with the cow down here
-    + {not cow2Soothed}[Give The Cow What It Wants]
+    + {not cow2Soothed}[Alex fed the cow some berries]
         {hasBerries: You take some berries out of your pocket to feed the cow some berries. You feel its tounge brush up against your hand as it takes them. It nuzzles your hand once it finishes chewing.}
         {hasBerries:
             ~cow2Soothed = true
@@ -126,16 +122,15 @@ Audi's property goes on for what seemes like miles. You have yet to even see a f
         {not cow2Soothed:
             ~stamina -= 5
         }
-        {not cow2Soothed: You get closer and the cow squeals and stomps off angrily, stepping on your foot on the way out. ->cow2}
-    + [Step Away] -> main
+        {not cow2Soothed: Alex got closer and the cow squealed and stomped off angrily, stepping on her foot on the way out. ->cow2}
+    *->main
     
     
     
     
 == pasture3 ==
 = intro
-
-Your feet start to hurt again. You haven't really had a chance to fully recover from yesterday. Everything is moving so fast but it feels like you have made so little progress in finding your cousin.  
+Alex's feet started to hurt again. She hadn't really had a chance to fully recover from yesterday. Everything was moving so fast but she felt like she had made such little progress in finding Kari.  
  ->main
  
 = main
@@ -145,42 +140,42 @@ Your feet start to hurt again. You haven't really had a chance to fully recover 
 }
 
     * ^B:C,8:10^[Examine bucket]
-        You see a metal bucket just lying on the floor. It is dented all over and a little dirty but it should do the trick.
+        Alex saw a metal bucket just lying on the floor. It was dented all over and a little dirty but it should do the trick.
         ~hasBucket = true  
         ->main
         
     + ^F:H,6:9 ^E:F,8:10 ^[Examine cow]
         {cow3milked: This was the nicest cow of all. -> main}
         {hasBucket: ->cow3} 
-        You don't feel like your ready to do that yet. 
+        Alex didn't feel like she was ready to do that yet. 
         ->main
         
-    +[Go back] ->pasture
+    +[Alex went back] ->pasture
 
 = cow3
-    This cow fidgets constantly, sporadically swatting its tail and kicking its feet.  
+    The cow fidgeted constantly, sporadically swatting its tail and kicking its feet.  
 
-    +[Talk to the cow]
-        You apologize for what you are about to do. You don't want to hurt it and your not here by choice. It seems to stop kicking and stay still.
+    +[Alex talked to the cow]
+        Alex apologized for what she was about to do. She didn't want to hurt it and she wasn'tt here by choice. It seemed to stop kicking and stay still.
         ->cow3
 
     + {not cow3milked} [Milk Cow]
         {hasBucket:
         ~cow3milked = true
         }
-        {not hasBucket: You are not prepared to do that right now. ->cow3}
+        {not hasBucket: Alex was not prepared to do that right now. ->cow3}
         ->cowtail
-    + [Step Away] -> main
+    *-> main
         
     = cowtail
-        You sit down to milk the cow and the cow turns away. You try to move with it, being careful of its feet. Once you finally settle it down, the cow slaps you in the face with its tail. You move around hoping to get out of its reach but the cow moves with you. You start to get angry.
+        Alex sat down to milk the cow and the cow turned away. She tried to move with it, being careful of its feet. Once she finally managed to settle it down, the cow slapped her in the face with its tail. She moved around hoping to get out of its reach but the cow moved with her. Alex began to get angry.
             ~cow3milked = true
-                *[Swat the tail away] You get frustrated and slap the tail out of your face. This startles the cow and it kicks its hind legs. They narrowly miss you. But if it hadn't you would have been seriously injured. You hastily squeeze the milk you need ignoring every swat in the face.
+                *[Alex swatted the tail away] She got frustrated and slapped the tail out of her face. This startled the cow and it kicks its hind legs. They narrowly missed hitting her in the side. But if it hadn't she would have been seriously injured. Alex hastily squeezed the milk she needed, ignoring every swat in the face.
                     ~stamina -= 15
                     ~milk += 1
                     ->main
                     
-                *[Ignore it] As best you can you try to ignore the tail in your face. Its hairs are coarse scratching up your face, getting in your eyes and mouth. Your face itches after every hit and you start to notice how bad this cow smells. You can hardly see, sometimes your hands jerk in reaction and milk sprays all over you. Despite this you get your milk even if most of it ended up on you. 
+                *[Alex ignored it] As best as she could Alex tried to ignore the tail in her face. Its hairs were coarse, scratching up her face, getting in her eyes and mouth. Her face itched after every hit and she started to notice how bad the cow smelled. She could hardly see, sometimes her hands jerked in reaction and milk sprayed everywhere. Despite this she got her milk even if most of it ended up on her or the ground. 
                     ~stamina -= 10
                     ~milk += 1
                     ->main

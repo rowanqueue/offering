@@ -246,7 +246,7 @@ You stroll into the house like you own the place. Grandfather is sitting in his 
 =act3walk
 ->act3car
 =act3car
-- You and grandfather get in his car and start to drive west. 
+- You and grandfather get in his car and start to drive west.
 #v_exit
 ->ACT4
 
