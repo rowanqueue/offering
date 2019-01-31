@@ -4,6 +4,8 @@
 
 //add in mom and dad
 #v_prologue/kariColdOpen
+#v_wait
+The Offering
 //Kari face lit by the fire with grandpa's hand on his shoulder]
 #v_prologue/alexCarShot
 //match-cut to alex sitting next to a car, drawing

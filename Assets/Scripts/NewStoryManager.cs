@@ -54,6 +54,7 @@ public class NewStoryManager : MonoBehaviour {
     Dictionary<string, int> letterToNum;
     Dictionary<string, string> speakerToColor;
 
+    public float waitTime;
 
     //bad not content specific shit
     public int stamina;
@@ -301,6 +302,9 @@ public class NewStoryManager : MonoBehaviour {
                     string visualCommand = s.Split('_')[1].Trim();
                     switch (visualCommand)
                     {
+                        case "wait":
+                            waitTime = Time.time + 1.5f;
+                            break;
                         case "fadeIn":
                             whatTolerp = 0;
                             duration = 0;
@@ -474,7 +478,7 @@ public class NewStoryManager : MonoBehaviour {
             }
         }
         //typing
-        if (typing)
+        if (typing && Time.time > waitTime)
         {
             displayText.color = Color.black;
             if (Time.time > lastTypedTimed + typeSpeed && whatToType.Length >= 1)

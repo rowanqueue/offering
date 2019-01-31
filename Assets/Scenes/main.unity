@@ -707,6 +707,7 @@ MonoBehaviour:
   lerpTime: 1
   displayImage: {fileID: 1390343420}
   topImage: {fileID: 1674938961}
+  waitTime: 0
   stamina: 0
   coinImages:
   - {fileID: 1800769829}
@@ -969,11 +970,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeSound:
-  - {fileID: 8300000, guid: 70489df2c160fd345b24501358b4910a, type: 3}
-  - {fileID: 8300000, guid: d1be68bcdd45402499538ed1a56853eb, type: 3}
-  - {fileID: 8300000, guid: 0957714b39c45b54bb4d325bbd13582b, type: 3}
-  - {fileID: 8300000, guid: 50fdd91dc79daf340bcdd75f05a74147, type: 3}
-  - {fileID: 8300000, guid: 609ecc8f04e31dc4bab4d919ba4dd303, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   characters: []
   duration: 0.1
 --- !u!1 &212250675
@@ -3783,7 +3784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.200007, y: 0}
+  m_AnchoredPosition: {x: 12.200002, y: 0}
   m_SizeDelta: {x: -12.2, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1583118389
