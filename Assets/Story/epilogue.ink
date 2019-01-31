@@ -13,7 +13,7 @@ Kari and Alex sat on the plane in silence.
 
 - They all stood on a great island, but this one had skyscrapers. Kari stood in the middle, safe.
 
-Alex took the photo, folded it twice, and slipped it in his pocket.
+Alex took the photo, folded it twice, and slipped it in her pocket.
 
 ->END
 -> END

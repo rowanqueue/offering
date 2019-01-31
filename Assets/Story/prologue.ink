@@ -4,10 +4,11 @@
 
 //add in mom and dad
 #v_prologue/prologueArt
-
 //Kari face lit by the fire with grandpa's hand on his shoulder
 //match-cut to alex sitting next to a car, drawing
-Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she would rather be here than on the deck. Looking at the desolate coast of rural Iceland just made Alex want to go home. She wished her parents hadn't come from a town so far away, and her stomach churned thinking about how much time she'd have to spend in the rental car before arriving at her Grandfather's house. 
+Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she would rather be here than on the deck.
+
+Looking at the desolate coast of rural Iceland just made Alex want to go home. She wished her parents hadn't come from a town so far away, and her stomach churned thinking about how much time she'd have to spend in the rental car before arriving at her Grandfather's house. 
 
 At least here it was quiet, and she could draw until her mother found her.
 //reverse shot for ALEX POV, we see she is sitting in a bay of cars, her mom standing there
@@ -20,6 +21,7 @@ Alex's mom took away her journal and pencils.
 :mom:"I know you don't want to be here, but you have to trust me. I'll explain soon, but you have to do exactly what I say until we leave here. No running off. Just be good for two days. Understand?":
 
 *   Alex nodded yes.
+*   Alex rolled her eyes. [] Her mom scoffed before saying, <>
 
 - :mom:"Come back up to the deck with me.":
 
