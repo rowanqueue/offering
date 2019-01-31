@@ -41,5 +41,19 @@ public class VolumeController : MonoBehaviour {
         {
             mute = !mute;
         }
-	}
+        RaycastHit hit;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                if (hit.collider != null)
+                {
+                    if (hit.collider.CompareTag("Volume"))
+                    {
+                        mute = !mute;
+                    }
+                }
+            }
+        }
+    }
 }
