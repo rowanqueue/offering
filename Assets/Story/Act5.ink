@@ -3,18 +3,21 @@
 ==act5Road==
 #v_clearScreen
 #v_act5/road
-You've run out onto the road, heading for the mountains. You hope to god or gods that Audhumbla isn't tricking you. You're freezing cold and soon praying to see any sort of car on the road. 
+Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road. 
 
-Sure enough, you see a pickup truck coming up from behind you. 
-*   [Stick your thumb up] You stick your thumb up and the car rolls to a stop next to you.
-*   [Walk in front of car] The car slows down in front of you and you walk around to the driver's side. You prepare to use what little Icelandic you know.
+Sure enough, she saw a pickup truck coming up from behind her. 
+*   [Alex stuck her thumb up] Alex stuck her thumb up and the car rolled to a stop next to her.
+*   [Alex walked in front of the car] The car slowed down in front of her and she walked around to the driver's side. Alex prepared to use what little Icelandic she knew.
 
 - :dad:"[Hello, child! What are you doing out here?]":
-*   [Lost my parents] :player:"I lost my parents,": you say.
-*   [Running from crazy man] :player:"I'm running from a crazy man,": you say.
-*   [Need to go skiing] :player:"I need to get to the ski resort,": you say.
+*   [Lost my parents] <>
+:player:"[I lost my parents,]": she said.
+*   [Running from crazy man] <>
+:player:"[I'm running from a crazy man,]": she said.
+*   [Need to go skiing] <>
+:player:"[I need to get to the ski resort,]": she said.
 
-- :dad:[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
+- :dad:[Well, if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
 //click car
 *   [Get in]
 #v_fadeOut
@@ -28,9 +31,9 @@ Sure enough, you see a pickup truck coming up from behind you.
 ==act5Arrival==
 #v_act5/snowyhouse
 #v_clearScreen
-You finally see the small wooden cabin, just where Kari's map said it would be. The lights are on, but it's quiet. 
+Alex finally saw the small wooden cabin, just where Audhumbla said it would be. The lights were on, but everything was totally still. 
 //click door
-*   [Knock on door] You knock on the cabin door and hear commotion inside. A woman around your mother's age opens the door. She looks at you like she's seen a ghost.
+*   [Alex knocked on the door] Alex knocked on the cabin door and heard commotion inside. A woman around her mother's age opened the door. She looked at Alex like she'd seen a ghost.
 - :brynja:"...Kari? Is that you?":
 *   [Yes]
 *   [No]
@@ -39,19 +42,19 @@ You finally see the small wooden cabin, just where Kari's map said it would be. 
 *   [Kari's cousin] :player:"Kari's cousin,": you say.
 *   [Sigrún's daughter] :player:"Sigrún's daughter,": you say.
 *   [Jorgur's granddaughter]:player:"Jorgur's granddaughter,": you say.
-- Her face turns white. :brynja:"Odin's spear... come in, quickly":
+- Her face turned white. :brynja:"Odin's spear... come in, quickly. But be quiet, my kids are asleep.":
 //click door again
 *   [Go inside]->act5insideHouse
 =act5insideHouse
-You enter the small cabin and the warmth instantly makes you feel safe and secure. There are two rooms - one a sort of kitchen and one lined with beds (in which there are two kids sleeping). It's a lovely home. The woman whispers into the house in Icelandic and someone comes out from the kitchen.
-:brynja:"My name is Brynja,": the woman says. :brynja:"This is my wife, Ásta."
+Alex entered the small cabin and the warmth instantly made her feel safe and secure. There were two rooms - one a sort of kitchen and one lined with beds. Alex was struck by how welcoming this home was. The woman whispered into the house in Icelandic and someone came out from the kitchen.
+:brynja:"My name is Brynja,": the woman said. :brynja:"This is my wife, Ásta."
 :asta:"What are you doing here, little one?":
-*   [Trying to find Kari] :player:"I'm trying to find Kari,": you say. :player:"Have you seen him?":
-:brynja:"No, but..." They share a look. 
-*   [Grandpa has gone crazy]:player:"Grandpa has gone crazy,": you say. :player:"He's attacked my dad.":
-They share a look. :brynja:"We assumed as much." 
-*   [I'm in danger] :player:"Grandpa attacked my dad.",: you say. :player:"I needed help.":
-- They share a look. :"asta":"How did you find us?": Ásta asks. You tell them about how Audhumbla helped you escape. Brynja is stunned. 
+*   [Trying to find Kari] :player:"I'm trying to find Kari,": Alex said. :player:"Have you seen him?":
+:brynja:"No, but..." They shared a look. 
+*   [Grandpa has gone crazy]:player:"Grandpa has gone crazy,": Alex said. :player:"He's attacked my dad.":
+They shared a look. :brynja:"We assumed as much." 
+*   [I'm in danger] :player:"Grandpa attacked my dad.",: you say. :player:"I need help.":
+- They shared a look. :"asta":"How did you find us?": Ásta asked. Alex told them about how Audhumbla helped you escape. Brynja is stunned. 
 :brynja:"Audhumbla went against Jorgur?":
 
 :asta:"He must have really gone insane.":
@@ -80,15 +83,15 @@ VAR grandpaPlanNum = 0
 
 ->chatpt1
 =grandpaHateAsk
-*  [Ask about fishing] :player:"What happened with the fishing?":
-    Ásta sighs. :asta:"We would sell our fish to the town across the bay, Dalvík. They didn't like us pagans but they still bought our fish. It started to grow and they got new fishing technology. Suddenly our fish were worth less and less.":
+*  [Fishing] :player:"What happened with the fishing?":
+    Ásta sighs. :asta:"We would sell our fish to the town across the bay, Dalvík. They didn't like us pagans but they still bought our fish. It started to grow and they got new fishing technology. Suddenly we couldn't catch anything. Jorgur thought we were cursed.":
     ~hateAskNum += 1
     ->grandpaHateAsk
-*  [Ask about "authentic"] :player:"What does that mean, authentic?":
+*  ["Authentic"] :player:"What does that mean, authentic?":
     :asta:"Jorgur talked about 'hard virtues.' Courage, honor, endurance, control. He thought that only those who lived like we did - worshiping the old gods, living off the land - were real Icelandic. To him, working in tourism is soft. We also started to realize that he hated the idea of anyone not 'true icelandic' invading his soil."
     ~hateAskNum += 1
     ->grandpaHateAsk
-*   [Ask about skiing] :player:"So... people ski here?": you ask.
+*   [Skiing] :player:"So... people ski here?": you ask.
         :asta:"Yes, it's quite popular. We have a great website." She looks lovingly at Brynja. 
         :brynja:"I do freelance web development. And most of the management. Ásta handles the tourists but mainly she is a writer.":    
     ~hateAskNum += 1
@@ -98,16 +101,16 @@ VAR grandpaPlanNum = 0
 
 =kindredAsk
 
-+  [Ask why they joined] :player:"So why did you join the kindred in the first place?":
-    Brynja answers. "In Dalvík we kept a low profile... We were gay and back then there was, well, contempt for us. We met your grandfather in town one day and he offered us something too good to be true."
++  [Why would you join the kindred?] :player:"So why would you join the kindred in the first place?":
+    Brynja answers. "In Dalvík we kept a low profile... We are gay and back then there was contempt for us. We met your grandfather in town one day and he offered us something too good to be true."
     :asta:"A place where we didn't have to hide, and didn't have to worry about money."
     ~kindredAskNum += 1
     ->kindredAsk
-+   [Ask about leaving] :player:"Why did you leave the kindred?": 
-    :brynja:"Your parents had already run away and everyone was on edge. Tour guides started bringing people in to see the "untouched nature" and it made Jorgur crazy. We were poor and sad and when your father's father sold some land to a tour agency it was time for us to find our own way. We still practice Asatru, but not like Jorgur.":    
++   [Why did you leave the kindred?] :player:"Why did you leave the kindred?": 
+    :brynja:"Your parents had already run away and everyone was on edge. Tour guides started bringing people in to see the "untouched nature" and it made Jorgur crazy. We were poor and sad and when your father's father started buying and selling land to tour agencies it was time for us to find our own way. We still practice Asatru, but not like Jorgur.":    
     ~kindredAskNum += 1
     ->kindredAsk
-+   [Ask about skiing]
++   [Why did my parents leave the kindred?] Your mother became fell in love once with a man from London. He promised to show her the world, and one day he just disappeared. It only made her more determined to leave.
     ~kindredAskNum += 1
     ->kindredAsk
 + {kindredAskNum>0}[Ask other questions] ->chatpt1
@@ -121,7 +124,9 @@ VAR grandpaPlanNum = 0
 
 ->chatend
 =chatend
-:brynja:"Come, we have to get to your mother,": Brynja says. You start to get up but Brynja quiets you.
+:brynja:"Come," Brynja said, putting on her coat, "we have to get you back to your mother.": 
+:asta:"Wait,": said Ásta. :asta:"Don't move.":
+Alex felt a chill move through the air.
 //door open sound
 //grandpa enters
 #t_speedDown
@@ -129,16 +134,24 @@ VAR grandpaPlanNum = 0
 :grandpa:"Ásta. Brynja."
 #t_reset
 :asta:"Ye gods, Jorgur. You look awful.":
-He does.
-:grandpa:"There you are, you little asni.": Grandpa lurches forward but Brynja steps between you. The sleeping kids jolt awake.
+He did. Jorgur's skin was ghostly white. He brandished a shotgun in the doorway of the hosue.
+:grandpa:"There you are, asni.": Jorgur started to move forward but Brynja stepped between him and Alex. The sleeping kids jolted awake.
 :brynja:"What are you doing with this child, Jorgur?":
-:grandpa:"Agh, stop speaking in his ugly language.":
-:brynja:"I'll speak so the child can understand it. This is madness. You sent Kari out into the wilds? Why?":
-:grandpa:"It's the design of the gods. I needed to distract the parents so the child can be brought to our ritual site. Don't you see? My Fjola died just before the Dísablót falls upon us!":
-
-:asta:"You will not make this innocent child a part of your perversion of our sacred rituals! It won't bring her back, Jorgur!"
-
-:grandpa:"Innocent? He dares to live as an American You don't understand,":
+:grandpa:"[Agh, stop speaking in her ugly language. She is a worthless American.]":
+:brynja:"I'll speak so Alex can understand me. This is insane. Leave the girl alone.":
+:grandpa:"I will do as I wish. My daughter died because of Fjola's sin. It drove the landvættir from my land and placed a curse on my family.":
+:asta:"You would rather make yourself a martyr than rejoin society?":
+:grandpa:"Asatru must rebuild our ancestral tribes. We cannot falter in this mission, we must regain our native freedom if we are to survive Ragnarok. I will not let you get in my way.": Jorgur pointed the gun at Brynja. :grandpa:"Kari. Put Alex in the car.":
+To his right, hiding behind his Grandfather's legs, was Kari. He looked terrified, but well. 
+:player:"Kari!": cried Alex. He didn't look at her. Jorgur gestured with his gun and Brynja stepped back against the wall. Ásta held her children.
+:grandpa:"Now, Kari!":
+:kari:"Yes, grandfather.": Kari walked over to Alex with a rope and tried to tie her hands.
+*   [Alex resisted] Alex struggled and pushed Kari away. 
+:kari:"Just let me do it, Alex. If I don't, he'll hurt us.":
+*   [Alex let him tie her]
+- Kari tied Alex's hands behind her back and led her over to Jorgur. 
+:grandpa:"[Come, we are leaving.]":
+->sacrifice
 //These foul tourists own you, they pillage the land and you bow to them.
 // Tonight the first moon of February rises and we will perform the ceremony as intended.
 //once we perform the blot the gods will look upon us favorably
