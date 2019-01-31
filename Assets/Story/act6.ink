@@ -23,7 +23,6 @@ Alex looked at Kari earnestly, telling him "You don't have to do this." Kari did
 -Grandfather finishes his speech, closing his eyes for a moment in silent prayer before unsheathing the dagger in his belt. Before Alex or Kari could react, he thrust the hilt out to Kari, beckoning for him to take it. Kari looked back up at his grandfather in shock. His eyes darted between Alex and Grandfather, as if waiting for something to happen.
 -grandpa: "[Take it, boy.] he urged him, [You are the future of our people. The trueblooded Icelanders must not hesitate to strike at those who trespass. Go, and cut the palm of her hand for sacrifice.]"
 -Kari hesitated.
-- 
 * [Don't listen to him!]
 "Don't listen to him!" Alex shouted in desperation, causing Kari to meet her gaze, if only for a moment. He looked at a loss for words, terrified. At the behest of Grandfather, he grasps the knife.
 * [say nothing]
@@ -43,14 +42,14 @@ Alex watched silently, the hairs on the back of her neck raised. Kari looked fro
 -:Kari: "[He's my Grandfather though, he always tells me how good the past was and, well, if he knows how to get us back there..."]
 - He trailed off, unsure where the dogma ended and his own beliefs began.
 
-*   [The past isn't perfect. You should take the good and leave the bad behind. And this is bad, Kari!]
+*   [The past isn't perfect.]
 "The past isn't perfect. You should take the good and leave the bad behind. And this is bad, Kari!" Alex spoke, pulling against the rope around her until her chest hurt. Kari silently mulled her words over, looking over the knife in his hands. Finally, he looked Alex in the eyes and spoke.
 - Kari: "[I just want the bad things to stop.]"->moreact6
 
 == beliefinmom
 :Kari: "But Grandpa says where you come from there's no honor in pureblooded families, that the States are a mess."
 
-*   [Where my family's from, it doesn't matter. That stuff's in the past. People are happy, even if they aren't all the same.]
+*   [That stuff's in the past.]
 
 "Where my family's from, it doesn't matter. That stuff's in the past. People are happy, even if they aren't all the same." Alex told him, speaking from her heart. Kari silently mulled her words over, looking over the knife in his hands. Finally, he looked Alex in the eyes and spoke.
 
@@ -66,7 +65,7 @@ Before Alex can respond, Kari cut the rope that tied her back. She looked at him
 *   [We need to run.]
 "We need to run." Alex said. For the first time without hesitation, Kari grabbed Alex's hand, running to the woods where they had come from. Grandfather's cries became more distant as the two raced through the winding thicket, following the runes like Alex had before not long ago. Finally they came out of the other side, the cries no longer audible, instead replaced by the hum of a car.
 
-:Mom: "[Alex! Kari!] Alex's mother calls out, opening the passenger door of the car and jumping up out of her seat. She rushed to the two kids, embracing them.
+-:Mom: "[Alex! Kari!] Alex's mother calls out, opening the passenger door of the car and jumping up out of her seat. She rushed to the two kids, embracing them.
 
 :Brynja: "[We gotta go, Fjola!] Brynja calls from the driver's seat. Fjola turns back to her and nods, taking a deep breath before hurrying Alex and Kari into the back of the car and getting back into the passenger seat.
 
