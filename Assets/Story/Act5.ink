@@ -1,14 +1,13 @@
 ==ACT5==
 ->act5Road
 ==act5Road==
-#check_act5
 #v_clearScreen
 #v_act5/road
 Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road. 
 
 Sure enough, she saw a pickup truck coming up from behind her. 
 *   [Alex stuck her thumb up] Alex stuck her thumb up and the car rolled to a stop next to her.
-*   [Alex walked in front of car] The car slowed down in front of her and she walked around to the driver's side. Alex prepared to use what little Icelandic she knew.
+*   [Alex walked in front of the car] The car slowed down in front of her and she walked around to the driver's side. Alex prepared to use what little Icelandic she knew.
 
 - :dad:"[Hello, child! What are you doing out here?]":
 *   [Lost my parents] <>
@@ -18,7 +17,7 @@ Sure enough, she saw a pickup truck coming up from behind her.
 *   [Need to go skiing] <>
 :player:"[I need to get to the ski resort,]": she said.
 
-- :dad:[Huh, well if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
+- :dad:[Well, if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
 //click car
 *   [Get in]
 #v_fadeOut
@@ -72,12 +71,12 @@ You look up at Brynja and Ásta.->chatpt1
 VAR hateAskNum = 0
 VAR kindredAskNum = 0
 VAR grandpaPlanNum = 0
-*   [Why does grandpa hate me?]:brynja:"The way he sees it, his kindred betrayed him. We survived for years by fishing but we couldn't keep up with the times. The tourism industry is a betrayal of what he thinks is an authentic Icelandic life.": -> grandpaHateAsk
++   [Why does grandpa hate me?]:brynja:"The way he sees it, his kindred betrayed him. We survived for years by fishing but we couldn't keep up with the times. The tourism industry is a betrayal of what he thinks is an authentic Icelandic life.": -> grandpaHateAsk
     
-*  [What was the kindred like?] Ásta and Brynja both start to speak, then Brynja motions to Ásta. :asta:"For a time it was nice. It was like a family, we shared everything. We could nearly sustain ourselves... I had so much time to enjoy life. We felt like rebels, and Jorgur was our mighty leader. In our eyes he could do no wrong. Things really changed.": 
++  [What was the kindred like?] Ásta and Brynja both start to speak, then Brynja motions to Ásta. :asta:"For a time it was nice. It was like a family, we shared everything. We could nearly sustain ourselves... I had so much time to enjoy life. We felt like rebels, and Jorgur was our mighty leader. In our eyes he could do no wrong. Things really changed.": 
 ->kindredAsk
 
-*  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
++  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
     :brynja:"A sacrifice.":
     Ásta glares at Brynja. :asta:"Who knows, he's a crazy old man. If Audhumbla really did send you here, he's alone. He can't hurt you.":->chatpt1
 * ->chatpt2
@@ -85,7 +84,7 @@ VAR grandpaPlanNum = 0
 ->chatpt1
 =grandpaHateAsk
 *  [Fishing] :player:"What happened with the fishing?":
-    Ásta sighs. :asta:"We would sell our fish to the town across the bay, Dalvík. They didn't like us pagans but they still bought our fish. It started to grow and they got new fishing technology. Suddenly our fish were worth less and less.":
+    Ásta sighs. :asta:"We would sell our fish to the town across the bay, Dalvík. They didn't like us pagans but they still bought our fish. It started to grow and they got new fishing technology. Suddenly we couldn't catch anything. Jorgur thought we were cursed.":
     ~hateAskNum += 1
     ->grandpaHateAsk
 *  ["Authentic"] :player:"What does that mean, authentic?":
@@ -102,16 +101,16 @@ VAR grandpaPlanNum = 0
 
 =kindredAsk
 
-+  [Joining kindred] :player:"So why did you join the kindred in the first place?":
-    Brynja answers. "In Dalvík we kept a low profile... We were gay and back then there was, well, contempt for us. We met your grandfather in town one day and he offered us something too good to be true."
++  [Why would you join the kindred?] :player:"So why would you join the kindred in the first place?":
+    Brynja answers. "In Dalvík we kept a low profile... We are gay and back then there was contempt for us. We met your grandfather in town one day and he offered us something too good to be true."
     :asta:"A place where we didn't have to hide, and didn't have to worry about money."
     ~kindredAskNum += 1
     ->kindredAsk
-+   [Leaving] :player:"Why did you leave the kindred?": 
-    :brynja:"Your parents had already run away and everyone was on edge. Tour guides started bringing people in to see the "untouched nature" and it made Jorgur crazy. We were poor and sad and when your father's father sold some land to a tour agency it was time for us to find our own way. We still practice Asatru, but not like Jorgur.":    
++   [Why did you leave the kindred?] :player:"Why did you leave the kindred?": 
+    :brynja:"Your parents had already run away and everyone was on edge. Tour guides started bringing people in to see the "untouched nature" and it made Jorgur crazy. We were poor and sad and when your father's father started buying and selling land to tour agencies it was time for us to find our own way. We still practice Asatru, but not like Jorgur.":    
     ~kindredAskNum += 1
     ->kindredAsk
-+   [Skiing]
++   [Why did my parents leave the kindred?] Your mother became fell in love once with a man from London. He promised to show her the world, and one day he just disappeared. It only made her more determined to leave.
     ~kindredAskNum += 1
     ->kindredAsk
 + {kindredAskNum>0}[Ask other questions] ->chatpt1
@@ -122,6 +121,7 @@ VAR grandpaPlanNum = 0
 
 
 =chatpt2
+
 ->chatend
 =chatend
 :brynja:"Come," Brynja said, putting on her coat, "we have to get you back to your mother.": 
@@ -131,7 +131,7 @@ Alex felt a chill move through the air.
 //grandpa enters
 #t_speedDown
 #t_speedDown
-:grandpa:"Ásta. Brynja.":
+:grandpa:"Ásta. Brynja."
 #t_reset
 :asta:"Ye gods, Jorgur. You look awful.":
 He did. Jorgur's skin was ghostly white. He brandished a shotgun in the doorway of the hosue.

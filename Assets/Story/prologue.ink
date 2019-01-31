@@ -1,62 +1,62 @@
 == beginning == 
-#s_act1/Audio/WAVESMENUSPROLOGUE_m
+#s_audio/waves
+#s_audio/WAVESMENUSPROLOGUE_m
 
 //add in mom and dad
 #v_prologue/prologueArt
 
 //Kari face lit by the fire with grandpa's hand on his shoulder
 //match-cut to alex sitting next to a car, drawing
-Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she preferred it to being on the deck. Looking at the coast of rural Iceland just made Alex want to go home.
+Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she would rather be here than on the deck. Looking at the desolate coast of rural Iceland just made Alex want to go home. She wished her parents hadn't come from a town so far away, and her stomach churned thinking about how much time she'd have to spend in the rental car before arriving at her Grandfather's house. 
 
-She wished her parents hadn't come from a town so far away, and her stomach churned thinking about how much more time she'll have to spend in the rental car before arriving at her Grandfather's house. At least here it was quiet, and she could draw until her mother found her.
+At least here it was quiet, and she could draw until her mother found her.
 //reverse shot for ALEX POV, we see she is sitting in a bay of cars, her mom standing there
 
-//If a brake malfunctions
-//The fumes and gas take priority
-:mom:"Jesus, Alex, what are you doing down here? I can barely breathe with all these fumes, and - if a brake malfunctions? A car could start rolling and run you over. Get your head out of your notebook.":
+:mom:"Jesus, Alex, what are you doing down here? I can barely breathe with these fumes, and - if a brake malfunctions? A car could start rolling and run you over. Look at me when I’m talking to you.":
 
 Alex's mom took away her journal and pencils.
 
 //haven't told you about what we're doing there?
-:mom:"Listen to me, Alex. I know you don't know much about where we're going, but that's why you have to trust me, and do exactly what I say. No running off. Just be good for two days, and then we leave. Understand?":
-//ADD THE ABILITY TO SAY NO
+:mom:"I know you don't want to be here, but you have to trust me. I'll explain soon, but you have to do exactly what I say until we leave here. No running off. Just be good for two days. Understand?":
+
 *   Alex nodded yes.
-*   Alex rolled her eyes. [] Her mom scoffed before saying, <>
 
 - :mom:"Come back up to the deck with me.":
 
 //Alex clicked on her mother to walk upstairs.
-
+//in environment
 *   [go up]
 //On the deck, clear screen
-#s_act1/Audio/WavesWav
+
 - Alex and her mom walked onto the deck and found her father. 
 
 
-:mom:"Einar. She was hiding with the cars,": she said.
+:mom:"Einar. She was hiding by the cars,": she said.
 //more expressive?
 
 Dad frowned. 
 
-:dad:"I'm sorry, I told her not to move from the bench... Why would you do that, Alex?":
+:dad:"Alex, I told you not to move from the bench.":
 
-*   [Alex tried to explain herself] Alex tried to explain herself. :player:"I wanted to draw,": she said. Mom gave dad an angry look, and he started to relay what they both knew would sound better coming from him.
-:dad:"I understand, but I told you to draw on the bench. Look, until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will pass by fast.":
+*   [Alex tried to explain herself] Alex tried to explain herself. :player:"I wanted to draw,": she said. Mom gave dad an angry look, and they silently decided that he would be the one to talk to Alex.
+
+:dad:"I understand, but I need you to stay with us. Look, until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will be over soon.":
 
 *   Alex kept quiet. 
-Dad looked at Mom, and then started to relay what they both knew would sound better coming from him.
 
-:dad:"Look, until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will pass by fast.":
+Mom and Dad looked at eachother and silently decided that he would be the one to talk to Alex.
+
+:dad:"Until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will pass by fast.":
 
 - Not quite satisfied but too anxious to continue, Mom stepped away to smoke a cigarette. Dad started to say something to her, then decided against it.
 
 :dad:"Are you excited to meet your cousin?":
 *   Alex answered yes. 
 :player:"I think so,": she said. 
-:dad:"I definitely am." dad He was born after your mom and I moved away, but his mother was a great woman. He's two years younger than you, but I think you two will get along really well.":
+:dad:"I definitely am,": dad said. :dad:"He was born after your mom and I moved away, but his mother was a great woman, and I'm sure he takes after her. Kari is two years younger than you, but I think you two will get along famously.":
 
 * Alex answered no.
-:player:"Not really. I don't know what he is like,": she said.
+:player:"Not really. I don't know what he's like,": she said.
 
 :dad:"To tell you the truth, I don't know either. He was born after your mother and I moved away, so I've never met him. But he's family, so we ought to give him a chance, right? His mother was a great woman. I bet you two will get along famously.":
 
