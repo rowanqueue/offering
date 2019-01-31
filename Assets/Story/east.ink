@@ -23,7 +23,7 @@ She was completely lost. Thunder crashed above her while the rain seeped through
     +^G:H,5:7 ^[Alex wandered north] -> wood2
 == lost ==
 ~Stamina -= 5
-{Alex walked on for what felt like forever...|Alex walked on for what felt like forever...}
+{Alex walked on for what felt like forever...|Every hill looked the same to Alex. before she knew it, she was back where she started.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.| Alex trips over the stones meant to guide her, when she gets up she finds her self back where she started. }
 -> entrance
 == wood2 ==
 #v_act2/forest2
