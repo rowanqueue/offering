@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -37,13 +38,17 @@ MonoBehaviour:
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: dae7fed51c309c144b458ad6cfb5af20, type: 3}
+    jsonAssetPath: {fileID: 0}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 88ef2c98b0fc12649ab24efae2ad5896, type: 3}
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: f4a2386f16457b147b75aa804c89f600, type: 3}
     jsonAssetPath: {fileID: 0}
-    jsonAsset: {fileID: 4900000, guid: 717e0670aa7a8fb4c8e26118dd099887, type: 3}
+    jsonAsset: {fileID: 4900000, guid: f1165effb630008429a8b52ff069626c, type: 3}
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 8bb89928bc460a5498e46b20aa73ee60, type: 3}
     jsonAssetPath: {fileID: 0}
@@ -53,15 +58,15 @@ MonoBehaviour:
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 4900000, guid: 47d5d88c537024b45a10f0108ca53b1d, type: 3}
   - compileAutomatically: 0
-    inkAsset: {fileID: 102900000, guid: 68703cee12abcdb489ead5a65db667aa, type: 3}
-    jsonAssetPath: {fileID: 0}
-    jsonAsset: {fileID: 0}
-  - compileAutomatically: 0
-    inkAsset: {fileID: 102900000, guid: dae7fed51c309c144b458ad6cfb5af20, type: 3}
-    jsonAssetPath: {fileID: 0}
-    jsonAsset: {fileID: 0}
-  - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 3a128ffe1cd428b40bf0b72085938563, type: 3}
+    jsonAssetPath: {fileID: 0}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: f0bb78674751d4df5b32ad1a9d13dbda, type: 3}
+    jsonAssetPath: {fileID: 0}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 68703cee12abcdb489ead5a65db667aa, type: 3}
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 0}
   pendingCompilationStack: []
