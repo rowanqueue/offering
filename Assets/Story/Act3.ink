@@ -8,33 +8,24 @@ VAR hasPapers = false
 #v_fadeIn
 #s_audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
-*   [Refuse]
-*   [Get up]
-#v_fadeIn
-- You reluctantly get out of bed. 
+*   [Alex refused to get up]
+Alex refused to get up.
+:grandpa:"I will not ask you again.":
+*   [Alex got up]
+- Alex begrudgingly got out of bed.
+*   [Ask about Kari] Alex got up in a daze, and suddenly remembered the events of the previous night. She asked if Kari was back.
+    :grandpa: "He didn't come home last night. Probably sleeping over at Audhumbla's. You don't understand. If you grew up here, you would not be afraid of the land. Come downstairs. Make yourself something to eat."
+- 
+//grandpa fade out
+*   ^I:J,3:7 ^[Go downstairs]->leaveHouse
 
-*   [Ask about Kari] You get up in a daze, then suddenly realize the events of last night. You ask where Kari is.
-    :grandpa: "He didn't come home last night. Probably sleeping over at Audhumbla's or the Jóhannsons. You don't understand, child, our kindred are unafraid of the land. She is far less cruel than the city you live in." 
-    You are unsatified with that answer and feel horribly guilty. If Kari isn't safe, it's your fault.
-    :grandpa: "Come downstairs. Make yourself something to eat. I will be hard at work outside."
-    ->askGramp
-    
-=askGramp
-    +[Press Further]
-    :grandpa: "I said come downstairs. Don't doubt my family's strength, Kari is far better at navigating this land then you will ever be!"
-     You head downstairs but can't help but worry about your cousin.
-    ->leaveHouse
-    +[Drop It] You head downstairs but can't help but worry about your cousin.
-    ->leaveHouse
-    
 =leaveHouse
 #v_exit
 #v_act3/insideHouseEmpty
-    Grandpa heads out the front door. You sit down at the table and try to make yourself breakfast. Your parents still aren't home, and neither is Kari. It doesn't take long for you to decide what you need to do.
-    You get up, put on your coat and boots and leave through the front door. 
-    Grandpa stops you.
-    :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that" 
-    He glares at you until you head back inside. You can tell there will be no chance to reason with them.
+    Grandpa headed out the front door. Alex found some bread in the cabinet and started to eat it. Her parents still weren't back, and she was getting worried.
+ 
+    :grandpa: "":
+    //Something sus that motivates the puzzle
    
     ->livingRoomPuzzle
     
@@ -72,56 +63,53 @@ Grandpa rushes in clearly confused about the fire. You take that chance to bolt 
 ==act3Boat
 #v_clearScreen
 ~coin +=1
-You finally enter the boat and find a mess of drawings, notes, and trinkets. Kari has fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, you assume he must spend a lot of his time here.
+Alex finally entered the boat to find a mess of drawings, notes, and trinkets. Kari had fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, Alex assumed he must spend a lot of his time here.
 ->Insideboat
 
 =Diary
-You pick up a school notebook and begin to read.
-:kari: "I am writing this in english to practice and it feels more secret. today I was out and i saw a man leading a group of strange people into the mountains. I told Grandpa and he was very upset and told me not to talk to them. he called them tourists. later we made really good bread with margret and bjorn johannson and we played outside and drew the wights.":
+Alex picked up a notebook and opened it to the first page.
+//mom has been sick, i wish i could help her, grandpa doesn't want 
+:kari:"I am writing this in english to practice. english feels more secret too. Last night mom was coughing a lot after dinner. I wanted to draw the wights with her but she said she had to rest. I made soup for mom and she went to bed early. I could hear her coughing in her room. I wanted to go lay with her but I don’t want to get sick too.":
+
 +  [Next entry]
-+  [Keep looking] You decide to keep looking through the boat. 
++  [Alex kept looking] Alex decided to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
 
-- :kari: "Today grandpa made a meeting for the kindred to talk about the tourists. There was grandpa, Audy, the Geirssons, and the Johannsons. I always like seeing mr. geirson. he said that we should be open to the tourists and fishing isn't as good anymore and Grandpa said that we need to protect our land. Grandpa got really mad and Mr. Geirson said that this is why aunt Sigrun and uncle einar left. That made Grandpa really mad. when we got home he didn't want to bake with me.":
+- :kari:"Grandfather let me stay home from school today so we could pray for mom to get better. Yesterday a friend in school said that when they got sick, they went to the doctor in Dalvík. I told Grandfather but he said that our family has been cursed since the landvættir fled and that doctors cannot help. I want the landvættir to come back because they would be able to help mom.":
 +   [Next entry]
-+  [Keep looking] You decide to keep looking through the boat. 
++  [Keep looking] Alex decided to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
 
-- :kari: "Grandpa has been quiet and mean. he found out Mr geirson sold some land to the man. grandma said maybe we should try to change and he was mean to her. i told grandpa that today was the day for eyvind kinnrifi and he told me it wasnt and he would not forget that even though it was the 9 february. he got really really mad and confused and punished me and i ran here to my boat.":
-+   [Next entry]
-+  [Keep looking] You decide to keep looking through the boat. 
+- :kari: "Mother passed to Valhalla last night. I know I should not be sad because she is with the spirits now, but I miss her. Breakfast always tasted best when she made it and she knew exactly how to put my socks on my feet so it was not uncomfortable. . Maybe she can talk to the landvættir and ask them to come back to our house and things will be a little better. I am excited because my cousin and aunt and uncle are coming to celebrate her. I really want to meet my cousin and I hope I can show her how great Asatru is. I hope what Grandfather says about them being traitors is not true. I have a good feeling about them, even though I have not met them yet.":
++  [Keep looking] Alex decided to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
-- :kari:"i have not written in this diary in a few months. grandpa does not allow me to speak english anymore or talk to the geirssons. the Johannsons left the kindred too. I miss playing with bJörn and margrét Johannson a lot but grandpa says i can not see them either. he has been very mean and yells a lot. he does not talk to grandma any more. at least auntie audy is still okay to talk to. i often sneak out to stay at her house in the west and she gives me milk. it does not seem like grandpa notices.":
-    +  [Keep looking] You decide to keep looking through the boat. 
-    ~seenBoat = seenBoat +1
-    ->Insideboat
 
 =Insideboat
 VAR seenBoat = 0
-*   [Examine drawings]:player:You examine the drawings: 
+*   [Examine drawings]:player:Alex examined the drawings: 
 ~seenBoat = seenBoat +1
-Heaps of half-finished papers lie around the boat. Over and over you see the same four creatures in Kari's drawings - dragon, eagle, bull, and giant. It's obsessive. In many of the drawings the four are pictured with a whale, sometimes fighting the whale or towering over it. The creatures are labeled, respectively, as East, North, West, South. ->Insideboat
+Heaps of half-finished papers lay around the boat. Alex recognized them as his wight drawings, but these were far more intricate than the ones in Kari's bedroom. Many of the drawings were frantically scribbled out. In a few drawings, the wights appeared dead, with Xs in their eyes. ->Insideboat
 +   [Examine journal]->Diary
-*   [Examine trinkets] Scattered around the boat you see a bowl with some runes carved in it, some little hammers, twigs, a knife, and a hollowed-out horn.
+*   [Examine trinkets] Scattered around the boat, Alex saw a bowl with some runes carved in it, some little hammers, twigs, a knife, and a hollowed-out wooden horn.
 ~seenBoat = seenBoat +1
 ->Insideboat 
-*  {seenBoat > 3} [Go Home] ->act3HomeOutside
+*  {seenBoat > 2} [Go Home] ->act3HomeOutside
 ==act3HomeOutside
 #v_clearScreen
 #s_stop
 #v_act3/outsideHouse
 //get back home, go inside
-You'd seen enough in the boat and decided to stop back home before heading out to meet Audhumbla. Finally, you arrive back at Grandpa's house, exhausted and beaten up from your journey north. Through the window you can see Grandpa napping in his chair. You could try to sneak back in or greet grandpa like nothing is wrong.
-*   [Walk in]->act3walkIn
-*   [Sneak in]->act3Sneak
+Alex had seen enough in the boat and decided to go home. When she arrived back at Jorgur's house, she was bruised and thoroughly exhausted. Through the window she could see Grandpa napping in his chair.
+*   [Alex walked right in]->act3walkIn
+*   [Alex attempted to sneak in]->act3Sneak
 
 =act3Sneak
 //empty homeInterior
 #v_act3/insideHouseEmpty
-You open the door and it creaks loudly. You don't see Grandpa. 
+Alex opened the door and couldn't mask the loud creak. She looked toward Grandpa’s chair, but he was nowhere to be seen.
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
@@ -129,19 +117,19 @@ You open the door and it creaks loudly. You don't see Grandpa.
 #v_clearScreen
 #v_enter_act3/fadedGRAMPS
 #v_act3/bedroom
-Grandpa is standing in Kari's room with an angry look on his face. 
+Grandpa stood in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"
 *   [Out looking for Kari] 
     #t_speeddown
-    :grandpa: "Hrmph. Your parents told you to stay in, didn't they?: 
-    :grandpa:Well I do like a rebel. Maybe you have a bit of Iceland in you after all. But don't do it again. Now, come downstairs. I am to give you lunch and then we leave":
+    :grandpa: "You were told to stay in the house. Come downstairs. You will eat lunch, and then we leave.":
+
     ->act3Leaving
     #t_reset
 *   [Just getting some air]
-    :grandpa: "Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":
+    :grandpa: "You should not leave the house without my permission. Come downstairs, I am to give you lunch and then we leave.":
     ->act3Leaving
 *   [Wanted to look at the mountains]
-    :grandpa: "They are beautiful. Well stay inside. Your parents told you. Now, come downstairs, I am to give you lunch and then we leave.":
+    :grandpa: "Hm. They are beautiful. Come downstairs, I am to give you lunch and then we leave.":
     ->act3Leaving
     
 =act3walkIn
@@ -149,14 +137,14 @@ Grandpa is standing in Kari's room with an angry look on his face.
 #v_clearScreen
 #v_act3/insideHouseEmpty
 #v_enter_act3/fadedGRAMPS
-You stroll into the house like you own the place. Grandpa is sitting in his chair. 
+Alex strolled into the house. Jorgur was sitting in his chair. 
 :grandpa: "Oh, hello.":
 #t_speeddown
-*   [Hello grandpa] :player:"Hello grandpa":
-*   [What's up]:player:"What's up.":
+*   [Hello Grandpa] :player:"Hello grandpa":
+*   [Sup]:player:"Sup.":
 *   [Hey]:player:"Hey.":
 #t_reset
-- Grandpa seems unconcerned. 
+- Grandpa seemed unconcerned. 
 :grandpa:"Hrmph. Where did you go? You seem hurt.":
 #t_speeddown
 
@@ -172,16 +160,14 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 
 *   [Looking for Kari]:player:"I was looking for Kari":
 #t_reset
-:grandpa: "Hrmph. I told you he is just out playing.":
-
--:grandpa:"You seem hurt. Here.":
+-:grandpa: "Hrmph. I told you he is just out playing.":
 
 ->act3Leaving
 
 =act3Leaving
-- Grandpa cleans you up a bit and gives you a bowl of lamb stew with bread. :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
+- :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
     *  [Why?] :player: "Why?":
-    :grandpa:"His family betrayed the kindred. They sold land to the tourist guides, to let them invade and deface our land. Now, I must employ fishermen from across the water.":
+    :grandpa:"His family betrayed the kindred. They paid money to a foreigner for the land that is rightfully ours, to employ tourist guides to let them invade and deface our land.":
     :player: "Huh.":
     *  [Okay] :player: "Okay.":
     -:grandpa:"Time to go.":
@@ -189,7 +175,7 @@ You stroll into the house like you own the place. Grandpa is sitting in his chai
 =act3walk
 ->act3car
 =act3car
-- You and grandpa get in his car and start to drive west. 
+- Alex and Jorgur got in his car and started to drive west. 
 #v_exit
 ->ACT4
 

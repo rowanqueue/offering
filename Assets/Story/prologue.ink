@@ -5,33 +5,72 @@
 //add in mom and dad
 #v_prologue/prologueArt
 
-FERRY TO FJALLVÍK, NORTHERN ICELAND - MORNING
+//Kari face lit by the fire with grandpa's hand on his shoulder
+//match-cut to alex sitting next to a car, drawing
+Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she would rather be here than on the deck. Looking at the desolate coast of rural Iceland just made Alex want to go home. She wished her parents hadn't come from a town so far away, and her stomach churned thinking about how much time she'd have to spend in the rental car before arriving at her Grandfather's house. 
 
-You look out across the bay at the snow-capped mountains and the small town beneath them where your parents grew up. 
-//It's been five hours of flying and five hours of driving to get to this ferry, which Dad assures you is the only way to get to Fjallvík. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you arrive at your grandfather's house here in northern Iceland. Until this weekend you’d never even left the tri-state area.
-It feels like forever since you left New York, and every minute you spend on this ferry makes you crankier. Your stomach churns thinking about how much more time you'll have to spend in the rental car before you finally arrive at your grandfather's house. You wish your parents hadn't come from a town so far out in the middle of nowhere.
+At least here it was quiet, and she could draw until her mother found her.
+//reverse shot for ALEX POV, we see she is sitting in a bay of cars, her mom standing there
 
-//    * [Complain] :player:"Mom, I feel sick,": you say.
-    * [Ask how much longer] :player:"How long is this going to take, Mom?": you ask.
-    * [Complain about feeling sick] :player:"Mom, I feel sick":
--   She puts her hands on your shoulders.
-    :mom:"Take deep breaths, and focus on the waves. Just listen. There's nowhere else on Earth that sounds like this place.":
-        * [Listen to the waves] You breath in and listen.
-        #s_volumeUp #s_volumeUp
-        * [Roll your eyes] You scoff and roll your eyes at your Mom. She's always trying to make you appreciate nature.
--   Your Mom turns to you and asks, :mom:"Are you excited to meet your cousin?":
-        * [Say Yes] :player:"Yeah, definitely,": you say.
-                :mom:"I’m excited to meet him too,": she replies.
-        * [Say No] :player:"Not really,": you say.
-                :mom:"Well, I’m excited to meet him," she replies.
-- :mom:"His mom - your aunt - was my best friend. I think you two will get along famously. ":#s_reset
-*   [Ask about meeting Grandpa] :player:"Do you think Grandpa Jorgur will like me?":
+:mom:"Jesus, Alex, what are you doing down here? I can barely breathe with these fumes, and - if a brake malfunctions? A car could start rolling and run you over. Look at me when I’m talking to you.":
+
+Alex's mom took away her journal and pencils.
+
+//haven't told you about what we're doing there?
+:mom:"I know you don't want to be here, but you have to trust me. I'll explain soon, but you have to do exactly what I say until we leave here. No running off. Just be good for two days. Understand?":
+
+*   Alex nodded yes.
+
+- :mom:"Come back up to the deck with me.":
+
+//Alex clicked on her mother to walk upstairs.
+//in environment
+*   [go up]
+//On the deck, clear screen
+
+- Alex and her mom walked onto the deck and found her father. 
+
+
+:mom:"Einar. She was hiding by the cars,": she said.
+//more expressive?
+
+Dad frowned. 
+
+:dad:"Alex, I told you not to move from the bench.":
+
+*   [Alex tried to explain herself] Alex tried to explain herself. :player:"I wanted to draw,": she said. Mom gave dad an angry look, and they silently decided that he would be the one to talk to Alex.
+
+:dad:"I understand, but I need you to stay with us. Look, until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will be over soon.":
+
+*   Alex kept quiet. 
+
+Mom and Dad looked at eachother and silently decided that he would be the one to talk to Alex.
+
+:dad:"Until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will pass by fast.":
+
+- Not quite satisfied but too anxious to continue, Mom stepped away to smoke a cigarette. Dad started to say something to her, then decided against it.
+
+:dad:"Are you excited to meet your cousin?":
+*   Alex answered yes. 
+:player:"I think so,": she said. 
+:dad:"I definitely am,": dad said. :dad:"He was born after your mom and I moved away, but his mother was a great woman, and I'm sure he takes after her. Kari is two years younger than you, but I think you two will get along famously.":
+
+* Alex answered no.
+:player:"Not really. I don't know what he's like,": she said.
+
+:dad:"To tell you the truth, I don't know either. He was born after your mother and I moved away, so I've never met him. But he's family, so we ought to give him a chance, right? His mother was a great woman. I bet you two will get along famously.":
+
+
+//have parents call eachother out on little things
+//have parents cut eachother off
+
+
     //TOO MUCH TEXT!!
--   :mom:"Well I think he'll like you very much. I mean... I haven’t seen Grandpa since before you were born but he loved people.:
+-   //:mom:"Well I think he'll like you very much. I mean... I haven’t seen Grandpa since before you were born but he loved people.:
 
-:mom:The thing is... he is a very, very old man now. He might be a bit confused and forgetful. He might say weird things. But I think you're old enough now...": She trails off. 
+//:mom:The thing is... he is a very, very old man now. He might be a bit confused and forgetful. He might say weird things. But I think you're old enough now...": She trails off. 
 
-:mom:"it's important for you on this trip to try to understand what kind of man he was and where your dad and I came from... we won't be coming back here for a very long time.":
+//:mom:"it's important for you on this trip to try to understand what kind of man he was and where your dad and I came from... we won't be coming back here for a very long time.":
     -> ACT1
 
         
