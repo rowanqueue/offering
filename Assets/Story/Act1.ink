@@ -39,7 +39,7 @@ The ferry pulled into the harbor and Alex's family drove off in their rental car
 == arrival ==
 //needs change of people
 Alex spent the next forty minutes managing her nausea as her father drove them through vast expanses of completely empty land - a tunnel burrowed through the snowy grey mountains behind the port to reveal a wide green valley with no civilization in sight.  Eventually, Alex's family pulled up to a small house. An old man who Alex knew must be her grandfather stood out front.
-#v_act1/outsideHouseFirst
+#v_act1/houseExterior
 
 //Alex had the thought that she had never seen so far in one direction. 
 :mom:"Leave your things in the car, Alex.":
@@ -53,7 +53,7 @@ Her parents got out of the car, and to prove a point Alex waited for her mother'
     
 *   [Alex refused to get out of the car] Alex refused to get out of the car, and slowly her mom walked over to her. She jerked the door open. Alex flinched, but when she looked up, her mom wouldn't meet her gaze. Alex slid out of the back seat and walked to the porch, Fjola following behind.
 
-    Alex got out of the car and walked to the house, getting a better look at her Grandfather - she realized that were he not hunched over a cane he would be an enormously tall man. Even decrepit like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of disapproving frown that was typical for old men, but there was something so relaxed about Grandpa Jorgur that Alex felt even more small. 
+    Alex got out of the car and walked to the house, getting a better look at her Grandfather - she realized that were he not hunched over a cane he would be an enormously tall man. Even decrepit like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of disapproving frown that was typical for old men, but there was something so relaxed about Grandfather Jorgur that Alex felt even more small. 
 
     To his right was Alex's younger cousin, Kari, who looked to be around 11 years old. He gawked at her, mesmerized. 
 
@@ -78,7 +78,7 @@ Alex decided to introduce herself to her cousin.
 ->intro_livingroom
 
 == intro_livingroom ==
-#v_act1/homeInterior
+#v_act1/houseInterior
 Jorgur walked into the house and took a seat.
 :grandpa:"Welcome back.":
 :dad:"It looks just like it did when we left,": Dad said. 
@@ -95,7 +95,7 @@ Kari's head shot down towards his feet.
 
 == intro_upstairs ==
 //needs dad floated in
-#v_act1/bedroom
+#v_act1/bedroomKari
 #s_audio/FootStep(Inside)_s
 - :kari:"...and this is my room! What do you think?":
 Alex stepped into her cousin's room. There were drawings scattered everywhere, on almost every surface. Alex might have wished she was allowed to keep her drawings on display like this, but something about Kari's room made her uneasy. Maybe it was the fact that the drawings were so incongruous. Looking closer, she realized that almost all the drawings were of the same four creatures over and over: a dragon, a bird, a bull, and a giant.
@@ -159,7 +159,7 @@ Some time passed as the pair studiously drew creatures of all sorts.
 
 :kari:"Hey Alex, what do you think of my English? I learn at school but Grandpa never allows me to use it. He hates English.":
 
-#v_enter_act1/fadedDAD
+#v_enter_act1/dadFade
 Before Alex could respond, her dad entered the room. :dad:"Dinner is ready, kids.":
 :kari:"Coming!": Kari cheerfully replied.
 *   ^I:J,3:7 ^[Go downstairs]->dinner

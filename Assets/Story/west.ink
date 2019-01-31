@@ -18,7 +18,7 @@ Alex looked around, the fields around her feeling quiet and empty.
 = intro
 #s_act4/Audio/COW OUTSIDE
 #s_stop_m
-#v_act4/barnEx
+#v_act4/barnExterior
 Alex could still see Grandfather and Audi talking through the window. Every once in a while, he would glance over at her and gave her a look she didn't understand. With the barn behind her, she was disgusted by the smell of manure drifting through the air.
 She didn't even know how to milk a cow, but to protest would be pointless. She rolled her sleeves up.
 ->main
@@ -37,7 +37,7 @@ She didn't even know how to milk a cow, but to protest would be pointless. She r
 #v_clearScreen
 She stopped at the foot of some rolling hills. She was astonished by the size of this farm. She saw cows roaming all around, lazily chewing grass. Speckled bushes sprouted wildly along the field to her right. ->main
 = main
-#v_act4/hillBushes
+#v_act4/pasture1
     + {not eatenBerries or not hasBerries} ^H:J,7:9 ^[Examine bushes] ->bushes
     + ^A:F,6:7 ^A:D,8:10 ^E,8^[Examine cow]
         {cow1milked : This was a nice cow -> main}
@@ -90,7 +90,7 @@ She stopped at the foot of some rolling hills. She was astonished by the size of
 Audi's property went on for what seemed like miles. She had yet to even see a fence anywhere. The cows seemed to just wander where they pleased.   
  ->main
 = main
-#v_act4/hill
+#v_act4/pasture2
     * ^A:J,1:4^[Examine sky]
         The clouds were thin, as if they were smeared across the sky. It looked like it was getting late. Alex was cold, you wanted to go home.
         ->main
@@ -135,9 +135,12 @@ Alex's feet started to hurt again. She hadn't really had a chance to fully recov
  ->main
  
 = main
-#v_act4/hillnonebucket
+#v_act4/pasture3
 {not hasBucket: 
-#v_act4/hillBucket
+#v_enter_bucketFade
+}
+{hasBucket:
+#v_exit
 }
 
     * ^B:C,8:10^[Examine bucket]

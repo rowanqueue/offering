@@ -13,7 +13,7 @@ VAR eagle_gone =false
 #v_clearScreen
 #s_act3/Audio/WindStooorm
 #s_act3/Audio/Somber_m
-#v_act3/northClimbingUpHills
+#v_act3/north1
 Alex tried to follow Kari's map as best she could, just looking at it gave her hope that Kari was okay. She could still feel her heart pounding from the escape. Staying inside just did not sit right with her. The air was chilly but refreshing, a perfect time to explore the beautiful landscape around her, but she was on a mission. ->main
 
 =main
@@ -46,7 +46,7 @@ Alex tried to follow Kari's map as best she could, just looking at it gave her h
 == cave ==
 = intro
 #v_clearScreen
-#v_act3/northBoat
+#v_act3/boatExterior
 She approached the boat from Kari's drawings and called out his name. There was no answer. That can't be right, he had to be here. He must be sleeping. This place was in all of his drawings. Where else could he have gone?
 She tried to get a closer look and finally noticed the massive eagle that had nested on the hull of the boat, right near the entrance. It sat at the helm staring at Alex, menacingly waiting for her to make a move. Maybe Kari wouldn't come out because he was afraid. Alex needed to get rid of it.  -> main 
 = main
@@ -121,7 +121,7 @@ She walked along the shore hoping to pick up on any landmark that would lead her
 == shore == 
 = intro
 #s_act3/Audio/WavesWav
-#v_act3/northCoveBoatFAR
+#v_act3/boatFar
 Walking upon the sandy shore, Alex saw the rotting old boat up ahead and it reminded her of going to the Rockaways with her parents. Pebbles lined the shore, smooth as sin as the waves washed over them. She thoguht it might finally be a good time to look around.-> main
 = main
     *^D:F,9:10 ^[Alex skipped a stone] She took a moment to just skip some rocks like she used to do with Dad. Everything so far had been so scary and Alex just now realized how much she wished her parents were here with her now. {fucked_hands: The salt water from the pebble stung her hands.}

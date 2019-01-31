@@ -4,7 +4,7 @@ VAR followedKari = false
 == afterDinner ==
 //needs kari added
 #v_clearScreen
-#v_act2/outsideHouse
+#v_act2/houseExteriorKari
 #s_audio/FootStep(Outside)_s
 :kari:"Did you enjoy dinner?":
 *   [Yes] :player: "Yeah. Besides the smell.":
@@ -15,16 +15,14 @@ VAR followedKari = false
 *   ^I:J,3:5 ^[Follow]->enterwood1
 
 == enterwood1 ==
-#v_act2/forest5
-#v_enter_act2/forrest5KARI
+#v_act2/east5Reverse
 #s_audio/FootStep(Outside)_s
 Alex cleared the hill and couldn't believe how wide open everything was. The hills seemed to roll on for miles and miles, but it all seemed within reach.
 :kari:"This way, cousin! It's not too far!": Kari ran along a brook and Alex tried to keep up.
 *   ^A:B,6:7^[Follow]->campfire
 
 ======== campfire ========
-#v_act2/meadowcampfire
-#v_enter_act2/entranceKARI
+#v_act2/campfireKari
 #s_audio/Piano LeadUp_m
 ~coin +=1
 Alex wasn't sure how far she'd gone or how long it took by the time the cousins arrived at their destination. A lean-to and some logs sat around a fire pit. Kari stood proudly in the center of the campsite.
@@ -119,7 +117,7 @@ The lizard fell to the ground and started to crawl away towards the tree line.
 //needs parents
 #v_clearScreen
 #s_audio/WAVESMENUSPROLOGUE_m
-#v_act2/outsideHouseThird
+#v_act2/houseExteriorParents
 
 Alex emerged from the trees and her parents ran to embrace her. She'd never seen them this upset. Dad was seemingly unable to speak.
 :mom:"Are you okay?":
@@ -147,7 +145,7 @@ Alex emerged from the trees and her parents ran to embrace her. She'd never seen
 == act2Home_inside ==
 //ART PROBLEM
 //needs just grandpa
-#v_act2/insideHouseJustGramps
+#v_act2/houseInteriorGrandpa
 Alex walked inside with Grandpa. 
 :grandpa: "Just you and me now, child.":
 *   [Are you concerned?]:player:"Are you scared about Kari?": you ask.
@@ -162,7 +160,7 @@ Alex walked inside with Grandpa.
 == act2Home_bedroom ==
 //get rid of kari, fade in mom
 #v_clearScreen
-#v_act2/bedroomEMPTY
+#v_act2/bedroom
 Alex was exhausted. Her mom had left some clothes for her, as promised.
 
 *   ^A:F,5:8 ^[Alex changed and tried to sleep]
@@ -173,11 +171,11 @@ Alex changed and tried to sleep. Not knowing when her parents would be back, Ale
 #t_speedDown
 - :mom: "Krútt... wake up...":
 #t_reset
-#v_enter_act2/fadedMOM
+#v_enter_act2/momFade
 Alex's mother shook her awake. 
 #v_fadeIn
 She couldn't tell what time it was, but she knew she asleep longer than her mom told her she would be.
-
+#v_exit
 :mom: "We went to the police across the bay. They're going to come in the morning to search for Kari but in the meantime Dad and I are going to keep looking. I left you some food in the fridge. Please stay here. I love you. ":
 #v_fadeOut
 

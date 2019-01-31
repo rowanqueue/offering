@@ -42,10 +42,11 @@ Alex finally saw the small wooden cabin, just where Audhumbla said it would be. 
 *   [Kari's cousin] :player:"Kari's cousin,": you say.
 *   [Sigrún's daughter] :player:"Sigrún's daughter,": you say.
 *   [Jorgur's granddaughter]:player:"Jorgur's granddaughter,": you say.
-- Her face turned white. :brynja:"Odin's spear... come in, quickly. But be quiet, my kids are asleep.":
+- Her face turned white. :brynja:"Oh gods... come in, quickly. But be quiet, my kids are asleep.":
 //click door again
 *   [Go inside]->act5insideHouse
 =act5insideHouse
+#v_act5/lesbianHouse1
 Alex entered the small cabin and the warmth instantly made her feel safe and secure. There were two rooms - one a sort of kitchen and one lined with beds. Alex was struck by how welcoming this home was. The woman whispered into the house in Icelandic and someone came out from the kitchen.
 :brynja:"My name is Brynja,": the woman said. :brynja:"This is my wife, Ásta."
 :asta:"What are you doing here, little one?":
@@ -64,19 +65,19 @@ They shared a look. :brynja:"We assumed as much."
 *   [Read letter]
 #v_clearScreen
 -:kari:"Dear Jóhannson family, 
-i hope you are well. i am sorry for writing in english but grandpa jorgur cannot read it. i wanted to tell you that grandma Fjola died but we are doing ok. my cousin and aunt and uncle have come to visit. grandpa tells me they are bad people but i really like to see them. i have been staying outside away from our house to fool them like he told me. grandpa said my cousin will help the kindred get strong again. the blót is tomorrow. he told me never to talk to you again but i miss playing with björn and margrét and wanted to say i hope you and grandpa make up and join us again.":
+:kari:i hope you are well. i am sorry for writing in english but grandpa jorgur cannot read it. i wanted to tell you that grandma Fjola died but we are doing ok. my cousin and aunt and uncle have come to visit. grandpa tells me they are bad people but i really like to see them. i have been staying outside away from our house to fool them like he told me. grandpa said my cousin will help the kindred get strong again. the blót is tomorrow. he told me never to talk to you again but i miss playing with björn and margrét and wanted to say i hope you and grandpa make up and join us again.":
 You look up at Brynja and Ásta.->chatpt1
 
 =chatpt1
 VAR hateAskNum = 0
 VAR kindredAskNum = 0
 VAR grandpaPlanNum = 0
-+   [Why does grandpa hate me?]:brynja:"The way he sees it, his kindred betrayed him. We survived for years by fishing but we couldn't keep up with the times. The tourism industry is a betrayal of what he thinks is an authentic Icelandic life.": -> grandpaHateAsk
+*   [Why does grandpa hate me?]:brynja:"The way he sees it, his kindred betrayed him. We survived for years by fishing but we couldn't keep up with the times. The tourism industry is a betrayal of what he thinks is an authentic Icelandic life.": -> grandpaHateAsk
     
-+  [What was the kindred like?] Ásta and Brynja both start to speak, then Brynja motions to Ásta. :asta:"For a time it was nice. It was like a family, we shared everything. We could nearly sustain ourselves... I had so much time to enjoy life. We felt like rebels, and Jorgur was our mighty leader. In our eyes he could do no wrong. Things really changed.": 
+*  [What was the kindred like?] Ásta and Brynja both start to speak, then Brynja motions to Ásta. :asta:"For a time it was nice. It was like a family, we shared everything. We could nearly sustain ourselves... I had so much time to enjoy life. We felt like rebels, and Jorgur was our mighty leader. In our eyes he could do no wrong. Things really changed.": 
 ->kindredAsk
 
-+  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
+*  [What is Grandpa going to do?] Brynja looks at Ásta. :asta:"We're not sure, but.. he is planning a blot.":
     :brynja:"A sacrifice.":
     Ásta glares at Brynja. :asta:"Who knows, he's a crazy old man. If Audhumbla really did send you here, he's alone. He can't hurt you.":->chatpt1
 * ->chatpt2
@@ -124,33 +125,35 @@ VAR grandpaPlanNum = 0
 
 ->chatend
 =chatend
-:brynja:"Come," Brynja said, putting on her coat, "we have to get you back to your mother.": 
+:brynja:"Come,": Brynja said, putting on her coat, :brynja:"we have to get you back to your mother.": 
 :asta:"Wait,": said Ásta. :asta:"Don't move.":
 Alex felt a chill move through the air.
 //door open sound
 //grandpa enters
+#v_act5/lesbianHouse2
 #t_speedDown
 #t_speedDown
 :grandpa:"Ásta. Brynja."
 #t_reset
 :asta:"Ye gods, Jorgur. You look awful.":
-He did. Jorgur's skin was ghostly white. He brandished a shotgun in the doorway of the hosue.
-:grandpa:"There you are, asni.": Jorgur started to move forward but Brynja stepped between him and Alex. The sleeping kids jolted awake.
+He did. Jorgur's skin was ghostly white. He brandished a shotgun in the doorway of the house.
+:grandpa:"There you are, asni.": Jorgur started to move forward but Brynja stepped between him and Alex.
 :brynja:"What are you doing with this child, Jorgur?":
 :grandpa:"[Agh, stop speaking in her ugly language. She is a worthless American.]":
 :brynja:"I'll speak so Alex can understand me. This is insane. Leave the girl alone.":
 :grandpa:"I will do as I wish. My daughter died because of Fjola's sin. It drove the landvættir from my land and placed a curse on my family.":
 :asta:"You would rather make yourself a martyr than rejoin society?":
-:grandpa:"Asatru must rebuild our ancestral tribes. We cannot falter in this mission, we must regain our native freedom if we are to survive Ragnarok. I will not let you get in my way.": Jorgur pointed the gun at Brynja. :grandpa:"Kari. Put Alex in the car.":
+:grandpa:"Asatru must rebuild our ancestral tribes. We cannot falter in this mission, we must regain our native freedom if we are to survive. I will not let you get in my way.": Jorgur pointed the gun at Brynja. :grandpa:"Kari. Put Alex in the car.":
 To his right, hiding behind his Grandfather's legs, was Kari. He looked terrified, but well. 
-:player:"Kari!": cried Alex. He didn't look at her. Jorgur gestured with his gun and Brynja stepped back against the wall. Ásta held her children.
+:player:"Kari!": cried Alex. He didn't look at her. Jorgur gestured with his gun and the wives stepped back against the wall.
 :grandpa:"Now, Kari!":
 :kari:"Yes, grandfather.": Kari walked over to Alex with a rope and tried to tie her hands.
 *   [Alex resisted] Alex struggled and pushed Kari away. 
 :kari:"Just let me do it, Alex. If I don't, he'll hurt us.":
 *   [Alex let him tie her]
-- Kari tied Alex's hands behind her back and led her over to Jorgur. 
+- Kari tied Alex's hands behind her back and led her over to Jorgur.
 :grandpa:"[Come, we are leaving.]":
+#v_fadeOut
 ->sacrifice
 //These foul tourists own you, they pillage the land and you bow to them.
 // Tonight the first moon of February rises and we will perform the ceremony as intended.

@@ -3,8 +3,9 @@
 #s_audio/WAVESMENUSPROLOGUE_m
 
 //add in mom and dad
-#v_prologue/prologueArt
-//Kari face lit by the fire with grandpa's hand on his shoulder
+#v_prologue/kariColdOpen
+//Kari face lit by the fire with grandpa's hand on his shoulder]
+#v_prologue/alexCarShot
 //match-cut to alex sitting next to a car, drawing
 Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she would rather be here than on the deck.
 
@@ -12,7 +13,7 @@ Looking at the desolate coast of rural Iceland just made Alex want to go home. S
 
 At least here it was quiet, and she could draw until her mother found her.
 //reverse shot for ALEX POV, we see she is sitting in a bay of cars, her mom standing there
-
+#v_prologue/momCarShot
 :mom:"Jesus, Alex, what are you doing down here? I can barely breathe with these fumes, and - if a brake malfunctions? A car could start rolling and run you over. Look at me when I’m talking to you.":
 
 Alex's mom took away her journal and pencils.
@@ -29,7 +30,8 @@ Alex's mom took away her journal and pencils.
 //in environment
 *   [go up]
 //On the deck, clear screen
-
+#v_prologue/ferry
+#v_clearScreen
 - Alex and her mom walked onto the deck and found her father. 
 
 

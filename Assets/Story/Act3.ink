@@ -3,8 +3,8 @@ VAR hasPapers = false
 == ACT3 ==
 //fade in, grandpa's here
 #v_clearScreen
-#v_act3/bedroomEmpty
-#v_enter_act3/fadedGRAMPS
+#v_act3/bedroom
+#v_enter_act3/grandpaFade
 #v_fadeIn
 #s_audio/Somber_m
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
@@ -21,7 +21,7 @@ Alex refused to get up.
 
 =leaveHouse
 #v_exit
-#v_act3/insideHouseEmpty
+#v_act3/houseInterior
     Grandpa headed out the front door. Alex found some bread in the cabinet and started to eat it. Her parents still weren't back, and she was getting worried.
  
     :grandpa: "":
@@ -30,7 +30,7 @@ Alex refused to get up.
     ->livingRoomPuzzle
     
 =livingRoomPuzzle
-#v_act3/insideHouseEmpty
+#v_act3/houseInterior
 + ^B:C,2:3^[Climb through the window] You could climb out the window but Grandpa would see you. You are going to need to do something more drastic. Cause a distraction, find a way to lure him into the house.
     ->livingRoomPuzzle
 //clickable
@@ -47,11 +47,7 @@ Alex refused to get up.
 +^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
 =UpstairsPuzzle
-#v_enter_act3/papers
-{hasPapers:
-#v_exit
-}
-#v_act3/bedroomEmpty
+#v_act3/bedroom
 * ^G:H,8:8 ^[Click Papers] You pick up Kari's drawings. He wouldn't mind losing a few drawings if it meant saving his life. You glance over the papers and realize one of them features a map to a spot north of the house. You decide to pocket it.
     ~hasPapers = true
     ->UpstairsPuzzle
@@ -61,6 +57,7 @@ Alex refused to get up.
 Grandpa rushes in clearly confused about the fire. You take that chance to bolt through the door, knowing he won't ever be able to catch up. You can hear his shouting in the distance but you don't care. You have to find your cousin. 
 * [Head North] ->trails
 ==act3Boat
+#v_act3/boatInterior
 #v_clearScreen
 ~coin +=1
 Alex finally entered the boat to find a mess of drawings, notes, and trinkets. Kari had fashioned this place into a home, or maybe a studio. From the amount of stuff lying around, Alex assumed he must spend a lot of his time here.
@@ -89,7 +86,7 @@ Alex picked up a notebook and opened it to the first page.
 
 =Insideboat
 VAR seenBoat = 0
-*   [Examine drawings]:player:Alex examined the drawings: 
+*   [Examine drawings]Alex examined the drawings.
 ~seenBoat = seenBoat +1
 Heaps of half-finished papers lay around the boat. Alex recognized them as his wight drawings, but these were far more intricate than the ones in Kari's bedroom. Many of the drawings were frantically scribbled out. In a few drawings, the wights appeared dead, with Xs in their eyes. ->Insideboat
 +   [Examine journal]->Diary
@@ -100,7 +97,7 @@ Heaps of half-finished papers lay around the boat. Alex recognized them as his w
 ==act3HomeOutside
 #v_clearScreen
 #s_stop
-#v_act3/outsideHouse
+#v_act3/houseExterior
 //get back home, go inside
 Alex had seen enough in the boat and decided to go home. When she arrived back at Jorgur's house, she was bruised and thoroughly exhausted. Through the window she could see Grandpa napping in his chair.
 *   [Alex walked right in]->act3walkIn
@@ -108,14 +105,14 @@ Alex had seen enough in the boat and decided to go home. When she arrived back a
 
 =act3Sneak
 //empty homeInterior
-#v_act3/insideHouseEmpty
+#v_act3/houseInterior
 Alex opened the door and couldn't mask the loud creak. She looked toward Grandpa’s chair, but he was nowhere to be seen.
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
 //grandpa in bedroom
 #v_clearScreen
-#v_enter_act3/fadedGRAMPS
+#v_enter_act3/grandpaFade
 #v_act3/bedroom
 Grandpa stood in Kari's room with an angry look on his face. 
 :grandpa:"Where have you been?"
@@ -135,8 +132,8 @@ Grandpa stood in Kari's room with an angry look on his face.
 =act3walkIn
 //just grandpa
 #v_clearScreen
-#v_act3/insideHouseEmpty
-#v_enter_act3/fadedGRAMPS
+#v_act3/houseInterior
+#v_enter_act3/grandpaFade
 Alex strolled into the house. Jorgur was sitting in his chair. 
 :grandpa: "Oh, hello.":
 #t_speeddown

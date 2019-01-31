@@ -1,10 +1,19 @@
 ==sacrifice==
-:grandpa:"[Tie him to the tree, Kari. Useless brat.]":
+#v_act6/campfire
+:grandpa:"[Tie her to the tree, Kari. Useless brat.]":
 //fade in
+#v_fadeIn
+Kari tied Alex to the tree, hands trembling. Your bonds feel slightly looser than they did before.
 
-:grandpa:“[Mighty ones in Asgard, Vanahiem, shining gods and goddesses of my folk, Alfur, landvættir, and my ancestors. I call upon you in all of your names to be here with me today]”:
+* [What are you doing?]
+Alex yelled what are you doing?
+Kari doesn't answer, only fumbles with the bonds around you.
+* [You don't have to do this.]
+Alex looked at Kari earnestly, telling him "You don't have to do this." Kari doesn't 
 
-*   [Jorgur declared his purpose]
+-:grandpa:“[Mighty ones in Asgard, Vanahiem, shining gods and goddesses of my folk, Alfur, landvættir, and my ancestors. I call upon you in all of your names to be here with me today]”:
+
+*   [Alex struggled against the bonds]
 :grandpa:“[We are here today to give honor to the landvættir, guardians of my ancestors. I ask that they return to my home, that they bestow their gifts upon me, and that they cast out all foreigners in the name of faith, family, and folk.]":
 - 
 * [Jorgur prepared the offering] Jorgur slit Alex's hand and bled it into a horn. Kari hid his eyes.
