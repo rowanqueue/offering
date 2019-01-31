@@ -181,7 +181,7 @@ Grandpa looked at his plate. :grandpa:"It was never the same after you left. She
 *   [Alex tried the stew] Alex tried the stew, which was fishy and thin but warmed her up.
 *   [Alex didn't eat] Alex stared at her bowl without touching her food.
 
-Mom didn't look up from the table. :mom:"Didn't you know she was sick? And yet you didn't take her to a single doctor?":
+- Mom didn't look up from the table. :mom:"Didn't you know she was sick? And yet you didn't take her to a single doctor?":
 
 :grandpa:"You know it is not my way.":
 

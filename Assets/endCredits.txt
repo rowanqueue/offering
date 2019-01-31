@@ -26,11 +26,13 @@ Puzzle Design
 Parker Crandell                            Social Media
 UI & UX
 Writing
-</align>
+</align>
+
 <align="right">Environment Art
 McKenna Flanagan                                  Logo
 Writing
-</align>
+</align>
+
 <align="right">Character Art
 Ajali Harrison                           Environment Art
 Writing

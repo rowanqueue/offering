@@ -1460,13 +1460,13 @@ Prefab:
         type: 2}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: d886f42a44ffea2498e497fd5618593b,
+      objectReference: {fileID: 11400000, guid: cd2de203d492a62489c1bbaa9a561e43,
         type: 2}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 21205340594385244, guid: d886f42a44ffea2498e497fd5618593b,
+      objectReference: {fileID: 21875049577223710, guid: cd2de203d492a62489c1bbaa9a561e43,
         type: 2}
     - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
         type: 2}
@@ -1560,6 +1560,11 @@ Prefab:
         type: 2}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 114889295866409218, guid: 7883c89f37a862c44be1a4aa7038b591,
+        type: 2}
+      propertyPath: m_fontColor.a
+      value: 0.9019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7883c89f37a862c44be1a4aa7038b591, type: 2}
@@ -2914,9 +2919,9 @@ MonoBehaviour:
   volume: 0
   volumeImage: {fileID: 1872224717}
   volumeOn:
-  - {fileID: 21300000, guid: 0d1d4f9d3cda1614384ec1401c626d78, type: 3}
-  - {fileID: 21300000, guid: 4626d253121a406499e1fa3ffcb3c04c, type: 3}
-  - {fileID: 21300000, guid: c4a663329faad98488a665ea051eb915, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   volumeMute: {fileID: 21300000, guid: 140cbc0bd20bf364bb5f56c2c7ac1d52, type: 3}
 --- !u!4 &1282511827
 Transform:

@@ -15,5 +15,5 @@ Kari and Alex sat on the plane in silence.
 
 Alex took the photo, folded it twice, and slipped it in her pocket.
 
-->END
+END
 -> END

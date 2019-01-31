@@ -58,7 +58,7 @@ She tried to get a closer look and finally noticed the massive eagle that had ne
     She chucked a pebble near the eagle, hoping that that would scare it. She was shocked when it actually hit. And even more shocked when the eagle does not react. It just continued to look at her with its piercing gaze.
     ->main
     
- * [Alex looked for another way in]
+ * {eagle_attempts > 0} [Alex looked for another way in]
     ~eagle_attempts+=1
     She walked around to the front of the boat, making sure she kept her distance from the bird. {hurt_leg:She suddenly felt a sharp pain in the leg she hurt while jumping. It brings her to her knees and Alex laid in the sand until it went away. She limped the rest of the way there.} The hull of the boat, with its warped and rusted metal, towered over her.
      Alex found no way in. 

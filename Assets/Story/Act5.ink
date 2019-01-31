@@ -3,7 +3,7 @@
 ==act5Road==
 #v_clearScreen
 #v_act5/road
-Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road. 
+Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road.
 
 Sure enough, she saw a pickup truck coming up from behind her. 
 *   [Alex stuck her thumb up] Alex stuck her thumb up and the car rolled to a stop next to her.
