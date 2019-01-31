@@ -29,7 +29,7 @@ Alex cleared the hill and couldn't believe how wide open everything was. Distanc
 ======== campfire ========
 #v_act2/meadowcampfire
 #v_enter_act2/entranceKARI
-#s_audio/Piano LeadUp_m
+#s_act2/Audio/PianoLeadUp_m
 ~coin +=1
 Alex wasn't sure how far she'd gone or how long it took by the time the cousins arrived at their destination. The grass gave way to dirt as Alex reached a thicket of trees, with a lean-to and some logs set up as benches around a fire pit. Kari stood proudly in the center of the area.
 

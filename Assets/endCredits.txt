@@ -52,6 +52,7 @@ Special thanks to
 Naomi Clark
 Isabella Djurovic
 Nicole Porter
+Martin Nayeri
 
 Thanks to
 Jesse Fuchs
@@ -59,6 +60,7 @@ Ryan Waller
 Amir Moverman
 Austin Biss
 Rachel Geng
+Jon Poulter
 
 to
 Jeremaiah
