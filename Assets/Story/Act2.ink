@@ -1,3 +1,4 @@
+VAR followedKari = false
 == ACT2 ==
 ->afterDinner
 == afterDinner ==
