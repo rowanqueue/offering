@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 7c22d5bd1b649664f964613eb7dcc9e8
+=======
+guid: 6969ee835e02a46c88c7823b250166f4
+>>>>>>> origin/ajali
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: f3bdb154acc0ca841841b46c66358ea9
+=======
+    spriteID: c6b9ec944697b445181da0d493a74745
+>>>>>>> origin/ajali
     vertices: []
     indices: 
     edges: []

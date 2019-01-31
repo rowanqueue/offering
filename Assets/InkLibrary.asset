@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -65,7 +66,11 @@ MonoBehaviour:
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
+<<<<<<< HEAD
     inkAsset: {fileID: 102900000, guid: d8d02f923b061c74e82fd52b922a60df, type: 3}
+=======
+    inkAsset: {fileID: 102900000, guid: f0bb78674751d4df5b32ad1a9d13dbda, type: 3}
+>>>>>>> origin/ajali
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
