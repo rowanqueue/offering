@@ -3,6 +3,7 @@ VAR followedKari = false
 ->afterDinner
 == afterDinner ==
 //needs kari added
+#check_act2
 #v_clearScreen
 #v_act2/houseExteriorKari
 #s_audio/FootStep(Outside)_s

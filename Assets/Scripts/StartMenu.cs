@@ -53,7 +53,7 @@ public class StartMenu : MonoBehaviour {
         {
             enter = enterWith.GetComponent<Image>();
             //playerprefs sets act here
-            act = new List<string>() {"act0","act1","act2","act3","act4","act5" }.IndexOf(checkPoint);
+            act = new List<string>() {"act0","act1","act2","act3","act4","act5","act6" }.IndexOf(checkPoint);
             sneakPeek.sprite = actImages[act - 1];
 
         }

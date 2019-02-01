@@ -3,6 +3,7 @@ VAR given_drawing = false
 VAR wight_drawn = 0
 
 == ACT1 ==
+#check_act1
 -> town
 == town ==
 = intro

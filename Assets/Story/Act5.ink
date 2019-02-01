@@ -2,6 +2,7 @@
 ->act5Road
 ==act5Road==
 #v_clearScreen
+#check_act5
 #v_act5/road
 Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road.
 
@@ -154,7 +155,7 @@ To his right, hiding behind his Grandfather's legs, was Kari. He looked terrifie
 - Kari tied Alex's hands behind her back and led her over to Jorgur.
 :grandpa:"[Come, we are leaving.]":
 #v_fadeOut
-->sacrifice
+->ACT6
 //These foul tourists own you, they pillage the land and you bow to them.
 // Tonight the first moon of February rises and we will perform the ceremony as intended.
 //once we perform the blot the gods will look upon us favorably

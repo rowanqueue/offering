@@ -1,5 +1,6 @@
 == ACT4 ==
 #v_clearScreen
+#check_act4
 #s_audio/Farm_m
 #v_act4/barnExterior
 //throw grandpa and audi here

@@ -50,5 +50,9 @@ public class CheatStarter : MonoBehaviour {
         {
             act = 5;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            act = 6;
+        }
     }
 }

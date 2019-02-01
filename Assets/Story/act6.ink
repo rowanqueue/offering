@@ -1,4 +1,5 @@
-==sacrifice==
+==ACT6==
+#check_act6
 #v_act6/campfire
 :grandpa:"[Tie her to the tree, Kari. Useless brat.]":
 //fade in
