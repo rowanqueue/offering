@@ -686,9 +686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba386069d0150409e4d0349898e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatJump: 
+  cheatJump: act2Home_outside
   gameOver: 0
-  inkJSONAsset: {fileID: 4900000, guid: f1165effb630008429a8b52ff069626c, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: 352b9741df237d643a84c6e2207fdc79, type: 3}
   choicesButtons:
   - {fileID: 1582184673}
   - {fileID: 750586007}
@@ -3784,7 +3784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.200002, y: 0}
+  m_AnchoredPosition: {x: 12.20001, y: 0}
   m_SizeDelta: {x: -12.2, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1583118389

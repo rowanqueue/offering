@@ -51,7 +51,7 @@ MonoBehaviour:
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: f4a2386f16457b147b75aa804c89f600, type: 3}
     jsonAssetPath: {fileID: 0}
-    jsonAsset: {fileID: 4900000, guid: f1165effb630008429a8b52ff069626c, type: 3}
+    jsonAsset: {fileID: 4900000, guid: 352b9741df237d643a84c6e2207fdc79, type: 3}
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 8bb89928bc460a5498e46b20aa73ee60, type: 3}
     jsonAssetPath: {fileID: 0}

@@ -30,7 +30,7 @@ Alex's mom took away her journal and pencils.
 
 //Alex clicked on her mother to walk upstairs.
 //in environment
-*   [go up]
+*  ^B:C,4:5 ^[go up]
 //On the deck, clear screen
 #v_prologue/ferry
 #v_clearScreen

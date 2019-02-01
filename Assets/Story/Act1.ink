@@ -32,8 +32,6 @@ The ferry pulled into the harbor and Alex's family drove off in their rental car
 //Dad turns to Alex. :dad:"Trust me, she'll be singing a different tune by tomorrow morning.":
 //:mom:"Keep your eyes on the road!"
 //MAKE THIS MORE DRAMATICALLY INTERESTING
-*   [cool]
--
 ->arrival
     
 == arrival ==
@@ -98,7 +96,7 @@ Kari's head shot down towards his feet.
 #v_act1/bedroomKari
 #s_audio/FootStep(Inside)_s
 - :kari:"...and this is my room! What do you think?":
-Alex stepped into her cousin's room. There were drawings scattered everywhere, on almost every surface. Alex might have wished she was allowed to keep her drawings on display like this, but something about Kari's room made her uneasy. Maybe it was the fact that the drawings were so incongruous. Looking closer, she realized that almost all the drawings were of the same four creatures over and over: a dragon, a bird, a bull, and a giant.
+Alex stepped into her cousin's room. There were drawings scattered everywhere, on almost every surface. Alex might have wished she was allowed to keep her drawings on display like this, but something about Kari's room made her uneasy. Maybe it was the fact that the drawings were so incongruous. Looking closer, she realized that almost all the drawings were of the same four creatures over and over- a dragon, a bird, a bull, and a giant.
 
 *   [It's nice] :player:"It's a nice room. I like your drawings.":
     :kari:"Thank you! Drawing is my favorite. Grandpa likes them too. He says I could be a famous artist one day. Here. I made this for you.":
@@ -162,11 +160,11 @@ Some time passed as the pair studiously drew creatures of all sorts.
 #v_enter_act1/dadFade
 Before Alex could respond, her dad entered the room. :dad:"Dinner is ready, kids.":
 :kari:"Coming!": Kari cheerfully replied.
-*   ^I:J,3:7 ^[Go downstairs]->dinner
+*   ^I:I,3:7 ^[Go downstairs]->dinner
 
 ==dinner==
 #v_exit
-#v_act1/homeInterior
+#v_act1/houseInterior
 #s_audio/FootStep(Inside)_s
 //dinner is actually gross and small
 Alex walked downstairs to find Jorgur ladeling out fish stew and hunks of bread. Alex still felt sort of sick from traveling, and the strong odor just made it worse.
@@ -209,7 +207,7 @@ At the mention of Ólafur's name, Jorgur grimaced. :grandpa:"Fjola, let the chil
 :mom:"Alex, just... don't go far.":
 
 :player:"I won't.":
-*^J:J,3:7 ^[Alex followed Kari outside]-> ACT2
+*^I:I,3:7 ^[Alex followed Kari outside]-> ACT2
 //coordinates link to next section
 -> DONE
 

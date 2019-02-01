@@ -888,10 +888,10 @@ MonoBehaviour:
   music: {fileID: 839809833}
   sneakPeek: {fileID: 932155268}
   actImages:
-  - {fileID: 21300000, guid: ee9e13e6ef391c449825aaf0c5cac0ea, type: 3}
-  - {fileID: 21300000, guid: 48a936bd8ee95d94488d016b9fcf6308, type: 3}
-  - {fileID: 21300000, guid: b12d7c6526ee32d43b9f1f4ef8ed9f64, type: 3}
-  - {fileID: 21300000, guid: a4927e74d6f9363499fd8f710f3bdd85, type: 3}
+  - {fileID: 21300000, guid: cc4e965ad482c024d9638856363e2720, type: 3}
+  - {fileID: 21300000, guid: 7b3e166f441e53043907d2eab01dc313, type: 3}
+  - {fileID: 21300000, guid: 794b48842bbffa346bcb6361673eceb4, type: 3}
+  - {fileID: 21300000, guid: 2f82b44ab58d90b4599690b8c4ca5c40, type: 3}
   - {fileID: 21300000, guid: 5c1b70b2eb6ca7942811409da2bdf7d6, type: 3}
   act: 0
   cs: {fileID: 839809835}
@@ -917,7 +917,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7ebe1351e297bc8448e281098347897e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a6eb7bc84d08bfa45b49a9f43df101a5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

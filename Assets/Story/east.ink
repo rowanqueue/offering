@@ -23,7 +23,7 @@ She was completely lost. Thunder crashed above her while the rain seeped through
     +^G:H,5:7 ^[Alex wandered north] -> wood2
 == lost ==
 ~Stamina -= 5
-{Alex walked on for what felt like forever...|Every hill looked the same to Alex. before she knew it, she was back where she started.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.| Alex trips over the stones meant to guide her, when she gets up she finds her self back where she started. }
+{Alex walked on for what felt like forever...|Alex walked on for what felt like forever...}
 -> entrance
 == wood2 ==
 #v_act2/east2
@@ -32,7 +32,7 @@ Alex's tears stung from the cold. She noticed some strange runes but was too exh
 = main
 #CORRECT ANSWER: EAST
 //CLUE: EAST
-    +^G:H,6:7 ^[GO NORTH]->lost
+    +^D:E,5:6 ^[GO NORTH]->lost
     +^I:J,7:8 ^[GO EAST] -> wood3
     +^G:H,9:10 ^[GO SOUTH]->lost
 == wood3 ==
@@ -42,9 +42,9 @@ The storm brooded directly over Alex, as if it was conspiring against her. It ro
 = main
 #CORRECT ANSWER: SOUTH
 //CLUE: BACK
-    +^G:H,5:7^[GO NORTH]->lost
+    +^G:H,4:5^[GO NORTH]->lost
     +^I:J,7:8^[GO EAST]->lost
-    +^G:H,9:10^[GO SOUTH]-> wood4
+    +^D:D,8:9^[GO SOUTH]-> wood4
     +^A:B,6:7 ^[GO WEST]->lost
 == wood4 ==
 #v_act2/east4
@@ -53,9 +53,9 @@ The winds were cruel and endless. {followedKari:Every rock or bush looked like K
 = main
 #CORRECT ANSWER: EAST
 //CLUE: RIGHT
-    +^G:H,6:7^[GO NORTH]->lost
-    +^I:J,6:8^[GO EAST] -> wood5
-    +^G:H,9:10^[GO SOUTH]->lost
+    +^G:H,3:4^[GO NORTH]->lost
+    +^I:I,5:5^[GO EAST] -> wood5
+    +^E:F,9:10^[GO SOUTH]->lost
     +^A:B,6:7^[GO WEST]->lost
 == wood5 ==
 #v_act2/east5
@@ -64,7 +64,7 @@ Alex stumbled, her feet in pain from the cold, the walking, the guilt. Perhaps t
 = main
 #CORRECT ANSWER: NORTH
 //CLUE: FOREWARD
-    +^G:H,5:7^[GO NORTH]->act2Home_outside
+    +^D:E,4:5^[GO NORTH]->act2Home_outside
     +^I:J,6:8^[GO EAST]->lost
-    +^G:H,9:10^[GO SOUTH]->lost
-    +^A:B,6:7^[GO WEST]->lost
+    +^F:G,9:10^[GO SOUTH]->lost
+    +^B:C,7:8^[GO WEST]->lost

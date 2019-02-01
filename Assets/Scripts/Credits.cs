@@ -20,7 +20,11 @@ public class Credits : MonoBehaviour {
     // Use this for initialization
     void Start() {
         speedy = false;
-        destroyThis = GameObject.FindGameObjectWithTag("DestroyThis").GetComponent<AudioSource>();
+        GameObject obj = GameObject.FindGameObjectWithTag("DestroyThis");
+        if(obj != null)
+        {
+            destroyThis = obj.GetComponent<AudioSource>();
+        }
         string[] split = startCredits.text.Split('\n');
         textToDisplay = new List<string>();
         int indexHere = 0;
@@ -71,7 +75,7 @@ public class Credits : MonoBehaviour {
         float mod = 1.0f;
         if (Input.anyKey || speedy)
         {
-            mod = 5.0f;
+            mod = 3.0f;
         }
         if (Input.anyKeyDown)
         {

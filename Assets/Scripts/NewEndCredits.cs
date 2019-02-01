@@ -49,7 +49,12 @@ public class NewEndCredits : MonoBehaviour {
 	void Update () {
         //displayText.rectTransform.position += new Vector3(0, speed);
         //displayText.rectTransform.pos
-        displayText.rectTransform.anchoredPosition += new Vector2(0, speed);
+        float mod = 1.0f;
+        if (Input.anyKey)
+        {
+            mod = 3f;
+        }
+        displayText.rectTransform.anchoredPosition += new Vector2(0, speed*mod);
         //Debug.Log(displayText.transform.position.y);
         if(Time.time > timeCreated+5f && displayText.rectTransform.anchoredPosition.y >= displayText.rectTransform.rect.height + speed*10f)
         {

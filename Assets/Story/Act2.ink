@@ -19,7 +19,7 @@ VAR followedKari = false
 #s_audio/FootStep(Outside)_s
 Alex cleared the hill and couldn't believe how wide open everything was. The hills seemed to roll on for miles and miles, but it all seemed within reach.
 :kari:"This way, cousin! It's not too far!": Kari ran along a brook and Alex tried to keep up.
-*   ^A:B,6:7^[Follow]->campfire
+*   ^H:I,7:9^[Follow]->campfire
 
 ======== campfire ========
 #v_act2/campfireKari
@@ -90,10 +90,10 @@ The lizard fell to the ground and started to crawl away towards the tree line.
 
 *   [Alex followed Kari] Kari had made up his mind, and Alex felt safer with him than without him. She started to chase after him.
 ~followedKari = true
-->entrance
+->eaststart
 *   [Alex turned back] Kari had made up his mind, and Alex knew that to protest would be pointless. Her parents would already be mad at her for being gone so long, following Kari now would be too much. She figured she could get back to Grandfather's house if she followed the stream. 
 ~followedKari = false
--> entrance
+-> eaststart
 
 //IF YOU FOLLOW KARI:
 //He appears in the next screen, but not in the one after. Text says you can still hear him but you can't tell from where. You call his name and he calls back, but you're unsure. Once you get to the stream, the text is like well, you decide to go home.
@@ -124,8 +124,8 @@ Alex emerged from the trees and her parents ran to embrace her. She'd never seen
 *   [Yes] :player:"Yeah, I think so":
 *   [No] :player:"I was scared.":
 - :mom: "You look hurt... where is your cousin?":
-{followedKari == false} ->whereKariLeft
-{followedKari == true} ->whereKariFollowed
+{followedKari == false: ->whereKariLeft}
+{followedKari == true: ->whereKariFollowed}
 =whereKariFollowed
 *   [I lost him] :player: "It's all my fault, I tried to follow him but I couldn't keep up.":
 *   [He just disappeared] :player:"I ran after him and he just vanished":
@@ -166,18 +166,21 @@ Alex was exhausted. Her mom had left some clothes for her, as promised.
 *   ^A:F,5:8 ^[Alex changed and tried to sleep]
 
 Alex changed and tried to sleep. Not knowing when her parents would be back, Alex tossed and turned for the next few hours, hoping Kari would come through the door.
+
 #v_fadeOut
 #t_speedDown
 #t_speedDown
+#v_clearScreen
 - :mom: "Krútt... wake up...":
 #t_reset
-#v_enter_act2/momFade
-Alex's mother shook her awake. 
+#vact2/bedroomMom
 #v_fadeIn
+Alex's mother shook her awake. 
+
 She couldn't tell what time it was, but she knew she asleep longer than her mom told her she would be.
-#v_exit
+
 :mom: "We went to the police across the bay. They're going to come in the morning to search for Kari but in the meantime Dad and I are going to keep looking. I left you some food in the fridge. Please stay here. I love you. ":
-#v_fadeOut
+#v_exit
 
 //fade out
 * Alex drifted back to sleep. -> ACT3
