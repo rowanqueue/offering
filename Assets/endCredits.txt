@@ -1,7 +1,7 @@
 Producer
 Rowan Q
 
-Creative Director
+Director
 Spencer Bernstein
 
 Cast
@@ -29,7 +29,7 @@ Writing
 </align>
 
 <align="right">Environment Art
-McKenna Flanagan                                  Logo
+McKenna Flangan                               UI & UX
 Writing
 </align>
 
@@ -55,6 +55,7 @@ Naomi Clark
 Isabella Djurovic
 Nicole Porter
 Martin Nayeri
+Desirée Cennname
 
 Thanks to
 Jesse Fuchs
@@ -65,7 +66,7 @@ Rachel Geng
 Jon Poulter
 
 to
-Jeremaiah
+Jeremiah
 
 Playtesters
 Jason Suh

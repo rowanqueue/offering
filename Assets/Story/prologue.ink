@@ -1,6 +1,6 @@
 == beginning == 
-#s_audio/waves
-#s_audio/WAVESMENUSPROLOGUE_m
+#s_act1/Audio/waves
+#s_act1/Audio/WAVESMENUSPROLOGUE_m
 
 //add in mom and dad
 #v_prologue/kariColdOpen

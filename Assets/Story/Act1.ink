@@ -9,6 +9,7 @@ VAR wight_drawn = 0
 = intro
 #s_stop
 #v_act1/dock
+#s_act1/Audio/WAVESMENUSPROLOGUE
 //TOO MUCH, ALSO WEIRD??
 The ferry pulled into the harbor and Alex's family drove off in their rental car. The town of Fjallvík is small, it took less than five minutes to drive slowly to its limits. On the way Alex noticed a fish market, school house, and general store, along with some tour advertisements for hiking, skiing, horse stables, and fishing.
 

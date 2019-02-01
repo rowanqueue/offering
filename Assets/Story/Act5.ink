@@ -4,6 +4,7 @@
 #v_clearScreen
 #check_act5
 #v_act5/road
+#s_act3/Audio/WindStooorm
 ~coin = 3
 Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road.
 
@@ -21,9 +22,9 @@ Sure enough, she saw a pickup truck coming up from behind her.
 
 - :dad:[Well, if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
 //click car
-*   [Get in]
+*   [Alex got in the car]
 #v_fadeOut
-- You drive for a few miles and it's clear you've entered the mountains. The ground is covered in snow as far as the eye can see. 
+- You drive for a few miles and it's clear you've entered the mountains. The ground is covered in snow as far as the eye can see.
 #v_fadeIn
 "This as far as I can go." they say "Good luck out there, kid. You have a rough trip ahead of you." They hand you a blanket and tell you to keep warm. 
 ->mountainBase
@@ -33,6 +34,8 @@ Sure enough, she saw a pickup truck coming up from behind her.
 ==act5Arrival==
 #v_act5/snowyhouse
 #v_clearScreen
+#s_stop
+#s_act3/audio/Somber_m
 Alex finally saw the small wooden cabin, just where Audhumbla said it would be. The lights were on, but everything was totally still. 
 //click door
 *   [Alex knocked on the door] Alex knocked on the cabin door and heard commotion inside. A woman around her mother's age opened the door. She looked at Alex like she'd seen a ghost.
@@ -155,7 +158,6 @@ To his right, hiding behind his Grandfather's legs, was Kari. He looked terrifie
 *   [Alex let him tie her]
 - Kari tied Alex's hands behind her back and led her over to Jorgur.
 :grandpa:"[Come, we are leaving.]":
-#v_fadeOut
 ->ACT6
 //These foul tourists own you, they pillage the land and you bow to them.
 // Tonight the first moon of February rises and we will perform the ceremony as intended.

@@ -7,7 +7,7 @@ VAR foundClues = false
 #check_act3
 #v_act3/bedroom
 #v_enter_act3/grandpaFade
-#s_audio/Somber_m
+#s_act3/audio/Somber_m
 ~coin = 1
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
 *   [Alex refused to get up]

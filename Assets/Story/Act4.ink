@@ -1,7 +1,7 @@
 == ACT4 ==
 #v_clearScreen
 #check_act4
-#s_audio/Farm_m
+#s_act4/Audio/Farm_m
 #v_act4/barnExterior
 //throw grandpa and audi here
 Jorgur drove up to an old farm. 
