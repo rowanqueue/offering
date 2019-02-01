@@ -304,7 +304,7 @@ public class NewStoryManager : MonoBehaviour {
                     switch (visualCommand)
                     {
                         case "wait":
-                            waitTime = Time.time + 1f;
+                            waitTime = Time.time + 3f;
                             break;
                         case "fadeIn":
                             whatTolerp = 0;

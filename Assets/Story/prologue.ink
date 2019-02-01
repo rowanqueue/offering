@@ -1,6 +1,6 @@
 == beginning == 
-#s_act1/Audio/waves
-#s_act1/Audio/WAVESMENUSPROLOGUE_m
+#s_stop
+#s_stop_m
 
 //add in mom and dad
 #v_prologue/kariColdOpen
@@ -8,6 +8,7 @@
 The Offering
 //Kari face lit by the fire with grandpa's hand on his shoulder]
 #v_prologue/alexCarShot
+#s_act1/Audio/prologue
 //match-cut to alex sitting next to a car, drawing
 Alex found a nook in the ferry where she couldn't see the water. Even though her dad told her that being inside would only make her more seasick, she would rather be here than on the deck.
 
@@ -33,6 +34,7 @@ Alex's mom took away her journal and pencils.
 *  ^B:C,4:5 ^[go up]
 //On the deck, clear screen
 #v_prologue/ferry
+#s_act1/Audio/waves
 #v_clearScreen
 - Alex and her mom walked onto the deck and found her father. 
 

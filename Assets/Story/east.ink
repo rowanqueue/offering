@@ -26,6 +26,7 @@ She was completely lost. Thunder crashed above her while the rain seeped through
 {Alex walked on for what felt like forever...|Every hill looked the same to Alex. before she knew it, she was back where she started.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.| Alex tripped over the stones meant to guide her, when she got up she found herself back where she started. }
 -> entrance
 == wood2 ==
+#v_exit
 #v_act2/east2
 #s_audio/FootStep(Outside)_s
 Alex's tears stung from the cold. She noticed some strange runes but was too exhausted and scared to care. -> main

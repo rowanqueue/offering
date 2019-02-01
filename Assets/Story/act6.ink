@@ -6,43 +6,39 @@
 #s_act4/Audio/Farm_m
 :grandpa:"[Tie her to the tree, Kari. Useless brat.]":
 //fade in
-Kari tied Alex to the tree, hands trembling. Her bonds felt slightly looser than they did before.
 
-* [What are you doing?]
-Alex yelled what are you doing?
-Kari didn't answer, only fumbled with the bonds around Alex's body.
-* [You don't have to do this.]
-Alex looked at Kari earnestly, telling him "You don't have to do this." Kari didn't respond, only looked down intently at the ropes in his hands.
+* [What are you doing?]:player:"Kari, what are you doing!?":
+
+Kari couldn't answer her. He continued to tie the ropes around Alex's torso.
+* [You don't have to do this.] :player:"You don't have to do this.": Kari didn't respond. He just kept tying the ropes around Alex.
 
 -:grandpa:“[Mighty ones in Asgard, Vanahiem, shining gods and goddesses of my folk, Alfur, landvættir, and my ancestors. I call upon you in all of your names to be here with me today]”:
 
 *   [Alex struggled against the bonds]
-*   [Please, Grandfather! Stop!]
-"Please, Grandfather! Stop!" Alex cried, twisting beneath her bonds as Kari backed up timidly, his eyes avoiding her.
-*   [Kari do something!]
-"Kari do something!" Alex called to her cousin. He pretended not to hear her as he backed away timidly.
+*   [Stop!]:player:"Stop!": Alex cried, twisting beneath her bonds as Kari backed away timidly.
+*   [Kari do something!] Alex called to her cousin. :player:"Kari, do something!": He pretended not to hear her as he backed away timidly.
 
 -:grandpa:“[We are here today to give honor to the landvættir, guardians of my ancestors. I ask that they return to my home, that they bestow their gifts upon me, and that they cast out all foreigners in the name of faith, family, and folk.]":
 
 #v_enter_act6/campfire2Fade
--Grandfather finishes his speech, closing his eyes for a moment in silent prayer before unsheathing the dagger in his belt. Before Alex or Kari could react, he thrust the hilt out to Kari, beckoning for him to take it. Kari looked back up at his grandfather in shock. His eyes darted between Alex and Grandfather, as if waiting for something to happen.
--:grandpa: "[Take it, boy.] he urged him, [You are the future of our people. The trueblooded Icelanders must not hesitate to strike at those who trespass. Go, and cut the palm of her hand for sacrifice.]"
+- Grandfather finished his speech and closed his eyes for a moment in silent prayer. Alex waited as the two stood absolutely still in prayer. Finally, Grandfather unsheathed a dagger and thrust the hilt out to Kari. He looked back up at his grandfather in shock. He looked from the dagger to his cousin, and back to the dagger. 
+-:grandpa: "[Take it, boy.] he urged him, [You are the future of our people. The true ethnic Asatru must not hesitate to strike at those who trespass. Go, and bleed her palm into the horn.]"
 -Kari hesitated.
 * [Don't listen to him!]
-"Don't listen to him!" Alex shouted in desperation, causing Kari to meet her gaze, if only for a moment. He looked at a loss for words, terrified. At the behest of Grandfather, he grasps the knife.
+"Don't listen to him!" Alex shouted in desperation, causing Kari to meet her gaze, if only for a moment. He looked at a loss for words, terrified. At the behest of Grandfather, he grasped the knife.
 * [Alex said nothing]
-Alex watched silently, the hairs on the back of her neck raised. Kari looked from her to the knife, almost in a daze. Shaken, he takes the knife.
+Alex watched silently, the hairs on the back of her neck raised. Kari looked from her to the knife, almost in a daze. Shaken, he took the knife.
 
--:grandpa:“[This is no time for hesitation, boy. You're an Icelander, like your Mother and Father before you.]":
-- Kari took a deep breath at the mention of his parents, becoming lost in thought, if only for a moment. Grandfather loomed over him, and there was no room for childish behavior or time to think, only do as adults do.
+-:grandpa:“[This is no time for hesitation, boy. You're an Icelander, like your ancestors before you. Your mother needs you]":
+- Kari raised his head at the mention of his mother. Grandfather loomed over him, and he knew he had no choice.
 
 #v_enter_act6/campfire3Fade
-- Seemingly resolute, he turned to Alex, blade in his small fist.
+- Kari turned to Alex, blade in his small fist.
 
-*   [Grandfather is wrong! All of this is wrong! Don't let him fool you.]
+*   [Grandfather is wrong!]
 "Grandfather is wrong! All of this is wrong! Don't let him fool you." Alex told her cousin as he stood in front of her.->beliefinself
 
-*   [Your mom didn't want this. She'd want you to come home with my parents and I.]
+*   [Your mom didn't want this.]
 "Your mom didn't want this. She'd want you to come home with my parents and I." Alex reasoned with him. ->beliefinmom 
 
 == beliefinself
@@ -65,13 +61,14 @@ Alex watched silently, the hairs on the back of her neck raised. Kari looked fro
 
 == moreact6
 
-Before Alex can respond, Kari cut the rope that tied her back. She looked at him in bewilderment, and so did Granfather.
+Before Alex could respond, Kari cut her ropes.
 
 #v_enter_act6/campfire4Fade
-:grandpa: "[Kari!]" he shouted. yet before he could react, Kari turned around and rushed at him, knife brandished. In one swift move the blade was dug into Grandfather's knee, causing him to cry out in pain before falling on his side. He grasped his knee as he spewed dozens of foreign curses.
+:grandpa: "[Kari!]" Grandfather shouted. yet before he could react, Kari turned around and rushed him, knife brandished. In one swift move he dug the blade into Jorgur's knee. He cried out in agony and collapsed to the ground, grasping his knee and spewing Icelandic curses.
 
 *   [We need to run.]
-"We need to run." Alex said. For the first time without hesitation, Kari grabbed Alex's hand, running to the woods where they had come from. Grandfather's cries became more distant as the two raced through the winding thicket, following the runes like Alex had before not long ago. Finally they came out of the other side, the cries no longer audible, instead replaced by the hum of a car.
+"We need to run." Alex said. 
+Without hesitation, Kari grabbed Alex's hand. Grandfather's cries became more distant as the two raced through the winding thicket, following the runes like Alex had before not long ago. Finally they came out the other side, and all they could hear was the rental car's engine.
 
 -:mom: "[Alex! Kari!] Alex's mother calls out, opening the passenger door of the car and jumping up out of her seat. She rushed to the two kids, embracing them.
 
@@ -83,7 +80,8 @@ Before Alex can respond, Kari cut the rope that tied her back. She looked at him
 *   [I'm scared.]
 "I'm scared." Alex near-whispered from the back of the car.
 
--:mom: "[Everything's gonna be fine. We're going to the airport and when we're there, we can talk.] Alex's mom explained as she looked through each window, almost expecting something to be there. As the car began to drive away from the forest, Alex looked through the back window, heart racing as the treeline faded, along with every dark shadow in it.
+-:mom: "Everything's gonna be fine. We're going to the airport and when we're there, I promise I will explain everything.":
+Fjola looked through each window as she raced away from the forest, every shadow looking less and less like her father.
 * Alex took a breath [] and closed her eyes.
 ->epilogue
 

@@ -16,10 +16,7 @@ public class NewEndCredits : MonoBehaviour {
         bool changeNext = true;
         foreach(string s in split)
         {
-            if(s[0] == '/')
-            {
-                break;
-            }
+            Debug.Log(s);
             if(s.Trim().Equals(""))
             {
                 changeNext = true;

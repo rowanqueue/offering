@@ -78,6 +78,7 @@ Alex decided to introduce herself to her cousin.
 ->intro_livingroom
 
 == intro_livingroom ==
+#s_stop_m
 #v_act1/houseInterior
 Jorgur walked into the house and took a seat.
 :grandpa:"Welcome back.":

@@ -39,7 +39,6 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
     Grandfather's face began to turn red.
     :grandpa: "It's like yogurt. Gah!": He threw his hands into the air. :grandpa:"What does your family teach you? How dare they let our culture die like this.":
     
-    #v_exit
     He stormed out and Alex felt relieved.
     ->eat 
     
@@ -49,6 +48,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
     ->eat
     
 =eat
+#v_exit
     Alex's parents still weren't home, and neither was Kari.
     //Third person
     Alex sat alone at the table and began to think to herself.

@@ -48,11 +48,13 @@ Alex tried to follow Kari's map as best she could, just looking at it gave her h
 #v_clearScreen
 #v_act3/boatExterior
 She approached the boat from Kari's drawings and called out his name. There was no answer. That can't be right, he had to be here. He must be sleeping. This place was in all of his drawings. Where else could he have gone?
-She tried to get a closer look and finally noticed the massive eagle that had nested on the hull of the boat, right near the entrance. It sat at the helm staring at Alex, menacingly waiting for her to make a move. Maybe Kari wouldn't come out because he was afraid. Alex needed to get rid of it.  -> main 
+She tried to get a closer look and finally noticed the massive eagle that had nested on the hull of the boat, right near the entrance. It sat at the helm staring at Alex, menacingly waiting for her to make a move. Maybe Kari wouldn't come out because he was afraid. Alex needed to get rid of it.  
+-> main 
 = main
  * [Alex approached the eagle]
     ~eagle_attempts+=1
-    Alex approached the boat slowly, carefully eyeing the eagle. As soon as she got close, it flapped its wings and brandished its sharp talons. She wouldn't be getting in with the eagle still there.->main
+    Alex approached the boat slowly, carefully eyeing the eagle. As soon as she got close, it flapped its wings and brandished its sharp talons. She wouldn't be getting in with the eagle still there.
+    ->main
  * [Alex threw a pebble at the eagle]
     ~eagle_attempts+=1
     She chucked a pebble near the eagle, hoping that that would scare it. She was shocked when it actually hit. And even more shocked when the eagle does not react. It just continued to look at her with its piercing gaze.
@@ -90,9 +92,11 @@ The summit of this very steep hill overlooked the shore. It ended in a rocky led
 = main
    * [Alex climbed down the rocky cliff] {not fucked_hands: She found some stable footing on the side of the cliff and thought she might be able to climb down safely. That didn't keep her hands from shaking though. She was almost to the bottom when her hand slipped and she fell backwards. She landed in the sand with no injuries but the wind knocked out of her.}
     ~Stamina = Stamina - 5
-      {fucked_hands :She found some stable footing on the side of the cliff and thought she might be able to climb down safely. She moved carefully only changing her grip when she knew it was safe. The cuts in her hands started burning, in a lapse of focus she let go and fell back on the sand. She felt the impact rattle every bone in her body. {~Stamina = Stamina - 10}} -> shore
+      {fucked_hands :She found some stable footing on the side of the cliff and thought she might be able to climb down safely. She moved carefully only changing her grip when she knew it was safe. The cuts in her hands started burning, in a lapse of focus she let go and fell back on the sand. She felt the impact rattle every bone in her body. }
+      -> shore
     
-    *[Alex looked for a smaller ledge] She walked along the edge of the cliff looking for a safer point to get onto the beach. She walked along the coast for what seemed like forever until the ledge dropped to a safe distance down. She eventually lost sight of the boat. ->longWalk
+    *[Alex looked for a smaller ledge] She walked along the edge of the cliff looking for a safer point to get onto the beach. She walked along the coast for what seemed like forever until the ledge dropped to a safe distance down. She eventually lost sight of the boat. 
+    ->longWalk
     
     * [Alex jumped down] There was no time, Alex just knew Kari was down there! She hastily jumped off the ledge, hoping the soft sand would cushion her fall. She nearly landed on her feet, but collapsed to the ground when she landed. She felt a serious pain in her leg, and thought it would be best to keep off of it the rest of the journey.
     ~Stamina = Stamina - 10
