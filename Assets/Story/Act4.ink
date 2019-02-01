@@ -5,7 +5,7 @@
 #v_act4/barnExterior
 //throw grandpa and audi here
 Jorgur drove up to an old farm. 
-~coin +=1
+~coin = 3
 :grandpa: “This is Audhumbla Ívarsdóttir’s house. She is the only remaining member of my kindred. Everyone else abandoned us to live with comforts, they abandoned the ways of our forefathers. I want you to see the life that we have.”:
 
 *    [What about other grandparents?] :player:”What about my other grandparents?”: Alex asked.
@@ -62,6 +62,8 @@ Jorgur stepped forward, lifting the shovel over his head, and let it come down w
 Jorgur laughed, winded. :grandpa:"You're not going anywhere,": he wheezes. 
 *   [Alex sprinted for the door] Terrified, Alex made a break for the door. Jogur grabbed her arm in an attempt to stop her, but she yanked herself free and ran for her life.
 *   [Alex ran to her father] Alex ran to Einar's side. He was still breathing but knocked out cold. Jorgur grabbed a hold of Alex before she could do anything. She broke free.
+
+#v_exit
 - Alex barely made it to the door.
 ->barnAudy
 ==barnAudy==

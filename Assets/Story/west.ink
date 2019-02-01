@@ -35,9 +35,10 @@ She didn't even know how to milk a cow, but to protest would be pointless. She r
 == pasture ==
 = intro
 #v_clearScreen
+#v_act4/pasture1
+#v_exit
 She stopped at the foot of some rolling hills. She was astonished by the size of this farm. She saw cows roaming all around, lazily chewing grass. Speckled bushes sprouted wildly along the field to her right. ->main
 = main
-#v_act4/pasture1
     + {not eatenBerries or not hasBerries} ^H:J,7:9 ^[Examine bushes] ->bushes
     + ^A:F,6:7 ^A:D,8:10 ^E,8^[Examine cow]
         {cow1milked : This was a nice cow -> main}
@@ -87,10 +88,11 @@ She stopped at the foot of some rolling hills. She was astonished by the size of
     
 == pasture2 ==
 = intro
+#v_act4/pasture2
+#v_exit
 Audi's property went on for what seemed like miles. She had yet to even see a fence anywhere. The cows seemed to just wander where they pleased.   
  ->main
 = main
-#v_act4/pasture2
     * ^A:J,1:4^[Examine sky]
         The clouds were thin, as if they were smeared across the sky. It looked like it was getting late. Alex was cold, you wanted to go home.
         ->main
@@ -131,18 +133,20 @@ Audi's property went on for what seemed like miles. She had yet to even see a fe
     
 == pasture3 ==
 = intro
-Alex's feet started to hurt again. She hadn't really had a chance to fully recover from yesterday. Everything was moving so fast but she felt like she had made such little progress in finding Kari.  
- ->main
- 
-= main
 #v_act4/pasture3
 {not hasBucket: 
-#v_enter_bucketFade
+#v_enter_act4/bucketFade
 }
 {hasBucket:
 #v_exit
 }
-
+Alex's feet started to hurt again. She hadn't really had a chance to fully recover from yesterday. Everything was moving so fast but she felt like she had made such little progress in finding Kari.  
+ ->main
+ 
+= main
+{hasBucket:
+#v_exit
+}
     * ^B:C,8:10^[Examine bucket]
         Alex saw a metal bucket just lying on the floor. It was dented all over and a little dirty but it should do the trick.
         ~hasBucket = true  

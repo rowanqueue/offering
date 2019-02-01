@@ -25,7 +25,7 @@ Alex cleared the hill and couldn't believe how wide open everything was. The hil
 ======== campfire ========
 #v_act2/campfireKari
 #s_audio/Piano LeadUp_m
-~coin +=1
+~coin = 1
 Alex wasn't sure how far she'd gone or how long it took by the time the cousins arrived at their destination. A lean-to and some logs sat around a fire pit. Kari stood proudly in the center of the campsite.
 
 :kari:"We made it, cousin! This is a very special place. Grandfather and I come here to pray, and sometimes camp! A few times a year, we gather with his friends for some bigger celebrations. There is always music and singing and good food! We used to do it more often. There used to be more people too.":->cousinConvo_campfire

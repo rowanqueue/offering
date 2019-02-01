@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba386069d0150409e4d0349898e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatJump: ACT3.leavehouse
+  cheatJump: ACT5
   gameOver: 0
   inkJSONAsset: {fileID: 4900000, guid: 352b9741df237d643a84c6e2207fdc79, type: 3}
   choicesButtons:

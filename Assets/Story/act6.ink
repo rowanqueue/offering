@@ -1,4 +1,5 @@
 ==ACT6==
+~coin = 4
 #check_act6
 #v_act6/campfire
 :grandpa:"[Tie her to the tree, Kari. Useless brat.]":

@@ -8,6 +8,7 @@ VAR foundClues = false
 #v_act3/bedroom
 #v_enter_act3/grandpaFade
 #s_audio/Somber_m
+~coin = 1
 :grandpa: "Wake up child. While you stay here you will live like a member of our kindred.":
 *   [Alex refused to get up]
 Alex refused to get up.
@@ -30,12 +31,15 @@ Alex refused to get up.
     
 =breakfast
 #v_exit
-#v_act3/insideHouseEmpty
+#v_act3/houseInterior
+#v_enter_act3/grandpaFade
 Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't reconize onto the table. Alex took a seat at the table as he stared directly at her.
     +[Alex asked about the breakfast]Alex asked what the white stuff was and Grandpa scoffed.
     :grandpa: "Its skyr!"
     Grandfather's face began to turn red.
     :grandpa: "It's like yogurt. Gah!": He threw his hands into the air. :grandpa:"What does your family teach you? How dare they let our culture die like this.":
+    
+    #v_exit
     He stormed out and Alex felt relieved.
     ->eat 
     
@@ -59,7 +63,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
     *[Alex drank some milk] She sipped some of her milk. ->eat4 
 =eat4
     *[Everyone will hate you]  The guilt cut deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!" She said to herself. ->livingRoomPuzzle
-    *[Alex kpet eating] She kept eating. ->eat5 
+    *[Alex kept eating] She kept eating. ->eat5 
 =eat5
     *[Everyone hates you]  The guilt cut deep into her. :player: "I can't just sit here and do nothing, not while Kari is still out there!": She said to herself. ->livingRoomPuzzle
     *[Alex kept eating] She kept eating. ->eat5
@@ -73,7 +77,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
 =livingRoomPuzzle
 {not foundClues: Alex got up, determined to save her cousin. She just had to figure out how. <>}
 {foundClues: Alex surveyed the room, deciding how she would sneak out of the house. <>}
-#v_act3/insideHouseEmpty
+#v_act3/houseInterior
 + ^B:C,2:3^[The window]
     {not foundClues: 
     Alex looked out the window perhaps hoping to see Kari. Unfortunately, all she found was the rolling hills to the north and her grandfather occationally walking past to water the plants.
@@ -87,10 +91,10 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
     Where ever Alex ended up going, she knew it will probably be a long journey. She stocked up on some snacks for her eventual journey, stuffing her pockets.//with what?
     ->livingRoomPuzzle
     }
-    Alex came to the realization that she was not getting out of this house while her Grandfather guarded the outside. She decided to break one of the shelves. With a loud crack, she snapped out a shelf in the cabinet, spilling the contents it supported. She frantically ducked out of sight as her Grandfather burst through the door to investigate. She then took the chance to bolt through the door, knowing he wouldn't be able to catch up. 
+    Alex came to the realization that she was not getting out of this house while her Grandfather guarded the outside. She decided to break one of the shelves. With a loud crack, she snapped out a shelf in the cabinet, spilling the contents it supported. She frantically ducked out of sight as her Grandfather burst through the door to investigate. She then took the chance to bolt through the door, knowing he wouldn't be able to catch up.
     ->puzzleEnd
 
-+^A:B,4:7^[Click Fireplace] 
++^A:B,5:7^[Click Fireplace] 
     {not foundClues: 
     A shiver went down Alex's spine. She cozied up next to the lit fireplace, just for a little while. For that short while, she felt like she was home again.
     ->livingRoomPuzzle 
@@ -98,7 +102,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
     Alex came to the realization that she was not getting out of this house while her Grandfather guarded the outside. She started frantically throwing things into the fire until smoke filled the room. She frantically ducked out of sight as her Grandfather burst through the door to investigate. She then took the chance to bolt through the door, knowing he wouldn't be able to catch up.
     ->puzzleEnd
     
-+{hasPapers}^J:J,3:7^[Front Door]  Alex got up, put on her coat and boots and left through the front door. 
++{hasPapers}^I:I,3:7^[Front Door]  Alex got up, put on her coat and boots and left through the front door. 
     Grandfather stopped her.
     :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that":
     He glared at her until she headed back inside. Alex can tell there will be no chance to reason with him.
@@ -108,20 +112,16 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
 +^H:H,2:5 ^[Click Stairs] ->UpstairsPuzzle
 
 = UpstairsPuzzle
-{not hasPapers:
-#v_enter_act3/papers
-}
-#v_act3/bedroomEmpty
-* ^G:H,8:8 ^[Click Papers] Alex picked up Kari's drawings. Sifting through them, she desperately looked for a clue, a message, anything that could guide her to Kari. She had to squint to make out what they were, which only served to remind her how young Kari was and how much danger he could be in.
-One drawing took her particularly long to decipher. But it soon dawned on her what it was- a map. There seemed to be a path through the mountains that lead to the shore. At the top right of the map was a boat circled in red. :player: "If Kari is anywhere it's there.":
+#v_act3/bedroom
+* ^F:G,8:8 ^[Click Papers] Alex picked up Kari's drawings. Sifting through them, she desperately looked for a clue, a message, anything that could guide her to Kari. She had to squint to make out what they were, which only served to remind her how young Kari was and how much danger he could be in.
+One drawing took her particularly long to decipher. But it soon dawned on her what it was- a map. There seemed to be a path through the mountains that lead to the shore. At the top right of the map was a boat circled in red. :player:"If Kari is anywhere it's there.":
     ~hasPapers = true
-#v_exit
     ->UpstairsPuzzle
-* ^A:F,5:8 ^ [The Bed] Alex had hardly slept at all the night before, seeing Kari's empty bed only made her feel worse. ->UpstairsPuzzle
-+ ^I:J,3:7 ^[down]->livingRoomPuzzle
+* ^A:E,5:8 ^ [The Bed] Alex had hardly slept at all the night before, seeing Kari's empty bed only made her feel worse. ->UpstairsPuzzle
++ ^I:I,3:7 ^[down]->livingRoomPuzzle
 
 =puzzleEnd
-As she runs, Alex heard her Grandfather's shouting behind her but she did not care. She needed to find her cousin, and this was how she was going to do it. 
+As she ran, Alex heard her Grandfather's shouting behind her but she did not care. She needed to find her cousin, and this was how she was going to do it. 
 * [Alex headed north] ->trails
 ==act3Boat
 #v_act3/boatInterior

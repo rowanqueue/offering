@@ -140,14 +140,14 @@ Walking upon the sandy shore, Alex saw the rotting old boat up ahead and it remi
     ~shore_attempts = shore_attempts + 1
     ->main 
     
-    +{shore_attempts > 0}[Alex walked to the boat] -> cave
+    +{shore_attempts > 0}^I:J,4:5 ^[Alex walked to the boat] -> cave
      //Coordinates needed!!!!!!!
     *^I:J,4:5^[Alex examined the boat] The rickety boat wass probably missing more planks than it still had left, Alex wasn't exactly sure how it was still standing. The mildewy flag was swaying in the ocean breeze. 
     ~shore_attempts = shore_attempts + 1
     -> main
-    *^I:J,2:3^[Alex examined the cliff] Alex took a minute to look back at what she just did and shudder. That was so dangerous! How does Kari do this? But all the cuts and bruises would be worth it once she brought Kari home.
+    //*^I:J,2:3^[Alex examined the cliff] Alex took a minute to look back at what she just did and shudder. That was so dangerous! How does Kari do this? But all the cuts and bruises would be worth it once she brought Kari home.
     ~shore_attempts = shore_attempts + 1
-    ->main
+    //->main
     //*^A:E,5:7 ^[Examine water] The water seems to be rushing to shore harder than usual. In the distance, you can see waves continously crashing into each other.
     //~shore_attempts = shore_attempts + 1
     //-> main

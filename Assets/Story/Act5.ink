@@ -4,6 +4,7 @@
 #v_clearScreen
 #check_act5
 #v_act5/road
+~coin = 3
 Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road.
 
 Sure enough, she saw a pickup truck coming up from behind her. 
@@ -54,9 +55,9 @@ Alex entered the small cabin and the warmth instantly made her feel safe and sec
 *   [Trying to find Kari] :player:"I'm trying to find Kari,": Alex said. :player:"Have you seen him?":
 :brynja:"No, but..." They shared a look. 
 *   [Grandpa has gone crazy]:player:"Grandpa has gone crazy,": Alex said. :player:"He's attacked my dad.":
-They shared a look. :brynja:"We assumed as much." 
+They shared a look. :brynja:"We assumed as much.":
 *   [I'm in danger] :player:"Grandpa attacked my dad.",: you say. :player:"I need help.":
-- They shared a look. :"asta":"How did you find us?": Ásta asked. Alex told them about how Audhumbla helped you escape. Brynja is stunned. 
+- They shared a look. :asta:"How did you find us?": Ásta asked. Alex told them about how Audhumbla helped you escape. Brynja is stunned. 
 :brynja:"Audhumbla went against Jorgur?":
 
 :asta:"He must have really gone insane.":
@@ -103,19 +104,19 @@ VAR grandpaPlanNum = 0
 
 =kindredAsk
 
-+  [Why would you join the kindred?] :player:"So why would you join the kindred in the first place?":
+*  [Why would you join the kindred?] :player:"So why would you join the kindred in the first place?":
     Brynja answers. "In Dalvík we kept a low profile... We are gay and back then there was contempt for us. We met your grandfather in town one day and he offered us something too good to be true."
     :asta:"A place where we didn't have to hide, and didn't have to worry about money."
     ~kindredAskNum += 1
     ->kindredAsk
-+   [Why did you leave the kindred?] :player:"Why did you leave the kindred?": 
+*   [Why did you leave the kindred?] :player:"Why did you leave the kindred?": 
     :brynja:"Your parents had already run away and everyone was on edge. Tour guides started bringing people in to see the "untouched nature" and it made Jorgur crazy. We were poor and sad and when your father's father started buying and selling land to tour agencies it was time for us to find our own way. We still practice Asatru, but not like Jorgur.":    
     ~kindredAskNum += 1
     ->kindredAsk
-+   [Why did my parents leave the kindred?] Your mother became fell in love once with a man from London. He promised to show her the world, and one day he just disappeared. It only made her more determined to leave.
+*   [Why did my parents leave the kindred?] Your mother became fell in love once with a man from London. He promised to show her the world, and one day he just disappeared. It only made her more determined to leave.
     ~kindredAskNum += 1
     ->kindredAsk
-+ {kindredAskNum>0}[Ask other questions] ->chatpt1
+* {kindredAskNum>0}[Ask other questions] ->chatpt1
 
 =grandpaPlanAsk
 
