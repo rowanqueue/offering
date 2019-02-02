@@ -17,7 +17,7 @@ Looking at the desolate coast of rural Iceland just made Alex want to go home. S
 At least here it was quiet, and she could draw until her mother found her.
 //reverse shot for ALEX POV, we see she is sitting in a bay of cars, her mom standing there
 #v_prologue/momCarShot
-:mom:"Jesus, Alex, what are you doing down here? I can barely breathe with these fumes, and - if a brake malfunctions? A car could start rolling and run you over. Look at me when I’m talking to you.":
+:mom:"Jesus, Alex, what are you doing down here? I can barely breathe with these fumes. What if a brake malfunctions? A car could start rolling and run you over. Look at me when I’m talking to you.":
 
 Alex's mom took away her journal and pencils.
 
@@ -48,25 +48,31 @@ Dad frowned.
 
 *   [Alex tried to explain herself] Alex tried to explain herself. :player:"I wanted to draw,": she said. Mom gave dad an angry look, and they silently decided that he would be the one to talk to Alex.
 
-:dad:"I understand, but I need you to stay with us. Look, until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will be over soon.":
+:dad:"I understand, but it's important you stay with us. You have to pay attention, krútt, and I need you to talk to me. I promise this trip will be over soon.":
 
 *   Alex kept quiet. 
 
-Mom and Dad looked at eachother and silently decided that he would be the one to talk to Alex.
+Mom and Dad looked at each other and silently decided that he would be the one to talk to Alex.
 
-:dad:"Until the end of the trip, you can only draw in the car. Otherwise, you have to pay attention, krútt. I need you to talk to me, and I promise this trip will pass by fast.":
+:dad:"You have to pay attention, krútt. I need you to talk to me, and I promise this trip will pass by fast.":
 
 - Not quite satisfied but too anxious to continue, Mom stepped away to smoke a cigarette. Dad started to say something to her, then decided against it.
 
 :dad:"Are you excited to meet your cousin?":
 *   Alex answered yes. 
 :player:"I think so,": she said. 
-:dad:"I definitely am,": dad said. :dad:"He was born after your mom and I moved away, but his mother was a great woman, and I'm sure he takes after her. Kari is two years younger than you, but I think you two will get along famously.":
+:dad:"I definitely am,": Dad said. 
+:dad:"He was born after your mom and I moved away, but his mother was a great woman, and I'm sure he takes after her. Kari is two years younger than you, but I think you two will get along famously.":
+
+Alex glanced over to her mother, who had put out her unfinished cigarette with a sigh. She walked back over to her family, :mom:"Come on, we're here.":
 
 * Alex answered no.
 :player:"Not really. I don't know what he's like,": she said.
 
 :dad:"To tell you the truth, I don't know either. He was born after your mother and I moved away, so I've never met him. But he's family, so we ought to give him a chance, right? His mother was a great woman. I bet you two will get along famously.":
+
+Alex glanced over to her mother, who had put out her unfinished cigarette with a sigh. She walked back over to her family, :mom:"Come on, we're here.":
+
 
 
 //have parents call eachother out on little things

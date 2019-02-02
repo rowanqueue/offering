@@ -7,7 +7,7 @@
 #v_act5/road
 #s_act3/Audio/WindStooorm
 ~coin = 3
-Alex ran out onto the road, headed for the mountains. She hoped to god or gods that Audhumbla wasn't tricking her. Alex was freezing cold and soon praying to see any sort of car on the road.
+Alex ran out onto the road, headed for the mountains. As her body grew colder, she prayed that Audhumbla wasn't tricking her and hoped to see a car come down the road.
 
 Sure enough, she saw a pickup truck coming up from behind her. 
 *   [Alex stuck her thumb up] Alex stuck her thumb up and the car rolled to a stop next to her.
@@ -15,19 +15,19 @@ Sure enough, she saw a pickup truck coming up from behind her.
 
 - :dad:"[Hello, child! What are you doing out here?]":
 *   [Lost my parents] <>
-:player:"[I lost my parents,]": she said.
+:player:"[I lost my parents,]": she said in broken Icelandic.
 *   [Running from crazy man] <>
-:player:"[I'm running from a crazy man,]": she said.
+:player:"[I'm running from a crazy man,]": she said in broken Icelandic.
 *   [Need to go skiing] <>
-:player:"[I need to get to the ski resort,]": she said.
+:player:"[I need to get to the ski resort,]": she said in broken Icelandic.
 
-- :dad:[Well, if you're heading up this way then I would have to be a monster not to help a child such as yourself from the cold. Hop in.]":
+- :dad:[Well, I'd have to be a monster to leave you in the cold. Hop in.]":
 //click car
 *   [Alex got in the car]
 #v_fadeOut
-- You drive for a few miles and it's clear you've entered the mountains. The ground is covered in snow as far as the eye can see.
+- The two drove for a few miles, eventually making their way into the mountains. The ground was covered in snow as far as the eye could see.
 #v_fadeIn
-"This as far as I can go." they say "Good luck out there, kid. You have a rough trip ahead of you." They hand you a blanket and tell you to keep warm. 
+"This as far as I can go." The driver said, "Good luck out there, kid. You have a rough trip ahead of you." They handed Alex a blanket, telling her to keep warm. 
 ->mountainBase
 ==mountainBase==
 ->mountain1
@@ -45,34 +45,36 @@ Alex finally saw the small wooden cabin, just where Audhumbla said it would be. 
 *   [No]
 *   [Say nothing]
 -   :brynja:"Wait, you're not Kari. Who are you?": 
-*   [Kari's cousin] :player:"Kari's cousin,": you say.
-*   [Sigrún's daughter] :player:"Sigrún's daughter,": you say.
-*   [Jorgur's granddaughter]:player:"Jorgur's granddaughter,": you say.
+*   [Kari's cousin] :player:"Kari's cousin,": Alex said.
+*   [Sigrún's daughter] :player:"Sigrún's daughter,": Alex said.
+*   [Jorgur's granddaughter]:player:"Jorgur's granddaughter,": Alex said.
 - Her face turned white. :brynja:"Oh gods... come in, quickly. But be quiet, my kids are asleep.":
 //click door again
 *   [Go inside]->act5insideHouse
 =act5insideHouse
 #v_act5/lesbianHouse1
-Alex entered the small cabin and the warmth instantly made her feel safe and secure. There were two rooms - one a sort of kitchen and one lined with beds. Alex was struck by how welcoming this home was. The woman whispered into the house in Icelandic and someone came out from the kitchen.
-:brynja:"My name is Brynja,": the woman said. :brynja:"This is my wife, Ásta."
+Alex entered the small cabin and the warmth instantly made her feel safe and secure. Closing the door behind her, the woman excused herself to the other room. Alex was struck by how welcoming the home was. After a moment the woman returned, another woman trailing behind her, and took a seat before Alex.
+
+:brynja:"My name is Brynja, and this is my wife, Ásta": the woman said.
+
 :asta:"What are you doing here, little one?":
 *   [Trying to find Kari] :player:"I'm trying to find Kari,": Alex said. :player:"Have you seen him?":
 :brynja:"No, but..." They shared a look. 
 *   [Grandpa has gone crazy]:player:"Grandpa has gone crazy,": Alex said. :player:"He's attacked my dad.":
 They shared a look. :brynja:"We assumed as much.":
-*   [I'm in danger] :player:"Grandpa attacked my dad.",: you say. :player:"I need help.":
-- They shared a look. :asta:"How did you find us?": Ásta asked. Alex told them about how Audhumbla helped you escape. Brynja is stunned. 
+*   [I'm in danger] :player:"Grandpa attacked my dad.",: Alex said. :player:"I need help.":
+- They shared a look. :asta:"How did you find us?": Ásta asked. Alex told them about how Audhumbla helped her escape. Brynja is stunned. 
 :brynja:"Audhumbla went against Jorgur?":
 
 :asta:"He must have really gone insane.":
 
-:brynja:"We sort of knew about this... Your cousin left us this note. We didn't see him but it was on our doorstep this morning.": They hand you a piece of paper.
+:brynja:"We sort of knew about this... Your cousin left us this note. We didn't see him but it was on our doorstep this morning.": They handed Alex a piece of paper.
 
 *   [Read letter]
 #v_clearScreen
 -:kari:"Dear Jóhannson family, 
-:kari:i hope you are well. i am sorry for writing in english but grandpa jorgur cannot read it. i wanted to tell you that grandma Fjola died but we are doing ok. my cousin and aunt and uncle have come to visit. grandpa tells me they are bad people but i really like to see them. i have been staying outside away from our house to fool them like he told me. grandpa said my cousin will help the kindred get strong again. the blót is tomorrow. he told me never to talk to you again but i miss playing with björn and margrét and wanted to say i hope you and grandpa make up and join us again.":
-You look up at Brynja and Ásta.->chatpt1
+:kari:i hope you are well. i am sorry for writing in english but grandpa jorgur cannot read it. i wanted to tell you that my mother died but we are doing ok. my cousin and aunt and uncle have come to visit. grandpa tells me they are bad people but i really like them. i have been staying outside away from our house to fool them like he told me. grandpa said my cousin will help the kindred get strong again. the blót is tomorrow. he told me never to talk to you again but i miss playing with björn and margrét and wanted to say i hope you and grandpa make up and join us again.":
+Alex looked up at Brynja and Ásta.->chatpt1
 
 =chatpt1
 VAR hateAskNum = 0
@@ -117,7 +119,7 @@ VAR grandpaPlanNum = 0
     :brynja:"Your parents had already run away and everyone was on edge. Tour guides started bringing people in to see the "untouched nature" and it made Jorgur crazy. We were poor and sad and when your father's father started buying and selling land to tour agencies it was time for us to find our own way. We still practice Asatru, but not like Jorgur.":    
     ~kindredAskNum += 1
     ->kindredAsk
-*   [Why did my parents leave the kindred?] Your mother became fell in love once with a man from London. He promised to show her the world, and one day he just disappeared. It only made her more determined to leave.
+*   [Why did my parents leave the kindred?] Your mother fell in love with a man from London. He promised to show her the world, and one day he just disappeared. It only made her more determined to leave.
     ~kindredAskNum += 1
     ->kindredAsk
 * {kindredAskNum>0}[Ask other questions] ->chatpt1
@@ -142,7 +144,7 @@ Alex felt a chill move through the air.
 :grandpa:"Ásta. Brynja."
 #t_reset
 :asta:"Ye gods, Jorgur. You look awful.":
-He did. Jorgur's skin was ghostly white. He brandished a shotgun in the doorway of the house.
+He did. Jorgur's skin was ghostly white and his hair was disheveled from the wind. He brandished a shotgun in the doorway of the house.
 :grandpa:"There you are, asni.": Jorgur started to move forward but Brynja stepped between him and Alex.
 :brynja:"What are you doing with this child, Jorgur?":
 :grandpa:"[Agh, stop speaking in her ugly language. She is a worthless American.]":

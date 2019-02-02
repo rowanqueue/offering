@@ -24,7 +24,7 @@ Alex tried to follow Kari's map as best she could, just looking at it gave her h
 +[Alex ventured on] Kari had to be at this hideout, where else would he have run off to? Alex was just glad that she found his drawings when she did. She thought that maybe when she found him, he could show her more sights around iceland.  ->trails2
 
 ==trails2 ==
- Alex climbed up and down hills hoping to spot her cousin's secret hideout. This hill in particular is precariously steep, but she could hear the ocean just ahead. Her feet began to slip under the loose gravel of the trail; she didn't feel safe. -> main
+ Alex climbed up and down hills hoping to spot her cousin's secret hideout. This hill in particular was precariously steep, but she could hear the ocean just ahead. Her feet began to slip under the loose gravel of the trail; she didn't feel safe. -> main
 = main
     * [Alex pushed forward] Alex took a deep breath and attacked the trail. Hiking as fast as she could, ignoring the burning in her calves. She was almost at the top when she tripped and tumbled down. 
     She got back up at the foot of the trail with some scratches and a bruise. She felt a bit worse.
@@ -36,8 +36,8 @@ Alex tried to follow Kari's map as best she could, just looking at it gave her h
     *[Alex paced herself] She decided to hike this steep trail slowly and safely. She zig-zagged across the slope so she didn't fall. She eventually got to the top but it ate up far more time than she wanted it to.
     ~ Stamina -= 5
     ->cliff
-    *[Alex used her hands] She used her hands to secure herself, out of fear of stubling down the hill. She kept her body low to the ground and scampered up the hill. She just knew that she looked absolutely ridiculous.
-    When she got to the top and unclenched her hands, finally noticing that they were raw and bloody, but she made it and that was the most important part. 
+    *[Alex used her hands] She used her hands to secure herself, out of fear of stumbling down the hill. She kept her body low to the ground and scampered up the hill. She just knew that she looked absolutely ridiculous.
+    When she got to the top she unclenched her hands, finally noticing that they were raw and bloody, but she made it and that was the most important part. 
     ~Stamina = Stamina - 5
     ~fucked_hands = true
     ->cliff
@@ -47,7 +47,7 @@ Alex tried to follow Kari's map as best she could, just looking at it gave her h
 = intro
 #v_clearScreen
 #v_act3/boatExterior
-She approached the boat from Kari's drawings and called out his name. There was no answer. That can't be right, he had to be here. He must be sleeping. This place was in all of his drawings. Where else could he have gone?
+She approached the boat from Kari's drawings and called out his name. There was no answer. It couldn't be right, he had to be here. He must be sleeping. This place was in all of his drawings. Where else could he have gone? Her thoughts were becoming more frantic. 
 She tried to get a closer look and finally noticed the massive eagle that had nested on the hull of the boat, right near the entrance. It sat at the helm staring at Alex, menacingly waiting for her to make a move. Maybe Kari wouldn't come out because he was afraid. Alex needed to get rid of it.  
 -> main 
 = main
@@ -73,8 +73,8 @@ She tried to get a closer look and finally noticed the massive eagle that had ne
     
  * {eagle_attempts > 2} [Alex shouted]
  #t_speedUp
-    She was tired and in pain and she just wanted to find Kari and go home. You was so frustrated that she started to cry. Alex yelled out for Kari. He has to be there, she had worked so hard to get here. 
-    It screeched back, flapped its wings, and swooped toward Alex. She closed her eyes and ducked. 
+    Alex was exhausted and in pain. She just wanted to find Kari and go home. She was so frustrated that she started to cry, yelling out for Kari. He had to be there, she had worked so hard to get here. 
+    The eagle screeched back, flapped its wings, and swooped toward Alex. She closed her eyes and ducked. 
     She felt wind rush over her head and a talon slash into her shoulder.
  #t_reset
     Alex stayed folded over in fear for a while until she no longer heard the flapping of the eagle's wings, leaving only a feather behind. She took it, as a reminder.
@@ -88,7 +88,7 @@ She tried to get a closer look and finally noticed the massive eagle that had ne
 == cliff == 
 = intro
 #v_act3/northHilltop
-The summit of this very steep hill overlooked the shore. It ended in a rocky ledge high over the beach. In the distance, she could see the boat Kari that must have been talking about sitting on the shore. She had to find a way down this cliff. -> main
+The summit of this very steep hill overlooked the shore. It ended in a rocky ledge high over the beach. In the distance, she could see the boat that Kari must have been talking about sitting on the shore. She had to find a way down this cliff. -> main
 = main
    * [Alex climbed down the rocky cliff] {not fucked_hands: She found some stable footing on the side of the cliff and thought she might be able to climb down safely. That didn't keep her hands from shaking though. She was almost to the bottom when her hand slipped and she fell backwards. She landed in the sand with no injuries but the wind knocked out of her.}
     ~Stamina = Stamina - 5
@@ -139,14 +139,15 @@ Walking upon the sandy shore, Alex saw the rotting old boat up ahead and it remi
     }
     -> main
     
-    *[Alex listened to the waves] She remembered what her mother told her and take in the sounds of the ocean. She thought back to the ordeal at the cliff and shuddered. She wished her mom was actually there with her.
+    *[Alex listened to the waves] She took in the sounds of the ocean and was reminded of her mother. She thought back to the ordeal at the cliff and shuddered, wishing her mom was actually there with her.
     ~Stamina = Stamina + 3
     ~shore_attempts = shore_attempts + 1
     ->main 
     
     +{shore_attempts > 0}^I:J,4:5 ^[Alex walked to the boat] -> cave
      //Coordinates needed!!!!!!!
-    *^I:J,4:5^[Alex examined the boat] The rickety boat wass probably missing more planks than it still had left, Alex wasn't exactly sure how it was still standing. The mildewy flag was swaying in the ocean breeze. 
+    *^I:J,4:5^[Alex examined the boat] The rickety boat was probably missing more planks than it still had left, Alex wasn't exactly sure how it was still standing.
+    
     ~shore_attempts = shore_attempts + 1
     -> main
     //*^I:J,2:3^[Alex examined the cliff] Alex took a minute to look back at what she just did and shudder. That was so dangerous! How does Kari do this? But all the cuts and bruises would be worth it once she brought Kari home.

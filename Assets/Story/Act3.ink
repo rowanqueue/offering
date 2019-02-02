@@ -23,7 +23,7 @@ Alex refused to get up.
     
 =askGramp
     +[Alex pressed further] :player:"How can you be sure he's safe?"://Add alex's dialogue here
-    :grandpa: "I said come downstairs. Don't doubt my family's strength, Kari is far better at navigating this land then you will ever be!"
+    :grandpa: "I said come downstairs. Don't doubt my family's strength, Kari is far better at navigating this land then you will ever be."
      Alex followed him downstairs but couldn't help but worry about her cousin.
     ->breakfast
     +[Alex dropped the subject] Alex followed downstairs but couldn't help but worry about her cousin.
@@ -88,7 +88,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
 //clickable
 + ^D:F,2:3^[The Cabinets]
     {not foundClues: 
-    Where ever Alex ended up going, she knew it will probably be a long journey. She stocked up on some snacks for her eventual journey, stuffing her pockets.//with what?
+    Where ever Alex ended up going, she knew it will probably be a long trek. She stocked up on some snacks for her eventual journey, stuffing her pockets.//with what?
     ->livingRoomPuzzle
     }
     Alex came to the realization that she was not getting out of this house while her Grandfather guarded the outside. She decided to break one of the shelves. With a loud crack, she snapped out a shelf in the cabinet, spilling the contents it supported. She frantically ducked out of sight as her Grandfather burst through the door to investigate. She then took the chance to bolt through the door, knowing he wouldn't be able to catch up.
@@ -96,7 +96,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
 
 +^A:B,5:7^[Click Fireplace] 
     {not foundClues: 
-    A shiver went down Alex's spine. She cozied up next to the lit fireplace, just for a little while. For that short while, she felt like she was home again.
+    A shiver went down Alex's spine. She cozied up next to the lit fireplace, just for a little while. For that short time, she felt like she was home again.
     ->livingRoomPuzzle 
     }
     Alex came to the realization that she was not getting out of this house while her Grandfather guarded the outside. She started frantically throwing things into the fire until smoke filled the room. She frantically ducked out of sight as her Grandfather burst through the door to investigate. She then took the chance to bolt through the door, knowing he wouldn't be able to catch up.
@@ -105,7 +105,7 @@ Grandfather plopped a plate of oatmeal and a dolop of white stuff Alex didn't re
 +{hasPapers}^I:I,3:7^[Front Door]  Alex got up, put on her coat and boots and left through the front door. 
     Grandfather stopped her.
     :grandpa: "Where do you think you're going? Go back inside! You are not Kari. You haven't lived here and I doubt you would ever make it home safely. You're parents have made you soft. They would blame me for you getting lost and I will not have that":
-    He glared at her until she headed back inside. Alex can tell there will be no chance to reason with him.
+    He glared at her until she headed back inside. Alex could tell there would be no chance to reason with him.
     ~foundClues = true
     ->livingRoomPuzzle
     
@@ -146,7 +146,7 @@ Alex picked up a notebook and opened it to the first page.
 ~seenBoat = seenBoat +1
 ->Insideboat
 
-- :kari: "Mother passed to Valhalla last night. I know I should not be sad because she is with the spirits now, but I miss her. Breakfast always tasted best when she made it and she knew exactly how to put my socks on my feet so it was not uncomfortable. . Maybe she can talk to the landvættir and ask them to come back to our house and things will be a little better. I am excited because my cousin and aunt and uncle are coming to celebrate her. I really want to meet my cousin and I hope I can show her how great Asatru is. I hope what Grandfather says about them being traitors is not true. I have a good feeling about them, even though I have not met them yet.":
+- :kari: "Mother passed to Valhalla last night. I know I should not be sad because she is with the spirits now, but I miss her. Breakfast always tasted best when she made it and she knew exactly how to put my socks on my feet so it was not uncomfortable. Maybe she can talk to the landvættir and ask them to come back to our house and things will be a little better. I am excited because my cousin and aunt and uncle are coming to celebrate her. I really want to meet my cousin and I hope I can show her how great Asatru is. I hope what Grandfather says about them being traitors is not true. I have a good feeling about them, even though I have not met them yet.":
 +  [Keep looking] Alex decided to keep looking through the boat. 
 ~seenBoat = seenBoat +1
 ->Insideboat
@@ -166,14 +166,14 @@ Heaps of half-finished papers lay around the boat. Alex recognized them as his w
 #s_stop
 #v_act3/houseExterior
 //get back home, go inside
-Alex had seen enough in the boat and decided to go home. When she arrived back at Jorgur's house, she was bruised and thoroughly exhausted. Through the window she could see Grandpa napping in his chair.
+Alex had seen enough in the boat and decided to go home. When she arrived back at her grandfather's house, she was bruised and thoroughly exhausted. Through the window she could see him napping in his chair.
 *   [Alex walked right in]->act3walkIn
 *   [Alex attempted to sneak in]->act3Sneak
 
 =act3Sneak
 //empty homeInterior
 #v_act3/houseInterior
-Alex opened the door and couldn't mask the loud creak. She looked toward Grandpa’s chair, but he was nowhere to be seen.
+Alex opened the door and couldn't mask the loud creak. She looked toward Grandfather’s chair, but he was no longer there.
 *  ^H:H,2:5 ^[Go upstairs]->act3SneakUpstairs
 
 =act3SneakUpstairs
@@ -208,8 +208,8 @@ Alex strolled into the house. Jorgur was sitting in his chair.
 *   [Sup]:player:"Sup.":
 *   [Hey]:player:"Hey.":
 #t_reset
-- Grandpa seemed unconcerned. 
-:grandpa:"Hrmph. Where did you go? You seem hurt.":
+- Grandpa eyed Alex with a slight glare. 
+:grandpa:"Where did you go? You seem hurt.":
 #t_speeddown
 
 *   [Just getting some air] :player:"Just... getting some air.":
@@ -229,9 +229,9 @@ Alex strolled into the house. Jorgur was sitting in his chair.
 ->act3Leaving
 
 =act3Leaving
-- :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore.":
+- :grandpa: "Your parents asked I bring you to your father's family in the village. I do not go there anymore, nor do I speak to Ólafur.":
     *  [Why?] :player: "Why?":
-    :grandpa:"His family betrayed the kindred. They paid money to a foreigner for the land that is rightfully ours, to employ tourist guides to let them invade and deface our land.":
+    :grandpa:"His family betrayed the kindred. They paid money to a foreigner for the land that is rightfully ours, to employ tourist guides to let them invade and deface our land!":
     :player: "Huh.":
     *  [Okay] :player: "Okay.":
     -:grandpa:"Time to go.":

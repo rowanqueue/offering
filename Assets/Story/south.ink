@@ -1,7 +1,7 @@
 == mountain1 == 
 = intro
 #v_act5/snowentrance
-Alex was very high up and could even see the glint of the ocean behind her. The snow crunching beneath her feet represented a stark change from the weather around the house. Coming from New York, Alex was prepared for the snow but not to this degree. Sleet slashed at her face and the cold cut through her clothes, she clearly wasn't prepared. Alex looked up at the mountain top and saw a winding dirt road. She felt closer to Kari than ever before. Audi told Alex there would people up there who could help.
+Alex was very high up and could even see the glint of the ocean behind her. The snow crunching beneath her feet represented a stark change from the weather around the house. Coming from New York, Alex was expecting the snow but not to this degree. Sleet slashed at her face and the cold cut through her clothes, she clearly wasn't prepared. Alex looked up at the mountain top and saw a winding dirt road. She felt closer to Kari than ever before. Audie told Alex there would people up there who could help.
     ->main
     
  =main
@@ -11,7 +11,7 @@ Alex was very high up and could even see the glint of the ocean behind her. The 
 
 *[Alex glanced at the sign] The sign pointed towards the trail. "Stay On The Path! -The Jóhannson's" -> main
 
-* [Alex surveyed the rocks] Everything surrounding Alex was covered in a dense ice. It was a much crueler cold here than it was in New York. The snow was harsher and the winds were stronger here in Iceland. Everything was so open, making her feel more vulerable than ever before.->main
+* [Alex surveyed the rocks] Everything surrounding Alex was covered in a dense ice. The snow was harsher and the winds were stronger here in Iceland and she found herself desperately missing home. Everything was so open, making her feel more vulerable than ever before.->main
 
 + [Alex walked up the trail] Alex trudged up the hill, slowly bracing herself against the wind. ->fork
 
@@ -35,7 +35,7 @@ With the wind blowing in Alex's face, it was hard to tell what was in front of h
 The higher Alex climbed the icier it got. Alex tried not to think about what happened her dad, instead focusing on the newest obstacle ahead of her. The ground had slowly been hardening beneath her and it was to the point where she started to slip. 
 
 //non clickable 
-+ [Alex cautiously walked in the Snow] 
++ [Alex cautiously walked in the snow] 
 Alex remembered what had happened on the beach and decided not to take any chances. She cautiously avoided the rocky terrain and found an area that was covered in snow. Its was a surprisingly deep pile of snow. In fact, Alex could feel some seep into her boots. She gasped at shock as the cold chill seeped down to her feet and stayed there. Alex tried to convince herself that this was better than falling.
     ~Stamina -= 5
     ->mountain3
@@ -54,18 +54,18 @@ Alex found an old branch on the ground and decided it would make the perfect com
 //same screen
 == mountain3 ==
 #v_act5/snowyrockypath
-Alex started to cry. Boulders, that seemed to tower over her, blocked her path forward. She stopped and took in the situation- Lost in the mountains, alone. If she died, no one would be able to find her body. She thought about how her parents will have had two lost children and it would be all her fault. She had no idea how she going to get past these massive rocks but she knew need to. She need to end this no matter what it cost her.
+Alex started to cry. Boulders, that seemed to tower over her, blocked her path forward. She stopped and took in the situation. She was lost in the mountains, alone. If she died, no one would be able to find her body. She thought about how her parents will have had lost two children and it would be all her fault. She had no idea how she going to get past these massive rocks but she knew need to. She need to end this no matter what it cost her.
 ->main
 =main
 //non clickable 
 * [Alex climbed over the rocks]
-Alex desperately tried to climb over the boulders. Everytime she would touch the rock her hands would burn from the cold. She fought through the pain, pulling herself up high enough to see over the ledge. Yet her foot would always slip off of the icy rock. She tried over and and over and over again, falling every time. She would have to find another way.  
+Alex desperately tried to climb over the boulders. Everytime she would touch the rock her hands would burn from the cold. She fought through the pain, pulling herself up high enough to see over the ledge. Yet her foot would always slip off of the icy rock. She tried over and over and over again, falling every time. She would have to find another way.  
 ~Stamina -= 5
     ->main
     
 + [Alex tried squeeze past the rocks]
 Alex tried to squeeze through the gaps of the boulders. Very quickly, she realized how hard it would be to fit through, but knew there was no going back. Desperately, Alex jammed herself through the gap as far as she could.
-And then She stopped. Alex couldn't push any further. She was stuck. She thrashed violently, trying to pull the left half of her body through. She was close, so close. Alex cried out for her parents, for anybody but nobody came. Alex went limp. she was so tired, confused, and scared. All she could think about was giving. But just then, she started to slide down the gap and fall to the floor. It took her a second to realize what happened, then she wiggled free, took a breath, and pushed forward.
+And then she stopped. Alex couldn't push any further. She was stuck. She thrashed violently, trying to pull the left half of her body through. She was close, so close. Alex cried out for her parents, for anybody, but nobody came. Alex went limp. She was so tired, confused, and scared. All she could think about was giving up. But then, she started to slide down the gap and fall to the floor. It took her a second to realize what happened, then she wiggled free, took a breath, and pushed forward.
 ~Stamina -= 10
 ->ending
     

@@ -11,7 +11,7 @@ VAR followedKari = false
 *   [Yes] :player: "Yeah. Besides the smell.":
 *   [No] :player: "How can you stand eating that fish? I feel like I'll never get the smell out of my nose":
 - Kari laughed. 
-    :kari:"We eat that almost every day though. I like it best when it's thicker. Anyway, I want to show you something. Follow me over here!":
+    :kari:"We eat that almost every day. I like it best when it's thicker. Anyway, I want to show you something. Follow me over here!":
     Before Alex could protest, Kari sped off toward the grassy hills behind the house. She figured she might as well follow.
 *   ^I:J,3:5 ^[Follow]->enterwood1
 
@@ -26,13 +26,16 @@ Alex cleared the hill and couldn't believe how wide open everything was. The hil
 #v_act2/campfireKari
 #s_audio/Piano LeadUp_m
 ~coin = 1
-Alex wasn't sure how far she'd gone or how long it took by the time the cousins arrived at their destination. A lean-to and some logs sat around a fire pit. Kari stood proudly in the center of the campsite.
+Alex wasn't sure how far she'd gone or how long it took by the time the pair arrived at their destination. A wooden statue and a stone bench sat around a fire pit. Kari stood proudly in the center of the campsite.
 
 :kari:"We made it, cousin! This is a very special place. Grandfather and I come here to pray, and sometimes camp! A few times a year, we gather with his friends for some bigger celebrations. There is always music and singing and good food! We used to do it more often. There used to be more people too.":->cousinConvo_campfire
 == cousinConvo_campfire ==
 *   [Who else comes here?] :player:"Who else comes here?": 
 
-:kari:"Well, it used to be Aunt Sigrún, Grandfather, Grandmother, Einar, Ólafur, Helga, Björn, Margrét, Ásta, Brynja, and Audhumbla.": Kari looked around, some apprehension in his eyes. :kari:"Now it’s just me, Audhumbla, and Grandfather.":->cousinConvo_campfire
+:kari:"Well, Grandfather said it used to be him, Grandmother, and our mothers. Uncle Einar and your Grandpa Ólafur were always there, as well as Audhumbla. The Jóhannsons, Brynja and Ásta, used to come too!": 
+
+Kari looked around, some apprehension in his eyes. :kari:"Now it’s just me, Audhumbla, and Grandfather.":->cousinConvo_campfire
+
 *   [Camping?] :player:"Camping?": she asked. 
 :kari:"It's so nice and fun. We stay here for a few days and just relax and pray.":
 ->cousinConvo_campfire
@@ -52,7 +55,7 @@ Alex wasn't sure how far she'd gone or how long it took by the time the cousins 
 :kari:"Of course they're real!":
 *   [Alex was scared]
 :kari:"I promise they won’t hurt you, it’ll be okay! We just have to remember to be super polite. They are a bit mischievous.":
-- :kari:"Here,": he said, :kari:"take a bite of this.:" 
+- :kari:"Here, take a bite of this,": he said. 
 
 *   [Take a bite]
     Alex bit off a chunk of the bread horse and handed it back to Kari, who chewed off one of the legs.
@@ -62,7 +65,7 @@ Alex wasn't sure how far she'd gone or how long it took by the time the cousins 
 
 -:kari:"Now, we put our wishes into the bread. You go first. You don't have to tell me what you wish for.":
 *   [I wish I was home]
-*   [I wish my parents would stop fighting]
+*   [I wish I could have met my aunt]
 *   [I wish I knew why my parents left this place]
 - :player:"Okay, I made my wish.":
 
@@ -149,7 +152,7 @@ Alex emerged from the trees and her parents ran to embrace her. She'd never seen
 #v_act2/houseInteriorGrandpa
 Alex walked inside with Grandpa. 
 :grandpa: "Just you and me now, child.":
-*   [Are you concerned?]:player:"Are you scared about Kari?": you ask.
+*   [Are you concerned?]:player:"Are you scared about Kari?":
 :grandpa:"Kari could not have gotten far. He is too weak. Here.":
 *   [Do you know where Kari is?] :player:"I'm sure he is just out playing. He knows the area well, and does not have the determination to run away. Here.":
 *   [Okay]:player:"Okay.":
@@ -174,7 +177,7 @@ Alex changed and tried to sleep. Not knowing when her parents would be back, Ale
 #v_clearScreen
 - :mom: "Krútt... wake up...":
 #t_reset
-#vact2/bedroomMom
+#v_act2/bedroomMom
 #v_fadeIn
 Alex's mother shook her awake. 
 

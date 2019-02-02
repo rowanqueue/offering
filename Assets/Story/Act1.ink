@@ -44,9 +44,9 @@ Alex spent the next forty minutes managing her nausea as her father drove them t
 //Alex had the thought that she had never seen so far in one direction. 
 :mom:"Leave your things in the car, Alex.":
 
-Her parents got out of the car, and to prove a point Alex waited for her mother's approval to follow. Grandfather shook dad's hand, and then him and Mom looked at eachother and said a few words. Alex watched intently. Grandfather gestured towards her, and mom motioned for her to come out of the car.
+Her parents got out of the car, and to prove a point Alex waited for her mother's approval to follow. Alex watched intently as her grandfather shook dad's hand, then looked at mom, and said a few words.  Grandfather gestured towards her, and mom motioned for her to come out of the car.
 
-*   [Alex got out of the car]     Alex got out of the car and walked to the house, getting a better look at her Grandfather - she realized that were he not hunched over a cane he would be an enormously tall man. Even decrepit like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of disapproving frown that was typical for old men, but there was something so relaxed about Grandpa Jorgur that Alex felt even more small. 
+*   [Alex got out of the car]     Alex got out of the car and walked to the house, getting a better look at her grandfather - she realized that were he not hunched over a cane he would be an enormously tall man. Even decrepit like this he was a very imposing figure, but Alex couldn't get a read on his expression. It was the kind of disapproving frown that was typical for old men, but there was something so relaxed about Grandpa Jorgur that Alex felt even more small. 
 
 
     To his right, she realized, was her younger cousin, Kari, hiding behind her grandfather's legs. He looked to be around 11 years old. Kari stared at her, mesmerized. 
@@ -57,7 +57,7 @@ Her parents got out of the car, and to prove a point Alex waited for her mother'
 
     To his right was Alex's younger cousin, Kari, who looked to be around 11 years old. He gawked at her, mesmerized. 
 
-- Grandfather spoke to Alex in English, fumbling with through the words-
+- Grandfather spoke to Alex in English, fumbling through the words-
 :grandpa: "So... you are the one I've waited so long to meet. You look just like your mother.": 
 They all stood there while Alex's Grandfather eyed her up and down before making sullen eye contact with Fjola.
 
@@ -73,7 +73,7 @@ Kari spoke deliberately. Alex assumed he was nervous.
 *   [Alex introduced herself to her cousin]
 Alex decided to introduce herself to her cousin. 
 :player:"Hey, I'm Alex,": she said. Kari lowered his voice.
-:kari:"Hey! It's so amazing to meet you. Wow, okay, come inside!":
+:kari:"Hi! I'm so happy to meet you. Please, come inside!":
 **  [Alex followed] Alex followed Kari in.
 ->intro_livingroom
 
@@ -86,7 +86,7 @@ Jorgur walked into the house and took a seat.
 Mom squeezed Alex's shoulder.
 :grandpa:"Kari, show your cousin around the house.":
 Kari's head shot down towards his feet.
-:kari:"Yes, grandfather.": He looks at you. 
+:kari:"Yes, grandfather.": He looked at Alex. 
 :kari:"Cousin, follow me upstairs?": 
 
 *   ^H:H,2:5 ^[Go upstairs]->
@@ -124,9 +124,9 @@ Alex stepped into her cousin's room. There were drawings scattered everywhere, o
 
 *   [Alex remembered the story]
 
-- Alex started to remember the story her father had told her once when she was very little. :player:"And an evil king sent his wizard to attack Iceland in the form of a whale?":
+- Alex started to remember the story her father had told her once when she was very little. :player:"And an evil king sent his wizard to attack Iceland in the form of a whale, right?":
 
-:kari:"Yes!": Kari replied. :kari:"Wow... I am so happy you know the story.": 
+:kari:"Yes!": Kari replied in awe. :kari:"I am so happy you know the story...": 
 
 Kari lowered his voice. :kari:"Listen Alex, I need to tell you something. There are not any wights around this house anymore. They were driven away from here, but Grandpa says drawing them is a good way to pay tribute and invite them. I like to hang my drawings on the clothesline for them to see. I sit by the window and watch them move in the wind like they are here protecting us, and soon they will come. Would you like to draw landvættir with me?":
 
@@ -152,7 +152,7 @@ Kari giggled at this. :kari:"It's not a cow, it's a bull! The bull is HUGE, and 
 *   [Alex asked his favorite wight] :player:"Which is your favorite wight, Kari?":
 :kari:"Ooh, that's hard. I think probably the bird. The birds can go anywhere they want.":
 ->drawingConvo
-*   [Some time passed as they drew together.]
+*   [They continued drawing together.]
 ->predinner
 
 =predinner
@@ -174,7 +174,7 @@ Alex walked downstairs to find Jorgur ladeling out fish stew and hunks of bread.
 
 *   [Alex took a seat]
 //WEIRD MOMENT
-Alex sat at the small dinner table next to her cousin. The room until Einar cleared his throat.
+Alex sat at the small dinner table next to her cousin. The room was silent until Einar cleared his throat.
 
 -:dad: "Jorgur, I'm so sorry about Lilja. We wish we could have been here.":
 Grandpa looked at his plate. :grandpa:"It was never the same after you left. She fell into a deep depression, and on top of the illness… it’s a shame you couldn’t see her before she died. It would have meant a lot to her.":
@@ -186,7 +186,8 @@ Grandpa looked at his plate. :grandpa:"It was never the same after you left. She
 
 :grandpa:"You know it is not my way.":
 
-:mom:"I should have been here to do something about it,”: she said. :mom:”We're only staying here for two days. After the funeral, we're leaving.":
+:mom:"I should have been here to do something about it,”: she said. 
+:mom:"We're only staying here for two days. After the funeral, we're leaving.":
 
 :grandpa: "As you do.": 
 
@@ -207,7 +208,7 @@ Kari nodded. :kari:"Yes, grandfather!": he said. Kari and Alex started putting t
 
 At the mention of Ólafur's name, Jorgur grimaced. :grandpa:"Fjola, let the children play for a little while. Ólafur is hardly any concern of mine, and after all, it's been years since I've seen you.":
 
-:mom:"Alex, just... don't go far.":
+She sighed, :mom:"Alex, just... don't go far.":
 
 :player:"I won't.":
 *^I:I,3:7 ^[Alex followed Kari outside]-> ACT2

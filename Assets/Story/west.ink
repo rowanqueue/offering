@@ -63,12 +63,12 @@ She stopped at the foot of some rolling hills. She was astonished by the size of
     Alex felt the body heat of the cow on her skin. It exhaled loudly once she crouched down. It seemed more nervous than she did, but she could barely believe it. 
     //write text in the above to indicate doing either petting or scratching
     +[Alex pet the cow]
-        Alex's hands trembled a little bit as she pet the cow. She had never seen an animal of this size in person before. This whole trip had been a stark change from her New York home, leaving her nervous and uncompfortable. The cow, on the other hand, seemed at ease even going so far as to move closer to you.  
+        Alex's hands trembled a little bit as she pet the cow. She had never seen an animal of this size in person before. This whole trip had been a stark change from her New York home, leaving her nervous and uncompfortable. The cow, on the other hand, seemed at ease even going so far as to move closer to her.  
             ~cow1Soothed = true
             ->cow1
     
     *[Alex scratched behind its ears]
-        Alex tried scratching behind her ears, like a dog. It snorted furiously and trashed her head angrily. This scared her even more. She didn't know how to approach these animals. If she couldn't even soothe them properly, how was she going to milk them?
+        Alex tried scratching behind her ears, like a dog. It snorted furiously and thrashed her head angrily. This scared her even more. She didn't know how to approach these animals. If she couldn't even soothe them properly, how was she going to milk them?
             ~stamina -= 5
             ~cow1Soothed = false
             ->cow1
@@ -90,11 +90,11 @@ She stopped at the foot of some rolling hills. She was astonished by the size of
 = intro
 #v_act4/pasture2
 #v_exit
-Audi's property went on for what seemed like miles. She had yet to even see a fence anywhere. The cows seemed to just wander where they pleased.   
+Audie's property went on for what seemed like miles. She had yet to even see a fence anywhere. The cows seemed to just wander where they pleased.   
  ->main
 = main
     * ^A:J,1:4^[Examine sky]
-        The clouds were thin, as if they were smeared across the sky. It looked like it was getting late. Alex was cold, you wanted to go home.
+        The clouds were thin, as if they were smeared across the sky. It looked like it was getting late. Alex was cold, she wanted to go home.
         ->main
     + ^H:J,5:10^[Examine cow]
         {cow2milked: This was also a nice cow. -> main}
@@ -106,11 +106,11 @@ Audi's property went on for what seemed like miles. She had yet to even see a fe
     Alex saw the cow periodically rustle through the bushes looking for something. It immediately stopped and stared at her when she approached.
     //explain what you do with the cow down here
     + {not cow2Soothed}[Alex fed the cow some berries]
-        {hasBerries: You take some berries out of your pocket to feed the cow some berries. You feel its tounge brush up against your hand as it takes them. It nuzzles your hand once it finishes chewing.}
+        {hasBerries: She took the berries out of her pocket to feed the cow. She felt its tounge brush up against her hand as it took them. It nuzzled her hand once it finished chewing.}
         {hasBerries:
             ~cow2Soothed = true
         }
-        {not hasBerries: You don't know what you can do.}
+        {not hasBerries: Alex wasn't sure what to can do.}
         ->cow2
     
     + {not cow2milked and cow2Soothed}[Milk Cow]
@@ -120,8 +120,8 @@ Audi's property went on for what seemed like miles. She had yet to even see a fe
         {hasBucket and cow2Soothed:
             ~milk += 1
         }
-        {hasBucket and cow2Soothed: You tug on the udders hoping to get this over with as soon as possible. The cow cries out in pain and knocks you to the ground when you get up you see the bucket contains drops of blood. ->main}
-        {not hasBucket: You are not prepared to do that right now. ->cow2}
+        {hasBucket and cow2Soothed: Alex tugged on the udders hoping to get this over with as soon as possible. The cow cried out in pain and knocked her to the ground. When she got up, she saw the bucket contained drops of blood. ->main}
+        {not hasBucket: Alex was not prepared to do that. ->cow2}
         {not cow2Soothed:
             ~stamina -= 5
         }
@@ -140,7 +140,7 @@ Audi's property went on for what seemed like miles. She had yet to even see a fe
 {hasBucket:
 #v_exit
 }
-Alex's feet started to hurt again. She hadn't really had a chance to fully recover from yesterday. Everything was moving so fast but she felt like she had made such little progress in finding Kari.  
+Alex's feet started to hurt again. She hadn't really had a chance to fully recover from her earlier adventures. Everything was moving so fast but she felt like she had made such little progress in finding Kari.  
  ->main
  
 = main
@@ -148,7 +148,7 @@ Alex's feet started to hurt again. She hadn't really had a chance to fully recov
 #v_exit
 }
     * ^B:C,8:10^[Examine bucket]
-        Alex saw a metal bucket just lying on the floor. It was dented all over and a little dirty but it should do the trick.
+        Alex saw a metal bucket lying on the floor. It was dented all over and a little dirty but it would do the trick.
         ~hasBucket = true  
         ->main
         
@@ -164,7 +164,7 @@ Alex's feet started to hurt again. She hadn't really had a chance to fully recov
     The cow fidgeted constantly, sporadically swatting its tail and kicking its feet.  
 
     +[Alex talked to the cow]
-        Alex apologized for what she was about to do. She didn't want to hurt it and she wasn'tt here by choice. It seemed to stop kicking and stay still.
+        Alex apologized for what she was about to do. She didn't want to hurt it and she wasn't here by choice. It seemed to stop kicking and stay still.
         ->cow3
 
     + {not cow3milked} [Milk Cow]
@@ -178,7 +178,7 @@ Alex's feet started to hurt again. She hadn't really had a chance to fully recov
     = cowtail
         Alex sat down to milk the cow and the cow turned away. She tried to move with it, being careful of its feet. Once she finally managed to settle it down, the cow slapped her in the face with its tail. She moved around hoping to get out of its reach but the cow moved with her. Alex began to get angry.
             ~cow3milked = true
-                *[Alex swatted the tail away] She got frustrated and slapped the tail out of her face. This startled the cow and it kicks its hind legs. They narrowly missed hitting her in the side. But if it hadn't she would have been seriously injured. Alex hastily squeezed the milk she needed, ignoring every swat in the face.
+                *[Alex swatted the tail away] She got frustrated and slapped the tail out of her face. This startled the cow and it kicked its hind legs. They narrowly missed hitting her in the side, but if they hadn't she would have been seriously injured. Alex hastily squeezed the milk she needed, ignoring every swat in the face.
                     ~stamina -= 15
                     ~milk += 1
                     ->main
