@@ -27,3 +27,9 @@ VAR coin = 0
 -> start
 == start ==
 -> beginning
+
+==demoEnd==
+This is the end of the demo. Thanks for playing!
+*[END]
+END
+->END

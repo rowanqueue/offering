@@ -72,6 +72,7 @@ public class Credits : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        speedy = true;
         float mod = 1.0f;
         if (Input.anyKey || speedy)
         {

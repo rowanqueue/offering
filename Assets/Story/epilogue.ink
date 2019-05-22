@@ -25,6 +25,6 @@ Kari showed Alex the drawing. The two of them stood on a great island, but this 
 :player: "When we get home we'll hang it up, okay?"
 
 Kari closed his sketchbook and looked out the window, excited for something new.
-
+*[END]
 END
 -> END

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour {
+    public bool demo;
     public bool hasSave;
     public TMP_Text scrampText;
     public TMP_Text offeringText;
@@ -45,6 +46,7 @@ public class StartMenu : MonoBehaviour {
         {
             hasSave = false;
         }
+        if (demo) { hasSave = false; }
         if (!hasSave)
         {
             enter = enterNo.GetComponent<Image>();
