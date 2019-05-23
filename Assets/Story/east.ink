@@ -9,44 +9,40 @@
 } 
 She was completely lost. Thunder crashed above her while the rain seeped through her shoes. Alex wandered around confused and hopeless, Occationally she would cry out for her cousin, fruitlessly. -> entrance
 == entrance ==
+{followedKari:
+:player:"Kaaarrriiii!":
+}
 -> main
 //THROW IN A HELP THING HERE CALL PARKER SEE IF HE CAN HELP THE PLAYER HERE
 //uSE ALTERNATIVES FOR WHEN YOU MAKE A MISTAKE
 = main
-{followedKari:
-:player:"Kaaarrriiii!":
-}
-//may just be displayed by visuals
-    //+[Examine Sign]
-    //The sign says "Beware the Dragon's Forest! Wander at your own risk!" and has a compass with norse runes replacing the traditional N, E, S, W.
-    //->main
     +^G:H,5:7 ^[Alex wandered north] -> wood2
 == lost ==
 ~Stamina -= 5
-{Alex walked on for what felt like forever...|Every hill looked the same to Alex. before she knew it, she was back where she started.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.| Alex tripped over the stones meant to guide her, when she got up she found herself back where she started. }
+{Alex walked on for what felt like forever...|Every hill looked the same to Alex. before she knew it, she was back where she started.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.|Alex ignored the signs, the storm was getting to her.| Alex tripped over the stones meant to guide her, when she got up she found herself guided by the light from her Grandfather's cabin. ->act2Home_outside}
 -> entrance
 == wood2 ==
 #v_exit
 #v_act2/east2
 #s_audio/FootStep(Outside)_s
-Alex's tears stung from the cold. She noticed some strange runes but was too exhausted and scared to care. -> main
+{Alex's tears stung from the cold. A single tree seemed to have been chopped down but she was too exhausted and scared to care.|Alex realized she was back at the start, she desperately called out for her cousin again|Alex would have to retrace her path once again but she could feel she was getting close.} -> main
 = main
 #CORRECT ANSWER: EAST
 //CLUE: EAST
-    +^D:E,5:6 ^[GO NORTH]->lost
+    +{!wood3}^D:E,5:6 ^[GO NORTH]->lost
     +^I:J,7:8 ^[GO EAST] -> wood3
-    +^G:H,9:10 ^[GO SOUTH]->lost
+    +{!wood3}^G:H,9:10 ^[GO SOUTH]->lost
 == wood3 ==
 #v_act2/east3
 #s_audio/FootStep(Outside)_s
-The storm brooded directly over Alex, as if it was conspiring against her. It roared and growled, pushed and pulled at her, but she pushed on. -> main
+The storm brooded directly over Alex, as if it was conspiring against her. It roared and growled, pushing her in every direction, but she trudged on. -> main
 = main
 #CORRECT ANSWER: SOUTH
 //CLUE: BACK
-    +^G:H,4:5^[GO NORTH]->lost
-    +^I:J,7:8^[GO EAST]->lost
+    +{!wood4}^G:H,4:5^[GO NORTH]->lost
+    +{!wood4}^I:J,7:8^[GO EAST]->lost
     +^D:D,8:9^[GO SOUTH]-> wood4
-    +^A:B,6:7 ^[GO WEST]->lost
+    +{!wood4}^A:B,6:7 ^[GO WEST]->lost
 == wood4 ==
 #v_act2/east4
 #s_audio/FootStep(Outside)_s
@@ -54,10 +50,10 @@ The winds were cruel and endless. {followedKari:Every rock or bush looked like K
 = main
 #CORRECT ANSWER: EAST
 //CLUE: RIGHT
-    +^G:H,3:4^[GO NORTH]->lost
+    +{!wood5}^G:H,3:4^[GO NORTH]->lost
     +^I:I,5:5^[GO EAST] -> wood5
-    +^E:F,9:10^[GO SOUTH]->lost
-    +^A:B,6:7^[GO WEST]->lost
+    +{!wood5}^E:F,9:10^[GO SOUTH]->lost
+    +{!wood5}^A:B,6:7^[GO WEST]->lost
 == wood5 ==
 #v_act2/east5
 #s_audio/FootStep(Outside)_s

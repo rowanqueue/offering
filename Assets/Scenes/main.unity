@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eba386069d0150409e4d0349898e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatJump: 
+  cheatJump: eaststart
   gameOver: 0
   inkJSONAsset: {fileID: 4900000, guid: 352b9741df237d643a84c6e2207fdc79, type: 3}
   choicesButtons:
@@ -1729,7 +1729,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4135927716266392, guid: b26deed507bc1c340aff5fe59d040ef8, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1147441280986376, guid: b26deed507bc1c340aff5fe59d040ef8, type: 2}
       propertyPath: m_IsActive
@@ -3784,7 +3784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000104904175, y: 0.000030517578}
+  m_AnchoredPosition: {x: 12.200003, y: 0}
   m_SizeDelta: {x: -12.2, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1583118389

@@ -444,14 +444,14 @@ public class NewStoryManager : MonoBehaviour {
                     typing = false;
                 }
             }
-            if(whatToType.Length > 0 && whatToType[0] == '[')
+            /*if(whatToType.Length > 0 && whatToType[0] == '[')
             {
                 string[] split = whatToType.Split('[')[1].Split(':');
                 speakerToColor.Add(split[0], '#' + split[1]);
                 TextSound.me.AddCharacter(split[0], split[2]);
                 whatToType = "";
                 typing = false;
-            }
+            }*/
             //check for current voice (either typing sound or specific voice
             if (whatToType.Length > 0 && whatToType[0] == ':')
             {
