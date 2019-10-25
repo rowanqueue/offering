@@ -7,6 +7,7 @@ using Ink.Runtime;
 using UnityEngine.SceneManagement;
 
 public class NewStoryManager : MonoBehaviour {
+    public bool auto;
     public string cheatJump;//put knot here
     public bool gameOver;
     public TextAsset inkJSONAsset;
@@ -17,6 +18,7 @@ public class NewStoryManager : MonoBehaviour {
     int numSpecialChoices;//how many non-text choices you have
     public List<Button> choicesButtons;
     public string currentKnot;
+    public string resetKnot;
 
     //tiles
     public Transform tileParent;
@@ -149,6 +151,19 @@ public class NewStoryManager : MonoBehaviour {
         }
     }
 	void Update () {
+        //expo reset
+        if(currentKnot == resetKnot)
+        {
+            SceneManager.LoadScene(0);
+        }
+        if (auto)
+        {
+            if(story.currentChoices.Count > 0)
+            {
+                story.ChooseChoiceIndex(0);
+            }
+        }
+
         scrollRect.verticalNormalizedPosition = 0;
         //variables
         stamina = int.Parse(story.variablesState["Stamina"].ToString());
